@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="theme-color" content="#0f2e1d"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>You-Farm Marketplace</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{forest:'#0f2e1d',leaf:'#1f6b3a',sprout:'#7cc47f',cream:'#f7f0e0',sand:'#efe3c8',clay:'#b8561f',harvest:'#f4b942',soil:'#3b2a1a',line:'#e8dcc0'},fontFamily:{sans:['Public Sans','sans-serif'],disp:['Space Grotesk','sans-serif']}}}}</script>
+<style>
+body{font-family:'Public Sans',sans-serif;background:#f7f0e0;color:#3b2a1a;overscroll-behavior:none}
+.ms{font-family:'Material Symbols Outlined';font-weight:400;font-style:normal;line-height:1;display:inline-block;font-variation-settings:'FILL' 0}
+.fill{font-variation-settings:'FILL' 1}
+.no-sb::-webkit-scrollbar{display:none}.no-sb{scrollbar-width:none}
+.pt-safe{padding-top:env(safe-area-inset-top,0)}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0)}
+.chip-on{background:#0f2e1d;color:#fff;border-color:#0f2e1d}
+.bub{max-width:82%;word-wrap:break-word}
+#chat{transform:translateY(100%);transition:transform .25s ease}@media(min-width:640px){#chat{transform:translateX(100%)}}#chat.open{transform:none}
+.card{transition:box-shadow .2s,transform .2s}.card:hover{box-shadow:0 14px 30px -12px rgba(59,42,26,.16);transform:translateY(-2px)}
+.ph{background:linear-gradient(135deg,var(--a),var(--b))}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #f4b942;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){#chat{transition:none}}
+</style></head>
+<body class="pb-24">
+
+<header class="fixed top-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-b border-line pt-safe">
+ <div class="h-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex items-center gap-3">
+  <img class="h-8" alt="You-Farm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdryaOneto5aYotA6uQjNAQ4C8P9CN5Xklc_4qjItWmxHO2SWFxxXvjHVtoGk48JIqRUVqF3WxRWQdI3bo9iG2s29Li-gG-IFroLa2sIJSyfgnxpW68yKSJyfuSAmrYSUT8ISiRi5S-EbDnsYoFFy86m3Wo5Wv-kSDEIanafdKRCj-rNu14Bq_YymhsGbNqMqzpiAcY26Bwk2z6Gsa9zu6KxARBkZKdkOY95plrqmByBAvS3I7ZhJNrQ"/>
+  <div class="min-w-0 flex-1"><div class="font-disp font-bold text-forest leading-tight">You-Farm</div>
+   <div class="text-[11px] text-soil/70 flex items-center gap-1"><span class="ms text-[13px] text-clay">location_on</span>Kampala &amp; Central Hub</div></div>
+  <a href="Market-Alets.html" aria-label="Notifications" class="relative w-11 h-11 grid place-items-center text-soil/70"><span class="ms text-[24px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-harvest ring-2 ring-white"></span></a>
+  <div class="w-9 h-9 rounded-full bg-sand text-leaf grid place-items-center" aria-label="Profile"><span class="ms">person</span></div>
+ </div>
+</header>
+
+<main class="pt-[72px] max-w-7xl mx-auto">
+ <!-- Hero -->
+ <section class="px-4 sm:px-6 lg:px-8 pt-3">
+  <div class="relative rounded-3xl overflow-hidden bg-forest min-h-[200px] lg:min-h-[270px] flex items-end lg:items-center">
+   <img id="hero-img" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()"/>
+   <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-forest via-forest/70 to-forest/10"></div>
+   <div class="relative p-5 sm:p-8 lg:p-14 w-full max-w-2xl text-white">
+    <h1 class="font-disp font-bold text-[26px] sm:text-4xl lg:text-5xl leading-tight">Buy straight from verified farmer groups</h1>
+    <p class="mt-2 text-white/85 text-sm sm:text-base">Compare prices with the Kampala market, bargain in private chat and pay safely through escrow.</p>
+    <label class="mt-4 flex items-center gap-2 bg-white rounded-xl px-3 h-12 text-soil shadow-lg"><span class="ms text-soil/70">search</span>
+     <input id="q" type="search" placeholder="Search by crop, group or depot" class="flex-1 bg-transparent outline-none text-sm min-w-0"/></label>
+   </div>
+  </div>
+ </section>
+
+ <!-- Market prices -->
+ <section class="px-4 sm:px-6 lg:px-8 mt-5">
+  <div class="flex items-center gap-3"><span class="text-sm font-semibold text-forest shrink-0">Today's prices</span>
+   <div id="ticker" class="flex gap-2 overflow-x-auto no-sb"></div></div>
+ </section>
+ <!-- Filters -->
+ <section class="px-4 sm:px-6 lg:px-8 mt-4 space-y-2 sticky top-16 z-30 bg-cream py-3">
+  <div class="flex gap-2 overflow-x-auto no-sb" id="crops"></div>
+  <div class="flex flex-wrap items-center gap-2 pt-1">
+   <span class="text-sm text-soil/70 w-full sm:w-auto sm:flex-1" id="count"></span>
+   <select id="dist" aria-label="District" class="h-10 rounded-lg bg-white border border-line px-2 text-sm"></select>
+   <select id="sort" aria-label="Sort" class="h-10 rounded-lg bg-white border border-line px-2 text-sm"><option value="rec">Recommended</option><option value="pl">Price: low to high</option><option value="ph">Price: high to low</option><option value="stock">Most stock</option><option value="rate">Top rated</option></select>
+   <label class="flex items-center gap-1.5 text-sm"><input id="fav-only" type="checkbox" class="accent-[#0f2e1d]"/>Saved</label>
+  </div>
+ </section>
+
+ <!-- Feed -->
+ <section id="feed" class="px-4 sm:px-6 lg:px-8 mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></section>
+
+ <section class="px-4 sm:px-6 lg:px-8 mt-8 pb-8 grid gap-3 lg:grid-cols-2">
+  <div class="bg-sand rounded-2xl p-4 flex gap-3 items-start">
+   <span class="ms fill text-leaf text-[28px]">verified_user</span>
+   <div><div class="font-semibold text-forest">Pay through MTN &amp; Airtel escrow</div>
+   <p class="text-sm text-soil/70">Your money stays frozen until the weighbridge ticket is signed at the destination depot. Never pay outside You-Farm.</p></div>
+  </div>
+  <button onclick="openRfq()" class="mt-3 w-full h-12 rounded-xl border border-leaf text-leaf font-semibold flex items-center justify-center gap-2"><span class="ms">factory</span>Need bulk for a factory or silo? Post an RFQ</button>
+ </section>
+</main>
+
+<!-- Chat sheet -->
+<div id="chat-back" class="fixed inset-0 z-50 bg-black/50 hidden" onclick="closeChat()"></div>
+<aside id="chat" class="fixed z-50 inset-x-0 bottom-0 top-10 sm:inset-x-auto sm:right-0 sm:top-0 sm:w-[440px] bg-white rounded-t-3xl sm:rounded-none flex flex-col shadow-2xl" role="dialog" aria-label="Chat" aria-hidden="true">
+ <div class="px-4 py-3 border-b border-line flex items-center gap-3">
+  <div id="c-av" class="w-10 h-10 rounded-full bg-leaf text-white grid place-items-center font-bold text-sm"></div>
+  <div class="min-w-0 flex-1"><div id="c-seller" class="font-semibold truncate"></div><div id="c-item" class="text-xs text-soil/70 truncate"></div></div>
+  <button onclick="closeChat()" aria-label="Close chat" class="w-10 h-10 rounded-full bg-cream grid place-items-center"><span class="ms">close</span></button>
+ </div>
+ <div class="px-4 py-2 bg-harvest/25 text-[12px] text-clay flex gap-2 items-start">
+  <span class="ms fill text-[16px] mt-px">lock</span>
+  <span>Private chat between you and this seller only. Phone numbers, emails, links and social handles are blocked. Keep every deal and payment on You-Farm.</span>
+ </div>
+ <div id="msgs" class="flex-1 overflow-y-auto px-4 py-3 space-y-2 bg-cream" aria-live="polite"></div>
+ <div id="warn" class="hidden px-4 py-2 bg-sand text-clay text-[13px] flex gap-2 items-start"><span class="ms text-[18px]">block</span><span id="warn-t"></span></div>
+ <div class="border-t border-line p-3 pb-safe space-y-2 bg-white">
+  <div id="offer-box" class="hidden bg-sand rounded-xl p-3 space-y-2">
+   <div class="flex gap-2">
+    <label class="flex-1 text-[11px] text-soil/70">Your price (UGX/kg)<input id="o-price" type="number" inputmode="numeric" class="w-full h-10 mt-0.5 px-2 rounded-lg border border-line text-base text-soil"/></label>
+    <label class="w-28 text-[11px] text-soil/70">Quantity (kg)<input id="o-qty" type="number" inputmode="numeric" class="w-full h-10 mt-0.5 px-2 rounded-lg border border-line text-base text-soil"/></label>
+   </div>
+   <div class="flex gap-2 items-center"><div id="o-chips" class="flex gap-1.5 flex-1"></div>
+    <button onclick="sendOffer()" class="h-10 px-4 rounded-lg bg-forest text-white font-semibold text-sm">Send offer</button></div>
+  </div>
+  <div class="flex gap-2 items-center">
+   <button onclick="toggleOffer()" class="h-11 px-3 rounded-xl bg-harvest/20 text-clay font-semibold text-sm flex items-center gap-1 shrink-0"><span class="ms text-[18px]">handshake</span>Offer</button>
+   <input id="msg" type="text" maxlength="400" placeholder="Ask about quality, delivery, price…" class="flex-1 min-w-0 h-11 px-3 rounded-xl bg-cream outline-none"/>
+   <button onclick="sendMsg()" aria-label="Send" class="w-11 h-11 rounded-xl bg-forest text-white grid place-items-center shrink-0"><span class="ms">send</span></button>
+  </div>
+ </div>
+</aside>
+
+<!-- Listing detail -->
+<div id="d-back" class="fixed inset-0 z-50 bg-black/50 hidden" onclick="closeDetail()"></div>
+<section id="detail" class="hidden fixed z-50 inset-x-0 bottom-0 top-14 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[560px] sm:max-h-[90vh] bg-white rounded-t-3xl sm:rounded-3xl flex-col shadow-2xl overflow-hidden" role="dialog" aria-modal="true" aria-label="Listing details">
+ <div id="d-body" class="flex-1 overflow-y-auto"></div>
+ <div id="d-foot" class="border-t border-line p-4 pb-safe flex gap-2 bg-white"></div>
+</section>
+
+<!-- RFQ modal -->
+<div id="rfq" class="fixed inset-0 z-50 bg-black/60 hidden items-end sm:items-center justify-center sm:p-4">
+ <div class="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-3xl p-5 space-y-3">
+  <div class="flex justify-between items-center"><h3 class="font-disp font-bold text-forest text-lg">Post industrial RFQ</h3><button onclick="closeRfq()" aria-label="Close" class="w-9 h-9 rounded-full bg-cream grid place-items-center"><span class="ms">close</span></button></div>
+  <input id="rfq-c" class="w-full h-12 px-3 rounded-lg bg-cream" value="Maize Grain (Grade 2 Animal Feed)"/>
+  <div class="flex gap-2"><input id="rfq-v" type="number" class="flex-1 h-12 px-3 rounded-lg bg-cream" value="25"/><div class="w-32 h-12 grid place-items-center rounded-lg bg-cream font-semibold text-forest">Metric tons</div></div>
+  <select class="w-full h-12 px-3 rounded-lg bg-cream"><option>Kampala Grain Silo 4 (Bweyogerere)</option><option>Jinja Processing Terminal</option><option>Mbarara Agro Park</option></select>
+  <button onclick="closeRfq();toast('Tender sent to 48 certified cooperatives')" class="w-full h-12 rounded-xl bg-forest text-white font-semibold">Send tender</button>
+ </div>
+</div>
+
+<div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] bg-soil text-white text-sm px-4 py-2 rounded-full opacity-0 pointer-events-none transition-opacity"></div>
+
+<nav class="fixed bottom-0 inset-x-0 z-40 bg-white border-t border-line shadow-[0_-4px_16px_rgba(59,42,26,.08)] pb-safe"><div class="flex h-16 max-w-2xl mx-auto text-soil/70 text-[11px] sm:text-xs font-semibold">
+ <a href="MarketPlace.html" aria-current="page" class="flex-1 flex flex-col items-center justify-center text-forest"><span class="ms fill text-[22px]">storefront</span>Marketplace</a>
+ <a href="Harvest.html" class="flex-1 flex flex-col items-center justify-center"><span class="ms text-[22px]">inventory_2</span>Harvests</a>
+ <a href="Escrow.html" class="flex-1 flex flex-col items-center justify-center"><span class="ms text-[22px]">verified_user</span>Escrow</a>
+ <a href="Transit.html" class="flex-1 flex flex-col items-center justify-center"><span class="ms text-[22px]">local_shipping</span>Transits</a>
+</div></nav>
+
+<script>
+/* ---------- Data ---------- */
+const ME={id:'u_buyer'};            // replace with the logged-in user from your auth/session
+const INDEX={Matooke:1800,'Maize Grain':1450,'Tomatoes & Veg':2600,'Beans & Pulses':3200,'Robusta Coffee':8200};
+const GRAD={Matooke:'#7cc47f,#1f6b3a','Maize Grain':'#f4b942,#b8561f','Tomatoes & Veg':'#b8561f,#3b2a1a','Beans & Pulses':'#3b2a1a,#b8561f','Robusta Coffee':'#3b2a1a,#0f2e1d'};
+const px=(id,w=800)=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+const L=[
+ {id:1,owner:'s_masaka',seller:'Masaka Farmers Cooperative',rate:4.8,rev:124,crop:'Matooke',dist:'Masaka',title:'Grade A Matooke (green cooking bananas)',price:1750,unit:'kg',stock:4500,moq:100,grade:'Grade A',tag:'Harvesting tomorrow',place:'Masaka Central Depot',pool:78,poolMin:5000,img:px(31537314)},
+ {id:2,owner:'s_rwenzori',seller:'Rwenzori Grain Union',rate:4.9,rev:89,crop:'Maize Grain',dist:'Kasese',title:'Sun-dried hybrid white maize (moisture under 13%)',price:1380,unit:'kg',stock:12000,moq:500,grade:'MC 12.8%',tag:'Organic certified',place:'Kasese Rail Hub Depot',bulk:'1,320 UGX/kg above 5,000 kg',img:px(60507)},
+ {id:3,owner:'s_mukono',seller:'Mukono Horticulture Club',rate:4.7,rev:42,crop:'Tomatoes & Veg',dist:'Wakiso',title:'Fresh Roma tomatoes (50 kg crates)',price:2400,unit:'kg',stock:800,moq:50,grade:'Grade 1',tag:'Cold chain ready',place:'Wakiso Perimeter Hub',img:px(11895396)},
+ {id:4,img:px(7717469),owner:'s_elgon',seller:'Elgon Pulses Growers',rate:4.6,rev:67,crop:'Beans & Pulses',dist:'Mbale',title:'Kidney beans, sorted and double-sieved',price:3100,unit:'kg',stock:6000,moq:200,grade:'Grade 1',tag:'Ready to dispatch',place:'Mbale Town Store'},
+ {id:5,owner:'s_kiruhura',seller:'Kiruhura Highland Farmers',rate:4.5,rev:58,crop:'Matooke',dist:'Mbarara',title:'Bogoya and Mbwazirume matooke bunches',price:1850,unit:'kg',stock:3200,moq:100,grade:'Grade B',tag:'Harvesting tomorrow',place:'Mbarara Agro Park',pool:41,poolMin:4000},
+ {id:6,owner:'s_bukoola',seller:'Bukoola Coffee Co-op',rate:4.9,rev:203,crop:'Robusta Coffee',dist:'Masaka',title:'Robusta FAQ, sun-dried kiboko',price:8050,unit:'kg',stock:9500,moq:300,grade:'FAQ',tag:'Lab tested',place:'Masaka Central Depot',bulk:'7,900 UGX/kg above 3,000 kg'}
+];
+L[4].img=px(19065611);L[5].img=px(2868982);   // Pexels photo IDs: swap any listing image here
+const DISTS=['All Uganda','Masaka','Mbarara','Mbale','Kasese','Wakiso'];
+const CROPS=['All crops',...Object.keys(INDEX)];
+const f=n=>Number(n).toLocaleString('en-US');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id);
+let S={dist:'All Uganda',crop:'All crops',q:'',sort:'rec',fav:false};
+let favs=[],threads={},bad={};
+try{favs=JSON.parse(localStorage.getItem('yf_favs')||'[]');threads=JSON.parse(localStorage.getItem('yf_threads')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('yf_favs',JSON.stringify(favs));localStorage.setItem('yf_threads',JSON.stringify(threads))}catch(e){}};
+function toast(t){const e=$('toast');e.textContent=t;e.style.opacity=1;clearTimeout(e._t);e._t=setTimeout(()=>e.style.opacity=0,2600)}
+
+/* ---------- Ticker & filters ---------- */
+const CH={Matooke:4.2,'Maize Grain':-1.1,'Tomatoes & Veg':6.8,'Beans & Pulses':0.9,'Robusta Coffee':2.5};
+$('ticker').innerHTML=Object.keys(INDEX).map(k=>`<div class="shrink-0 bg-white border border-line rounded-full px-3 py-1.5 text-sm"><b>${k}</b> ${f(INDEX[k])} <span class="text-xs font-semibold ${CH[k]<0?'text-clay':'text-leaf'}">${CH[k]>0?'▲':'▼'} ${Math.abs(CH[k])}%</span></div>`).join('');
+function chips(el,list,key,on){$(el).innerHTML=list.map(v=>`<button data-v="${esc(v)}" class="shrink-0 px-3.5 h-9 rounded-full border border-line bg-white text-sm font-semibold ${S[key]===v?'chip-on':''}">${esc(v)}</button>`).join('');
+ $(el).querySelectorAll('button').forEach(b=>b.onclick=()=>{S[key]=b.dataset.v;chips(el,list,key);render()})}
+chips('crops',CROPS,'crop');$('dist').value=S.dist;
+$('dist').innerHTML=DISTS.map(d=>`<option>${d}</option>`).join('');$('dist').onchange=e=>{S.dist=e.target.value;render()};
+$('q').oninput=e=>{S.q=e.target.value.toLowerCase();render()};
+$('sort').onchange=e=>{S.sort=e.target.value;render()};
+$('fav-only').onchange=e=>{S.fav=e.target.checked;render()};
+
+/* ---------- Listings ---------- */
+function visual(l,sm){const [a,b]=GRAD[l.crop].split(',');
+ const ph=`<div class="ph absolute inset-0 grid place-items-center px-1 text-center font-disp font-bold text-white/90 ${sm?'text-xs':'text-xl'}" style="--a:${a};--b:${b}">${esc(l.crop)}</div>`;
+ return ph+(l.img?`<img src="${l.img}" alt="${esc(l.title)}" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()"/>`:'')}
+function card(l){
+ const d=Math.round((l.price-INDEX[l.crop])/INDEX[l.crop]*100);
+ const mk=d<=-1?`<span class="text-leaf">${Math.abs(d)}% below market</span>`:d>=1?`<span class="text-clay">${d}% above market</span>`:`<span class="text-leaf">At market price</span>`;
+ return `<article tabindex="0" role="button" aria-label="View details: ${esc(l.title)}" onclick="openDetail(${l.id})" onkeydown="if(event.key==='Enter')openDetail(${l.id})" class="card bg-white rounded-xl border border-line p-3 flex gap-3 cursor-pointer">
+  <div class="relative w-24 h-24 shrink-0 rounded-lg overflow-hidden bg-sand">${visual(l,1)}</div>
+  <div class="min-w-0 flex-1 flex flex-col">
+   <div class="flex items-start gap-1"><h3 class="flex-1 font-semibold text-[15px] leading-snug line-clamp-2">${esc(l.title)}</h3>
+    <button onclick="event.stopPropagation();fav(${l.id})" aria-label="Save" class="-mt-1 -mr-1 w-8 h-8 grid place-items-center shrink-0"><span class="ms text-[20px] ${favs.includes(l.id)?'fill text-clay':'text-soil/70'}">favorite</span></button></div>
+   <div class="text-xs text-soil/70 truncate">${esc(l.seller)} · ★ ${l.rate}</div>
+   <div class="mt-auto"><span class="font-disp font-bold text-xl text-forest">${f(l.price)}</span><span class="text-xs text-soil/70"> UGX / kg</span>
+    <div class="text-[11px] font-semibold leading-tight">${mk}</div></div>
+  </div></article>`}
+function render(){
+ let r=L.filter(l=>(S.dist==='All Uganda'||l.dist===S.dist)&&(S.crop==='All crops'||l.crop===S.crop)&&(!S.q||(l.title+l.seller+l.place+l.crop+l.dist).toLowerCase().includes(S.q))&&(!S.fav||favs.includes(l.id)));
+ const by={pl:(a,b)=>a.price-b.price,ph:(a,b)=>b.price-a.price,stock:(a,b)=>b.stock-a.stock,rate:(a,b)=>b.rate-a.rate,rec:(a,b)=>(b.rate*Math.log(b.rev+2))-(a.rate*Math.log(a.rev+2))};
+ r.sort(by[S.sort]);
+ $('count').textContent=r.length+(r.length===1?' listing':' listings')+(S.dist!=='All Uganda'?' in '+S.dist:'');
+ $('feed').innerHTML=r.length?r.map(card).join(''):`<div class="text-center py-12 bg-white rounded-2xl border border-line"><span class="ms text-5xl text-soil/70">search_off</span><div class="font-semibold">No listings match</div><p class="text-sm text-soil/70 mb-3">Try another district or crop.</p><button class="px-4 h-10 rounded-lg bg-forest text-white font-semibold" onclick="S={dist:'All Uganda',crop:'All crops',q:'',sort:'rec',fav:false};$('q').value='';$('fav-only').checked=false;chips('crops',CROPS,'crop');$('dist').value=S.dist;render()">Clear filters</button></div>`}
+let dcur=null;
+function openDetail(id){
+ const l=L.find(x=>x.id===id);dcur=l;
+ const d=Math.round((l.price-INDEX[l.crop])/INDEX[l.crop]*100);
+ const mk=d<=-1?`<span class="text-leaf">${Math.abs(d)}% below the Kampala market price</span>`:d>=1?`<span class="text-clay">${d}% above the Kampala market price</span>`:`<span class="text-leaf">At the Kampala market price</span>`;
+ const mine=l.owner===ME.id,fact=(k,v)=>`<div class="bg-cream rounded-xl p-3"><div class="text-xs text-soil/70">${k}</div><div class="font-semibold">${v}</div></div>`;
+ $('d-body').innerHTML=`<div class="relative aspect-[16/10] bg-sand">${visual(l)}
+  ${l.tag?`<span class="absolute top-3 left-3 text-[11px] font-bold bg-white text-forest rounded-full px-2.5 py-1">${esc(l.tag)}</span>`:''}
+  <button onclick="closeDetail()" aria-label="Close" class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white grid place-items-center shadow"><span class="ms">close</span></button>
+  <button id="d-fav" onclick="fav(${l.id})" aria-label="Save" class="absolute top-3 right-16 w-10 h-10 rounded-full bg-white grid place-items-center shadow"><span class="ms ${favs.includes(l.id)?'fill text-clay':''}">favorite</span></button></div>
+ <div class="p-5 space-y-4">
+  <div><div class="text-sm text-soil/70 flex items-center gap-1"><span class="ms fill text-leaf text-[18px]">verified</span><b class="text-leaf">${esc(l.seller)}</b> · ★ ${l.rate} (${l.rev} reviews)</div>
+   <h2 class="mt-1 font-disp font-bold text-xl leading-snug">${esc(l.title)}</h2></div>
+  <div><span class="font-disp font-bold text-3xl text-forest">${f(l.price)}</span><span class="text-soil/70"> UGX / kg</span><div class="text-sm font-semibold">${mk}</div></div>
+  <div class="grid grid-cols-2 gap-2.5">${fact('Grade',esc(l.grade))}${fact('Pickup depot',esc(l.place))}${fact('Available',f(l.stock)+' kg')}${fact('Minimum order',f(l.moq)+' kg')}</div>
+  ${l.bulk?`<div class="bg-harvest/25 rounded-xl p-3 text-sm">Bulk price: <b>${l.bulk}</b></div>`:''}
+  ${l.pool?`<div><div class="flex justify-between text-sm mb-1"><span class="text-soil/70">Buyer pool, truckload of ${f(l.poolMin)} kg</span><b class="text-leaf">${l.pool}% filled</b></div><div class="h-2 rounded-full bg-line overflow-hidden"><div class="h-full bg-leaf rounded-full" style="width:${l.pool}%"></div></div></div>`:''}
+  <div class="bg-sand rounded-xl p-3 text-sm flex gap-2"><span class="ms fill text-leaf">verified_user</span><span>Your payment stays in escrow until the weighbridge ticket is signed at the destination depot.</span></div>
+ </div>`;
+ $('d-foot').innerHTML=mine?`<div class="flex-1 h-12 grid place-items-center rounded-xl bg-cream text-soil/70 text-sm">This is your listing</div>`:
+  `<button onclick="closeDetail();openChat(${l.id})" class="flex-1 h-12 rounded-xl bg-forest text-white font-semibold flex items-center justify-center gap-1.5"><span class="ms text-[20px]">chat</span>Chat &amp; bargain</button>
+   <button onclick="buy(${l.id});closeDetail()" class="h-12 px-5 rounded-xl border border-line font-semibold text-forest whitespace-nowrap">${l.pool?'Join pool':'Buy now'}</button>`;
+ $('d-back').classList.remove('hidden');$('detail').classList.replace('hidden','flex');$('d-body').scrollTop=0}
+function closeDetail(){dcur=null;$('d-back').classList.add('hidden');$('detail').classList.replace('flex','hidden')}
+function fav(id){favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];save();render();const h=$('d-fav');if(dcur&&dcur.id===id&&h)h.firstElementChild.className='ms '+(favs.includes(id)?'fill text-clay':'')}
+function buy(id){const l=L.find(x=>x.id===id);toast(l.pool?'Joined the buyer pool':'Order started with escrow protection')}
+function openRfq(){$('rfq').classList.replace('hidden','flex')}function closeRfq(){$('rfq').classList.replace('flex','hidden')}
+
+/* ---------- Contact-detail filter ---------- */
+const W={zero:0,oh:0,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9};
+function findContact(raw){
+ const s=raw.toLowerCase();
+ if(/[a-z0-9._%+-]+\s*(@|\(at\)|\[at\]|\bat\b)\s*[a-z0-9-]+\s*(\.|\(dot\)|\[dot\]|\bdot\b)\s*[a-z]{2,}/.test(s))return'an email address';
+ if(/https?:\/\/|www\.|\b[a-z0-9-]+\.(com|net|org|ug|co|me|io|app|link|ly)\b/.test(s))return'a link';
+ if(/(^|\s)@[a-z0-9_.]{3,}/.test(s))return'a social handle';
+ if(/\b(whats\s?app|telegram|signal|viber|imo|wechat|facebook|instagram|snapchat|tiktok|dm me|inbox me|call me|text me|phone me|my (number|phone|contact|line)|phone number|contact me|reach me)\b/.test(s))return'an off-platform contact request';
+ let t=s.replace(/\d{1,3}(,\d{3})+/g,' ').replace(/\b(zero|oh|one|two|three|four|five|six|seven|eight|nine)\b/g,m=>' '+W[m]+' ');
+ for(const r of(t.match(/\+?\d[\d\s().\-_*]{5,}\d/g)||[])){const d=r.replace(/\D/g,'');const n=d.length,pre=/^(\+|0|256|7)/.test(r.trim());
+  const priceList=r.trim().split(/\s+/).every(g=>/^[1-9]\d{2,3}$/.test(g));   // e.g. "1750 1600 1500" is a list of prices
+  if(!priceList&&((pre&&n>=8)||n>=9))return'a phone number'}
+ return null}
+
+/* ---------- Chat ---------- */
+let cur=null;
+const tkey=id=>id;           // one private thread per listing per buyer (server: key by listing + buyerId)
+const th=()=>threads[tkey(cur.id)]||(threads[tkey(cur.id)]=[]);
+function openChat(id){
+ const l=L.find(x=>x.id===id);
+ if(l.owner===ME.id){toast('You cannot chat with yourself');return}   // only the buyer and the listing's seller may be in a thread
+ cur=l;$('c-seller').textContent=l.seller;$('c-item').textContent=l.title+' · '+f(l.price)+' UGX/kg';$('c-av').textContent=l.seller.split(' ').slice(0,2).map(w=>w[0]).join('');
+ if(!th().length)th().push({f:'sys',x:'Say hello and ask about quality, delivery or stock. You can also send a price offer.'});
+ $('o-price').value=Math.round(l.price*0.95/10)*10;$('o-qty').value=l.moq;
+ $('o-chips').innerHTML=[3,5,10].map(p=>`<button onclick="$('o-price').value=${Math.round(l.price*(1-p/100)/10)*10}" class="h-10 px-2.5 rounded-lg bg-white border border-line text-xs font-semibold">-${p}%</button>`).join('');
+ $('offer-box').classList.add('hidden');$('warn').classList.add('hidden');
+ $('chat-back').classList.remove('hidden');$('chat').classList.add('open');$('chat').setAttribute('aria-hidden','false');
+ drawMsgs();$('msg').focus({preventScroll:true})}
+function closeChat(){$('chat').classList.remove('open');$('chat').setAttribute('aria-hidden','true');$('chat-back').classList.add('hidden');cur=null;save();render()}
+function toggleOffer(){$('offer-box').classList.toggle('hidden')}
+function drawMsgs(){
+ const box=$('msgs');
+ box.innerHTML=th().map((m,i)=>{
+  if(m.f==='sys')return`<div class="text-center text-[12px] text-soil/70 px-4">${esc(m.x)}</div>`;
+  if(m.f==='block')return`<div class="text-center text-[12px] text-clay bg-sand rounded-lg py-1.5 px-3 mx-auto w-fit">A message was blocked: it contained ${esc(m.x)}.</div>`;
+  const me=m.f==='me',al=me?'ml-auto items-end':'mr-auto items-start',bg=me?'bg-forest text-white':'bg-white border border-line';
+  if(m.k){const t={offer:'Offer',counter:'Counter-offer',deal:'Deal agreed'}[m.k];
+   let act='';const last=i===th().length-1;
+   if(m.k==='counter'&&last)act=`<div class="flex gap-2 mt-2"><button onclick="acceptCounter(${i})" class="flex-1 h-9 rounded-lg bg-forest text-white text-sm font-semibold">Accept</button><button onclick="toggleOffer();$('offer-box').classList.remove('hidden')" class="flex-1 h-9 rounded-lg bg-cream text-soil text-sm font-semibold">Counter</button></div>`;
+   if(m.k==='deal')act=`<button onclick="orderDeal(${i})" class="w-full h-10 mt-2 rounded-lg bg-harvest text-soil text-sm font-bold">Order at ${f(m.p)} UGX/kg</button>`;
+   return`<div class="bub flex flex-col ${al}"><div class="rounded-2xl border-2 ${m.k==='deal'?'border-leaf bg-sand':'border-harvest bg-white'} p-3 w-64"><div class="text-[11px] font-bold ${m.k==='deal'?'text-leaf':'text-clay'}">${t}${me?' · from you':''}</div><div class="font-disp font-bold text-xl text-forest">${f(m.p)} <span class="text-xs font-sans text-soil/70">UGX/kg</span></div><div class="text-[13px] text-soil/70">${f(m.q)} kg · total ${f(m.p*m.q)} UGX</div>${act}</div></div>`}
+  return`<div class="bub flex flex-col ${al}"><div class="rounded-2xl px-3 py-2 text-[15px] ${bg}">${esc(m.x)}</div></div>`}).join('');
+ box.scrollTop=box.scrollHeight}
+function push(m){th().push({...m,t:Date.now()});save();drawMsgs()}
+function guard(text){const hit=findContact(text);
+ if(hit){const n=bad[cur.id]=(bad[cur.id]||0)+1;
+  $('warn-t').textContent=`Not sent. Messages can't include ${hit}. Keep talking here so your deal stays protected by escrow.`+(n>=3?' Repeated attempts may lead to account review.':'');
+  $('warn').classList.remove('hidden');th().push({f:'block',x:hit});save();drawMsgs();return false}
+ $('warn').classList.add('hidden');return true}
+function sendMsg(){const i=$('msg');const x=i.value.trim();if(!x||!cur)return;if(!guard(x))return;i.value='';push({f:'me',x});sellerReply(x)}
+$('msg').addEventListener('keydown',e=>{if(e.key==='Enter')sendMsg()});
+function sendOffer(){const p=+$('o-price').value,q=+$('o-qty').value;
+ if(!p||!q||q<cur.moq){toast('Minimum order is '+f(cur.moq)+' kg');return}
+ if(q>cur.stock){toast('Only '+f(cur.stock)+' kg available');return}
+ if(p>=cur.price){toast('Your offer is at or above the asking price. Use Buy now instead.');return}
+ if(p<cur.price*0.6){toast('Offer is too far below the asking price');return}
+ $('offer-box').classList.add('hidden');push({f:'me',k:'offer',p,q});sellerRespond(p,q)}
+function sellerRespond(p,q){
+ setTimeout(()=>{if(!cur)return;const r10=n=>Math.round(n/10)*10,floor=r10(cur.price*0.9);
+  if(p>=floor){push({f:'seller',x:'That works for us. Confirming your price.'});push({f:'seller',k:'deal',p,q})}
+  else{const c=Math.max(floor,r10((p+cur.price)/2));push({f:'seller',x:'Thanks for the offer. That is a bit low for this quality. Here is our best price.'});push({f:'seller',k:'counter',p:c,q})}},1300)}
+function acceptCounter(i){const m=th()[i];push({f:'me',x:'I accept your counter-offer.'});setTimeout(()=>push({f:'seller',k:'deal',p:m.p,q:m.q}),700)}
+function orderDeal(i){const m=th()[i];toast('Order placed at '+f(m.p)+' UGX/kg. Pay into escrow to confirm.')}
+function sellerReply(x){const s=x.toLowerCase();
+ const a=/deliver|transport|truck/.test(s)?'We can dispatch from the depot within 24 hours. Delivery cost is added at checkout.':
+ /quality|grade|fresh|sample/.test(s)?'All stock is inspected at the depot and graded before dispatch. You can check it at the weighbridge on arrival.':
+ /price|cheap|discount|bargain|lower/.test(s)?'Tap Offer and send your price and quantity. We will respond quickly.':
+ /stock|available|how much/.test(s)?`We currently have ${f(cur.stock)} kg available.`:'Thanks for your message. How many kilograms do you need?';
+ setTimeout(()=>{if(cur)push({f:'seller',x:a})},1100)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(cur)closeChat();else if(dcur)closeDetail()}});
+
+/* ---------- Start ---------- */
+$('hero-img').src=px(19065611,1600);
+render();
+</script>
+</body></html>

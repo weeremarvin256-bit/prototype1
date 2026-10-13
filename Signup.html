@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="#012d1d" name="theme-color"/>
+<title>Join You-Farm</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      primary: "#012d1d", "primary-container": "#1b4332", "on-primary": "#ffffff",
+      secondary: "#904d00", "secondary-container": "#fe932c",
+      surface: "#f9faf7", "surface-low": "#f3f4f1", "surface-container": "#edeeeb",
+      "surface-high": "#e7e8e6", "on-surface": "#191c1b", "on-surface-variant": "#414844",
+      outline: "#717973", "outline-variant": "#c1c8c2", error: "#ba1a1a", "error-container": "#ffdad6",
+      "tertiary-fixed": "#b1f0ce", "on-tertiary-fixed": "#002114"
+    },
+    fontFamily: { head: ["Space Grotesk"], body: ["Public Sans"] }
+  } }
+};
+</script>
+<style>
+  body { font-family: "Public Sans", sans-serif; overscroll-behavior: none; }
+  .head { font-family: "Space Grotesk", sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500; }
+  .pb-safe { padding-bottom: max(env(safe-area-inset-bottom), 12px); }
+  .field { transition: box-shadow .15s, border-color .15s; }
+  .field:focus { outline: none; border-color: #012d1d; box-shadow: 0 0 0 3px rgba(1,45,29,.15); }
+  .field[aria-invalid="true"] { border-color: #ba1a1a; }
+  .role-card[aria-checked="true"] { border-color: #012d1d; background: #fff; box-shadow: 0 0 0 1px #012d1d; }
+  .role-card[aria-checked="true"] .role-icon { background: #012d1d; color: #fff; }
+  .role-card[aria-checked="true"] .role-tick { background: #012d1d; color: #fff; }
+  .role-card:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid #fe932c; outline-offset: 2px; }
+  .otp { text-align: center; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen">
+
+<!-- Header -->
+<header class="fixed top-0 inset-x-0 z-40 bg-surface/90 backdrop-blur border-b border-outline-variant/50">
+  <div class="max-w-md md:max-w-xl lg:max-w-5xl mx-auto h-14 px-3 md:px-4 flex items-center justify-between">
+    <div class="flex items-center gap-1">
+      <button id="back-btn" type="button" aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-lg hover:bg-surface-container">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <span class="head font-semibold text-xl text-primary tracking-tight">You-Farm</span>
+    </div>
+    <div class="inline-flex p-0.5 rounded-full bg-surface-high" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true" class="lang-btn px-3 h-8 rounded-full text-xs font-bold">ENG</button>
+      <button type="button" data-lang="lg" aria-pressed="false" class="lang-btn px-3 h-8 rounded-full text-xs font-bold">LUG</button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-md md:max-w-xl lg:max-w-5xl mx-auto px-4 pt-20 md:pt-24 pb-40">
+<div class="lg:grid lg:grid-cols-[1fr_480px] lg:gap-12 lg:items-start">
+
+  <!-- Desktop-only brand panel -->
+  <aside class="hidden lg:flex flex-col justify-between sticky top-24 rounded-3xl bg-primary text-on-primary p-10 min-h-[560px] overflow-hidden relative">
+    <div class="absolute -right-16 -bottom-16 w-72 h-72 rounded-full bg-primary-container"></div>
+    <div class="absolute right-10 bottom-24 w-24 h-24 rounded-full bg-secondary-container/80"></div>
+    <div class="relative">
+      <span class="material-symbols-outlined text-secondary-container text-5xl">agriculture</span>
+      <h2 class="head text-4xl leading-tight font-bold mt-5 tracking-tight" data-i18n="asideTitle">From the farm gate straight to the buyer.</h2>
+      <ul class="mt-8 space-y-4 text-base max-w-sm">
+        <li class="flex gap-3"><span class="material-symbols-outlined text-secondary-container">payments</span><span data-i18n="aside1">Get paid to MTN MoMo or Airtel Money</span></li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-secondary-container">groups</span><span data-i18n="aside2">Pool produce with your cooperative for bigger orders</span></li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-secondary-container">local_shipping</span><span data-i18n="aside3">Verified transporters move your load safely</span></li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="min-w-0">
+
+  <!-- Progress -->
+  <div class="mb-5">
+    <div class="flex items-center justify-between mb-2">
+      <span id="step-label" class="text-xs font-bold uppercase tracking-wider text-on-surface-variant"></span>
+    </div>
+    <div class="h-1.5 rounded-full bg-surface-container overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="2" id="progressbar">
+      <div id="progress-fill" class="h-full bg-secondary-container rounded-full transition-all duration-300" style="width:50%"></div>
+    </div>
+  </div>
+
+  <!-- ============ STEP 1 ============ -->
+  <form id="step1" novalidate autocomplete="on">
+    <h1 class="head text-[26px] leading-[34px] font-semibold text-primary tracking-tight" data-i18n="title">Join You-Farm</h1>
+    <p class="text-sm text-on-surface-variant mt-1 mb-6" data-i18n="subtitle">Sell and buy farm produce directly across Uganda. It takes about a minute.</p>
+
+    <!-- Role -->
+    <fieldset class="mb-6">
+      <legend class="text-sm font-semibold mb-2" data-i18n="roleLegend">I am joining as a…</legend>
+      <div id="role-group" role="radiogroup" aria-label="Account role" class="flex flex-col gap-2.5">
+
+        <button type="button" role="radio" aria-checked="true" data-role="farmer" class="role-card relative text-left flex items-center gap-3 p-3.5 pr-12 rounded-xl border border-outline-variant bg-surface-low">
+          <span class="role-icon w-11 h-11 rounded-lg bg-surface-high text-on-surface-variant flex items-center justify-center shrink-0"><span class="material-symbols-outlined">potted_plant</span></span>
+          <span class="min-w-0">
+            <span class="block font-semibold" data-i18n="roleFarmer">Farmer / Cooperative</span>
+            <span class="block text-xs text-on-surface-variant leading-snug" data-i18n="roleFarmerD">Sell your harvest and get paid to MTN MoMo or Airtel Money.</span>
+          </span>
+          <span class="role-tick absolute top-1/2 -translate-y-1/2 right-3.5 w-6 h-6 rounded-full bg-surface-high text-transparent flex items-center justify-center"><span class="material-symbols-outlined text-[16px]">check</span></span>
+        </button>
+
+        <button type="button" role="radio" aria-checked="false" data-role="buyer" class="role-card relative text-left flex items-center gap-3 p-3.5 pr-12 rounded-xl border border-outline-variant bg-surface-low">
+          <span class="role-icon w-11 h-11 rounded-lg bg-surface-high text-on-surface-variant flex items-center justify-center shrink-0"><span class="material-symbols-outlined">storefront</span></span>
+          <span class="min-w-0">
+            <span class="block font-semibold" data-i18n="roleBuyer">Commercial Buyer</span>
+            <span class="block text-xs text-on-surface-variant leading-snug" data-i18n="roleBuyerD">Buy grains, matooke, coffee and vegetables in bulk, with escrow protection.</span>
+          </span>
+          <span class="role-tick absolute top-1/2 -translate-y-1/2 right-3.5 w-6 h-6 rounded-full bg-surface-high text-transparent flex items-center justify-center"><span class="material-symbols-outlined text-[16px]">check</span></span>
+        </button>
+
+        <button type="button" role="radio" aria-checked="false" data-role="transporter" class="role-card relative text-left flex items-center gap-3 p-3.5 pr-12 rounded-xl border border-outline-variant bg-surface-low">
+          <span class="role-icon w-11 h-11 rounded-lg bg-surface-high text-on-surface-variant flex items-center justify-center shrink-0"><span class="material-symbols-outlined">local_shipping</span></span>
+          <span class="min-w-0">
+            <span class="block font-semibold" data-i18n="roleTrans">Transporter / Driver</span>
+            <span class="block text-xs text-on-surface-variant leading-snug" data-i18n="roleTransD">Carry depot loads and earn on return trips.</span>
+          </span>
+          <span class="role-tick absolute top-1/2 -translate-y-1/2 right-3.5 w-6 h-6 rounded-full bg-surface-high text-transparent flex items-center justify-center"><span class="material-symbols-outlined text-[16px]">check</span></span>
+        </button>
+      </div>
+    </fieldset>
+
+    <!-- Name -->
+    <div class="mb-5">
+      <label for="full_name" id="name-label" class="block text-sm font-semibold mb-1.5">Full name or cooperative lead</label>
+      <input id="full_name" name="name" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next"
+             class="field w-full h-12 px-4 rounded-xl bg-white border border-outline-variant text-base placeholder:text-outline"
+             placeholder="e.g. Grace Nakato" aria-describedby="name-err"/>
+      <p id="name-err" class="err hidden mt-1.5 text-sm text-error items-center gap-1" role="alert"></p>
+    </div>
+
+    <!-- Phone -->
+    <div class="mb-5">
+      <label for="phone_number" class="block text-sm font-semibold mb-1.5" data-i18n="phoneLabel">Mobile money phone number</label>
+      <div class="flex gap-2">
+        <div class="h-12 px-3 rounded-xl bg-surface-container border border-outline-variant flex items-center gap-1.5 shrink-0" aria-hidden="true">
+          <span class="text-lg">🇺🇬</span><span class="font-semibold">+256</span>
+        </div>
+        <div class="relative flex-1 min-w-0">
+          <input id="phone_number" name="tel-national" type="tel" inputmode="numeric" autocomplete="tel-national" enterkeyhint="next"
+                 class="field w-full h-12 pl-4 pr-24 rounded-xl bg-white border border-outline-variant text-base tracking-wide placeholder:text-outline"
+                 placeholder="772 123 456" aria-describedby="phone-hint phone-err"/>
+          <span id="network-chip" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-[11px] font-bold px-2 py-1 rounded-full"></span>
+        </div>
+      </div>
+      <p id="phone-hint" class="mt-1.5 text-xs text-on-surface-variant" data-i18n="phoneHint">We'll text you a code. This number is also where your payouts go.</p>
+      <p id="phone-err" class="err hidden mt-1.5 text-sm text-error" role="alert"></p>
+    </div>
+
+    <!-- National ID Number -->
+    <div class="mb-5">
+      <label for="nin" class="block text-sm font-semibold mb-1.5" data-i18n="ninLabel">National ID number (NIN)</label>
+      <div class="relative">
+        <input id="nin" name="nin" type="text" maxlength="14" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="next"
+               class="field w-full h-12 pl-4 pr-11 rounded-xl bg-white border border-outline-variant text-base tracking-widest uppercase placeholder:text-outline placeholder:normal-case placeholder:tracking-normal"
+               placeholder="e.g. CM12345678ABCD" aria-describedby="nin-hint nin-err"/>
+        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">badge</span>
+      </div>
+      <p id="nin-hint" class="mt-1.5 text-xs text-on-surface-variant flex gap-1.5">
+        <span class="material-symbols-outlined text-[16px] text-primary shrink-0">lock</span>
+        <span data-i18n="ninHint">14 characters, found on your national ID card. Used only to verify who you are and never shown to other users.</span>
+      </p>
+      <p id="nin-err" class="err hidden mt-1.5 text-sm text-error" role="alert"></p>
+    </div>
+
+    <!-- District -->
+    <div class="mb-5">
+      <label for="district_hub" class="block text-sm font-semibold mb-1.5" data-i18n="districtLabel">Nearest district / hub</label>
+      <div class="relative">
+        <select id="district_hub" name="district" class="field w-full h-12 pl-4 pr-10 rounded-xl bg-white border border-outline-variant text-base appearance-none" aria-describedby="district-err">
+          <option value="" selected disabled data-i18n="districtPh">Choose your hub</option>
+          <option value="masaka">Masaka Central (Coffee &amp; Matooke)</option>
+          <option value="mbale">Mbale (Arabica &amp; Cereals)</option>
+          <option value="kasese">Kasese (Cotton, Maize &amp; Beans)</option>
+          <option value="mbarara">Mbarara (Dairy &amp; Produce)</option>
+          <option value="kampala_kalerwe">Kampala Kalerwe (Buyer Market)</option>
+          <option value="other">Other / not listed</option>
+        </select>
+        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+      </div>
+      <p id="district-err" class="err hidden mt-1.5 text-sm text-error" role="alert"></p>
+    </div>
+
+    <!-- Terms -->
+    <div class="mb-6">
+      <label class="flex items-start gap-3 cursor-pointer min-h-[44px]">
+        <input id="terms" type="checkbox" class="mt-0.5 w-5 h-5 shrink-0 accent-[#012d1d]" aria-describedby="terms-err"/>
+        <span class="text-sm text-on-surface-variant leading-snug"><span data-i18n="termsPre">I agree to the</span> <a href="Terms.html" class="text-secondary font-semibold underline" data-i18n="terms">Terms of Service</a> <span data-i18n="and">and</span> <a href="Privacy.html" class="text-secondary font-semibold underline" data-i18n="privacy">Privacy Policy</a>.</span>
+      </label>
+      <p id="terms-err" class="err hidden mt-1 text-sm text-error" role="alert"></p>
+    </div>
+
+    <!-- Trust (compact) -->
+    <div class="rounded-xl bg-surface-low border border-outline-variant/60 p-4 mb-4">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+        <span class="font-semibold text-sm" data-i18n="trustTitle">Safe and simple</span>
+      </div>
+      <ul class="text-xs text-on-surface-variant space-y-1.5">
+        <li class="flex gap-2"><span class="material-symbols-outlined text-[16px] text-primary">account_balance</span><span data-i18n="trust1">Payments held in mobile money escrow until delivery</span></li>
+        <li class="flex gap-2"><span class="material-symbols-outlined text-[16px] text-primary">verified</span><span data-i18n="trust2">Produce graded to UNBS standards</span></li>
+        <li class="flex gap-2"><span class="material-symbols-outlined text-[16px] text-primary">visibility_off</span><span data-i18n="trust3">Your number is never shown to other users</span></li>
+      </ul>
+    </div>
+
+    <!-- USSD -->
+    <a href="tel:*284*44%23" class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-high">
+      <span class="w-9 h-9 rounded-full bg-secondary text-white flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[20px]">dialpad</span></span>
+      <span class="flex-1 min-w-0">
+        <span class="block text-sm font-semibold" data-i18n="ussdTitle">No data bundle? Sign up by phone call</span>
+        <span class="block text-xs text-on-surface-variant"><span data-i18n="ussdTap">Tap to dial</span> <strong class="text-primary tracking-wider">*284*44#</strong> · <span data-i18n="free">Free</span></span>
+      </span>
+      <span class="material-symbols-outlined text-on-surface-variant">call</span>
+    </a>
+
+    <p class="text-center text-sm text-on-surface-variant mt-6">
+      <span data-i18n="have">Already registered?</span>
+      <a href="Login.html" class="text-secondary font-semibold underline ml-1" data-i18n="signin">Sign in</a>
+    </p>
+  </form>
+
+  <!-- ============ STEP 2: OTP ============ -->
+  <section id="step2" class="hidden">
+    <button type="button" id="edit-number" class="inline-flex items-center gap-1 text-sm font-semibold text-secondary mb-3 min-h-[44px]">
+      <span class="material-symbols-outlined text-[18px]">edit</span><span data-i18n="editNumber">Change number</span>
+    </button>
+    <h1 class="head text-[26px] leading-[34px] font-semibold text-primary tracking-tight" data-i18n="otpTitle">Enter your code</h1>
+    <p class="text-sm text-on-surface-variant mt-1 mb-6"><span data-i18n="otpSent">We sent a 6-digit code by SMS to</span> <strong id="otp-phone" class="text-on-surface"></strong></p>
+
+    <div id="otp-group" class="flex justify-between gap-1.5 sm:gap-2" role="group" aria-label="6 digit code">
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Digit 1"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 2"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 3"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 4"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 5"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 6"/>
+    </div>
+    <p id="otp-err" class="hidden mt-2 text-sm text-error" role="alert"></p>
+
+    <div class="mt-5 text-sm text-on-surface-variant">
+      <span id="resend-wait"></span>
+      <button type="button" id="resend-btn" class="hidden font-semibold text-secondary underline min-h-[44px]" data-i18n="resend">Resend code</button>
+    </div>
+
+    <div id="done" class="hidden mt-8 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed p-4 flex gap-3">
+      <span class="material-symbols-outlined">check_circle</span>
+      <p class="text-sm font-semibold" data-i18n="welcome">Phone verified. Welcome to You-Farm!</p>
+    </div>
+  </section>
+  </div>
+</div>
+</main>
+
+<!-- Sticky CTA -->
+<div class="fixed bottom-0 inset-x-0 z-30 bg-surface/95 backdrop-blur border-t border-outline-variant/50 pb-safe">
+  <div class="max-w-md md:max-w-xl lg:max-w-5xl mx-auto px-4 pt-3 lg:grid lg:grid-cols-[1fr_480px] lg:gap-12">
+    <div class="hidden lg:block"></div>
+    <button id="cta" type="button" class="w-full h-14 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center gap-2 active:bg-primary-container disabled:opacity-60">
+      <span id="cta-text">Send me a code</span>
+      <span id="cta-icon" class="material-symbols-outlined text-[20px]">arrow_forward</span>
+    </button>
+  </div>
+</div>
+
+<script>
+(function () {
+  /* ---------- i18n (Luganda strings are a starting draft: have a native speaker review) ---------- */
+  const T = {
+    en: {
+      asideTitle:"From the farm gate straight to the buyer.", aside1:"Get paid to MTN MoMo or Airtel Money", aside2:"Pool produce with your cooperative for bigger orders", aside3:"Verified transporters move your load safely",
+      title:"Join You-Farm", subtitle:"Sell and buy farm produce directly across Uganda. It takes about a minute.",
+      roleLegend:"I am joining as a…", roleFarmer:"Farmer / Cooperative", roleFarmerD:"Sell your harvest and get paid to MTN MoMo or Airtel Money.",
+      roleBuyer:"Commercial Buyer", roleBuyerD:"Buy grains, matooke, coffee and vegetables in bulk, with escrow protection.",
+      roleTrans:"Transporter / Driver", roleTransD:"Carry depot loads and earn on return trips.",
+      nameFarmer:"Full name or cooperative lead", nameBuyer:"Your name or business name", nameTrans:"Full name (as on your driving permit)",
+      phoneLabel:"Mobile money phone number", phoneHint:"We'll text you a code. This number is also where your payouts go.",
+      districtLabel:"Nearest district / hub", districtPh:"Choose your hub",
+      termsPre:"I agree to the", terms:"Terms of Service", and:"and", privacy:"Privacy Policy",
+      trustTitle:"Safe and simple", trust1:"Payments held in mobile money escrow until delivery", trust2:"Produce graded to UNBS standards", trust3:"Your number is never shown to other users",
+      ussdTitle:"No data bundle? Sign up by phone call", ussdTap:"Tap to dial", free:"Free",
+      have:"Already registered?", signin:"Sign in",
+      cta1:"Send me a code", cta2:"Verify and finish", sending:"Sending code…", verifying:"Checking…",
+      step1:"Step 1 of 2 · Your details", step2:"Step 2 of 2 · Verify phone",
+      editNumber:"Change number", otpTitle:"Enter your code", otpSent:"We sent a 6-digit code by SMS to",
+      resend:"Resend code", resendIn:"Resend code in", welcome:"Phone verified. Welcome to You-Farm!",
+      ninLabel:"National ID number (NIN)", ninHint:"14 characters, found on your national ID card. Used only to verify who you are and never shown to other users.", eNin:"Enter your 14-character NIN exactly as on your ID (it starts with CM, CF, PM or PF).",
+      eName:"Please enter your name.", ePhone:"Enter a valid Ugandan mobile number, e.g. 772 123 456.", eDistrict:"Please choose a hub.", eTerms:"Please accept the terms to continue.", eOtp:"Enter all 6 digits."
+    },
+    lg: {
+      asideTitle:"Okuva ku nnimiro okutuuka ku muguzi.", aside1:"Weewole ssente ku MTN MoMo oba Airtel Money", aside2:"Gatta ebirime n'ekibiina kyo okufuna ebiragiro ebinene", aside3:"Abasitula abakakasiddwa batwala ebyamaguzi byo mu mirembe",
+      title:"Wandiika ku You-Farm", subtitle:"Tunda era gula ebirime butereevu mu Uganda yonna. Kitwala eddakiika emu.",
+      roleLegend:"Nsoma nga…", roleFarmer:"Omulimi / Ekibiina", roleFarmerD:"Tunda amakungula go olabe ssente ku MTN MoMo oba Airtel Money.",
+      roleBuyer:"Omuguzi ow'amaguzi amangi", roleBuyerD:"Gula emmere, matooke, emmwanyi n'enva endiirwa mu bungi, ssente zikuumibwa.",
+      roleTrans:"Omusibuka / Omugoba", roleTransD:"Situla ebyamaguzi era olabe ssente ku lugendo olw'okudda.",
+      nameFarmer:"Erinnya lyo oba omukulembeze w'ekibiina", nameBuyer:"Erinnya lyo oba bizinensi", nameTrans:"Erinnya lyo (nga bwe liri ku layisinsi)",
+      phoneLabel:"Namba ya ssimu ya mobile money", phoneHint:"Tujja kukutumira koodi. Ssente zo zijja ku namba eno.",
+      districtLabel:"Disitulikiti / ekifo ekisinga okuba okumpi", districtPh:"Londa ekifo",
+      termsPre:"Nzikiriza", terms:"Amateeka g'okukozesa", and:"n'", privacy:"Enkola y'ebyama",
+      trustTitle:"Tekyabulabe", trust1:"Ssente zikuumibwa okutuusa ng'ebintu bituuse", trust2:"Ebirime bipimibwa ng'omutindo gwa UNBS bwe guli", trust3:"Namba yo tebeeragibwa bakozesa abalala",
+      ussdTitle:"Tolina data? Wandiika ku ssimu", ussdTap:"Kwatako okukuba", free:"Bwereere",
+      have:"Wawandiika dda?", signin:"Yingira",
+      cta1:"Ntumira koodi", cta2:"Kakasa omalirize", sending:"Tutuma koodi…", verifying:"Tukebera…",
+      step1:"Ekyokusooka 1 mu 2 · Ebikukwatako", step2:"Ekyokubiri 2 mu 2 · Kakasa ssimu",
+      editNumber:"Kyusa namba", otpTitle:"Yingiza koodi", otpSent:"Tutumye koodi ey'ennamba 6 ku",
+      resend:"Ddamu otumirwe koodi", resendIn:"Ddamu otumirwe mu", welcome:"Ssimu ekakasiddwa. Tukwaniriza ku You-Farm!",
+      ninLabel:"Namba y'endagamuntu (NIN)", ninHint:"Ennukuta 14, ziri ku ndagamuntu yo. Zikozesebwa okukakasa ggwe ani yekka era tezeragibwa bakozesa abalala.", eNin:"Wandiika NIN ey'ennukuta 14 nga bw'eri ku ndagamuntu yo (etandika na CM, CF, PM oba PF).",
+      eName:"Wandiika erinnya lyo.", ePhone:"Wandiika namba ya ssimu entuufu, eky'okulabirako 772 123 456.", eDistrict:"Londa ekifo.", eTerms:"Tuukiriza amateeka okugenda mu maaso.", eOtp:"Yingiza ennamba zonna 6."
+    }
+  };
+  let lang = 'en', role = 'farmer', step = 1, resendTimer = null;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const t = k => T[lang][k];
+
+  function applyLang() {
+    document.documentElement.lang = lang === 'lg' ? 'lg' : 'en';
+    $$('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+    $$('.lang-btn').forEach(b => {
+      const on = b.dataset.lang === lang;
+      b.setAttribute('aria-pressed', on);
+      b.className = 'lang-btn px-3 h-8 rounded-full text-xs font-bold ' + (on ? 'bg-white text-primary shadow-sm' : 'text-on-surface-variant');
+    });
+    updateNameLabel(); updateStep();
+    try { localStorage.setItem('yf_lang', lang); } catch (e) {}
+  }
+  $$('.lang-btn').forEach(b => b.addEventListener('click', () => { lang = b.dataset.lang; applyLang(); }));
+
+  /* ---------- Role ---------- */
+  function updateNameLabel() {
+    $('#name-label').textContent = t(role === 'buyer' ? 'nameBuyer' : role === 'transporter' ? 'nameTrans' : 'nameFarmer');
+  }
+  const cards = $$('.role-card');
+  function setRole(r) {
+    role = r;
+    cards.forEach(c => { const on = c.dataset.role === r; c.setAttribute('aria-checked', on); c.tabIndex = on ? 0 : -1; });
+    updateNameLabel();
+  }
+  cards.forEach((c, i) => {
+    c.addEventListener('click', () => setRole(c.dataset.role));
+    c.addEventListener('keydown', e => {
+      const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (!d) return;
+      e.preventDefault();
+      const n = cards[(i + d + cards.length) % cards.length];
+      setRole(n.dataset.role); n.focus();
+    });
+  });
+  setRole('farmer');
+
+  /* ---------- Phone ---------- */
+  const phone = $('#phone_number');
+  const chip = $('#network-chip');
+  function digits() {
+    let d = phone.value.replace(/\D/g, '');
+    if (d.startsWith('256')) d = d.slice(3);
+    if (d.startsWith('0')) d = d.slice(1);
+    return d.slice(0, 9);
+  }
+  function network(d) {
+    const p = d.slice(0, 2);
+    if (['77', '78', '76', '39'].includes(p)) return ['MTN', 'bg-[#ffcc00] text-black'];
+    if (['70', '75', '74'].includes(p)) return ['Airtel', 'bg-[#e40000] text-white'];
+    return null;
+  }
+  phone.addEventListener('input', () => {
+    const d = digits();
+    phone.value = [d.slice(0, 3), d.slice(3, 6), d.slice(6, 9)].filter(Boolean).join(' ');
+    const n = d.length >= 2 && network(d);
+    if (n) { chip.textContent = n[0]; chip.className = 'absolute right-2.5 top-1/2 -translate-y-1/2 text-[11px] font-bold px-2 py-1 rounded-full ' + n[1]; }
+    else chip.className = 'hidden';
+    clearErr(phone);
+  });
+  const validPhone = d => /^[37]\d{8}$/.test(d);
+
+  /* ---------- Validation helpers ---------- */
+  function setErr(el, msgKey) {
+    el.setAttribute('aria-invalid', 'true');
+    const p = $('#' + el.getAttribute('aria-describedby').split(' ').pop());
+    p.textContent = t(msgKey); p.classList.remove('hidden'); p.classList.add('flex');
+  }
+  function clearErr(el) {
+    el.removeAttribute('aria-invalid');
+    const ids = (el.getAttribute('aria-describedby') || '').split(' ');
+    const p = $('#' + ids[ids.length - 1]);
+    if (p && p.classList.contains('err')) { p.classList.add('hidden'); p.classList.remove('flex'); }
+  }
+  const nin = $('#nin');
+  nin.addEventListener('input', () => { nin.value = nin.value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 14); clearErr(nin); });
+  const validNin = v => /^(C|P)(M|F)[A-Z0-9]{12}$/.test(v);
+  ['full_name', 'district_hub', 'terms'].forEach(id => $('#' + id).addEventListener('input', e => clearErr(e.target)));
+  $('#district_hub').addEventListener('change', e => clearErr(e.target));
+  $('#terms').addEventListener('change', e => clearErr(e.target));
+
+  function validateStep1() {
+    let first = null;
+    const fail = (el, k) => { setErr(el, k); first = first || el; };
+    if ($('#full_name').value.trim().length < 2) fail($('#full_name'), 'eName');
+    if (!validPhone(digits())) fail(phone, 'ePhone');
+    if (!validNin(nin.value)) fail(nin, 'eNin');
+    if (!$('#district_hub').value) fail($('#district_hub'), 'eDistrict');
+    if (!$('#terms').checked) fail($('#terms'), 'eTerms');
+    if (first) { first.focus(); first.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+    return !first;
+  }
+
+  /* ---------- Steps ---------- */
+  function updateStep() {
+    $('#step-label').textContent = t(step === 1 ? 'step1' : 'step2');
+    $('#progress-fill').style.width = step === 1 ? '50%' : '100%';
+    $('#progressbar').setAttribute('aria-valuenow', step);
+    $('#cta-text').textContent = t(step === 1 ? 'cta1' : 'cta2');
+  }
+  function show(n) {
+    step = n;
+    $('#step1').classList.toggle('hidden', n !== 1);
+    $('#step2').classList.toggle('hidden', n !== 2);
+    updateStep();
+    window.scrollTo({ top: 0 });
+  }
+
+  function setLoading(on, key) {
+    const b = $('#cta');
+    b.disabled = on;
+    $('#cta-text').textContent = t(on ? key : (step === 1 ? 'cta1' : 'cta2'));
+    $('#cta-icon').textContent = on ? 'progress_activity' : 'arrow_forward';
+    $('#cta-icon').classList.toggle('animate-spin', on);
+  }
+
+  /* ---------- OTP ---------- */
+  const otps = $$('.otp');
+  otps.forEach((inp, i) => {
+    inp.addEventListener('input', () => {
+      inp.value = inp.value.replace(/\D/g, '').slice(-1);
+      $('#otp-err').classList.add('hidden'); otps.forEach(o => o.removeAttribute('aria-invalid'));
+      if (inp.value && i < 5) otps[i + 1].focus();
+      if (otps.every(o => o.value)) submitOtp();
+    });
+    inp.addEventListener('keydown', e => { if (e.key === 'Backspace' && !inp.value && i > 0) otps[i - 1].focus(); });
+    inp.addEventListener('paste', e => {
+      const txt = (e.clipboardData.getData('text') || '').replace(/\D/g, '').slice(0, 6);
+      if (!txt) return;
+      e.preventDefault();
+      txt.split('').forEach((c, j) => otps[j].value = c);
+      otps[Math.min(txt.length, 5)].focus();
+      if (txt.length === 6) submitOtp();
+    });
+  });
+
+  function startResend() {
+    let s = 30;
+    const wait = $('#resend-wait'), btn = $('#resend-btn');
+    btn.classList.add('hidden'); wait.classList.remove('hidden');
+    clearInterval(resendTimer);
+    const tick = () => {
+      if (s <= 0) { clearInterval(resendTimer); wait.classList.add('hidden'); btn.classList.remove('hidden'); return; }
+      wait.textContent = t('resendIn') + ' 0:' + String(s).padStart(2, '0'); s--;
+    };
+    tick(); resendTimer = setInterval(tick, 1000);
+  }
+
+  function sendCode() {
+    setLoading(true, 'sending');
+    // TODO: replace with real API call, e.g. POST /api/auth/send-otp { phone: '+256' + digits(), nin: nin.value, role, district }
+    return new Promise(res => setTimeout(res, 900)).then(() => {
+      setLoading(false);
+      $('#otp-phone').textContent = '+256 ' + phone.value;
+      show(2); startResend(); otps.forEach(o => o.value = ''); otps[0].focus();
+    });
+  }
+
+  function submitOtp() {
+    const code = otps.map(o => o.value).join('');
+    if (code.length < 6) { $('#otp-err').textContent = t('eOtp'); $('#otp-err').classList.remove('hidden'); return; }
+    setLoading(true, 'verifying');
+    // TODO: replace with real API call, e.g. POST /api/auth/verify-otp { phone, code }
+    new Promise(res => setTimeout(res, 900)).then(() => {
+      setLoading(false);
+      $('#done').classList.remove('hidden');
+      $('#cta').classList.add('hidden');
+      // TODO: redirect by role, e.g. location.href = role + '-dashboard.html'
+    });
+  }
+
+  $('#cta').addEventListener('click', () => {
+    if (step === 1) { if (validateStep1()) sendCode(); }
+    else submitOtp();
+  });
+  $('#step1').addEventListener('submit', e => { e.preventDefault(); $('#cta').click(); });
+  $('#resend-btn').addEventListener('click', sendCode);
+  $('#edit-number').addEventListener('click', () => { clearInterval(resendTimer); show(1); phone.focus(); });
+  $('#back-btn').addEventListener('click', () => { step === 2 ? $('#edit-number').click() : (history.length > 1 ? history.back() : location.href = 'index.html'); });
+
+  /* ---------- Init ---------- */
+  try { const s = localStorage.getItem('yf_lang'); if (s && T[s]) lang = s; } catch (e) {}
+  applyLang();
+})();
+</script>
+</body>
+</html>

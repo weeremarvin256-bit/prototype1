@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#0f2e1d"/>
+<title>You-Farm Harvests</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{forest:'#0f2e1d',leaf:'#1f6b3a',sprout:'#7cc47f',cream:'#f7f0e0',sand:'#efe3c8',clay:'#b8561f',harvest:'#f4b942',soil:'#3b2a1a',line:'#e8dcc0'},fontFamily:{sans:['Public Sans','sans-serif'],disp:['Space Grotesk','sans-serif']}}}}</script>
+<style>
+body{font-family:'Public Sans',sans-serif;background:#f7f0e0;color:#3b2a1a;overscroll-behavior:none}
+.ms{font-family:'Material Symbols Outlined';font-weight:400;font-style:normal;line-height:1;display:inline-block;font-variation-settings:'FILL' 0}
+.fill{font-variation-settings:'FILL' 1}
+.no-sb::-webkit-scrollbar{display:none}.no-sb{scrollbar-width:none}
+.pt-safe{padding-top:env(safe-area-inset-top,0)}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0)}
+.card{transition:box-shadow .2s,transform .2s}.card:hover{box-shadow:0 14px 30px -12px rgba(59,42,26,.18);transform:translateY(-2px)}
+.bar{transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.chip-on{background:#0f2e1d;color:#fff;border-color:#0f2e1d}
+.press:active{transform:scale(.98)}
+@keyframes up{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}.sheet-in{animation:up .22s ease-out}
+button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid #f4b942;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.bar,.sheet-in,.card{transition:none;animation:none}}
+</style></head>
+<body>
+
+<header class="fixed top-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-b border-line pt-safe">
+ <div class="h-16 px-5 sm:px-8 max-w-6xl mx-auto flex items-center gap-3">
+  <img class="h-8" alt="You-Farm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdryaOneto5aYotA6uQjNAQ4C8P9CN5Xklc_4qjItWmxHO2SWFxxXvjHVtoGk48JIqRUVqF3WxRWQdI3bo9iG2s29Li-gG-IFroLa2sIJSyfgnxpW68yKSJyfuSAmrYSUT8ISiRi5S-EbDnsYoFFy86m3Wo5Wv-kSDEIanafdKRCj-rNu14Bq_YymhsGbNqMqzpiAcY26Bwk2z6Gsa9zu6KxARBkZKdkOY95plrqmByBAvS3I7ZhJNrQ"/>
+  <div class="min-w-0 flex-1"><div class="font-disp font-bold text-forest leading-tight">You-Farm</div>
+   <div class="text-[11px] text-soil/70 flex items-center gap-1"><span class="ms text-[13px] text-clay">location_on</span>Kampala &amp; Central Hub</div></div>
+  <a href="Market-Alets.html" aria-label="Notifications" class="relative w-11 h-11 grid place-items-center text-soil/70"><span class="ms text-[24px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-harvest ring-2 ring-white"></span></a>
+  <div class="w-9 h-9 rounded-full bg-sand text-leaf grid place-items-center" aria-label="Profile"><span class="ms">person</span></div>
+ </div>
+</header>
+
+<main class="pt-[72px] pb-32 max-w-6xl mx-auto px-5 sm:px-8">
+ <div class="pt-10 flex items-start justify-between gap-4">
+  <div><p class="text-sm font-semibold text-clay">Cooperative hub, Mbale</p>
+   <h1 class="font-disp font-bold text-3xl sm:text-4xl text-forest mt-1.5 leading-tight">Harvests &amp; pools</h1>
+   <p class="text-soil/70 mt-3 max-w-md leading-relaxed">Sell your harvest, join wholesale pools and follow your money in one place.</p></div>
+  <span class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sand text-forest text-sm font-semibold mt-1"><span class="ms fill text-[18px] text-leaf">groups</span>Leader view</span>
+ </div>
+
+ <div class="mt-10 grid gap-12 lg:grid-cols-[360px_1fr] lg:gap-16 items-start">
+  <aside class="space-y-6 lg:sticky lg:top-24">
+   <section class="relative overflow-hidden rounded-3xl bg-forest text-white p-6 sm:p-7">
+    <div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-harvest/20 blur-3xl pointer-events-none"></div>
+    <div class="relative">
+     <div class="flex items-center justify-between"><span class="text-white/75">Escrow holdings</span>
+      <button id="eye" onclick="toggleBal()" aria-label="Show or hide balance" class="w-10 h-10 -mr-2 rounded-full hover:bg-white/10 grid place-items-center"><span class="ms text-[22px]">visibility</span></button></div>
+     <div id="bal" class="font-disp font-bold text-4xl tracking-tight mt-2 leading-tight">UGX 0</div>
+     <p class="text-sm text-white/70 mt-2 flex items-center gap-1.5"><span class="ms fill text-sprout text-[18px]">verified_user</span>Held safely until depot delivery</p>
+     <div class="mt-7 pt-6 border-t border-white/15 grid grid-cols-2 gap-6">
+      <div><div class="text-sm text-white/70">Lots on offer</div><div class="font-disp font-bold text-3xl mt-1" id="m-lots">0</div></div>
+      <div><div class="text-sm text-white/70">Tons committed</div><div class="font-disp font-bold text-3xl mt-1" id="m-mt">0</div></div>
+     </div>
+     <button onclick="openPayout()" class="press mt-7 w-full h-14 rounded-2xl bg-harvest text-soil font-bold flex items-center justify-center gap-2 hover:brightness-105 transition"><span class="ms fill text-[22px]">payments</span>Cash out to mobile money</button>
+    </div>
+   </section>
+
+   <section class="rounded-3xl bg-white border border-line divide-y divide-line overflow-hidden">
+    <button onclick="openNewLot()" class="w-full flex items-center gap-4 p-5 text-left hover:bg-cream transition"><span class="w-11 h-11 rounded-full bg-forest text-white grid place-items-center shrink-0"><span class="ms">add</span></span><span class="flex-1 min-w-0"><b class="block text-forest">List a new harvest lot</b><span class="text-sm text-soil/70">Add crop, quantity and price</span></span><span class="ms text-soil/40">chevron_right</span></button>
+    <button id="b-voice" onclick="voice()" class="w-full flex items-center gap-4 p-5 text-left hover:bg-cream transition"><span id="mic" class="w-11 h-11 rounded-full bg-sand text-leaf grid place-items-center shrink-0"><span class="ms">mic</span></span><span class="flex-1 min-w-0"><b class="block text-forest">Voice listing</b><span class="text-sm text-soil/70">Speak in Luganda or English</span></span><span class="ms text-soil/40">chevron_right</span></button>
+    <button onclick="toast('Camera ready. Place 10 grains on a dry sheet to scan moisture and grade.','photo_camera')" class="w-full flex items-center gap-4 p-5 text-left hover:bg-cream transition"><span class="w-11 h-11 rounded-full bg-sand text-leaf grid place-items-center shrink-0"><span class="ms">photo_camera</span></span><span class="flex-1 min-w-0"><b class="block text-forest">Crop scan</b><span class="text-sm text-soil/70">Check moisture and grade</span></span><span class="ms text-soil/40">chevron_right</span></button>
+   </section>
+
+   <p class="px-1 text-sm text-soil/70 leading-relaxed flex gap-3"><span class="ms text-leaf shrink-0">trending_up</span><span>Pooling with 42 farmers in Mbale earns about 18% more than selling to roadside buyers.</span></p>
+  </aside>
+
+  <div class="space-y-16 min-w-0">
+   <section aria-labelledby="h-pools">
+    <h2 id="h-pools" class="font-disp font-bold text-2xl text-forest">Open pools</h2>
+    <p class="text-soil/70 mt-2 leading-relaxed">Pool crops with your neighbours to fill wholesale orders paid through escrow.</p>
+    <div class="flex gap-2 overflow-x-auto no-sb mt-6" id="pool-tabs"></div>
+    <div id="pools" class="mt-6 grid gap-6 md:grid-cols-2"></div>
+   </section>
+
+   <section aria-labelledby="h-lots">
+    <div class="flex items-baseline justify-between gap-3"><h2 id="h-lots" class="font-disp font-bold text-2xl text-forest">My harvest lots</h2><span class="text-sm text-soil/70" id="lot-count"></span></div>
+    <div class="flex gap-2 overflow-x-auto no-sb mt-6" id="lot-tabs"></div>
+    <div id="lots" class="mt-6 grid gap-6 md:grid-cols-2"></div>
+   </section>
+  </div>
+ </div>
+</main>
+
+<div id="s-back" class="fixed inset-0 z-[55] bg-soil/50 hidden" onclick="closeSheet()"></div>
+<section id="sheet" class="hidden fixed z-[60] inset-x-0 bottom-0 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[480px] bg-white rounded-t-3xl sm:rounded-3xl max-h-[92vh] overflow-y-auto p-6 pb-safe shadow-2xl sheet-in" role="dialog" aria-modal="true"></section>
+<div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[70] max-w-[92vw] bg-soil text-white text-sm px-4 py-2.5 rounded-full shadow-xl opacity-0 pointer-events-none transition-opacity flex items-center gap-2"><span id="t-i" class="ms text-[18px] text-harvest">check_circle</span><span id="t-t"></span></div>
+
+<nav class="fixed bottom-0 inset-x-0 z-40 bg-white border-t border-line shadow-[0_-4px_16px_rgba(59,42,26,.08)] pb-safe"><div class="flex h-16 max-w-2xl mx-auto text-soil/70 text-[11px] sm:text-xs font-semibold">
+ <a href="MarketPlace.html" class="flex-1 flex flex-col items-center justify-center hover:text-forest"><span class="ms text-[22px]">storefront</span>Marketplace</a>
+ <a href="Harvest.html" aria-current="page" class="flex-1 flex flex-col items-center justify-center text-forest"><span class="ms fill text-[22px]">inventory_2</span>Harvests</a>
+ <a href="Escrow.html" class="flex-1 flex flex-col items-center justify-center hover:text-forest"><span class="ms text-[22px]">verified_user</span>Escrow</a>
+ <a href="Transit.html" class="flex-1 flex flex-col items-center justify-center hover:text-forest"><span class="ms text-[22px]">local_shipping</span>Transits</a>
+</div></nav>
+
+<script>
+const $=id=>document.getElementById(id),f=n=>Math.round(n).toLocaleString('en-US');
+const px=(id,w=400)=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+const IMG={'Arabica Coffee':px(19052799),'Robusta Coffee':px(2868982),'Maize Grain':px(60507),'Beans & Pulses':px(7717469),'Tomatoes & Veg':px(11895396),'Matooke':px(31537314)};
+const thumb=(src,cls)=>`<div class="relative ${cls} rounded-xl overflow-hidden bg-sand shrink-0">${src?`<img src="${src}" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()"/>`:''}</div>`;
+
+/* ---------- State ---------- */
+const S={balance:4850000,hidden:false,committed:3.2,poolTab:'all',lotTab:'all'};
+const pools=[
+ {id:'sorghum',cat:'institutional',tag:'Institutional contract',left:'4 days left',urgent:false,title:'Uganda Breweries 50-ton sorghum and barley contract',place:'Central Malting Facility · Luzira pickup',img:px(60507),target:50,filled:34,farmers:18,price:1600},
+ {id:'beans',cat:'education',tag:'Education board',left:'Closes in 2 days',urgent:true,title:'Kampala Schools Alliance 20-ton dry beans pool',place:'Jinja Road Agro-Terminal hub',img:px(7717469),target:20,filled:17,farmers:12,price:3200}];
+const lots=[
+ {id:'AG-409',st:'verified',title:'500 kg Grade A Arabica Coffee',sub:'Mount Elgon slopes · 11.8% moisture',img:IMG['Arabica Coffee'],price:9000,inq:2},
+ {id:'AG-312',st:'transit',title:'1,200 kg Yellow Maize',sub:'Sun-dried · Grade 2 processing ready',img:IMG['Maize Grain'],total:1440000},
+ {id:'AG-287',st:'paused',title:'800 kg Nambale Dry Beans',sub:'Mbale · Grade 1',img:IMG['Beans & Pulses'],price:3000,inq:0}];
+const ST={verified:['check_circle','Quality verified','bg-sand text-leaf'],transit:['local_shipping','In transit','bg-harvest/30 text-soil'],paused:['pause_circle','Paused','bg-soil/10 text-soil/70'],review:['hourglass_top','Pending review','bg-harvest/30 text-soil']};
+
+/* ---------- Toast + sheet ---------- */
+function toast(t,i='check_circle'){$('t-t').textContent=t;$('t-i').textContent=i;const e=$('toast');e.style.opacity=1;clearTimeout(e._t);e._t=setTimeout(()=>e.style.opacity=0,3200)}
+function openSheet(h){$('sheet').innerHTML=h;$('s-back').classList.remove('hidden');$('sheet').classList.remove('hidden');$('sheet').scrollTop=0;const i=$('sheet').querySelector('input,select');i&&setTimeout(()=>i.focus({preventScroll:true}),60)}
+function closeSheet(){$('s-back').classList.add('hidden');$('sheet').classList.add('hidden')}
+const head=(t,ic)=>`<div class="flex items-center justify-between mb-6"><h3 class="font-disp font-bold text-xl text-forest flex items-center gap-2"><span class="ms text-leaf">${ic}</span>${t}</h3><button onclick="closeSheet()" aria-label="Close" class="w-10 h-10 rounded-full bg-cream grid place-items-center"><span class="ms">close</span></button></div>`;
+const inp='w-full h-14 px-4 rounded-2xl bg-cream border border-line text-base font-semibold';
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+
+/* ---------- Summary ---------- */
+function drawBal(v){$('bal').textContent=S.hidden?'UGX ••••••':'UGX '+f(v)}
+function countUp(from,to){const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;if(reduce||S.hidden){drawBal(to);return}const t0=performance.now();(function s(t){const p=Math.min(1,(t-t0)/900);drawBal(from+(to-from)*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(s)})(t0)}
+function toggleBal(){S.hidden=!S.hidden;$('eye').firstElementChild.textContent=S.hidden?'visibility_off':'visibility';drawBal(S.balance)}
+function drawMetrics(){$('m-lots').textContent=lots.filter(l=>l.st!=='paused').length;$('m-mt').textContent=S.committed.toFixed(1)}
+
+/* ---------- Pools ---------- */
+function tabs(el,list,key,fn){$(el).innerHTML=list.map(([v,l])=>`<button onclick="${fn}('${v}')" class="shrink-0 h-10 px-5 rounded-full border border-line bg-white text-sm font-semibold hover:bg-sand transition ${S[key]===v?'chip-on hover:bg-forest':''}">${l}</button>`).join('')}
+function setPoolTab(v){S.poolTab=v;drawPools()}
+function drawPools(){
+ tabs('pool-tabs',[['all','All pools'],['urgent','Closing soon'],['institutional','Institutional'],['education','Education']],'poolTab','setPoolTab');
+ const list=pools.filter(p=>S.poolTab==='all'||(S.poolTab==='urgent'?p.urgent:p.cat===S.poolTab));
+  $('pools').innerHTML=list.length?list.map(p=>{
+  const pct=Math.round(p.filled/p.target*100),left=p.target-p.filled,full=left<=0;
+  return `<article class="card bg-white rounded-3xl border border-line overflow-hidden flex flex-col">
+   <div class="relative aspect-[16/9] bg-sand"><img src="${p.img}" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()"/>
+    <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold shadow-sm ${p.urgent?'bg-clay text-white':'bg-white text-forest'}"><span class="ms text-[16px]">${p.urgent?'alarm':'timer'}</span>${p.left}</span></div>
+   <div class="p-6 flex flex-col gap-6 flex-1">
+    <div><p class="text-sm font-semibold ${p.cat==='education'?'text-leaf':'text-clay'}">${p.tag}</p>
+     <h3 class="font-semibold text-lg leading-snug mt-1.5">${p.title}</h3><p class="text-sm text-soil/70 mt-2">${p.place}</p></div>
+    <div><div class="flex justify-between items-baseline"><span class="font-semibold">${(+p.filled.toFixed(2))} of ${p.target} tons</span><span class="text-sm text-soil/70">${pct}%</span></div>
+     <div class="h-2 rounded-full bg-sand overflow-hidden mt-3"><div class="bar h-full rounded-full ${p.urgent?'bg-harvest':'bg-leaf'}" style="width:0" data-w="${pct}"></div></div>
+     <p class="text-sm text-soil/70 mt-3">${full?'Pool is full':(+left.toFixed(2))+' tons still needed'} · ${p.farmers} farmers</p></div>
+    <div class="mt-auto pt-6 border-t border-line flex items-center justify-between gap-4">
+     <div><div class="text-sm text-soil/70">Guaranteed price</div><div><span class="font-disp font-bold text-2xl text-forest">${f(p.price)}</span><span class="text-sm text-soil/70"> UGX / kg</span></div></div>
+     <button onclick="openPledge('${p.id}')" ${full?'disabled':''} class="press h-12 px-5 rounded-2xl font-semibold transition whitespace-nowrap ${full?'bg-soil/10 text-soil/50':p.urgent?'bg-harvest text-soil hover:brightness-105':'bg-forest text-white hover:bg-leaf'}">${full?'Pool full':p.urgent?'Join pool':'Contribute'}</button></div>
+   </div></article>`}).join(''):'<p class="text-soil/70 py-6">No pools match this filter.</p>';
+ requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll('#pools [data-w]').forEach(e=>e.style.width=e.dataset.w+'%')))}
+
+function openPledge(id){const p=pools.find(x=>x.id===id),max=Math.floor((p.target-p.filled)*1000);
+ openSheet(head('Commit yield to contract','add_business')+`
+ <div class="bg-cream rounded-xl p-3"><div class="text-sm font-semibold text-leaf">${p.title}</div><div class="text-sm text-soil/70">Guaranteed payout <b class="text-forest">UGX ${f(p.price)} / kg</b> via mobile money</div></div>
+ <label class="block mt-4 text-sm font-semibold text-forest" for="kg">How many kilograms will you pledge?</label>
+ <div class="relative mt-1.5"><input id="kg" type="number" inputmode="numeric" min="1" max="${max}" value="${Math.min(500,max)}" class="${inp} pr-14 text-lg" oninput="calc(${p.price},${max})"/><span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-bold text-soil/70">KG</span></div>
+ <div class="flex gap-2 mt-3">${[100,250,500].filter(v=>v<=max).map(v=>`<button onclick="$('kg').value=${v};calc(${p.price},${max})" class="h-9 px-3 rounded-full border border-line text-sm font-semibold hover:bg-sand">${v} kg</button>`).join('')}<button onclick="$('kg').value=${max};calc(${p.price},${max})" class="h-9 px-3 rounded-full border border-line text-sm font-semibold hover:bg-sand">Max ${f(max)}</button></div>
+ <div class="flex justify-between items-center mt-6"><span class="text-sm text-soil/70">Estimated escrow value</span><b id="est" class="font-disp text-xl text-forest"></b></div>
+ <p id="kg-err" class="text-sm text-clay mt-1 hidden"></p>
+ <div class="mt-6 flex gap-3 bg-sand rounded-2xl p-4 text-sm leading-relaxed"><span class="ms text-leaf text-[20px]">lock_clock</span><span>The buyer has already locked the funds in You-Farm escrow. They are released after the quality check at the Mbale depot.</span></div>
+ <button onclick="pledge('${id}',${max})" class="press mt-6 w-full h-14 rounded-2xl bg-forest text-white font-semibold flex items-center justify-center gap-2 hover:bg-leaf transition"><span class="ms text-[20px]">verified</span>Confirm pledge and generate bag tags</button>`);calc(p.price,max)}
+function calc(price,max){const v=+$('kg').value||0,bad=v<1||v>max;$('est').textContent='UGX '+f(v*price);const e=$('kg-err');e.classList.toggle('hidden',!bad);e.textContent=v>max?`This pool only needs ${f(max)} kg more.`:'Enter at least 1 kg.'}
+function pledge(id,max){const v=+$('kg').value||0;if(v<1||v>max){calc(0,max);return}const p=pools.find(x=>x.id===id);p.filled+=v/1000;p.farmers++;S.committed+=v/1000;closeSheet();drawPools();drawMetrics();toast(`Pledged ${f(v)} kg. QR bag tags sent by SMS.`)}
+
+/* ---------- Lots ---------- */
+function setLotTab(v){S.lotTab=v;drawLots()}
+function lotCard(l){const [ic,lab,cls]=ST[l.st];
+ const note=l.st==='transit'?`<span class="relative flex w-2.5 h-2.5 shrink-0"><span class="absolute inset-0 rounded-full bg-clay animate-ping opacity-60"></span><span class="relative w-2.5 h-2.5 rounded-full bg-clay"></span></span><span>En route to Jinja Silo Terminal · arrives 4:30 PM</span>`
+ :l.st==='review'?`<span class="ms text-clay text-[20px]">hourglass_top</span><span>Waiting for an officer to verify quality</span>`
+ :l.st==='paused'?`<span class="ms text-soil/60 text-[20px]">pause_circle</span><span>Hidden from buyers until you resume</span>`
+ :`<span class="ms fill text-leaf text-[20px]">verified</span><span>Verified by P. Mukasa, District Extension Officer</span>`;
+ const foot=l.st==='transit'?`<div><div class="text-sm text-soil/70">Contract value</div><div class="font-disp font-bold text-xl text-forest">UGX ${f(l.total)}</div></div><button onclick="toast('Waybill for ${l.id} opened.','receipt_long')" class="press h-11 px-4 rounded-2xl bg-sand text-forest font-semibold hover:bg-line transition">View waybill</button>`
+ :`<div><div class="text-sm text-soil/70">Price per kg</div><div class="font-disp font-bold text-xl text-forest">UGX ${f(l.price)}</div></div>
+   <div class="flex items-center gap-2">${l.inq?`<button onclick="toast('${l.inq} buyers have asked about ${l.id}.','forum')" class="h-11 px-4 rounded-2xl bg-sand text-forest font-semibold">${l.inq} inquiries</button>`:''}
+   <button onclick="lotMenu('${l.id}')" aria-label="Lot options" class="w-11 h-11 rounded-2xl border border-line grid place-items-center text-forest hover:bg-cream transition"><span class="ms">more_horiz</span></button></div>`;
+ return `<article class="card bg-white rounded-3xl border border-line p-6 flex flex-col gap-5 ${l.st==='paused'?'opacity-80':''}">
+  <div class="flex gap-4">${thumb(l.img,'w-20 h-20')}
+   <div class="min-w-0 flex-1"><div class="flex items-center justify-between gap-2"><span class="text-sm text-soil/70">Lot #${l.id}</span><span class="px-2.5 py-1 rounded-full text-xs font-semibold ${cls}">${lab}</span></div>
+    <h3 class="font-semibold text-lg leading-snug mt-1.5">${l.title}</h3><p class="text-sm text-soil/70 mt-1">${l.sub}</p></div></div>
+  <p class="text-sm flex items-center gap-2.5 text-soil/80">${note}</p>
+  <div class="flex items-center justify-between gap-3 pt-5 border-t border-line mt-auto">${foot}</div></article>`}
+function drawLots(){
+ tabs('lot-tabs',[['all','All'],['active','Active'],['transit','In transit'],['paused','Paused']],'lotTab','setLotTab');
+ const act=lots.filter(l=>l.st!=='paused').length;$('lot-count').textContent=`${act} of ${lots.length} active`;
+ const list=lots.filter(l=>S.lotTab==='all'||(S.lotTab==='active'?(l.st==='verified'||l.st==='review'):l.st===S.lotTab));
+ $('lots').innerHTML=list.length?list.map(lotCard).join(''):'<p class="text-soil/70 py-6 md:col-span-2">No lots in this view yet.</p>'}
+function lotMenu(id){const l=lots.find(x=>x.id===id),p=l.st==='paused';
+ openSheet(head('Lot #'+id,'inventory_2')+`<p class="text-sm text-soil/70 -mt-2 mb-4">${l.title}</p>
+ <button onclick="toggleLot('${id}')" class="press w-full h-12 rounded-xl bg-cream hover:bg-sand transition flex items-center gap-3 px-4 font-semibold text-forest"><span class="ms">${p?'play_circle':'pause_circle'}</span>${p?'Resume listing':'Pause listing'}</button>
+ <button onclick="removeLot('${id}')" class="press mt-2 w-full h-12 rounded-xl bg-clay/10 hover:bg-clay/20 transition flex items-center gap-3 px-4 font-semibold text-clay"><span class="ms">delete</span>Remove this lot</button>`)}
+function toggleLot(id){const l=lots.find(x=>x.id===id);l.st=l.st==='paused'?'verified':'paused';closeSheet();drawLots();drawMetrics();toast(l.st==='paused'?'Listing paused. Buyers can no longer see it.':'Listing is live again.','check_circle')}
+function removeLot(id){lots.splice(lots.findIndex(x=>x.id===id),1);closeSheet();drawLots();drawMetrics();toast('Lot '+id+' removed.','delete')}
+
+function openNewLot(){openSheet(head('List a new harvest lot','add_circle')+`
+ <label class="text-sm font-semibold text-forest" for="n-crop">Crop</label>
+ <select id="n-crop" class="${inp} mt-1.5">${Object.keys(IMG).map(c=>`<option>${c}</option>`).join('')}</select>
+ <div class="grid grid-cols-2 gap-4 mt-5">
+  <div><label class="text-sm font-semibold text-forest" for="n-kg">Quantity (kg)</label><input id="n-kg" type="number" inputmode="numeric" min="1" placeholder="e.g. 800" class="${inp} mt-1.5"/></div>
+  <div><label class="text-sm font-semibold text-forest" for="n-pr">Price (UGX / kg)</label><input id="n-pr" type="number" inputmode="numeric" min="1" placeholder="e.g. 1500" class="${inp} mt-1.5"/></div></div>
+ <label class="block mt-5 text-sm font-semibold text-forest" for="n-loc">Where is it stored?</label><input id="n-loc" type="text" value="Mbale" class="${inp} mt-1.5"/>
+ <p id="n-err" class="text-sm text-clay mt-2 hidden">Add a quantity and a price to list this lot.</p>
+ <button onclick="addLot()" class="press mt-6 w-full h-14 rounded-2xl bg-forest text-white font-semibold flex items-center justify-center gap-2 hover:bg-leaf transition"><span class="ms text-[20px]">add_circle</span>List this lot</button>`)}
+function addLot(){const c=$('n-crop').value,kg=+$('n-kg').value,pr=+$('n-pr').value;if(kg<1||pr<1){$('n-err').classList.remove('hidden');return}
+ const id='AG-'+(400+Math.floor(Math.random()*500));lots.unshift({id,st:'review',title:`${f(kg)} kg ${c}`,sub:($('n-loc').value||'Mbale')+' · Awaiting verification',img:IMG[c],price:pr,inq:0});
+ S.lotTab='all';closeSheet();drawLots();drawMetrics();toast('Lot '+id+' listed. An officer will verify it soon.','add_circle')}
+
+/* ---------- Payout & voice ---------- */
+function openPayout(){if(S.balance<=0){toast('Nothing to cash out right now.','info');return}
+ openSheet(head('Cash out to mobile money','payments')+`
+ <div class="bg-cream rounded-xl p-3 flex justify-between items-center"><span class="text-sm text-soil/70">Available to cash out</span><b class="font-disp text-lg text-forest">UGX ${f(S.balance)}</b></div>
+ <div class="grid grid-cols-2 gap-3 mt-5" id="net">${['MTN MoMo','Airtel Money'].map((n,i)=>`<button onclick="pickNet(${i})" data-i="${i}" class="h-12 rounded-xl border border-line font-semibold ${i?'':'chip-on'}">${n}</button>`).join('')}</div>
+ <label class="block mt-6 text-sm font-semibold text-forest" for="amt">Amount (UGX)</label>
+ <div class="flex gap-2 mt-1.5"><input id="amt" type="number" inputmode="numeric" value="${S.balance}" class="${inp} flex-1 text-lg"/><button onclick="$('amt').value=Math.floor(S.balance/2)" class="h-12 px-3 rounded-xl border border-line text-sm font-semibold hover:bg-sand">Half</button><button onclick="$('amt').value=S.balance" class="h-12 px-3 rounded-xl border border-line text-sm font-semibold hover:bg-sand">All</button></div>
+ <p id="a-err" class="text-sm text-clay mt-2 hidden"></p>
+ <button onclick="payout()" class="press mt-6 w-full h-14 rounded-2xl bg-harvest text-soil font-bold flex items-center justify-center gap-2 hover:brightness-105 transition"><span class="ms fill text-[20px]">send_to_mobile</span>Send to my mobile money</button>`)}
+let net=0;function pickNet(i){net=i;document.querySelectorAll('#net button').forEach(b=>b.classList.toggle('chip-on',+b.dataset.i===i))}
+function payout(){const a=Math.floor(+$('amt').value||0),e=$('a-err');if(a<1||a>S.balance){e.textContent=a<1?'Enter an amount to cash out.':'You can cash out up to UGX '+f(S.balance)+'.';e.classList.remove('hidden');return}
+ const old=S.balance;S.balance-=a;closeSheet();countUp(old,S.balance);toast(`UGX ${f(a)} is on its way to your ${net?'Airtel Money':'MTN MoMo'} line.`,'send_to_mobile')}
+let rec=0;function voice(){const m=$('mic');if(rec){clearTimeout(rec);rec=0;m.classList.remove('bg-clay','text-white','animate-pulse');m.classList.add('bg-sand','text-leaf');toast('Recording stopped.','mic_off');return}
+ m.classList.remove('bg-sand','text-leaf');m.classList.add('bg-clay','text-white','animate-pulse');toast('Listening. Say the crop, number of bags and location.','mic');
+ rec=setTimeout(()=>{rec=0;m.classList.remove('bg-clay','text-white','animate-pulse');m.classList.add('bg-sand','text-leaf');toast('Got it. Review your voice listing in the next step.','check_circle')},5000)}
+
+/* ---------- Start ---------- */
+drawPools();drawLots();drawMetrics();countUp(0,S.balance);
+</script>
+</body></html>

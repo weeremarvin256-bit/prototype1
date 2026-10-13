@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="#012d1d" name="theme-color"/>
+<title>Sign in · You-Farm</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      primary: "#012d1d", "primary-container": "#1b4332", "on-primary": "#ffffff",
+      secondary: "#904d00", "secondary-container": "#fe932c",
+      surface: "#f9faf7", "surface-low": "#f3f4f1", "surface-container": "#edeeeb",
+      "surface-high": "#e7e8e6", "on-surface": "#191c1b", "on-surface-variant": "#414844",
+      outline: "#717973", "outline-variant": "#c1c8c2", error: "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+      "tertiary-fixed": "#b1f0ce", "on-tertiary-fixed": "#002114"
+    },
+    fontFamily: { head: ["Space Grotesk"], body: ["Public Sans"] }
+  } }
+};
+</script>
+<style>
+  body { font-family: "Public Sans", sans-serif; overscroll-behavior: none; }
+  .head { font-family: "Space Grotesk", sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500; }
+  .pb-safe { padding-bottom: max(env(safe-area-inset-bottom), 16px); }
+  .field { transition: box-shadow .15s, border-color .15s; }
+  .field:focus, .field:focus-within { outline: none; border-color: #012d1d; box-shadow: 0 0 0 3px rgba(1,45,29,.15); }
+  .field[aria-invalid="true"], .field-wrap[aria-invalid="true"] { border-color: #ba1a1a; }
+  .field-wrap:focus-within { border-color: #012d1d; box-shadow: 0 0 0 3px rgba(1,45,29,.15); }
+  .field-wrap input:focus { outline: none; box-shadow: none; }
+  .otp { text-align: center; }
+  button:focus-visible, a:focus-visible { outline: 3px solid #fe932c; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen">
+
+<!-- Header -->
+<header class="fixed top-0 inset-x-0 z-40 bg-surface/90 backdrop-blur border-b border-outline-variant/50">
+  <div class="max-w-md md:max-w-xl lg:max-w-5xl mx-auto h-14 px-3 md:px-4 flex items-center justify-between">
+    <div class="flex items-center gap-1">
+      <button id="back-btn" type="button" aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-lg hover:bg-surface-container">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <span class="head font-semibold text-xl text-primary tracking-tight">You-Farm</span>
+    </div>
+    <div class="inline-flex p-0.5 rounded-full bg-surface-high" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true" class="lang-btn px-3 h-8 rounded-full text-xs font-bold">ENG</button>
+      <button type="button" data-lang="lg" aria-pressed="false" class="lang-btn px-3 h-8 rounded-full text-xs font-bold">LUG</button>
+    </div>
+  </div>
+</header>
+
+<!-- Offline banner -->
+<div id="offline" class="hidden fixed top-14 inset-x-0 z-30 bg-secondary-container text-[#2f1500] text-sm font-semibold">
+  <div class="max-w-md md:max-w-xl lg:max-w-5xl mx-auto px-4 py-2 flex items-center gap-2">
+    <span class="material-symbols-outlined text-[20px]">signal_disconnected</span>
+    <span><span data-i18n="offline">You're offline. You can still use You-Farm by dialling</span> <a href="tel:*284*44%23" class="underline">*284*44#</a></span>
+  </div>
+</div>
+
+<main class="max-w-md md:max-w-xl lg:max-w-5xl mx-auto px-4 pt-20 md:pt-24 pb-safe">
+<div class="lg:grid lg:grid-cols-[1fr_480px] lg:gap-12 lg:items-start">
+
+  <!-- Desktop-only brand panel -->
+  <aside class="hidden lg:flex flex-col justify-between sticky top-24 rounded-3xl bg-primary text-on-primary p-10 min-h-[560px] overflow-hidden relative">
+    <div class="absolute -right-16 -bottom-16 w-72 h-72 rounded-full bg-primary-container"></div>
+    <div class="absolute right-10 bottom-24 w-24 h-24 rounded-full bg-secondary-container/80"></div>
+    <div class="relative">
+      <span class="material-symbols-outlined text-secondary-container text-5xl">agriculture</span>
+      <h2 class="head text-4xl leading-tight font-bold mt-5 tracking-tight" data-i18n="asideTitle">Your farm business, in your pocket.</h2>
+      <ul class="mt-8 space-y-4 text-base max-w-sm">
+        <li class="flex gap-3"><span class="material-symbols-outlined text-secondary-container">trending_up</span><span data-i18n="aside1">Live wholesale market prices</span></li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-secondary-container">payments</span><span data-i18n="aside2">Escrow payouts straight to mobile money</span></li>
+        <li class="flex gap-3"><span class="material-symbols-outlined text-secondary-container">inventory_2</span><span data-i18n="aside3">Track your orders, batches and loads</span></li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="min-w-0 max-w-md mx-auto w-full lg:max-w-none">
+
+  <!-- ================= VIEW: LOGIN ================= -->
+  <section id="view-login">
+    <h1 class="head text-[26px] leading-[34px] font-semibold text-primary tracking-tight" data-i18n="welcome">Welcome back</h1>
+    <p class="text-sm text-on-surface-variant mt-1 mb-6" data-i18n="subtitle">Sign in to your marketplace, payouts and orders.</p>
+
+    <div id="notice" class="hidden mb-5 rounded-xl p-3.5 text-sm font-semibold flex gap-2.5" role="alert" aria-live="assertive">
+      <span id="notice-icon" class="material-symbols-outlined text-[20px] shrink-0"></span><span id="notice-text"></span>
+    </div>
+
+    <form id="login-form" novalidate>
+      <!-- Phone -->
+      <div class="mb-5">
+        <div class="flex items-end justify-between mb-1.5">
+          <label for="phone" class="text-sm font-semibold" data-i18n="phoneLabel">Registered mobile number</label>
+          <button type="button" id="change-number" class="hidden text-xs font-semibold text-secondary underline min-h-[28px]" data-i18n="notYou">Use a different number</button>
+        </div>
+        <div class="flex gap-2">
+          <div class="h-12 px-3 rounded-xl bg-surface-container border border-outline-variant flex items-center gap-1.5 shrink-0" aria-hidden="true">
+            <span class="text-lg">🇺🇬</span><span class="font-semibold">+256</span>
+          </div>
+          <div class="relative flex-1 min-w-0">
+            <input id="phone" name="tel-national" type="tel" inputmode="numeric" autocomplete="tel-national" enterkeyhint="next"
+                   class="field w-full h-12 pl-4 pr-24 rounded-xl bg-white border border-outline-variant text-base tracking-wide placeholder:text-outline"
+                   placeholder="772 123 456" aria-describedby="phone-err"/>
+            <span id="network-chip" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-[11px] font-bold px-2 py-1 rounded-full"></span>
+          </div>
+        </div>
+        <p id="phone-err" class="err hidden mt-1.5 text-sm text-error" role="alert"></p>
+      </div>
+
+      <!-- PIN -->
+      <div class="mb-4">
+        <div class="flex items-end justify-between mb-1.5">
+          <label for="pin" class="text-sm font-semibold" data-i18n="pinLabel">4-digit PIN</label>
+          <button type="button" id="forgot" class="text-sm font-semibold text-secondary underline min-h-[28px]" data-i18n="forgot">Forgot PIN?</button>
+        </div>
+        <div class="field-wrap flex items-center rounded-xl bg-white border border-outline-variant h-12" id="pin-wrap">
+          <input id="pin" name="pin" type="password" inputmode="numeric" maxlength="4" autocomplete="current-password" enterkeyhint="go"
+                 class="flex-1 min-w-0 h-full pl-4 bg-transparent text-xl tracking-[.5em] placeholder:text-outline placeholder:tracking-normal placeholder:text-base" placeholder="••••" aria-describedby="pin-err"/>
+          <button type="button" class="toggle-pin w-11 h-11 mr-0.5 flex items-center justify-center text-on-surface-variant rounded-lg" data-target="pin" aria-label="Show PIN" aria-pressed="false">
+            <span class="material-symbols-outlined">visibility</span>
+          </button>
+        </div>
+        <p id="pin-err" class="err hidden mt-1.5 text-sm text-error" role="alert"></p>
+      </div>
+
+      <label class="flex items-center gap-3 cursor-pointer min-h-[44px] mb-5">
+        <input id="remember" type="checkbox" checked class="w-5 h-5 shrink-0 accent-[#012d1d]"/>
+        <span class="text-sm text-on-surface-variant" data-i18n="remember">Remember my number on this device</span>
+      </label>
+
+      <button id="login-btn" type="submit" class="w-full h-14 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center gap-2 active:bg-primary-container disabled:opacity-60">
+        <span class="btn-text" data-i18n="login">Sign in</span><span class="btn-icon material-symbols-outlined text-[20px]">arrow_forward</span>
+      </button>
+    </form>
+
+    <div class="flex items-center gap-3 my-5 text-xs font-bold uppercase tracking-wider text-on-surface-variant">
+      <span class="flex-1 h-px bg-outline-variant"></span><span data-i18n="or">or</span><span class="flex-1 h-px bg-outline-variant"></span>
+    </div>
+
+    <div class="flex gap-2">
+      <button id="sms-btn" type="button" class="flex-1 h-12 rounded-full bg-white border border-outline-variant font-semibold text-primary flex items-center justify-center gap-2 hover:bg-surface-low disabled:opacity-60">
+        <span class="material-symbols-outlined text-secondary text-[20px]">sms</span><span class="btn-text truncate" data-i18n="smsLogin">Sign in with an SMS code</span>
+      </button>
+      <button id="bio-btn" type="button" class="hidden w-12 h-12 rounded-full bg-white border border-outline-variant text-primary items-center justify-center hover:bg-surface-low" aria-label="Sign in with fingerprint or face">
+        <span class="material-symbols-outlined">fingerprint</span>
+      </button>
+    </div>
+
+    <!-- USSD -->
+    <a href="tel:*284*44%23" class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-high mt-6">
+      <span class="w-9 h-9 rounded-full bg-secondary text-white flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[20px]">dialpad</span></span>
+      <span class="flex-1 min-w-0">
+        <span class="block text-sm font-semibold" data-i18n="ussdTitle">No data bundle? Use You-Farm by phone call</span>
+        <span class="block text-xs text-on-surface-variant"><span data-i18n="ussdTap">Tap to dial</span> <strong class="text-primary tracking-wider">*284*44#</strong> · <span data-i18n="free">Free</span></span>
+      </span>
+      <span class="material-symbols-outlined text-on-surface-variant">call</span>
+    </a>
+
+    <p class="text-center text-sm text-on-surface-variant mt-6">
+      <span data-i18n="noAccount">New to You-Farm?</span>
+      <a href="Signup.html" class="text-secondary font-semibold underline ml-1" data-i18n="register">Create an account</a>
+    </p>
+
+    <ul class="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-on-surface-variant">
+      <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">lock</span><span data-i18n="trust1">Encrypted sign-in</span></li>
+      <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">account_balance</span><span data-i18n="trust2">Escrow-protected payments</span></li>
+      <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">verified</span><span data-i18n="trust3">UNBS-graded produce</span></li>
+    </ul>
+  </section>
+
+  <!-- ================= VIEW: OTP ================= -->
+  <section id="view-otp" class="hidden">
+    <button type="button" id="otp-back" class="inline-flex items-center gap-1 text-sm font-semibold text-secondary mb-3 min-h-[44px]">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span><span data-i18n="backToLogin">Back to sign in</span>
+    </button>
+    <h1 id="otp-title" class="head text-[26px] leading-[34px] font-semibold text-primary tracking-tight"></h1>
+    <p class="text-sm text-on-surface-variant mt-1 mb-6"><span data-i18n="otpSent">We sent a 6-digit code by SMS to</span> <strong id="otp-phone" class="text-on-surface"></strong></p>
+
+    <div id="otp-group" class="flex justify-between gap-1.5 sm:gap-2" role="group" aria-label="6 digit code">
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Digit 1"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 2"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 3"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 4"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 5"/>
+      <input class="otp field w-full min-w-0 h-14 rounded-xl bg-white border border-outline-variant text-2xl font-bold" inputmode="numeric" maxlength="1" aria-label="Digit 6"/>
+    </div>
+    <p id="otp-err" class="hidden mt-2 text-sm text-error" role="alert"></p>
+
+    <div class="mt-5 text-sm text-on-surface-variant">
+      <span id="resend-wait"></span>
+      <button type="button" id="resend-btn" class="hidden font-semibold text-secondary underline min-h-[44px]" data-i18n="resend">Resend code</button>
+    </div>
+
+    <button id="otp-btn" type="button" class="mt-6 w-full h-14 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center gap-2 active:bg-primary-container disabled:opacity-60">
+      <span class="btn-text" data-i18n="verify">Verify code</span><span class="btn-icon material-symbols-outlined text-[20px]">arrow_forward</span>
+    </button>
+  </section>
+
+  <!-- ================= VIEW: NEW PIN ================= -->
+  <section id="view-newpin" class="hidden">
+    <h1 class="head text-[26px] leading-[34px] font-semibold text-primary tracking-tight" data-i18n="newPinTitle">Set a new PIN</h1>
+    <p class="text-sm text-on-surface-variant mt-1 mb-6" data-i18n="newPinSub">Choose 4 digits that are easy for you to remember but hard for others to guess.</p>
+
+    <form id="newpin-form" novalidate>
+      <div class="mb-5">
+        <label for="newpin" class="block text-sm font-semibold mb-1.5" data-i18n="newPin">New PIN</label>
+        <div class="field-wrap flex items-center rounded-xl bg-white border border-outline-variant h-12">
+          <input id="newpin" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" class="flex-1 min-w-0 h-full pl-4 bg-transparent text-xl tracking-[.5em] placeholder:text-outline placeholder:tracking-normal placeholder:text-base" placeholder="••••" aria-describedby="newpin-err"/>
+          <button type="button" class="toggle-pin w-11 h-11 mr-0.5 flex items-center justify-center text-on-surface-variant rounded-lg" data-target="newpin,confirmpin" aria-label="Show PIN" aria-pressed="false"><span class="material-symbols-outlined">visibility</span></button>
+        </div>
+        <p id="newpin-err" class="err hidden mt-1.5 text-sm text-error" role="alert"></p>
+      </div>
+      <div class="mb-6">
+        <label for="confirmpin" class="block text-sm font-semibold mb-1.5" data-i18n="confirmPin">Confirm new PIN</label>
+        <div class="field-wrap flex items-center rounded-xl bg-white border border-outline-variant h-12">
+          <input id="confirmpin" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" class="flex-1 min-w-0 h-full pl-4 bg-transparent text-xl tracking-[.5em] placeholder:text-outline placeholder:tracking-normal placeholder:text-base" placeholder="••••" aria-describedby="confirmpin-err"/>
+        </div>
+        <p id="confirmpin-err" class="err hidden mt-1.5 text-sm text-error" role="alert"></p>
+      </div>
+      <button id="newpin-btn" type="submit" class="w-full h-14 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center gap-2 active:bg-primary-container disabled:opacity-60">
+        <span class="btn-text" data-i18n="savePin">Save PIN and sign in</span><span class="btn-icon material-symbols-outlined text-[20px]">check</span>
+      </button>
+    </form>
+  </section>
+
+  </div>
+</div>
+</main>
+
+<script>
+(function () {
+  /* ---------- i18n (Luganda is a draft: have a native speaker review it) ---------- */
+  const T = {
+    en: {
+      welcome:"Welcome back", subtitle:"Sign in to your marketplace, payouts and orders.",
+      phoneLabel:"Registered mobile number", notYou:"Use a different number", pinLabel:"4-digit PIN", forgot:"Forgot PIN?",
+      remember:"Remember my number on this device", login:"Sign in", or:"or", smsLogin:"Sign in with an SMS code",
+      ussdTitle:"No data bundle? Use You-Farm by phone call", ussdTap:"Tap to dial", free:"Free",
+      noAccount:"New to You-Farm?", register:"Create an account",
+      trust1:"Encrypted sign-in", trust2:"Escrow-protected payments", trust3:"UNBS-graded produce",
+      asideTitle:"Your farm business, in your pocket.", aside1:"Live wholesale market prices", aside2:"Escrow payouts straight to mobile money", aside3:"Track your orders, batches and loads",
+      offline:"You're offline. You can still use You-Farm by dialling",
+      backToLogin:"Back to sign in", otpSent:"We sent a 6-digit code by SMS to", verify:"Verify code",
+      otpTitleLogin:"Sign in with your code", otpTitleReset:"Reset your PIN",
+      resend:"Resend code", resendIn:"Resend code in",
+      newPinTitle:"Set a new PIN", newPinSub:"Choose 4 digits that are easy for you to remember but hard for others to guess.",
+      newPin:"New PIN", confirmPin:"Confirm new PIN", savePin:"Save PIN and sign in",
+      signingIn:"Signing in…", sending:"Sending code…", checking:"Checking…", saving:"Saving…",
+      ePhone:"Enter a valid Ugandan mobile number, e.g. 772 123 456.", ePin:"Your PIN is exactly 4 digits.",
+      eWrong:"That number and PIN don't match. Please try again.",
+      eLocked:"Too many tries. Try again in", eLockedHint:"You can also sign in with an SMS code.",
+      eNetwork:"We couldn't reach the server. Check your connection or dial *284*44#.",
+      eOtp:"Enter all 6 digits.", eOtpBad:"That code isn't right. Check the SMS and try again.",
+      ePinWeak:"That PIN is too easy to guess (like 1234 or 0000). Pick another.", ePinMatch:"The two PINs don't match.",
+      okReset:"PIN updated. Signing you in…", okIn:"Signed in. Taking you to the marketplace…", seconds:"s",
+      showPin:"Show PIN", hidePin:"Hide PIN"
+    },
+    lg: {
+      welcome:"Tukwaniriza nate", subtitle:"Yingira olabe akatale ko, ssente n'ebiragiro.",
+      phoneLabel:"Namba ya ssimu gye wawandiisa", notYou:"Kozesa namba endala", pinLabel:"PIN ey'ennamba 4", forgot:"Werabidde PIN?",
+      remember:"Jjukira namba yange ku ssimu eno", login:"Yingira", or:"oba", smsLogin:"Yingira n'koodi ya SMS",
+      ussdTitle:"Tolina data? Kozesa You-Farm ng'okuba ssimu", ussdTap:"Kwatako okukuba", free:"Bwereere",
+      noAccount:"Oli muggya ku You-Farm?", register:"Wandiisa akawunti",
+      trust1:"Okuyingira okukuumibwa", trust2:"Ssente zikuumibwa okutuusa ng'ebintu bituuse", trust3:"Ebirime bipimibwa UNBS",
+      asideTitle:"Bizinensi y'ennimiro yo, mu nsawo yo.", aside1:"Emiwendo gy'akatale mu kiseera kino", aside2:"Ssente zituuka butereevu ku mobile money", aside3:"Goberera ebiragiro, ebirime n'okutwala",
+      offline:"Tolina mutimbagano. Oyinza okukozesa You-Farm ng'okuba",
+      backToLogin:"Ddayo ku kuyingira", otpSent:"Tutumye koodi ey'ennamba 6 ku", verify:"Kakasa koodi",
+      otpTitleLogin:"Yingira n'koodi yo", otpTitleReset:"Zzaawo PIN yo",
+      resend:"Ddamu otumirwe koodi", resendIn:"Ddamu otumirwe mu",
+      newPinTitle:"Teekawo PIN empya", newPinSub:"Londa ennamba 4 ez'osobola okujjukira naye ng'abalala tebasobola kuzimanya.",
+      newPin:"PIN empya", confirmPin:"Kakasa PIN empya", savePin:"Terekawo PIN oyingire",
+      signingIn:"Tukuyingiza…", sending:"Tutuma koodi…", checking:"Tukebera…", saving:"Tuterekawo…",
+      ePhone:"Wandiika namba ya ssimu entuufu, eky'okulabirako 772 123 456.", ePin:"PIN yo ya nnamba 4 zokka.",
+      eWrong:"Namba n'ePIN tebikwatagana. Ddamu ogezeko.",
+      eLocked:"Ogezezzaako emirundi mingi. Ddamu oluvannyuma lwa", eLockedHint:"Oyinza n'okuyingira n'koodi ya SMS.",
+      eNetwork:"Tetusobodde kutuuka ku server. Kebera omutimbagano oba kuba *284*44#.",
+      eOtp:"Yingiza ennamba zonna 6.", eOtpBad:"Koodi si ntuufu. Kebera SMS oddemu.",
+      ePinWeak:"PIN eyo nnyangu nnyo okumanyibwa (nga 1234 oba 0000). Londa endala.", ePinMatch:"PIN zombi tezikwatagana.",
+      okReset:"PIN ezzeeyo. Tukuyingiza…", okIn:"Oyingidde. Tukuzza ku katale…", seconds:"s",
+      showPin:"Laga PIN", hidePin:"Kweka PIN"
+    }
+  };
+  let lang = 'en', view = 'login', otpPurpose = 'login', resendTimer = null, lockTimer = null, otpVerified = false;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const t = k => T[lang][k];
+  const store = {
+    get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} },
+    del: k => { try { localStorage.removeItem(k); } catch (e) {} }
+  };
+
+  function applyLang() {
+    document.documentElement.lang = lang;
+    $$('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+    $$('.lang-btn').forEach(b => {
+      const on = b.dataset.lang === lang;
+      b.setAttribute('aria-pressed', on);
+      b.className = 'lang-btn px-3 h-8 rounded-full text-xs font-bold ' + (on ? 'bg-white text-primary shadow-sm' : 'text-on-surface-variant');
+    });
+    $$('.toggle-pin').forEach(b => b.setAttribute('aria-label', t(b.getAttribute('aria-pressed') === 'true' ? 'hidePin' : 'showPin')));
+    $('#otp-title').textContent = t(otpPurpose === 'reset' ? 'otpTitleReset' : 'otpTitleLogin');
+    store.set('yf_lang', lang);
+  }
+  $$('.lang-btn').forEach(b => b.addEventListener('click', () => { lang = b.dataset.lang; applyLang(); }));
+
+  /* ---------- Views ---------- */
+  function showView(v) {
+    view = v;
+    ['login', 'otp', 'newpin'].forEach(n => $('#view-' + n).classList.toggle('hidden', n !== v));
+    window.scrollTo({ top: 0 });
+  }
+
+  /* ---------- Notices & button state ---------- */
+  function notice(kind, text) {
+    const n = $('#notice');
+    if (!text) { n.classList.add('hidden'); return; }
+    const ok = kind === 'ok';
+    n.className = 'mb-5 rounded-xl p-3.5 text-sm font-semibold flex gap-2.5 ' + (ok ? 'bg-tertiary-fixed text-on-tertiary-fixed' : 'bg-error-container text-on-error-container');
+    $('#notice-icon').textContent = ok ? 'check_circle' : 'error';
+    $('#notice-text').textContent = text;
+  }
+  function busy(btn, on, key) {
+    const txt = $('.btn-text', btn), ico = $('.btn-icon', btn);
+    if (on) {
+      btn.dataset.prev = txt.textContent; btn.dataset.prevIcon = ico ? ico.textContent : '';
+      btn.disabled = true; txt.removeAttribute('data-i18n'); txt.textContent = t(key);
+      if (ico) { ico.textContent = 'progress_activity'; ico.classList.add('animate-spin'); }
+    } else {
+      btn.disabled = false; txt.textContent = btn.dataset.prev || txt.textContent;
+      if (ico) { ico.textContent = btn.dataset.prevIcon || ico.textContent; ico.classList.remove('animate-spin'); }
+    }
+  }
+  function fieldErr(inputId, key) {
+    const el = $('#' + inputId), p = $('#' + inputId + '-err');
+    (el.closest('.field-wrap') || el).setAttribute('aria-invalid', 'true');
+    p.textContent = t(key); p.classList.remove('hidden');
+  }
+  function clearField(inputId) {
+    const el = $('#' + inputId), p = $('#' + inputId + '-err');
+    (el.closest('.field-wrap') || el).removeAttribute('aria-invalid');
+    if (p) p.classList.add('hidden');
+  }
+
+  /* ---------- Phone ---------- */
+  const phone = $('#phone'), chip = $('#network-chip');
+  const digits = () => {
+    let d = phone.value.replace(/\D/g, '');
+    if (d.startsWith('256')) d = d.slice(3);
+    if (d.startsWith('0')) d = d.slice(1);
+    return d.slice(0, 9);
+  };
+  const validPhone = d => /^[37]\d{8}$/.test(d);
+  function network(d) {
+    const p = d.slice(0, 2);
+    if (['77', '78', '76', '39'].includes(p)) return ['MTN', 'bg-[#ffcc00] text-black'];
+    if (['70', '75', '74'].includes(p)) return ['Airtel', 'bg-[#e40000] text-white'];
+    return null;
+  }
+  phone.addEventListener('input', () => {
+    const d = digits();
+    phone.value = [d.slice(0, 3), d.slice(3, 6), d.slice(6, 9)].filter(Boolean).join(' ');
+    const n = d.length >= 2 && network(d);
+    chip.className = n ? 'absolute right-2.5 top-1/2 -translate-y-1/2 text-[11px] font-bold px-2 py-1 rounded-full ' + n[1] : 'hidden';
+    if (n) chip.textContent = n[0];
+    clearField('phone'); notice();
+  });
+
+  /* ---------- PIN inputs ---------- */
+  ['pin', 'newpin', 'confirmpin'].forEach(id => {
+    $('#' + id).addEventListener('input', e => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 4); clearField(id); notice(); });
+  });
+  $$('.toggle-pin').forEach(b => b.addEventListener('click', () => {
+    const show = b.getAttribute('aria-pressed') !== 'true';
+    b.setAttribute('aria-pressed', show);
+    b.setAttribute('aria-label', t(show ? 'hidePin' : 'showPin'));
+    $('.material-symbols-outlined', b).textContent = show ? 'visibility_off' : 'visibility';
+    b.dataset.target.split(',').forEach(id => { $('#' + id).type = show ? 'text' : 'password'; });
+  }));
+  const weakPin = p => /^(\d)\1{3}$/.test(p) || '0123456789'.includes(p) || '9876543210'.includes(p) || ['1212', '2580', '1004', '2000', '2020', '2021', '2022', '2023', '2024', '2025', '2026'].includes(p);
+
+  /* ---------- Demo backend: REPLACE each with a real API call ---------- */
+  const api = {
+    login: (phone, pin) => new Promise((res, rej) => setTimeout(() =>
+      pin === '0000' ? rej({ code: 'bad_credentials' }) : res({ role: 'farmer' }), 900)),       // POST /api/auth/login
+    sendOtp: (phone, purpose) => new Promise(res => setTimeout(res, 900)),                      // POST /api/auth/send-otp
+    verifyOtp: (phone, code, purpose) => new Promise((res, rej) => setTimeout(() =>
+      code === '000000' ? rej({ code: 'bad_otp' }) : res({ role: 'farmer', resetToken: 'demo' }), 900)), // POST /api/auth/verify-otp
+    setPin: (phone, pin, resetToken) => new Promise(res => setTimeout(() => res({ role: 'farmer' }), 900)) // POST /api/auth/reset-pin
+  };
+  const HOME = { farmer: 'MarketPlace.html', buyer: 'MarketPlace.html', transporter: 'MarketPlace.html' }; // TODO: point at each dashboard
+  function goHome(role) {
+    notice('ok', t('okIn'));
+    setTimeout(() => { location.href = HOME[role] || 'MarketPlace.html'; }, 700);
+  }
+  const isNetworkErr = e => !e || !e.code || e.code === 'network';
+
+  /* ---------- Lockout (client-side convenience only: the server must enforce this too) ---------- */
+  const MAX_TRIES = 5, LOCK_SECS = 60;
+  const fails = () => parseInt(store.get('yf_fails') || '0', 10);
+  function lockRemaining() { return Math.max(0, Math.ceil((parseInt(store.get('yf_lock') || '0', 10) - Date.now()) / 1000)); }
+  function runLock() {
+    clearInterval(lockTimer);
+    const btn = $('#login-btn');
+    const tick = () => {
+      const r = lockRemaining();
+      if (r <= 0) { clearInterval(lockTimer); btn.disabled = false; store.del('yf_lock'); store.set('yf_fails', '0'); notice(); return; }
+      btn.disabled = true;
+      notice('err', t('eLocked') + ' ' + r + t('seconds') + '. ' + t('eLockedHint'));
+    };
+    tick(); if (lockRemaining() > 0) lockTimer = setInterval(tick, 1000);
+  }
+
+  /* ---------- Login ---------- */
+  $('#login-form').addEventListener('submit', e => {
+    e.preventDefault(); notice();
+    if (lockRemaining() > 0) return;
+    const d = digits(), pin = $('#pin').value;
+    let first = null;
+    if (!validPhone(d)) { fieldErr('phone', 'ePhone'); first = phone; }
+    if (pin.length !== 4) { fieldErr('pin', 'ePin'); first = first || $('#pin'); }
+    if (first) { first.focus(); return; }
+
+    const btn = $('#login-btn'); busy(btn, true, 'signingIn');
+    api.login(d, pin).then(r => {
+      store.set('yf_fails', '0');
+      if ($('#remember').checked) store.set('yf_phone', d); else store.del('yf_phone');
+      busy(btn, false); btn.disabled = true; goHome(r.role);
+    }).catch(err => {
+      busy(btn, false);
+      if (isNetworkErr(err)) { notice('err', t('eNetwork')); return; }
+      const n = fails() + 1; store.set('yf_fails', String(n));
+      $('#pin').value = ''; $('#pin').focus();
+      if (n >= MAX_TRIES) { store.set('yf_lock', String(Date.now() + LOCK_SECS * 1000)); runLock(); }
+      else notice('err', t('eWrong'));
+    });
+  });
+
+  /* ---------- Remembered number ---------- */
+  function applyRemembered() {
+    const saved = store.get('yf_phone');
+    if (saved && validPhone(saved)) {
+      phone.value = [saved.slice(0, 3), saved.slice(3, 6), saved.slice(6, 9)].join(' ');
+      phone.dispatchEvent(new Event('input'));
+      $('#change-number').classList.remove('hidden');
+      $('#pin').focus();
+    } else phone.focus();
+  }
+  $('#change-number').addEventListener('click', () => {
+    store.del('yf_phone'); phone.value = ''; phone.dispatchEvent(new Event('input'));
+    $('#change-number').classList.add('hidden'); phone.focus();
+  });
+
+  /* ---------- OTP (used for SMS sign-in and PIN reset) ---------- */
+  const otps = $$('.otp');
+  const otpCode = () => otps.map(o => o.value).join('');
+  otps.forEach((inp, i) => {
+    inp.addEventListener('input', () => {
+      inp.value = inp.value.replace(/\D/g, '').slice(-1);
+      $('#otp-err').classList.add('hidden'); otps.forEach(o => o.removeAttribute('aria-invalid'));
+      if (inp.value && i < 5) otps[i + 1].focus();
+      if (otpCode().length === 6) submitOtp();
+    });
+    inp.addEventListener('keydown', e => { if (e.key === 'Backspace' && !inp.value && i > 0) otps[i - 1].focus(); });
+    inp.addEventListener('paste', e => {
+      const txt = (e.clipboardData.getData('text') || '').replace(/\D/g, '').slice(0, 6);
+      if (!txt) return;
+      e.preventDefault();
+      txt.split('').forEach((c, j) => otps[j].value = c);
+      otps[Math.min(txt.length, 5)].focus();
+      if (txt.length === 6) submitOtp();
+    });
+  });
+  function otpError(key) {
+    const p = $('#otp-err'); p.textContent = t(key); p.classList.remove('hidden');
+    otps.forEach(o => o.setAttribute('aria-invalid', 'true'));
+  }
+  function startResend() {
+    let s = 30; const wait = $('#resend-wait'), btn = $('#resend-btn');
+    btn.classList.add('hidden'); wait.classList.remove('hidden'); clearInterval(resendTimer);
+    const tick = () => {
+      if (s <= 0) { clearInterval(resendTimer); wait.classList.add('hidden'); btn.classList.remove('hidden'); return; }
+      wait.textContent = t('resendIn') + ' 0:' + String(s).padStart(2, '0'); s--;
+    };
+    tick(); resendTimer = setInterval(tick, 1000);
+  }
+  function requestOtp(purpose, fromBtn) {
+    notice();
+    const d = digits();
+    if (!validPhone(d)) { fieldErr('phone', 'ePhone'); phone.focus(); return; }
+    otpPurpose = purpose;
+    const btn = fromBtn; if (btn) busy(btn, true, 'sending');
+    api.sendOtp(d, purpose).then(() => {
+      if (btn) busy(btn, false);
+      $('#otp-phone').textContent = '+256 ' + $('#phone').value;
+      otps.forEach(o => { o.value = ''; o.removeAttribute('aria-invalid'); });
+      $('#otp-err').classList.add('hidden');
+      applyLang(); showView('otp'); startResend(); otps[0].focus();
+    }).catch(() => { if (btn) busy(btn, false); notice('err', t('eNetwork')); });
+  }
+  let resetToken = null;
+  function submitOtp() {
+    if (otpCode().length < 6) { otpError('eOtp'); return; }
+    const btn = $('#otp-btn'); if (btn.disabled) return;
+    busy(btn, true, 'checking');
+    api.verifyOtp(digits(), otpCode(), otpPurpose).then(r => {
+      busy(btn, false);
+      if (otpPurpose === 'reset') { resetToken = r.resetToken; showView('newpin'); $('#newpin').focus(); }
+      else { btn.disabled = true; showView('login'); goHome(r.role); }
+    }).catch(err => {
+      busy(btn, false);
+      if (isNetworkErr(err)) otpError('eNetwork'); else { otpError('eOtpBad'); otps.forEach(o => o.value = ''); otps[0].focus(); }
+    });
+  }
+  $('#sms-btn').addEventListener('click', e => requestOtp('login', e.currentTarget));
+  $('#forgot').addEventListener('click', () => requestOtp('reset'));
+  $('#otp-btn').addEventListener('click', submitOtp);
+  $('#resend-btn').addEventListener('click', () => requestOtp(otpPurpose));
+  $('#otp-back').addEventListener('click', () => { clearInterval(resendTimer); showView('login'); });
+
+  /* ---------- New PIN ---------- */
+  $('#newpin-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const a = $('#newpin').value, b = $('#confirmpin').value;
+    let first = null;
+    if (a.length !== 4) { fieldErr('newpin', 'ePin'); first = $('#newpin'); }
+    else if (weakPin(a)) { fieldErr('newpin', 'ePinWeak'); first = $('#newpin'); }
+    if (!first && a !== b) { fieldErr('confirmpin', 'ePinMatch'); first = $('#confirmpin'); }
+    if (first) { first.focus(); return; }
+    const btn = $('#newpin-btn'); busy(btn, true, 'saving');
+    api.setPin(digits(), a, resetToken).then(r => {
+      busy(btn, false); btn.disabled = true;
+      showView('login'); notice('ok', t('okReset'));
+      setTimeout(() => goHome(r.role), 900);
+    }).catch(() => { busy(btn, false); notice('err', t('eNetwork')); showView('login'); });
+  });
+
+  /* ---------- Biometrics: only offered when this device is set up for it ---------- */
+  // Passkey/WebAuthn needs a one-time registration after a normal sign-in. Until your backend
+  // supports it, this button stays hidden. After registering, run: localStorage.setItem('yf_bio','1')
+  (function initBio() {
+    if (store.get('yf_bio') !== '1' || !window.PublicKeyCredential || !PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable) return;
+    PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable().then(ok => {
+      if (!ok) return;
+      const b = $('#bio-btn'); b.classList.remove('hidden'); b.classList.add('flex');
+      b.addEventListener('click', () => {
+        // TODO: fetch a challenge from your server, call navigator.credentials.get({ publicKey }), post the assertion back,
+        // then goHome(role) on success.
+      });
+    }).catch(() => {});
+  })();
+
+  /* ---------- Offline banner ---------- */
+  function syncOnline() { $('#offline').classList.toggle('hidden', navigator.onLine); }
+  window.addEventListener('online', syncOnline); window.addEventListener('offline', syncOnline); syncOnline();
+
+  /* ---------- Back button ---------- */
+  $('#back-btn').addEventListener('click', () => {
+    if (view !== 'login') { clearInterval(resendTimer); showView('login'); }
+    else if (history.length > 1) history.back(); else location.href = 'index.html';
+  });
+
+  /* ---------- Init ---------- */
+  const saved = store.get('yf_lang'); if (saved && T[saved]) lang = saved;
+  applyLang(); applyRemembered();
+  if (lockRemaining() > 0) runLock();
+})();
+</script>
+</body>
+</html>

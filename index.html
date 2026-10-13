@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f2e1d">
+<meta name="description" content="You-Farm is a harvest exchange where Ugandan farmers and buyers trade directly with verified grading and Bank of Uganda escrow.">
+<title>You-Farm | The Modern Harvest Exchange</title>
+<style>
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; background: #f7f0e0; }
+  ::-webkit-scrollbar { display: none; }
+  .pb-safe { padding-bottom: max(env(safe-area-inset-bottom), 16px); }
+  .pt-safe { padding-top: max(env(safe-area-inset-top), 12px); }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes sway { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+  @keyframes slowzoom { from { transform: scale(1.04); } to { transform: scale(1.14); } }
+  .rise { opacity: 0; animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+  .d1 { animation-delay: .05s } .d2 { animation-delay: .15s } .d3 { animation-delay: .25s } .d4 { animation-delay: .35s } .d5 { animation-delay: .45s }
+  .sway { animation: sway 5s ease-in-out infinite; transform-origin: bottom center; }
+  .zoom { animation: slowzoom 24s ease-in-out infinite alternate; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .grain { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); mix-blend-mode: multiply; opacity: .07; }
+  :focus-visible { outline: 3px solid #f4b942; outline-offset: 3px; }
+  img { background: #d9cfb6; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .rise, .reveal { opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { forest: "#0f2e1d", leaf: "#1f6b3a", sprout: "#7cc47f", cream: "#f7f0e0", sand: "#efe3c8", clay: "#b8561f", harvest: "#f4b942", soil: "#3b2a1a" },
+    fontFamily: { head: ["Fraunces", "Georgia", "serif"], body: ["Public Sans", "sans-serif"] } } } };
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-cream font-body text-soil antialiased overflow-x-hidden selection:bg-harvest selection:text-forest">
+
+<!-- Header -->
+<header class="fixed top-0 inset-x-0 z-50 pt-safe px-3 sm:px-4">
+  <div class="mx-auto max-w-5xl mt-2 flex items-center justify-between gap-2 px-3 sm:px-5 py-2 rounded-full bg-forest/70 backdrop-blur-xl border border-white/15 shadow-lg text-white">
+    <a href="#top" class="flex items-center gap-2.5 min-w-0" aria-label="You-Farm home">
+      <span class="w-9 h-9 rounded-full bg-cream p-0.5 border border-harvest/60 flex items-center justify-center overflow-hidden shrink-0">
+        <img alt="" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VWBNni7Ks5abEW0l-2GWa_UWPB70yfyCNAUXLIE6B_hu2zrU2gEhGBKo83V7KrLniYRYpin4XRjuArTwGX2YLAtLuywVzXOUn3CqX1kqGv9msgDTPSfNqOcWjC_7uI9o29M14vE4hkhgLBJH3_DY0qCbkZ4Eq3lAmzPLVeq67j7U9eE8ScWd2Ta_rFNf1locd0L7KquioZ6dMypAECbBTT0KpT-zzhuNL3AmIWjdoJy7whajFDSFYnOjUU">
+      </span>
+      <span class="font-head text-xl font-bold tracking-tight">You-Farm</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm text-white/80" aria-label="Sections">
+      <a href="#how" class="hover:text-harvest transition" data-i18n="nav_how">How it works</a>
+      <a href="#delivery" class="hover:text-harvest transition" data-i18n="nav_del">Delivery</a>
+      <a href="#who" class="hover:text-harvest transition" data-i18n="nav_who">Who it's for</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button id="voiceBtn" type="button" aria-pressed="false" title="Listen in Luganda"
+        class="flex items-center gap-1.5 min-h-[40px] px-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-semibold active:scale-95 transition">
+        <span class="material-symbols-outlined text-[18px] text-harvest" aria-hidden="true">volume_up</span>
+        <span id="voiceText" data-i18n="voice">Voice</span>
+      </button>
+      <div class="flex p-0.5 rounded-full bg-black/30 border border-white/15 text-xs" role="group" aria-label="Language">
+        <button id="langEng" type="button" class="min-h-[36px] px-3 rounded-full font-bold transition">ENG</button>
+        <button id="langLug" type="button" class="min-h-[36px] px-3 rounded-full font-medium transition">LUG</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="relative min-h-[100dvh] flex items-center overflow-hidden text-white px-4 sm:px-8 pt-28 pb-24 bg-forest">
+  <img alt="" aria-hidden="true" class="zoom absolute inset-0 w-full h-full object-cover"
+       src="https://images.unsplash.com/photo-1741874299706-2b8e16839aaa?auto=format&fit=crop&q=70&w=2000">
+  <div class="absolute inset-0 bg-gradient-to-r from-forest/95 via-forest/75 to-forest/35 lg:to-forest/20"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-forest/40"></div>
+  <div class="grain absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative mx-auto w-full max-w-6xl grid lg:grid-cols-[1.1fr_.9fr] gap-10 lg:gap-14 items-center">
+
+    <!-- Copy -->
+    <div class="text-center lg:text-left">
+      <div class="rise d1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-harvest/15 border border-harvest/40 mb-6">
+        <span class="material-symbols-outlined text-harvest text-lg" style="font-variation-settings:'FILL' 1" aria-hidden="true">agriculture</span>
+        <span class="text-xs sm:text-sm text-harvest"><strong class="text-white">3,420 MT</strong> <span data-i18n="ticker">traded this week</span></span>
+      </div>
+
+      <h1 class="rise d2 font-head font-extrabold tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-5">
+        <span data-i18n="h1a">From our soil</span><br>
+        <span class="text-harvest" data-i18n="h1b">to the market.</span>
+      </h1>
+
+      <p class="rise d3 text-white/90 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-6" data-i18n="sub">
+        You-Farm is Uganda's harvest exchange. Sell your maize, coffee and beans directly to buyers at a fair price, have it delivered by freelance transporters or registered couriers, and stay protected by Bank of Uganda escrow.
+      </p>
+
+      <div class="rise d3 flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+        <span class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm backdrop-blur-sm"><span class="material-symbols-outlined text-base text-sprout" aria-hidden="true">verified_user</span><span data-i18n="b1">MAAIF Verified</span></span>
+        <span class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm backdrop-blur-sm"><span class="material-symbols-outlined text-base text-harvest" aria-hidden="true">shield</span><span data-i18n="b2">BoU Escrow</span></span>
+        <span class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm backdrop-blur-sm"><span class="material-symbols-outlined text-base text-sprout" aria-hidden="true">payments</span><span data-i18n="b3">0% MoMo Cashout Fees</span></span>
+        <span class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm backdrop-blur-sm"><span class="material-symbols-outlined text-base text-harvest" aria-hidden="true">local_shipping</span><span data-i18n="b4">Delivery Arranged</span></span>
+      </div>
+
+      <div class="rise d4 flex flex-col gap-3 max-w-md mx-auto lg:mx-0">
+        <a href="Signup.html" class="group h-14 sm:h-16 rounded-2xl bg-harvest hover:bg-[#ffc94d] text-forest font-bold text-base sm:text-lg flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(244,185,66,.35)] active:scale-[.985] transition">
+          <span data-i18n="cta_start">Get Started</span>
+          <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
+        </a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <a href="Login.html" class="h-12 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/30 font-semibold text-sm sm:text-base flex items-center justify-center gap-2 active:scale-[.985] transition backdrop-blur-sm">
+            <span class="material-symbols-outlined text-[20px] text-harvest" aria-hidden="true">login</span><span data-i18n="cta_login">Login</span>
+          </a>
+          <a href="Login.html?method=momo" class="h-12 rounded-2xl bg-black/25 hover:bg-black/40 border border-white/15 text-white/95 text-sm font-medium flex items-center justify-center gap-2 active:scale-[.985] transition">
+            <span class="material-symbols-outlined text-[20px] text-harvest" aria-hidden="true">phone_iphone</span><span data-i18n="cta_momo">Quick Login with MoMo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produce board -->
+    <div class="rise d5 relative mx-auto w-full max-w-sm sm:max-w-md">
+      <div class="relative rounded-[1.75rem] bg-cream text-soil p-4 sm:p-5 shadow-[0_25px_60px_rgba(0,0,0,.45)] rotate-[1.2deg]">
+        <div class="flex items-center justify-between mb-3 px-1">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-leaf" aria-hidden="true">storefront</span><span class="font-head font-bold text-lg" data-i18n="mkt">Today's Market</span></div>
+          <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-harvest/30 text-clay" data-i18n="sample">Sample prices</span>
+        </div>
+
+        <ul class="space-y-2.5">
+          <li class="flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-sand">
+            <img alt="Maize" class="w-16 h-16 rounded-xl object-cover shrink-0" loading="lazy" src="https://images.unsplash.com/photo-1661619106780-875be3b90feb?auto=format&fit=crop&q=70&w=240&h=240">
+            <div class="flex-1 min-w-0"><p class="font-semibold text-sm" data-i18n="maize">Maize · Grade A</p><p class="text-xs text-soil/60">Masaka · 12 MT</p></div>
+            <div class="text-right"><p class="font-head font-bold text-leaf text-sm">UGX 1,350<span class="text-soil/50 font-normal text-xs">/kg</span></p><p class="text-[11px] font-semibold text-leaf">▲ 3.2%</p></div>
+          </li>
+          <li class="flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-sand">
+            <img alt="Coffee cherries" class="w-16 h-16 rounded-xl object-cover shrink-0" loading="lazy" src="https://images.pexels.com/photos/7125454/pexels-photo-7125454.jpeg?auto=compress&cs=tinysrgb&w=240&h=240&fit=crop">
+            <div class="flex-1 min-w-0"><p class="font-semibold text-sm" data-i18n="coffee">Coffee · Robusta</p><p class="text-xs text-soil/60">Mbale · 4 MT</p></div>
+            <div class="text-right"><p class="font-head font-bold text-leaf text-sm">UGX 7,800<span class="text-soil/50 font-normal text-xs">/kg</span></p><p class="text-[11px] font-semibold text-leaf">▲ 1.1%</p></div>
+          </li>
+          <li class="flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-sand">
+            <img alt="Beans" class="w-16 h-16 rounded-xl object-cover shrink-0" loading="lazy" src="https://images.unsplash.com/photo-1579705745811-a32bef7856a3?auto=format&fit=crop&q=70&w=240&h=240">
+            <div class="flex-1 min-w-0"><p class="font-semibold text-sm" data-i18n="beans">Beans · Nambale</p><p class="text-xs text-soil/60">Mbarara · 7 MT</p></div>
+            <div class="text-right"><p class="font-head font-bold text-clay text-sm">UGX 3,600<span class="text-soil/50 font-normal text-xs">/kg</span></p><p class="text-[11px] font-semibold text-clay">▼ 0.8%</p></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="absolute -top-4 -right-1 sm:-right-5 flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-forest text-white shadow-xl border border-harvest/40 rotate-[3deg]">
+        <span class="material-symbols-outlined text-harvest text-xl" style="font-variation-settings:'FILL' 1" aria-hidden="true">lock</span>
+        <div class="leading-tight"><p class="text-xs font-semibold" data-i18n="chip1">Payment secured</p><p class="text-[10px] text-white/60" data-i18n="chip1s">Held in escrow</p></div>
+      </div>
+      <div class="absolute -bottom-5 -left-1 sm:-left-5 flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-harvest text-forest shadow-xl -rotate-[3deg]">
+        <span class="material-symbols-outlined text-xl" style="font-variation-settings:'FILL' 1" aria-hidden="true">check_circle</span>
+        <div class="leading-tight"><p class="text-xs font-bold" data-i18n="chip2">Graded &amp; verified</p><p class="text-[10px] text-forest/70" data-i18n="chip2s">Quality you can trust</p></div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#how" class="absolute bottom-20 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center text-white/70 hover:text-harvest text-xs gap-1 transition" aria-label="Scroll to learn more">
+    <span data-i18n="learn">See how it works</span><span class="material-symbols-outlined">expand_more</span>
+  </a>
+
+  <!-- Field-edge wave into cream -->
+  <svg class="absolute bottom-[-1px] inset-x-0 w-full h-14 sm:h-20 text-cream" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0,64 C180,110 360,20 600,56 C840,92 1020,120 1220,70 C1320,46 1400,40 1440,48 L1440,120 L0,120 Z"/>
+  </svg>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="px-4 sm:px-8 pt-6 pb-16 sm:pb-24 scroll-mt-20">
+  <div class="mx-auto max-w-6xl">
+    <div class="reveal text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+      <p class="text-clay text-xs font-bold tracking-[.22em] uppercase mb-3" data-i18n="how_k">How it works</p>
+      <h2 class="font-head text-3xl sm:text-4xl font-bold tracking-tight text-forest mb-3" data-i18n="how_h">From your garden to your pocket in four steps</h2>
+      <p class="text-soil/70" data-i18n="how_p">You-Farm connects growers and buyers directly, so no middlemen take a cut and nobody waits for their money.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+      <article class="reveal bg-white rounded-3xl overflow-hidden border border-sand shadow-[0_10px_30px_rgba(59,42,26,.08)] hover:-translate-y-1 transition">
+        <div class="relative h-44">
+          <img alt="Farmer tending crops" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1509099381441-ea3c0cf98b94?auto=format&fit=crop&q=70&w=800&h=450">
+          <span class="absolute top-3 left-3 w-9 h-9 rounded-full bg-harvest text-forest font-head font-extrabold flex items-center justify-center shadow">1</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-head text-xl font-bold text-forest mb-1.5" data-i18n="s1h">Sign up &amp; list your harvest</h3>
+          <p class="text-sm text-soil/70 leading-relaxed" data-i18n="s1p">Farmers, buyers and transporters all register the same simple way. Farmers then post their crop, quantity and location, even by USSD.</p>
+        </div>
+      </article>
+
+      <article class="reveal bg-white rounded-3xl overflow-hidden border border-sand shadow-[0_10px_30px_rgba(59,42,26,.08)] hover:-translate-y-1 transition" style="transition-delay:.08s">
+        <div class="relative h-44">
+          <img alt="Harvested maize" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1604343574001-a9d95eb6384a?auto=format&fit=crop&q=70&w=800&h=450">
+          <span class="absolute top-3 left-3 w-9 h-9 rounded-full bg-harvest text-forest font-head font-extrabold flex items-center justify-center shadow">2</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-head text-xl font-bold text-forest mb-1.5" data-i18n="s2h">Get graded &amp; matched</h3>
+          <p class="text-sm text-soil/70 leading-relaxed" data-i18n="s2p">Your produce is verified and graded, then matched with buyers who offer a fair price.</p>
+        </div>
+      </article>
+
+      <article class="reveal bg-white rounded-3xl overflow-hidden border border-sand shadow-[0_10px_30px_rgba(59,42,26,.08)] hover:-translate-y-1 transition" style="transition-delay:.16s">
+        <div class="relative h-44">
+          <img alt="Truck carrying produce" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1760727466072-598be6b318ee?auto=format&fit=crop&q=70&w=800&h=450">
+          <span class="absolute top-3 left-3 w-9 h-9 rounded-full bg-harvest text-forest font-head font-extrabold flex items-center justify-center shadow">3</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-head text-xl font-bold text-forest mb-1.5" data-i18n="sTh">Choose your delivery</h3>
+          <p class="text-sm text-soil/70 leading-relaxed" data-i18n="sTp">Pick a freelance transporter or a registered courier service, whichever suits you.</p>
+        </div>
+      </article>
+
+      <article class="reveal bg-white rounded-3xl overflow-hidden border border-sand shadow-[0_10px_30px_rgba(59,42,26,.08)] hover:-translate-y-1 transition" style="transition-delay:.24s">
+        <div class="relative h-44">
+          <img alt="Farmer holding grain" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1710149484964-d966b771c204?auto=format&fit=crop&q=70&w=800&h=450">
+          <span class="absolute top-3 left-3 w-9 h-9 rounded-full bg-harvest text-forest font-head font-extrabold flex items-center justify-center shadow">4</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-head text-xl font-bold text-forest mb-1.5" data-i18n="s3h">Get paid securely</h3>
+          <p class="text-sm text-soil/70 leading-relaxed" data-i18n="s3p">The buyer's payment is held in escrow and released straight to your Mobile Money on delivery.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section id="delivery" class="px-4 sm:px-8 pb-16 sm:pb-24 scroll-mt-20">
+  <div class="mx-auto max-w-6xl rounded-3xl bg-sand border border-[#e2d3ad] p-6 sm:p-10">
+    <div class="reveal text-center max-w-2xl mx-auto mb-8">
+      <p class="text-clay text-xs font-bold tracking-[.22em] uppercase mb-3" data-i18n="del_k">Delivery</p>
+      <h2 class="font-head text-3xl sm:text-4xl font-bold tracking-tight text-forest mb-3" data-i18n="del_h">Your harvest, delivered your way</h2>
+      <p class="text-soil/70" data-i18n="del_p">Farmers and buyers choose how their produce travels. Transporters join You-Farm by registering the same way farmers and buyers do.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
+      <div class="reveal flex gap-4 p-5 rounded-2xl bg-white border border-[#e8dcc0]">
+        <span class="w-12 h-12 shrink-0 rounded-2xl bg-harvest/30 flex items-center justify-center"><span class="material-symbols-outlined text-clay" aria-hidden="true">two_wheeler</span></span>
+        <div>
+          <h3 class="font-head text-lg font-bold text-forest mb-1" data-i18n="d1h">Freelance transporters</h3>
+          <p class="text-sm text-soil/70 leading-relaxed" data-i18n="d1p">Independent drivers and riders who register on You-Farm and take on delivery jobs from farmers and buyers.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-4 p-5 rounded-2xl bg-white border border-[#e8dcc0]" style="transition-delay:.08s">
+        <span class="w-12 h-12 shrink-0 rounded-2xl bg-leaf/15 flex items-center justify-center"><span class="material-symbols-outlined text-leaf" aria-hidden="true">local_shipping</span></span>
+        <div>
+          <h3 class="font-head text-lg font-bold text-forest mb-1" data-i18n="d2h">Registered courier services</h3>
+          <p class="text-sm text-soil/70 leading-relaxed" data-i18n="d2p">Established delivery companies that are officially registered, for clients who prefer a courier.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="who" class="px-4 sm:px-8 pb-16 sm:pb-24 scroll-mt-20">
+  <div class="mx-auto max-w-6xl grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+    <div class="reveal relative rounded-3xl overflow-hidden text-white min-h-[22rem] flex items-end">
+      <img alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1741874299706-2b8e16839aaa?auto=format&fit=crop&q=70&w=1000">
+      <div class="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/10"></div>
+      <div class="relative p-7">
+        <h3 class="font-head text-2xl font-bold mb-3" data-i18n="f_h">For farmers</h3>
+        <ul class="space-y-2 text-sm text-white/90">
+          <li class="flex gap-2"><span class="material-symbols-outlined text-harvest text-lg" aria-hidden="true">check_circle</span><span data-i18n="f1">Sell direct and keep more of the price</span></li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-harvest text-lg" aria-hidden="true">check_circle</span><span data-i18n="f2">Works offline with USSD on any phone</span></li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-harvest text-lg" aria-hidden="true">check_circle</span><span data-i18n="f3">Cash out to MoMo with 0% fees</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal relative rounded-3xl overflow-hidden text-white min-h-[22rem] flex items-end" style="transition-delay:.08s">
+      <img alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/7125686/pexels-photo-7125686.jpeg?auto=compress&cs=tinysrgb&w=1000">
+      <div class="absolute inset-0 bg-gradient-to-t from-soil via-soil/70 to-soil/10"></div>
+      <div class="relative p-7">
+        <h3 class="font-head text-2xl font-bold mb-3" data-i18n="b_h">For buyers</h3>
+        <ul class="space-y-2 text-sm text-white/90">
+          <li class="flex gap-2"><span class="material-symbols-outlined text-harvest text-lg" aria-hidden="true">check_circle</span><span data-i18n="bu1">Source graded, verified produce in bulk</span></li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-harvest text-lg" aria-hidden="true">check_circle</span><span data-i18n="bu2">Pay safely: funds release only on delivery</span></li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-harvest text-lg" aria-hidden="true">check_circle</span><span data-i18n="bu3">Compare prices from farmers nationwide</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal relative rounded-3xl overflow-hidden text-white min-h-[22rem] flex items-end md:col-span-2 lg:col-span-1" style="transition-delay:.16s">
+      <img alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1760727466072-598be6b318ee?auto=format&fit=crop&q=70&w=1000">
+      <div class="absolute inset-0 bg-gradient-to-t from-clay via-clay/70 to-forest/10"></div>
+      <div class="relative p-7">
+        <h3 class="font-head text-2xl font-bold mb-3" data-i18n="t_h">For transporters</h3>
+        <ul class="space-y-2 text-sm text-white/95">
+          <li class="flex gap-2"><span class="material-symbols-outlined text-harvest text-lg" aria-hidden="true">check_circle</span><span data-i18n="t1">Register the same way farmers and buyers do</span></li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-harvest text-lg" aria-hidden="true">check_circle</span><span data-i18n="t2">Take delivery jobs from farmers and buyers</span></li>
+          <li class="flex gap-2"><span class="material-symbols-outlined text-harvest text-lg" aria-hidden="true">check_circle</span><span data-i18n="t3">Freelancers and registered couriers both welcome</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="px-4 sm:px-8 pb-14">
+  <div class="reveal relative mx-auto max-w-4xl rounded-3xl overflow-hidden bg-forest text-white text-center p-7 sm:p-12">
+    <div class="grain absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+    <span class="material-symbols-outlined text-harvest text-4xl sway inline-block" style="font-variation-settings:'FILL' 1" aria-hidden="true">eco</span>
+    <h2 class="relative font-head text-2xl sm:text-4xl font-bold tracking-tight mt-2 mb-2" data-i18n="fin_h">Ready to grow your income?</h2>
+    <p class="relative text-white/75 mb-6 max-w-lg mx-auto" data-i18n="fin_p">Join farmers and buyers already trading on You-Farm.</p>
+    <div class="relative flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="Signup.html" class="h-12 px-8 rounded-2xl bg-harvest hover:bg-[#ffc94d] text-forest font-bold flex items-center justify-center gap-2 active:scale-95 transition"><span data-i18n="cta_start2">Create free account</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+      <a href="tel:*284*44%23" class="h-12 px-6 rounded-2xl bg-white/10 border border-white/30 text-harvest font-mono font-bold flex items-center justify-center gap-2 active:scale-95 hover:bg-white/20 transition">
+        <span class="material-symbols-outlined text-lg" aria-hidden="true">call</span>*284*44#
+      </a>
+    </div>
+    <p class="relative text-xs text-white/60 mt-4" data-i18n="ussd">No mobile data in the field? Dial the free USSD code on any phone.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-forest text-white px-4 pb-safe pt-6">
+  <div class="mx-auto max-w-4xl text-center flex flex-col gap-1.5 pb-3">
+    <p class="flex flex-wrap justify-center gap-x-3 text-xs sm:text-sm text-white/70 tracking-wide"><span>BoU Escrow</span><span class="text-white/30">•</span><span>UNBS Certified</span><span class="text-white/30">•</span><span>MAAIF Registered</span></p>
+    <p class="text-[11px] sm:text-xs text-white/45">You-Farm AgriTech Ltd · 256-Bit Escrow Vault · Kampala, Uganda</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Luganda strings should be reviewed by a native speaker.
+  var T = {
+    en: {
+      nav_how:"How it works", nav_del:"Delivery", nav_who:"Who it's for", voice:"Voice", ticker:"traded this week",
+      h1a:"From our soil", h1b:"to the market.",
+      sub:"You-Farm is Uganda's harvest exchange. Sell your maize, coffee and beans directly to buyers at a fair price, have it delivered by freelance transporters or registered couriers, and stay protected by Bank of Uganda escrow.",
+      b1:"MAAIF Verified", b2:"BoU Escrow", b3:"0% MoMo Cashout Fees", b4:"Delivery Arranged",
+      cta_start:"Get Started", cta_login:"Login", cta_momo:"Quick Login with MoMo", learn:"See how it works",
+      mkt:"Today's Market", sample:"Sample prices", maize:"Maize · Grade A", coffee:"Coffee · Robusta", beans:"Beans · Nambale",
+      chip1:"Payment secured", chip1s:"Held in escrow", chip2:"Graded & verified", chip2s:"Quality you can trust",
+      how_k:"How it works", how_h:"From your garden to your pocket in four steps",
+      how_p:"You-Farm connects growers and buyers directly, so no middlemen take a cut and nobody waits for their money.",
+      s1h:"Sign up & list your harvest", s1p:"Farmers, buyers and transporters all register the same simple way. Farmers then post their crop, quantity and location, even by USSD.",
+      sTh:"Choose your delivery", sTp:"Pick a freelance transporter or a registered courier service, whichever suits you.",
+      del_k:"Delivery", del_h:"Your harvest, delivered your way",
+      del_p:"Farmers and buyers choose how their produce travels. Transporters join You-Farm by registering the same way farmers and buyers do.",
+      d1h:"Freelance transporters", d1p:"Independent drivers and riders who register on You-Farm and take on delivery jobs from farmers and buyers.",
+      d2h:"Registered courier services", d2p:"Established delivery companies that are officially registered, for clients who prefer a courier.",
+      t_h:"For transporters", t1:"Register the same way farmers and buyers do", t2:"Take delivery jobs from farmers and buyers", t3:"Freelancers and registered couriers both welcome",
+      s2h:"Get graded & matched", s2p:"Your produce is verified and graded, then matched with buyers who offer a fair price.",
+      s3h:"Get paid securely", s3p:"The buyer's payment is held in escrow and released straight to your Mobile Money on delivery.",
+      f_h:"For farmers", f1:"Sell direct and keep more of the price", f2:"Works offline with USSD on any phone", f3:"Cash out to MoMo with 0% fees",
+      b_h:"For buyers", bu1:"Source graded, verified produce in bulk", bu2:"Pay safely: funds release only on delivery", bu3:"Compare prices from farmers nationwide",
+      fin_h:"Ready to grow your income?", fin_p:"Join farmers and buyers already trading on You-Farm.",
+      cta_start2:"Create free account", ussd:"No mobile data in the field? Dial the free USSD code on any phone."
+    },
+    lg: {
+      nav_how:"Engeri gy'ekola", nav_del:"Okutuusa", nav_who:"Ani agukozesa", voice:"Wuliriza", ticker:"bitundiddwa wiiki eno",
+      h1a:"Okuva mu ttaka lyaffe", h1b:"okutuuka ku katale.",
+      sub:"You-Farm ke katale k'amakungula mu Uganda. Tunda kasooli, emmwanyi n'ebijanjaalo byo butereevu eri abaguzi ku bbeeyi ennungi, bitwalibwe abatambuzi abeetongodde oba kampuni ezewandiisizza, era ssente zo zikuumibwe Bank of Uganda escrow.",
+      b1:"MAAIF Ekakasa", b2:"BoU Escrow", b3:"Tewali ssente za MoMo ku kuggyayo", b4:"Okutuusa kukolebwa",
+      cta_start:"Tandika", cta_login:"Yingira", cta_momo:"Yingira mangu ne MoMo", learn:"Laba engeri gy'ekola",
+      mkt:"Akatale ka Leero", sample:"Emiwendo egy'ekyokulabirako", maize:"Kasooli · Ddaala A", coffee:"Emmwanyi · Robusta", beans:"Ebijanjaalo · Nambale",
+      chip1:"Ssente ziterekeddwa", chip1s:"Mu escrow", chip2:"Bikebeddwa", chip2s:"Omutindo gwesigika",
+      how_k:"Engeri gy'ekola", how_h:"Okuva mu nnimiro okutuuka ku nsawo yo mu bitundu bina",
+      how_p:"You-Farm egatta abalimi n'abaguzi butereevu, tewali ba wakati abatwala ku ssente zo.",
+      s1h:"Weewandiise otegeke amakungula go", s1p:"Abalimi, abaguzi n'abatambuzi beewandiisa mu ngeri yeemu ennyangu. Omulimi oluvannyuma ateekawo ekirime, obungi n'ekifo, newankubadde ng'ayita mu USSD.",
+      sTh:"Londa engeri y'okutuusaamu", sTp:"Londa omutambuzi ayeetongodde oba kampuni etambuza ebintu eyewandiisizza, nga bw'oyagala.",
+      del_k:"Okutuusa", del_h:"Amakungula go gatuusibwa nga bw'oyagala",
+      del_p:"Abalimi n'abaguzi balonda engeri ebirime gye bitambuzibwamu. Abatambuzi beewandiisa nga abalimi n'abaguzi bwe bakola.",
+      d1h:"Abatambuzi abeetongodde", d1p:"Abavuzi n'abavuzi ba bodaboda abeewandiisa ku You-Farm ne bakola emirimu gy'okutuusa egy'abalimi n'abaguzi.",
+      d2h:"Kampuni ezitambuza ebintu ezewandiisizza", d2p:"Kampuni ezitambuza ebintu ezaakakasibwa mu butongole, eri abo abaagala kampuni.",
+      t_h:"Eri abatambuzi", t1:"Weewandiise nga abalimi n'abaguzi bwe bakola", t2:"Kola emirimu gy'okutuusa egy'abalimi n'abaguzi", t3:"Abeetongodde ne kampuni ezewandiisizza bonna bakkirizibwa",
+      s2h:"Kebejjebwa ofune omuguzi", s2p:"Ebirime byo bikebejjebwa ne bigerwa, olwo ne bigattibwa n'abaguzi abawa emiwendo emituufu.",
+      s3h:"Weebwe ssente mu butebenkevu", s3p:"Ssente z'omuguzi zikuumirwa mu escrow ne ziteekebwa ku Mobile Money yo ng'ebirime bituuse.",
+      f_h:"Eri abalimi", f1:"Tunda butereevu ofune ssente ennyingi", f2:"Ekola nga tolina ddata ne USSD ku ssimu yonna", f3:"Ggyayo ku MoMo nga tewali ssente",
+      b_h:"Eri abaguzi", bu1:"Gula ebirime ebikebeddwa mu bungi", bu2:"Wa ssente mu butebenkevu: ziweebwa ng'ebirime bituuse", bu3:"Geraageranya emiwendo okuva eri abalimi bonna",
+      fin_h:"Weetegefu okwongera ku nfuna yo?", fin_p:"Yingira wamu n'abalimi n'abaguzi abasuubula ku You-Farm.",
+      cta_start2:"Kola akawunti ya bwereere", ussd:"Toli ku ddata mu nnimiro? Ssaako koodi ya USSD ey'obwereere ku ssimu yonna."
+    }
+  };
+
+  var lang = 'en';
+  try { lang = localStorage.getItem('yf-lang') || 'en'; } catch (e) {}
+
+  var eng = document.getElementById('langEng'), lug = document.getElementById('langLug');
+  var ON = "min-h-[36px] px-3 rounded-full bg-harvest text-forest font-bold transition";
+  var OFF = "min-h-[36px] px-3 rounded-full text-white/75 hover:text-white font-medium transition";
+
+  function setLang(l) {
+    lang = l;
+    document.documentElement.lang = l === 'lg' ? 'lg' : 'en';
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var v = T[l][el.getAttribute('data-i18n')];
+      if (v) el.textContent = v;
+    });
+    eng.className = l === 'en' ? ON : OFF;
+    lug.className = l === 'lg' ? ON : OFF;
+    eng.setAttribute('aria-pressed', l === 'en');
+    lug.setAttribute('aria-pressed', l === 'lg');
+    try { localStorage.setItem('yf-lang', l); } catch (e) {}
+  }
+  eng.addEventListener('click', function () { setLang('en'); });
+  lug.addEventListener('click', function () { setLang('lg'); });
+  setLang(lang);
+
+  // Voice narration
+  var vBtn = document.getElementById('voiceBtn'), vText = document.getElementById('voiceText');
+  var speaking = false;
+  var LUG_TEXT = "Tukusanyukidde ku You-Farm. Akatale ak'omulembe akagatta abalimi n'abaguzi abanene mu Uganda. Funirawo ssente zo n'obukuumi bwa Bank of Uganda.";
+  var ENG_TEXT = "Welcome to You-Farm. The harvest exchange connecting Ugandan farmers and buyers, with your money protected by Bank of Uganda escrow.";
+
+  function resetVoice() {
+    speaking = false;
+    vText.textContent = T[lang].voice;
+    vBtn.setAttribute('aria-pressed', 'false');
+    vBtn.classList.remove('bg-harvest', 'text-forest');
+    vBtn.classList.add('bg-white/10');
+  }
+  vBtn.addEventListener('click', function () {
+    if (!('speechSynthesis' in window)) return;
+    if (speaking) { speechSynthesis.cancel(); resetVoice(); return; }
+    var u = new SpeechSynthesisUtterance(lang === 'lg' ? LUG_TEXT : ENG_TEXT);
+    u.lang = lang === 'lg' ? 'lg-UG' : 'en-UG';
+    u.rate = 0.95;
+    u.onend = u.onerror = resetVoice;
+    speaking = true;
+    vText.textContent = '...';
+    vBtn.setAttribute('aria-pressed', 'true');
+    vBtn.classList.remove('bg-white/10');
+    vBtn.classList.add('bg-harvest', 'text-forest');
+    speechSynthesis.speak(u);
+  });
+
+  // Scroll reveal
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('in'); }); }
+})();
+</script>
+</body>
+</html>
