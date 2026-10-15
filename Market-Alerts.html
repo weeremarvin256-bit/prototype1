@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="shell-type" content="mobile_stack">
+<title>Market alerts · You-Farm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: {
+    primary:"#012d1d","primary-container":"#1b4332","primary-fixed":"#c1ecd4","on-primary-fixed":"#002114",
+    secondary:"#904d00","secondary-container":"#fe932c","secondary-fixed":"#ffdcc3","on-secondary-fixed":"#2f1500","on-secondary-fixed-variant":"#6e3900",
+    "tertiary-fixed":"#b1f0ce",tertiary:"#002d1c","tertiary-container":"#00452e",
+    error:"#ba1a1a","error-container":"#ffdad6",
+    surface:"#f9faf7","surf-low":"#f3f4f1","surf-mid":"#edeeeb","surf-high":"#e7e8e6",
+    "on-surface":"#191c1b","on-surface-variant":"#414844","outline-variant":"#c1c8c2"
+  },
+  fontFamily: { sans:["Public Sans","system-ui","sans-serif"], display:["Space Grotesk","Public Sans","sans-serif"] }
+}}};
+</script>
+<style type="text/tailwindcss">
+@layer base {
+  body { @apply bg-surface font-sans text-sm text-on-surface antialiased; overscroll-behavior-y: none; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-primary-container; outline-style: solid; }
+  button { @apply cursor-pointer; }
+}
+@layer components {
+  .pill { @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold; }
+  .chip { @apply flex min-h-[40px] shrink-0 items-center gap-2 rounded-full bg-surf-high px-4 text-xs font-semibold text-on-surface-variant transition-colors hover:bg-surf-mid; }
+  .chip[aria-pressed="true"] { @apply bg-primary-container text-white; }
+  .chip b { @apply rounded-full bg-black/10 px-1.5 text-[11px]; }
+  .act { @apply inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-xl px-4 text-xs font-bold transition active:scale-[0.97]; }
+}
+.material-symbols-outlined { font-size: 20px; line-height: 1; user-select: none; }
+.fill { font-variation-settings: 'FILL' 1; }
+.noscroll { scrollbar-width: none; } .noscroll::-webkit-scrollbar { display: none; }
+@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="fixed inset-x-0 top-0 z-40 border-b border-outline-variant/40 bg-surface/90 backdrop-blur-xl" style="padding-top:env(safe-area-inset-top,0px)">
+  <div class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-2 sm:px-6">
+    <div class="flex min-w-0 items-center gap-1">
+      <button aria-label="Go back" onclick="history.back()" class="grid size-11 shrink-0 place-items-center rounded-full hover:bg-surf-mid"><span class="material-symbols-outlined !text-[24px]">arrow_back</span></button>
+      <img alt="You-Farm" class="mr-2 hidden h-7 w-auto sm:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdryaOneto5aYotA6uQjNAQ4C8P9CN5Xklc_4qjItWmxHO2SWFxxXvjHVtoGk48JIqRUVqF3WxRWQdI3bo9iG2s29Li-gG-IFroLa2sIJSyfgnxpW68yKSJyfuSAmrYSUT8ISiRi5S-EbDnsYoFFy86m3Wo5Wv-kSDEIanafdKRCj-rNu14Bq_YymhsGbNqMqzpiAcY26Bwk2z6Gsa9zu6KxARBkZKdkOY95plrqmByBAvS3I7ZhJNrQ">
+      <h1 class="truncate font-display text-lg font-semibold">Market alerts</h1>
+    </div>
+    <div class="flex shrink-0 items-center gap-2 pr-2 sm:pr-0">
+      <span class="pill bg-primary-fixed text-on-primary-fixed"><span class="size-1.5 rounded-full bg-primary"></span>Synced</span>
+      <img alt="Your profile" class="size-9 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjGpVqcRobJ6dgJqOb6OImerkE_Z6Na2ia4wnP9ggICH2fYk1OwCpcv9IkNZd0KV-ygAw-O1Usu0rjJjsL2vwGd_p52QqDsyeXT3sINDxCKDDc_B2OAatZdSy1eiKbIwZVMdmz_v7bx0lK2eeQp7kPRL7fFFGCjr4Q8bh7-TGajqdX5vo_J_1Fvh2QoCLYQsWfS5dxCKkDzBFpX9dRYKKngLbYoLNpqkNrQvhV5b7qwce4IJPeTLuoGw">
+    </div>
+  </div>
+</header>
+
+<main class="mx-auto max-w-5xl px-4 pb-12 sm:px-6" style="padding-top:calc(4rem + env(safe-area-inset-top,0px))">
+  <div class="grid lg:grid-cols-[minmax(0,1fr)_288px] lg:gap-x-8">
+
+    <!-- Feed -->
+    <div class="min-w-0">
+      <div class="sticky z-30 -mx-4 bg-surface/95 px-4 pb-2 pt-3 backdrop-blur-md sm:-mx-6 sm:px-6 lg:static lg:mx-0 lg:bg-transparent lg:px-0 lg:backdrop-blur-none" style="top:calc(4rem + env(safe-area-inset-top,0px))">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <h2 class="font-display text-xl font-semibold">Your alerts</h2>
+            <span id="unreadBadge" aria-live="polite" class="pill !text-xs bg-secondary-container text-on-secondary-fixed"></span>
+          </div>
+          <button id="markAll" class="flex min-h-[44px] items-center gap-1 rounded-lg px-2 text-xs font-bold text-primary-container hover:bg-surf-mid disabled:opacity-50">
+            <span class="material-symbols-outlined !text-[18px]">done_all</span><span>Mark all as read</span>
+          </button>
+        </div>
+        <div id="chipsMobile" class="noscroll -mx-4 mt-1 flex gap-2 overflow-x-auto px-4 py-1 sm:-mx-6 sm:px-6 lg:hidden" role="group" aria-label="Filter alerts"></div>
+      </div>
+
+      <div id="feed" class="flex flex-col gap-6 pt-3"></div>
+
+      <div id="empty" class="hidden flex-col items-center gap-2 py-12 text-center">
+        <span class="grid size-16 place-items-center rounded-full bg-surf-high text-on-surface-variant"><span class="material-symbols-outlined !text-[32px]">notifications_paused</span></span>
+        <h3 class="font-display text-lg font-semibold">Nothing here yet</h3>
+        <p class="max-w-xs text-on-surface-variant">New alerts in this category will show up here as soon as they arrive.</p>
+      </div>
+    </div>
+
+    <!-- Aside: filters (desktop) + SMS settings -->
+    <aside class="mt-6 lg:sticky lg:mt-3 lg:self-start" style="top:calc(5rem + env(safe-area-inset-top,0px))">
+      <nav id="chipsDesk" class="mb-4 hidden flex-col gap-1 lg:flex" aria-label="Filter alerts"></nav>
+      <div class="flex gap-3 rounded-2xl border border-outline-variant/50 bg-white p-4">
+        <span class="material-symbols-outlined mt-0.5 shrink-0 text-primary">sms</span>
+        <div>
+          <p class="font-semibold">Alerts by SMS too</p>
+          <p class="mt-1 text-xs leading-relaxed text-on-surface-variant">Price moves of 5% or more and every escrow release are also sent to your phone by zero-rated SMS.</p>
+          <button class="mt-1 inline-flex min-h-[44px] items-center gap-1 rounded-lg text-xs font-bold text-secondary hover:underline">Manage SMS alerts<span class="material-symbols-outlined !text-[16px]">arrow_forward</span></button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 translate-y-4 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white opacity-0 shadow-lg transition-all duration-200" style="margin-bottom:env(safe-area-inset-bottom,0px)"></div>
+
+<script>
+const TONES = {
+  price: ['bg-primary-container','bg-primary-fixed text-primary'],
+  money: ['bg-secondary-container','bg-secondary-fixed text-on-secondary-fixed'],
+  move:  ['bg-tertiary-container','bg-tertiary-fixed text-tertiary'],
+  info:  ['bg-outline-variant','bg-surf-high text-on-surface-variant']
+};
+const FILTERS = [['all','All alerts','notifications'],['prices','Price trends','trending_up'],['escrow','Escrow & orders','verified_user'],['logistics','Logistics','local_shipping'],['system','System & UNBS','settings']];
+const GROUPS = ['Today','Yesterday','Earlier this week'];
+
+// Replace with data from your API; each alert is one object.
+const alerts = [
+ {id:1,g:0,cat:'prices',tone:'price',icon:'trending_up',type:'Price spike',time:'14m ago',unread:1,urgent:1,
+  title:'Matooke spot price up 6.8%',body:'Masaka Central Depot wholesale rate jumped on weekend institutional demand. Consider locking your harvest batch today.',
+  facts:[['Now','UGX 1,850/kg'],['Change','+6.8%'],['Depot','Masaka Central']],src:'Marketplace feed, Masaka',act:['View spot prices','arrow_forward']},
+ {id:2,g:0,cat:'escrow',tone:'money',icon:'verified_user',type:'Escrow released',time:'1h ago',unread:1,
+  title:'UGX 1,440,000 is on its way to you',body:'Crown Agro signed off the weighbridge check for Lot #AG-312 (1,200 kg yellow maize). Payout sent to your MTN MoMo account.',
+  facts:[['Amount','UGX 1,440,000'],['Lot','#AG-312'],['Paid to','MTN +256 772 ••• 419']],src:'Escrow vault',act:['View receipt','receipt_long']},
+ {id:3,g:0,cat:'logistics',tone:'move',icon:'local_shipping',type:'Freight dispatched',time:'3h ago',unread:1,
+  title:'Waybill #AL-9921 is on the road',body:'Driver Peter Semakula left Kasese Regional Depot with 2.5 MT of yellow maize, heading to Kampala Central Silo.',
+  facts:[['Truck','Isuzu Forward, UAZ 412K'],['Load','2.5 MT'],['Route','Kasese to Kampala']],live:1,act:['Track manifest','pin_drop']},
+ {id:4,g:1,cat:'escrow',tone:'info',icon:'groups',type:'Cooperative pool',time:'4:15 PM',urgent:1,
+  title:'Uganda Breweries 50T sorghum pool is 85% full',body:'Only 7.5 MT left before collection closes. The guaranteed minimum depot-gate payout is UGX 1,600/kg.',
+  facts:[['Min. payout','UGX 1,600/kg'],['Left to fill','7.5 MT']],bar:[85,'42.5 / 50 MT'],act:['Join pool','chevron_right']},
+ {id:5,g:1,cat:'system',tone:'money',icon:'cloud_sync',type:'Weather advisory',time:'11:20 AM',urgent:1,
+  title:'Heavy rain for Mt. Elgon & Mbale',body:'Torrential afternoon rain is forecast. Move sun-dried Arabica parchment onto waterproof tarpaulin storage.',
+  facts:[['Window','Next 48 hours'],['Humidity','88%'],['Keep moisture','Below 12%']],src:'Mbale Agro-Met Station'},
+ {id:6,g:2,cat:'system',tone:'info',icon:'verified',type:'UNBS regulation',time:'3 days ago',
+  title:'New moisture limit for export maize',body:'Kampala Central Hub now needs a certified digital moisture reading for Grade 1 export contracts. Lots above the limit go to local feed mills.',
+  facts:[['Grade 1 limit','Below 13.0%'],['13.1–14.5%','Local feed mills']],src:'UNBS Standard Rev. 2024-C',act:['Read standard','arrow_forward']},
+ {id:7,g:2,cat:'system',tone:'info',icon:'phonelink_setup',type:'System',time:'4 days ago',
+  title:'USSD backup stays on during Sunday sync',body:'Depot inventory locks and mobile bidding keep working by phone while the cloud database syncs on Sunday at 02:00 AM.',
+  facts:[['Dial','*284*44#'],['Networks','MTN & Airtel'],['Data cost','None']],src:'Zero-data USSD gateway active'}
+];
+let filter = 'all'; const $ = id => document.getElementById(id);
+
+function card(a){
+  const [bar,tile] = TONES[a.tone];
+  const facts = a.facts.map(([k,v]) => `<div class="min-w-0 rounded-lg bg-surf-low px-3 py-2"><dt class="text-[11px] text-on-surface-variant">${k}</dt><dd class="truncate text-sm font-semibold text-on-surface">${v}</dd></div>`).join('');
+  const prog = a.bar ? `<div class="mt-3"><div class="mb-1 flex justify-between text-xs"><span class="text-on-surface-variant">Pool progress</span><span class="font-semibold text-primary">${a.bar[1]}</span></div><div class="h-2 overflow-hidden rounded-full bg-surf-high" role="progressbar" aria-valuenow="${a.bar[0]}" aria-valuemin="0" aria-valuemax="100"><div class="h-full rounded-full bg-primary-container" style="width:${a.bar[0]}%"></div></div></div>` : '';
+  const src = a.live ? `<span class="pill bg-primary-fixed text-on-primary-fixed"><span class="size-1.5 animate-pulse rounded-full bg-primary"></span>Live GPS</span>` : (a.src ? `<span class="min-w-0 truncate text-xs text-on-surface-variant">${a.src}</span>` : '<span></span>');
+  const act = a.act ? `<button class="act ${a.urgent ? 'bg-primary-container text-white hover:bg-primary' : 'bg-surf-mid text-primary hover:bg-surf-high'}">${a.act[0]}<span class="material-symbols-outlined !text-[16px]">${a.act[1]}</span></button>` : '';
+  return `<article data-id="${a.id}" class="relative overflow-hidden rounded-2xl border p-4 sm:p-5 ${a.unread ? 'border-outline-variant bg-white shadow-sm' : 'border-outline-variant/50 bg-white/60'}">
+    ${a.unread ? `<span class="absolute inset-y-0 left-0 w-1 ${bar}"></span>` : ''}
+    <div class="flex items-start gap-3">
+      <span class="grid size-10 shrink-0 place-items-center rounded-xl ${tile}"><span class="material-symbols-outlined fill">${a.icon}</span></span>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-start justify-between gap-2">
+          <div class="flex flex-wrap items-center gap-x-2 gap-y-1"><span class="text-xs font-semibold text-on-surface-variant">${a.type}</span>${a.urgent ? '<span class="pill bg-secondary-fixed text-on-secondary-fixed-variant"><span class="material-symbols-outlined fill !text-[12px]">schedule</span>Act soon</span>' : ''}</div>
+          <div class="flex shrink-0 items-center text-xs text-on-surface-variant">${a.time}${a.unread ? `<button data-read="${a.id}" aria-label="Mark as read" class="grid size-8 place-items-center -mr-2"><span class="size-2.5 rounded-full bg-secondary-container ring-4 ring-secondary-container/25"></span></button>` : ''}</div>
+        </div>
+        <h3 class="mt-1 text-base leading-snug ${a.unread ? 'font-bold' : 'font-semibold'}">${a.title}</h3>
+        <p class="mt-1 max-w-prose leading-relaxed text-on-surface-variant">${a.body}</p>
+      </div>
+    </div>
+    <dl class="mt-3 grid grid-cols-2 gap-2 sm:ml-[52px] sm:grid-cols-3">${facts}</dl>
+    <div class="sm:ml-[52px]">${prog}</div>
+    ${(a.act || a.src || a.live) ? `<div class="mt-3 flex flex-wrap items-center justify-between gap-2 sm:ml-[52px]">${src}${act}</div>` : ''}
+  </article>`;
+}
+
+function render(){
+  const list = alerts.filter(a => filter === 'all' || a.cat === filter);
+  $('feed').innerHTML = GROUPS.map((g,i) => {
+    const items = list.filter(a => a.g === i); if (!items.length) return '';
+    return `<section aria-label="${g}"><h2 class="mb-3 text-xs font-bold text-on-surface-variant">${g}</h2><div class="flex flex-col gap-3">${items.map(card).join('')}</div></section>`;
+  }).join('');
+  $('empty').classList.toggle('hidden', !!list.length); $('empty').classList.toggle('flex', !list.length);
+
+  const n = alerts.filter(a => a.unread).length;
+  const badge = $('unreadBadge');
+  badge.textContent = n ? `${n} unread` : 'All caught up';
+  badge.className = 'pill !text-xs ' + (n ? 'bg-secondary-container text-on-secondary-fixed' : 'bg-primary-fixed text-on-primary-fixed');
+  $('markAll').disabled = !n;
+
+  const count = k => k === 'all' ? alerts.length : alerts.filter(a => a.cat === k).length;
+  $('chipsMobile').innerHTML = FILTERS.map(([k,l]) => `<button class="chip" data-f="${k}" aria-pressed="${k===filter}">${l}<b>${count(k)}</b></button>`).join('');
+  $('chipsDesk').innerHTML = FILTERS.map(([k,l,ic]) => `<button data-f="${k}" aria-pressed="${k===filter}" class="flex min-h-[44px] items-center gap-3 rounded-xl px-3 text-left text-sm font-semibold transition-colors ${k===filter ? 'bg-primary-container text-white' : 'text-on-surface-variant hover:bg-surf-mid'}"><span class="material-symbols-outlined">${ic}</span><span class="flex-1">${l}</span><span class="text-xs opacity-80">${count(k)}</span></button>`).join('');
+}
+
+let tt; function toast(m){ const t=$('toast'); t.textContent=m; t.classList.remove('opacity-0','translate-y-4'); clearTimeout(tt); tt=setTimeout(()=>t.classList.add('opacity-0','translate-y-4'),2200); }
+
+document.addEventListener('click', e => {
+  const f = e.target.closest('[data-f]'); if (f) { filter = f.dataset.f; render(); return; }
+  if (e.target.closest('#markAll')) { alerts.forEach(a => a.unread = 0); render(); toast('All alerts marked as read'); return; }
+  const card = e.target.closest('article[data-id]');
+  if (card) { const a = alerts.find(x => x.id == card.dataset.id); if (a && a.unread) { a.unread = 0; render(); } }
+});
+
+render();
+</script>
+</body>
+</html>

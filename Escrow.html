@@ -1,216 +1,534 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#002114", "on-tertiary-fixed": "#002114", "surface-tint": "#3f6653", "error": "#ba1a1a", "tertiary-container": "#00452e", "inverse-surface": "#2e312f", "outline": "#717973", "on-surface-variant": "#414844", "secondary-fixed": "#ffdcc3", "surface-variant": "#e2e3e0", "secondary-fixed-dim": "#ffb77d", "on-tertiary-fixed-variant": "#0e5138", "on-primary-fixed-variant": "#274e3d", "primary": "#012d1d", "on-secondary": "#ffffff", "surface-dim": "#d9dad7", "on-tertiary-container": "#75b393", "surface-bright": "#f9faf7", "surface": "#f9faf7", "primary-fixed-dim": "#a5d0b9", "on-tertiary": "#ffffff", "on-secondary-container": "#663500", "error-container": "#ffdad6", "primary-fixed": "#c1ecd4", "inverse-primary": "#a5d0b9", "tertiary-fixed": "#b1f0ce", "on-surface": "#191c1b", "on-secondary-fixed": "#2f1500", "surface-container-highest": "#e2e3e0", "on-primary": "#ffffff", "background": "#f9faf7", "secondary-container": "#fe932c", "on-primary-container": "#86af99", "inverse-on-surface": "#f0f1ee", "surface-container-high": "#e7e8e6", "on-secondary-fixed-variant": "#6e3900", "secondary": "#904d00", "primary-container": "#1b4332", "on-error": "#ffffff", "tertiary-fixed-dim": "#95d4b3", "outline-variant": "#c1c8c2", "surface-container-low": "#f3f4f1", "on-background": "#191c1b", "surface-container": "#edeeeb", "tertiary": "#002d1c", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "2.5rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-xl": "2.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "label-md": ["Public Sans"], "label-sm": ["Public Sans"], "body-md": ["Public Sans"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "label-lg": ["Public Sans"], "body-sm": ["Public Sans"], "display-lg": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "title-lg": ["Public Sans"], "title-md": ["Public Sans"], "body-lg": ["Public Sans"] }, "fontSize": { "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "600"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="You-Farm Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdryaOneto5aYotA6uQjNAQ4C8P9CN5Xklc_4qjItWmxHO2SWFxxXvjHVtoGk48JIqRUVqF3WxRWQdI3bo9iG2s29Li-gG-IFroLa2sIJSyfgnxpW68yKSJyfuSAmrYSUT8ISiRi5S-EbDnsYoFFy86m3Wo5Wv-kSDEIanafdKRCj-rNu14Bq_YymhsGbNqMqzpiAcY26Bwk2z6Gsa9zu6KxARBkZKdkOY95plrqmByBAvS3I7ZhJNrQ"><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary truncate tracking-tight">You-Farm</span><span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Online</span></div><div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm truncate"><span class="material-symbols-outlined text-[14px] text-secondary">location_on</span><span class="truncate font-label-sm text-label-sm">Kampala &amp; Central Hub</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(0,0,0,0.08)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjGpVqcRobJ6dgJqOb6OImerkE_Z6Na2ia4wnP9ggICH2fYk1OwCpcv9IkNZd0KV-ygAw-O1Usu0rjJjsL2vwGd_p52QqDsyeXT3sINDxCKDDc_B2OAatZdSy1eiKbIwZVMdmz_v7bx0lK2eeQp7kPRL7fFFGCjr4Q8bh7-TGajqdX5vo_J_1Fvh2QoCLYQsWfS5dxCKkDzBFpX9dRYKKngLbYoLNpqkNrQvhV5b7qwce4IJPeTLuoGw"></div></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
-<!-- Subtle Trust Banner Alert -->
-<div class="px-margin pt-space-md">
-<div class="flex items-center gap-space-sm bg-primary-fixed text-on-primary-fixed px-space-md py-space-sm rounded-xl shadow-sm">
-<span class="material-symbols-outlined text-[20px] text-primary flex-shrink-0" style="font-variation-settings: 'FILL' 1;">security</span>
-<div class="flex-1 min-w-0">
-<p class="font-label-md text-label-md truncate">Bank of Uganda Approved Escrow Protocol</p>
-<p class="font-body-sm text-body-sm opacity-90 truncate">Direct Mobile Money protection under tier-1 trustee</p>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>You-Farm Escrow</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#002114", "on-tertiary-fixed": "#002114", "surface-tint": "#3f6653", "error": "#ba1a1a", "tertiary-container": "#00452e", "inverse-surface": "#2e312f", "outline": "#717973", "on-surface-variant": "#414844", "secondary-fixed": "#ffdcc3", "surface-variant": "#e2e3e0", "secondary-fixed-dim": "#ffb77d", "on-tertiary-fixed-variant": "#0e5138", "on-primary-fixed-variant": "#274e3d", "primary": "#012d1d", "on-secondary": "#ffffff", "surface-dim": "#d9dad7", "on-tertiary-container": "#75b393", "surface-bright": "#f9faf7", "surface": "#f9faf7", "primary-fixed-dim": "#a5d0b9", "on-tertiary": "#ffffff", "on-secondary-container": "#663500", "error-container": "#ffdad6", "primary-fixed": "#c1ecd4", "inverse-primary": "#a5d0b9", "tertiary-fixed": "#b1f0ce", "on-surface": "#191c1b", "on-secondary-fixed": "#2f1500", "surface-container-highest": "#e2e3e0", "on-primary": "#ffffff", "background": "#f9faf7", "secondary-container": "#fe932c", "on-primary-container": "#86af99", "inverse-on-surface": "#f0f1ee", "surface-container-high": "#e7e8e6", "on-secondary-fixed-variant": "#6e3900", "secondary": "#904d00", "primary-container": "#1b4332", "on-error": "#ffffff", "tertiary-fixed-dim": "#95d4b3", "outline-variant": "#c1c8c2", "surface-container-low": "#f3f4f1", "on-background": "#191c1b", "surface-container": "#edeeeb", "tertiary": "#002d1c", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "2.5rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-xl": "2.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "label-md": ["Public Sans"], "label-sm": ["Public Sans"], "body-md": ["Public Sans"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "label-lg": ["Public Sans"], "body-sm": ["Public Sans"], "display-lg": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "title-lg": ["Public Sans"], "title-md": ["Public Sans"], "body-lg": ["Public Sans"] }, "fontSize": { "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "600"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}] } } } };</script>
+<style>
+@layer base{html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}body{overscroll-behavior:none}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px)}.pt-safe{padding-top:env(safe-area-inset-top,0px)}}
+::-webkit-scrollbar{display:none}
+.no-scrollbar{scrollbar-width:none;-ms-overflow-style:none}
+.msym-fill{font-variation-settings:'FILL' 1}
+@keyframes rise{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.rise{animation:rise .4s ease both}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+@keyframes fade{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.sheet{animation:up .28s cubic-bezier(.2,.8,.2,1) both}
+@media(min-width:768px){.sheet{animation:fade .2s ease both}}
+.skeleton{background:linear-gradient(90deg,#edeeeb 25%,#f3f4f1 37%,#edeeeb 63%);background-size:400% 100%;animation:sk 1.4s ease infinite}
+@keyframes sk{0%{background-position:100% 50%}100%{background-position:0 50%}}
+.track-fill{transition:width .8s cubic-bezier(.2,.8,.2,1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin .9s linear infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid #fe932c;outline-offset:2px}
+@media print{header,nav,#toast,.noprint{display:none!important}}
+</style></head>
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen">
+
+<!-- ============ HEADER ============ -->
+<header class="fixed top-0 inset-x-0 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+  <div class="h-16 md:h-20 mx-auto max-w-6xl px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md">
+    <div class="flex items-center gap-space-sm min-w-0">
+      <img alt="You-Farm logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdryaOneto5aYotA6uQjNAQ4C8P9CN5Xklc_4qjItWmxHO2SWFxxXvjHVtoGk48JIqRUVqF3WxRWQdI3bo9iG2s29Li-gG-IFroLa2sIJSyfgnxpW68yKSJyfuSAmrYSUT8ISiRi5S-EbDnsYoFFy86m3Wo5Wv-kSDEIanafdKRCj-rNu14Bq_YymhsGbNqMqzpiAcY26Bwk2z6Gsa9zu6KxARBkZKdkOY95plrqmByBAvS3I7ZhJNrQ"/>
+      <div class="flex flex-col min-w-0">
+        <span class="font-headline-sm text-headline-sm text-primary truncate tracking-tight leading-6">You-Farm</span>
+        <span class="hidden sm:flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm truncate"><span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>Kampala &amp; Central Hub</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-space-xs flex-shrink-0">
+      <a aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="Market-Alerts.html"><span class="material-symbols-outlined text-[24px]">notifications</span><span id="notif-dot" class="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></a>
+      <div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-lg shadow-sm" aria-label="Your account: Crown Agro Kampala" title="Crown Agro Kampala">CA</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MAIN ============ -->
+<main class="pt-20 md:pt-28 pb-28">
+<div class="mx-auto max-w-6xl px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-x-gutter-desktop gap-y-space-lg items-start">
+
+  <!-- Vault summary -->
+  <section class="lg:col-start-1 lg:col-span-5 flex flex-col gap-space-md" aria-label="Escrow summary">
+    <div class="flex items-center gap-space-sm bg-primary-fixed text-on-primary-fixed px-space-md py-space-sm rounded-xl">
+      <span class="material-symbols-outlined text-[22px] text-primary flex-shrink-0 msym-fill">shield_lock</span>
+      <div class="min-w-0"><p class="font-label-md text-label-md">Your money is held, not sent</p><p class="font-body-sm text-body-sm opacity-90">Funds sit in a ring-fenced escrow wallet and move only when delivery is confirmed.</p></div>
+    </div>
+
+    <div class="bg-primary-container text-on-primary rounded-xl p-space-lg shadow-md relative overflow-hidden rise">
+      <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-secondary/15 pointer-events-none"></div>
+      <div class="absolute -right-4 -bottom-12 w-32 h-32 rounded-full bg-primary-fixed-dim/10 pointer-events-none"></div>
+      <div class="relative z-10">
+        <span class="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>In escrow now</span>
+        <div class="font-headline-lg-mobile md:font-headline-lg text-[28px] md:text-[34px] text-surface-bright mt-1 font-semibold tracking-tight" id="v-total">UGX 0</div>
+        <p class="font-body-sm text-primary-fixed-dim mt-0.5" id="v-sub"></p>
+
+        <div class="mt-space-md h-2.5 rounded-full bg-primary/40 overflow-hidden flex" id="v-bar" role="img" aria-label="Escrow balance split"></div>
+        <div class="mt-space-sm grid grid-cols-3 gap-space-sm text-center" id="v-stats"></div>
+
+        <div class="mt-space-md pt-space-md border-t border-primary-fixed-dim/20 flex items-center justify-between gap-2 text-primary-fixed-dim font-label-sm text-label-sm">
+          <span class="flex items-center gap-1.5 min-w-0"><span class="material-symbols-outlined text-[18px] text-secondary-container flex-shrink-0">account_balance_wallet</span><span class="truncate">MTN MoMo ••88492</span></span>
+          <span class="flex-shrink-0 px-2.5 py-1 rounded-full bg-surface-container-lowest/15 text-primary-fixed" id="v-released"></span>
+        </div>
+      </div>
+    </div>
+
+    <button id="action-banner" class="hidden w-full text-left bg-secondary-fixed text-on-secondary-fixed rounded-xl px-space-md py-space-sm items-center gap-space-sm shadow-sm active:scale-[.99] transition-transform" onclick="jumpToAction()"></button>
+  </section>
+
+  <!-- Orders -->
+  <section class="lg:col-start-6 lg:col-span-7 lg:row-start-1 lg:row-span-4 flex flex-col gap-space-md min-w-0" aria-label="Escrow orders">
+    <div class="flex flex-wrap items-center justify-between gap-space-sm">
+      <h1 class="font-headline-sm text-headline-sm text-primary">Escrow orders</h1>
+      <div class="inline-flex p-0.5 rounded-full bg-surface-container text-label-md font-label-md" role="group" aria-label="View as">
+        <button id="role-buyer" class="px-3.5 py-1.5 rounded-full transition-colors" onclick="setRole('buyer')">I'm buying</button>
+        <button id="role-seller" class="px-3.5 py-1.5 rounded-full transition-colors" onclick="setRole('seller')">I'm selling</button>
+      </div>
+    </div>
+    <div class="flex gap-space-xs overflow-x-auto no-scrollbar -mx-margin px-margin md:mx-0 md:px-0" id="tabs" role="tablist"></div>
+    <div class="flex flex-col gap-space-md" id="orders" aria-live="polite"></div>
+  </section>
+
+  <!-- How it works -->
+  <section class="lg:col-start-1 lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+    <h2 class="font-title-md text-title-md text-primary flex items-center gap-2 mb-space-md"><span class="material-symbols-outlined text-[20px] text-secondary">account_tree</span>How escrow protects you</h2>
+    <ol class="flex flex-col gap-space-md relative before:absolute before:left-[15px] before:top-3 before:bottom-3 before:w-0.5 before:bg-surface-container-high">
+      <li class="flex gap-3 relative"><span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 z-10 font-label-lg">1</span><div><p class="font-label-lg">Buyer funds escrow</p><p class="font-body-sm text-on-surface-variant">Approve the MTN or Airtel prompt. The seller sees the money is locked, but can't touch it.</p></div></li>
+      <li class="flex gap-3 relative"><span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 z-10 font-label-lg">2</span><div><p class="font-label-lg">Seller delivers</p><p class="font-body-sm text-on-surface-variant">The depot weighs the load and logs the weighbridge ticket against your delivery PIN.</p></div></li>
+      <li class="flex gap-3 relative"><span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 z-10 font-label-lg">3</span><div><p class="font-label-lg">Buyer inspects for 72 hours</p><p class="font-body-sm text-on-surface-variant">Confirm weight and grade, or raise a dispute. Disputes freeze the money immediately.</p></div></li>
+      <li class="flex gap-3 relative"><span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 z-10"><span class="material-symbols-outlined text-[18px]">payments</span></span><div><p class="font-label-lg">Funds released</p><p class="font-body-sm text-on-surface-variant">Paid for the kilograms that actually arrived. Silence for 72 hours releases automatically.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- Ledger -->
+  <section class="lg:col-start-1 lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+    <div class="flex items-center justify-between mb-space-sm"><h2 class="font-title-md text-title-md text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[20px] text-secondary">receipt_long</span>Escrow activity</h2></div>
+    <ul class="flex flex-col divide-y divide-surface-container" id="ledger"></ul>
+  </section>
+
+  <!-- Support -->
+  <section class="lg:col-start-1 lg:col-span-5 bg-surface-container-high rounded-xl p-space-md shadow-sm">
+    <div class="flex items-start gap-space-sm">
+      <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[22px]">support_agent</span></div>
+      <div class="flex-1 min-w-0">
+        <h2 class="font-title-md text-title-md font-semibold">You-Farm Escrow Guarantee</h2>
+        <p class="font-body-sm text-on-surface-variant mt-0.5">Weight, grade or delivery problem? Funds stay locked until both sides accept a resolution.</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a class="inline-flex items-center gap-1.5 px-3 py-2 bg-surface-container-lowest text-primary rounded-lg font-label-md shadow-sm active:scale-95 transition-transform" href="tel:0800100200"><span class="material-symbols-outlined text-[16px] text-secondary">phone_in_talk</span>Dispute hotline 0800 100 200</a>
+          <button class="inline-flex items-center gap-1.5 px-3 py-2 bg-surface-container-lowest text-on-surface-variant rounded-lg font-label-md shadow-sm hover:text-primary" onclick="toast('Support chat opens inside You-Farm','forum')"><span class="material-symbols-outlined text-[16px]">forum</span>Message support</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
-<span class="material-symbols-outlined text-[18px] text-primary/70">verified</span>
+
+<!-- Photo credit + demo reset -->
+<p class="mt-space-xl text-center font-body-sm text-outline">Photos via <a class="underline" href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> (free licences; see each file page for credits) · <button class="underline" onclick="resetDemo()">Reset demo data</button></p>
 </div>
+</main>
+
+<!-- ============ SHEET ============ -->
+<div id="sheet-wrap" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-end md:items-center justify-center md:p-margin-tablet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="sheet bg-surface-container-lowest w-full max-w-lg rounded-t-2xl md:rounded-2xl shadow-2xl max-h-[92dvh] flex flex-col pb-safe">
+    <div class="flex items-start justify-between gap-space-sm p-space-lg pb-space-sm flex-shrink-0">
+      <div class="min-w-0"><p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider" id="sheet-kicker"></p><h2 class="font-headline-sm text-headline-sm text-primary leading-tight" id="sheet-title"></h2></div>
+      <button aria-label="Close" class="w-9 h-9 flex-shrink-0 rounded-full bg-surface-container flex items-center justify-center" onclick="closeSheet()"><span class="material-symbols-outlined text-[20px]">close</span></button>
+    </div>
+    <div class="px-space-lg pb-space-lg overflow-y-auto flex flex-col gap-space-md" id="sheet-body"></div>
+  </div>
 </div>
-<!-- Escrow Vault Summary Card -->
-<div class="px-margin pt-space-lg"><div class="bg-primary-container text-on-primary rounded-xl p-space-lg shadow-md relative overflow-hidden"><div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-secondary/15 pointer-events-none"></div><div class="flex items-start justify-between gap-space-sm relative z-10"><div><span class="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider"><span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span> Active Escrow Vault</span><div class="font-headline-lg-mobile text-headline-lg-mobile text-surface-bright mt-2 font-semibold tracking-tight">UGX 3,420,000</div></div><div class="bg-surface-container-lowest/15 backdrop-blur-md rounded-xl p-2.5 text-center flex-shrink-0"><span class="material-symbols-outlined text-[26px] text-secondary-fixed">shield_lock</span></div></div><div class="mt-space-lg pt-space-md border-t border-primary/20 flex items-center justify-between gap-2 relative z-10"><div class="flex items-center gap-2 text-on-primary-container font-label-sm text-label-sm"><span class="material-symbols-outlined text-[18px] text-secondary-container">account_balance_wallet</span><span class="">MTN MoMo Reserve #88492</span></div><span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/15 text-primary-fixed font-label-sm text-label-sm">1 Active Transit</span></div></div></div>
-<!-- Active Order Header & Quick Filter Pills -->
-<div class="px-margin pt-space-lg flex items-center justify-between">
-<h2 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
-      Live Shipment
-      <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
-</h2>
-<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-full">
-      Waybill #AL-9921
-    </span>
-</div>
-<!-- Main Active Transit & Order Card -->
-<div class="px-margin pt-space-sm">
-<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
-<!-- Produce Header Image and Badges -->
-<div class="relative h-44 w-full">
-<img class="w-full h-full object-cover" data-alt="Golden sunlit high grade yellow maize grains filling woven farm sacks in an East African warehouse with rich natural lighting and fine agricultural texture in amber and forest green tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLvBPdozg-QVC5b1pg3t-SglPKtB74iIpfQ7BvYgthgwPY4Uc4bGIzspIYy5iV0J9ncsQ8dYHSewLXM31GZWRdCOwvtZ7WLvkBa3Hjcqew1osH39I6Vs1RLM3seOfATCLtnAPP-gJciWmWW1BKQEIPElxVRdX_UlNXEpQMuRVeRCuIcuzRgI3FWw3yPNb5t648ourXHR8FHfPr4NnzqzEVdQXCpTnGN5IRGZU80koD1JpqmndvhOGmmA">
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
-<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
-<span class="px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm rounded-md shadow-sm flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
-            Grade 1 Export Standard
-          </span>
-<span class="px-2 py-1 bg-secondary text-surface-bright font-label-sm text-label-sm rounded-md shadow-sm">
-            12.8% Moisture
-          </span>
-</div>
-<div class="absolute bottom-3 left-3 right-3 text-surface-bright">
-<p class="font-label-sm text-label-sm text-primary-fixed-dim">Commodity Lot #AL-9921</p>
-<p class="font-title-lg text-title-lg text-white font-semibold">2,500 kg High-Grade Yellow Maize</p>
-</div>
-</div>
-<!-- Trade Parties Info -->
-<div class="p-space-md bg-surface-container-low">
-<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-2">
-<span class="">Seller: Rwenzori Grain Union</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-<span class="">Buyer: Crown Agro Kampala</span>
-</div>
-<div class="bg-surface-container-lowest rounded-lg p-2.5 flex items-center justify-between shadow-sm">
-<div class="flex items-center gap-2 min-w-0">
-<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-secondary text-[18px]">lock</span>
-</div>
-<div class="min-w-0">
-<p class="font-label-md text-label-md text-on-surface truncate">UGX 3,420,000 Locked in Escrow</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant truncate">MTN Mobile Money Merchant Release</p>
-</div>
-</div>
-<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
-</div>
-</div>
-<!-- Live Transit Route Overview Map Placeholder -->
-<div class="p-space-md">
-<div class="relative w-full h-36 rounded-xl overflow-hidden shadow-inner">
-<div class="w-full h-full bg-cover bg-center" data-location="Fort Portal, Uganda" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBS31YXIh82RFZQPKQvrAeVcXk2-tvfADpdxrrxVjSv0sl4BkkgIzkthMQ1ndaGtaKLDBYZuMaDcB9qjI-Kf5O1bINGaOWiIkkp3Fi07o20BvGRbe9C30lGf7xLAqQ_fcKRN2aDab4qpwEleGoxVshfMXYpPyK00vU75N2_gebwo34i9RfFlpYzOMH_I8wqs_SnfMh_jQLunQ74kKFD3pl0owhCDYzvUR1zUE6pyFkV2Rq4w9-wMZij2A')"></div>
-<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px] pointer-events-none"></div>
-<div class="absolute top-2 left-2 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-md shadow-sm">
-<p class="font-label-sm text-label-sm text-on-surface flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px] text-secondary">near_me</span>
-              Near Fort Portal Bypass
-            </p>
-</div>
-<div class="absolute bottom-2 right-2 bg-primary text-on-primary px-3 py-1 rounded-full text-label-sm font-label-sm shadow flex items-center gap-1.5">
-<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
-            ETA: Today 4:30 PM
-          </div>
-</div>
-</div>
-<!-- Live Transit Milestone Stepper -->
-<div class="p-space-lg"><h3 class="font-title-md text-title-md text-primary mb-space-md flex items-center gap-2"><span class="material-symbols-outlined text-[20px] text-secondary">conversion_path</span> Escrow &amp; Transit Milestones</h3><div class="flex flex-col space-y-5 relative before:absolute before:left-3.5 before:top-2 before:bottom-3 before:w-0.5 before:bg-surface-container-high"><div class="flex items-start gap-3.5 relative"><div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm flex-shrink-0 z-10"><span class="material-symbols-outlined text-[16px]">check</span></div><div class="flex-1 min-w-0 pt-0.5"><div class="flex items-center justify-between"><p class="font-label-md text-label-md text-on-surface">Harvest Weighed &amp; Graded</p><span class="font-body-sm text-body-sm text-on-surface-variant">08:15 AM</span></div><p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Batch QA passed: Grade 1 certified at Kasese Depot</p></div></div><div class="flex items-start gap-3.5 relative"><div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm flex-shrink-0 z-10"><span class="material-symbols-outlined text-[16px]">check</span></div><div class="flex-1 min-w-0 pt-0.5"><div class="flex items-center justify-between"><p class="font-label-md text-label-md text-on-surface">Escrow Funded &amp; Locked</p><span class="font-body-sm text-body-sm text-on-surface-variant">09:30 AM</span></div><p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Buyer MoMo hold confirmed &amp; verified by system</p></div></div><div class="flex items-start gap-3.5 relative"><div class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm flex-shrink-0 z-10 animate-pulse"><span class="material-symbols-outlined text-[16px]">local_shipping</span></div><div class="flex-1 min-w-0 pt-0.5 bg-surface-container-low p-3 rounded-xl"><div class="flex items-center justify-between"><p class="font-label-md text-label-md text-primary font-semibold">Dispatched via Isuzu Forward</p><span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm rounded">Active</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Reg: <span class="font-label-md text-label-md text-on-surface">UBF 412K</span> (Near Fort Portal)</p><div class="mt-3 flex items-center gap-2.5"><div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden"><div class="bg-secondary-container h-1.5 rounded-full w-3/5"></div></div><span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">60% Done</span></div></div></div><div class="flex items-start gap-3.5 relative"><div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center flex-shrink-0 z-10"><span class="material-symbols-outlined text-[16px]">qr_code_scanner</span></div><div class="flex-1 min-w-0 pt-0.5"><p class="font-label-md text-label-md text-on-surface-variant">Hub Arrival &amp; Quality Scan</p><p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Pending Kampala Central Depot intake scan</p></div></div><div class="flex items-start gap-3.5 relative"><div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center flex-shrink-0 z-10"><span class="material-symbols-outlined text-[16px]">payments</span></div><div class="flex-1 min-w-0 pt-0.5"><p class="font-label-md text-label-md text-on-surface-variant">Escrow Auto-Release to Farmer Wallet</p><p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Instant payout upon digital delivery sign-off</p></div></div></div></div>
-<!-- Driver & Dispatch Contact Bar -->
-<div class="p-space-md bg-surface-container-low flex items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm min-w-0">
-<div class="relative w-11 h-11 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
-<img class="w-full h-full object-cover" data-alt="Portrait of an African commercial truck driver wearing a clean navy cap with a warm confident smile in natural outdoor sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlkOj8tHwZ3jWjs8_lkIg9panq135aVHN6IokTBdCMrlhdQfs9uQaUybgkxvny0Z3F85h1NxN30uBfiKvvnpmYN4NexY_iDP6OL6YiVxuG1wiPYKUMI3jxiht6d9dgpTQtiuP6kQHUHq-tHwA5H98UINY8VSWEBY9pC3Mq-4tLBYCQgpxxut6nm52S3r7f-Yn43G72Tg_TE0SqzgZ2tIG5MCeWYJR8XOO9MxoLrr6dtF1avyCXSEJX3Q">
-</div>
-<div class="min-w-0">
-<p class="font-label-md text-label-md text-on-surface truncate">Peter Semakula</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Logistics Lead · 4.9★ (142 Trips)</p>
-</div>
-</div>
-<div class="flex items-center gap-2 flex-shrink-0">
-<a aria-label="Call Driver" class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="tel:+256700000000">
-<span class="material-symbols-outlined text-[20px]">call</span>
-</a>
-<a aria-label="WhatsApp Driver" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="https://wa.me/256700000000">
-<span class="material-symbols-outlined text-[20px]">chat</span>
-</a>
-</div>
-</div>
-<!-- Action Button: Digital Waybill Pass -->
-<div class="p-space-md">
-<button class="w-full h-12 bg-primary hover:bg-primary-container active:bg-primary text-on-primary rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 shadow transition-colors" id="btn-view-pass">
-<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
-          View QR Code Delivery Pass
-        </button>
-</div>
-</div>
-</div>
-<!-- QR Modal (Hidden by default, triggered via micro-interaction) -->
-<div class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-margin" id="modal-qr">
-<div class="bg-surface-container-lowest rounded-xl max-w-sm w-full p-space-lg text-center shadow-xl">
-<div class="flex justify-between items-center mb-space-sm">
-<span class="font-headline-sm text-headline-sm text-primary">Consignment Pass</span>
-<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" id="btn-close-qr">
-<span class="material-symbols-outlined text-[18px]">close</span>
-</button>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Scan at Kampala Central Depot to trigger inspection &amp; payment release</p>
-<!-- Generated SVG Stylized QR Placeholder -->
-<div class="bg-surface-container-low p-4 rounded-xl inline-block mx-auto mb-space-md shadow-inner">
-<svg class="w-44 h-44 text-primary" fill="currentColor" viewBox="0 0 100 100">
-<rect fill="#012d1d" height="24" rx="3" width="24" x="10" y="10"></rect>
-<rect fill="#ffffff" height="14" rx="2" width="14" x="15" y="15"></rect>
-<rect fill="#012d1d" height="6" width="6" x="19" y="19"></rect>
-<rect fill="#012d1d" height="24" rx="3" width="24" x="66" y="10"></rect>
-<rect fill="#ffffff" height="14" rx="2" width="14" x="71" y="15"></rect>
-<rect fill="#012d1d" height="6" width="6" x="75" y="19"></rect>
-<rect fill="#012d1d" height="24" rx="3" width="24" x="10" y="66"></rect>
-<rect fill="#ffffff" height="14" rx="2" width="14" x="15" y="71"></rect>
-<rect fill="#012d1d" height="6" width="6" x="19" y="75"></rect>
-<!-- Data blocks -->
-<rect fill="#fe932c" height="14" width="6" x="40" y="15"></rect>
-<rect fill="#012d1d" height="6" width="10" x="50" y="20"></rect>
-<rect fill="#012d1d" height="16" rx="2" width="16" x="42" y="38"></rect>
-<rect fill="#fe932c" height="18" width="8" x="66" y="42"></rect>
-<rect fill="#012d1d" height="10" width="8" x="25" y="45"></rect>
-<rect fill="#012d1d" height="6" width="12" x="42" y="66"></rect>
-<rect fill="#fe932c" height="8" width="18" x="60" y="66"></rect>
-<rect fill="#012d1d" height="12" width="6" x="42" y="78"></rect>
-<rect fill="#012d1d" height="8" width="24" x="54" y="82"></rect>
-</svg>
-</div>
-<div class="bg-primary-fixed text-on-primary-fixed p-2.5 rounded-lg text-left">
-<p class="font-label-sm text-label-sm font-semibold truncate">Security Token: AL-884-9921-XQ</p>
-<p class="font-body-sm text-body-sm truncate">Authorized driver Peter Semakula (UBF 412K)</p>
-</div>
-</div>
-</div>
-<!-- Completed Orders History -->
-<div class="px-margin pt-space-xl">
-<div class="flex items-center justify-between mb-space-sm">
-<h3 class="font-headline-sm text-headline-sm text-primary">Completed Orders</h3>
-<a class="font-label-md text-label-md text-secondary hover:underline" href="#">View All (18)</a>
-</div>
-<div class="space-y-3"><div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-3"><div class="flex items-start justify-between gap-space-sm"><div><div class="flex items-center gap-2"><span class="font-title-md text-title-md text-on-surface font-semibold">1,800 kg Arabica Parchment</span><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="font-label-sm text-label-sm text-primary">Grade AA</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Order #AL-9874 · Mbale Mountain Hub</p></div><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Paid &amp; Released</span></div><div class="flex items-center justify-between pt-3 border-t border-surface-container"><div><span class="font-body-sm text-body-sm text-on-surface-variant">Settled:</span><span class="font-label-md text-label-md text-on-surface ml-1">UGX 14,400,000</span></div><div class="flex items-center gap-2"><button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[14px]">workspace_premium</span> Inspection Cert</button><button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[14px]">refresh</span> Re-order</button></div></div></div><div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-3"><div class="flex items-start justify-between gap-space-sm"><div><div class="flex items-center gap-2"><span class="font-title-md text-title-md text-on-surface font-semibold">4,000 kg Soya Bean Pure</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-secondary">Grade 1</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Order #AL-9780 · Gulu Agro Producers</p></div><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Paid &amp; Released</span></div><div class="flex items-center justify-between pt-3 border-t border-surface-container"><div><span class="font-body-sm text-body-sm text-on-surface-variant">Settled:</span><span class="font-label-md text-label-md text-on-surface ml-1">UGX 9,600,000</span></div><div class="flex items-center gap-2"><button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[14px]">workspace_premium</span> Inspection Cert</button><button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[14px]">refresh</span> Re-order</button></div></div></div></div>
-</div>
-<!-- Trust & Dispute Hotline Card -->
-<div class="px-margin pt-space-xl pb-space-lg">
-<div class="bg-surface-container-high rounded-xl p-space-md shadow-sm">
-<div class="flex items-start gap-space-sm">
-<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-[20px]">support_agent</span>
-</div>
-<div class="flex-1 min-w-0">
-<h4 class="font-title-md text-title-md text-on-surface font-semibold">You-Farm Trust &amp; Escrow Guarantee</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
-            Discrepancy in weight, grade, or transit delay? Funds remain strictly locked until both parties approve resolution.
-          </p>
-<div class="mt-3 flex flex-wrap gap-2">
-<a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest text-primary rounded-lg font-label-sm text-label-sm shadow-sm active:scale-95 transition-transform" href="tel:0800100200">
-<span class="material-symbols-outlined text-[16px] text-secondary">phone_in_talk</span>
-              Dispute Hotline: 0800 100 200 (Toll Free)
-            </a>
-<a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest text-on-surface-variant rounded-lg font-label-sm text-label-sm shadow-sm hover:text-primary" href="#">
-<span class="material-symbols-outlined text-[16px]">contact_support</span>
-              Regional Agronomist Chat
-            </a>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<div id="toast" role="status" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[70] bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full font-label-md shadow-xl opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2 max-w-[92vw]"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed" id="toast-icon">check_circle</span><span id="toast-msg"></span></div>
+
+<!-- ============ BOTTOM NAV (mobile) ============ -->
+<nav class="fixed bottom-0 inset-x-0 z-40 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] border-t border-outline-variant/40" aria-label="Primary" data-active-classes="text-primary font-bold"><div class="w-full flex items-center justify-around h-16 px-space-xs">
+  <a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="marketplace" href="MarketPlace.html"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Marketplace</span></a>
+  <a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="my-harvests-and-pools" href="Harvest.html"><span class="material-symbols-outlined text-[22px]">nest_eco_leaf</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Harvests</span></a>
+  <a aria-current="page" class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-primary font-bold transition-colors" data-path="orders-and-escrow" href="Escrow.html"><span class="material-symbols-outlined text-[22px] msym-fill">verified_user</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Escrow</span></a>
+  <a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="transits-and-hubs" href="Transit.html"><span class="material-symbols-outlined text-[22px]">local_shipping</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Transits</span></a>
+</div></nav>
+
 <script>
-    // Micro-interaction for Digital Waybill modal
-    const btnViewPass = document.getElementById('btn-view-pass');
-    const btnCloseQr = document.getElementById('btn-close-qr');
-    const modalQr = document.getElementById('modal-qr');
+/* ==========================================================================
+   REAL PHOTOS  (Wikimedia Commons hot-links by file name – swap for your own
+   licensed photos by editing this one object)
+   ========================================================================== */
+const COMMONS = f => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=900`;
+const PHOTO = {
+  maize:  {file:'Harvesting_maize.jpg', alt:'Maize being harvested', icon:'grass'},
+  coffee: {file:'Coffee_beans.jpg', alt:'Coffee beans', icon:'coffee'},
+  soy:    {file:'Soybeans.jpg', alt:'Soybeans', icon:'spa'},
+  matooke:{file:'A_bunch_of_matooke.jpg', alt:'A bunch of matooke', icon:'nutrition'},
+  tomato: {file:'A_woman_sorting_tomatoes_in_a_vegetable_market_in_Uganda.jpg', alt:'Sorting tomatoes at a market in Uganda', icon:'nutrition'}
+};
+function photo(key, cls){
+  const p=PHOTO[key]||PHOTO.maize;
+  return `<div class="relative overflow-hidden bg-surface-container ${cls||''}"><div class="absolute inset-0 skeleton"></div>
+    <img src="${COMMONS(p.file)}" alt="${p.alt}" loading="lazy" referrerpolicy="no-referrer" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+      onload="this.classList.remove('opacity-0');this.previousElementSibling.remove()"
+      onerror="photoFail(this,'${p.icon}')"/></div>`;
+}
+function photoFail(img, icon){ // neutral placeholder, never an illustration
+  const w=img.parentElement; w.innerHTML=`<div class="absolute inset-0 flex items-center justify-center bg-surface-container-high text-outline"><span class="material-symbols-outlined text-[40px]">${icon}</span></div>`;
+}
 
-    if (btnViewPass && modalQr && btnCloseQr) {
-      btnViewPass.addEventListener('click', () => {
-        modalQr.classList.remove('hidden');
-      });
-      btnCloseQr.addEventListener('click', () => {
-        modalQr.classList.add('hidden');
-      });
-      modalQr.addEventListener('click', (e) => {
-        if (e.target === modalQr) {
-          modalQr.classList.add('hidden');
-        }
-      });
-    }
-  </script>
-</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="marketplace" href="MarketPlace.html"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Marketplace</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="my-harvests-and-pools" href="Harvest.html"><span class="material-symbols-outlined text-[22px]">nest_eco_leaf</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Harvests</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="orders-and-escrow" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Escrow</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="transits-and-hubs" href="#"><span class="material-symbols-outlined text-[22px]">local_shipping</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Transits</span></a></div></nav>
+/* ==========================================================================
+   HELPERS
+   ========================================================================== */
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString('en-US');
+const short = n => n>=1e6 ? (n/1e6).toFixed(2).replace(/\.?0+$/,'')+'M' : Math.round(n/1e3)+'k';
+const ugx = n => 'UGX '+fmt(n);
+const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const H=3600e3, NOW=Date.now();
+const ago = ts => { const m=Math.max(1,Math.round((Date.now()-ts)/60000)); return m<60?`${m} min ago`:m<1440?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} d ago`; };
+const left = ts => { const ms=ts-Date.now(); if(ms<=0) return '0h 00m'; const h=Math.floor(ms/H), m=Math.floor(ms%H/60000); return `${h}h ${String(m).padStart(2,'0')}m`; };
+let tT; function toast(t,i='check_circle'){ $('toast-msg').textContent=t; $('toast-icon').textContent=i; const e=$('toast'); e.classList.remove('opacity-0','pointer-events-none'); clearTimeout(tT); tT=setTimeout(()=>e.classList.add('opacity-0','pointer-events-none'),3000); }
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
+/* Same contact-sharing rule as the marketplace chat: free-text on this page stays on-platform too. */
+const NW={zero:0,oh:0,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9};
+function detectContact(raw){
+  const t=String(raw||'').toLowerCase();
+  if(/[a-z0-9._%+-]+\s*(@|\(at\)|\[at\]|\bat\b)\s*[a-z0-9-]+\s*(\.|\(dot\)|\bdot\b)\s*[a-z]{2,}/.test(t)||/\b(gmail|yahoo|hotmail|outlook)\b/.test(t)) return 'an email address';
+  if(/(https?:\/\/|www\.|\bwa\.me\b|\b[a-z0-9-]{2,}\s?(\.|\bdot\b)\s?(com|net|org|ug|co|io|me|app)\b)/.test(t)) return 'a link';
+  if(/\b(whats\s?app|telegram|viber|imo|facebook|insta(gram)?|tiktok|snap(chat)?|call me|text me|my (number|phone|line|contact)|outside (the )?(app|platform))\b/.test(t)||/(^|\s)@[a-z0-9_.]{3,}/.test(t)) return 'a way to contact you off the platform';
+  let n=t.replace(/\b(zero|oh|one|two|three|four|five|six|seven|eight|nine)\b/g,w=>NW[w]).replace(/(?<=\d)o(?=\d)/g,'0');
+  n=n.replace(/\d{1,3}(,\d{3})+(\.\d+)?/g,' ').replace(/\d+(\.\d+)?\s*(kg|kgs|ugx|shs|tons?|mt|bags?|sacks?|%|percent)\b/g,' ');
+  if((n.match(/\+?\d(?:[\s\-.()/_*|,]*\d){6,}/g)||[]).length||n.replace(/\D/g,'').length>=9) return 'a phone number';
+  return '';
+}
+
+/* ==========================================================================
+   DATA
+   status: awaiting_payment → in_delivery → delivered → released | disputed
+   ========================================================================== */
+const SEED = () => ({
+  orders:[
+    {id:'AL-9921', photo:'maize',  title:'High-Grade Yellow Maize', spec:'Grade 1 · 12.8% moisture', kg:2500, unit:1368, seller:'Rwenzori Grain Union', buyer:'Crown Agro Kampala', status:'in_delivery', fundedAt:NOW-6*H, eta:'Arrives today ~4:30 PM', pin:'482913'},
+    {id:'AL-9934', photo:'coffee', title:'Robusta FAQ Coffee', spec:'Screen 15 · sun-dried', kg:800, unit:8400, seller:'Buddu Coffee Growers', buyer:'Crown Agro Kampala', status:'delivered', fundedAt:NOW-30*H, ticket:{kg:796, at:NOW-31*H+30*H}, releaseAt:NOW+41*H+12*60000},
+    {id:'AL-9940', photo:'tomato', title:'Roma Tomatoes (50 kg crates)', spec:'Grade 1 · cold chain', kg:400, unit:2400, seller:'Mukono Horticulture Club', buyer:'Crown Agro Kampala', status:'awaiting_payment', fundBy:NOW+2*H},
+    {id:'AL-9902', photo:'matooke',title:'Grade A Matooke', spec:'Green cooking bananas', kg:1500, unit:1750, seller:'Masaka Farmers Cooperative', buyer:'Crown Agro Kampala', status:'disputed', fundedAt:NOW-80*H,
+      ticket:{kg:1500, at:NOW-50*H}, dispute:{reason:'Quality below grade', pct:12, openedAt:NOW-20*H, note:'About 12% of the bunches were over-ripe on arrival.', evidence:3, buyerOk:false, sellerOk:false, escalated:false}},
+    {id:'AL-9874', photo:'coffee', title:'Arabica Parchment', spec:'Grade AA · Mbale Mountain Hub', kg:1800, unit:8000, seller:'Mbale Mountain Hub', buyer:'Crown Agro Kampala', status:'released', releasedAt:NOW-9*24*H, paid:14400000, refund:0},
+    {id:'AL-9780', photo:'soy',    title:'Soya Bean, Pure', spec:'Grade 1 · Gulu Agro Producers', kg:4000, unit:2400, seller:'Gulu Agro Producers', buyer:'Crown Agro Kampala', status:'released', releasedAt:NOW-24*24*H, paid:9600000, refund:0}
+  ],
+  events:[
+    {t:NOW-20*H, o:'AL-9902', k:'dispute', text:'Dispute opened · funds frozen', amt:-2625000},
+    {t:NOW-6*H,  o:'AL-9921', k:'fund',    text:'Escrow funded · MTN MoMo', amt:3420000},
+    {t:NOW-5*H,  o:'AL-9921', k:'ship',    text:'Seller dispatched the load', amt:0},
+    {t:NOW-1*H,  o:'AL-9934', k:'ticket',  text:'Weighbridge ticket logged · 796 kg', amt:0},
+    {t:NOW-30*H, o:'AL-9934', k:'fund',    text:'Escrow funded · Airtel Money', amt:6720000},
+    {t:NOW-9*24*H, o:'AL-9874', k:'release', text:'Released to seller', amt:-14400000}
+  ].sort((a,b)=>b.t-a.t),
+  v:3
+});
+let S = store.get('yf_escrow_v1', null); if(!S||S.v!==3) S=SEED();
+const save=()=>store.set('yf_escrow_v1',S);
+let role='buyer', tab='active';
+const total = o => o.kg*o.unit;
+const TOL = 1; // % weight variance accepted without a dispute
+function computePay(o){ const rec=Math.min(o.ticket.kg,o.kg); const pay=Math.round(o.unit*rec); return {pay, refund:total(o)-pay, rec}; } // never pay for more than was ordered
+const inspectionOpen = o => o.status==='delivered' && o.releaseAt>Date.now();
+const getO = id => S.orders.find(o=>o.id===id);
+const logE = (o,k,text,amt)=>{ S.events.unshift({t:Date.now(),o,k,text,amt}); };
+
+/* ==========================================================================
+   SUMMARY
+   ========================================================================== */
+function needsAction(o){ const dOpen=o.status==='disputed'&&!o.dispute.escalated&&!o.dispute[role==='buyer'?'buyerOk':'sellerOk']; return role==='buyer' ? (o.status==='awaiting_payment'||o.status==='delivered'||dOpen) : dOpen; }
+function renderSummary(){
+  const held = S.orders.filter(o=>o.status==='in_delivery'||o.status==='delivered').reduce((a,o)=>a+total(o),0);
+  const frozen = S.orders.filter(o=>o.status==='disputed').reduce((a,o)=>a+total(o),0);
+  const pending = S.orders.filter(o=>o.status==='awaiting_payment').reduce((a,o)=>a+total(o),0);
+  const released = S.orders.filter(o=>o.status==='released').reduce((a,o)=>a+(o.paid||0),0);
+  const sum=held+frozen;
+  $('v-total').textContent=ugx(sum);
+  const n=S.orders.filter(o=>['in_delivery','delivered','disputed'].includes(o.status)).length;
+  $('v-sub').textContent = n? `Across ${n} active order${n>1?'s':''}` : 'Nothing is held right now';
+  const pct=x=>sum? x/sum*100:0;
+  $('v-bar').innerHTML = sum? `<div class="bg-secondary-container h-full" style="width:${pct(held)}%"></div><div class="bg-error h-full" style="width:${pct(frozen)}%"></div>` : '';
+  const stat=(c,l,v)=>`<div class="rounded-lg bg-surface-container-lowest/10 py-2 px-1"><div class="flex items-center justify-center gap-1 font-label-sm text-primary-fixed-dim"><span class="w-2 h-2 rounded-full ${c}"></span>${l}</div><div class="font-label-lg text-surface-bright mt-0.5 truncate">${v?short(v):'0'}</div></div>`;
+  $('v-stats').innerHTML = stat('bg-secondary-container','Held',held)+stat('bg-error','Frozen',frozen)+stat('bg-primary-fixed-dim','To fund',pending);
+  $('v-released').textContent=`${ugx(released)} released`;
+  const na=S.orders.filter(needsAction);
+  const b=$('action-banner');
+  if(na.length){ b.classList.remove('hidden'); b.classList.add('flex'); b.innerHTML=`<span class="material-symbols-outlined text-[22px] msym-fill flex-shrink-0">notification_important</span><span class="flex-1 min-w-0"><span class="font-label-lg block">${na.length} order${na.length>1?'s':''} need${na.length>1?'':'s'} your action</span><span class="font-body-sm block opacity-90 truncate">${na.map(o=>o.id).join(' · ')}</span></span><span class="material-symbols-outlined">arrow_downward</span>`; }
+  else { b.classList.add('hidden'); b.classList.remove('flex'); }
+  $('notif-dot').classList.toggle('hidden', !na.length);
+}
+function jumpToAction(){ const o=S.orders.find(needsAction); if(!o) return; tab = o.status==='disputed'?'disputes':'active'; renderTabs(); renderOrders(); const el=document.querySelector(`[data-order="${o.id}"]`); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); }
+
+/* ==========================================================================
+   ORDERS
+   ========================================================================== */
+const STAGES=['Funded','In delivery','Delivered','Confirmed','Released'];
+const doneCount = o => ({awaiting_payment:0,in_delivery:1,delivered:2,disputed:2,released:5,expired:0,cancelled:0})[o.status];
+function stepper(o){
+  const d=doneCount(o), cur = o.status==='released'?-1:d; const frozen=o.status==='disputed';
+  const pct = d>=5?100: d===0?0 : ((d-1)/4*100) + (frozen?0:12.5);
+  return `<div class="relative mt-space-sm" aria-label="Escrow progress: ${d} of 5">
+    <div class="absolute top-[13px] left-[10%] right-[10%] h-0.5 bg-surface-container-high"></div>
+    <div class="absolute top-[13px] left-[10%] h-0.5 ${frozen?'bg-error':'bg-primary'} track-fill" style="width:${pct*0.8}%"></div>
+    <ol class="relative grid grid-cols-5">${STAGES.map((s,i)=>{
+      const done=i<d, now=i===cur && !frozen, bad=frozen&&i===d-1&&false;
+      const dot = done ? `<span class="w-7 h-7 rounded-full ${frozen&&i===2?'bg-error':'bg-primary'} text-on-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[16px]">${frozen&&i===2?'gavel':'check'}</span></span>`
+        : now ? `<span class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm animate-pulse"><span class="material-symbols-outlined text-[16px]">more_horiz</span></span>`
+        : `<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center"><span class="text-[11px] font-bold">${i+1}</span></span>`;
+      return `<li class="flex flex-col items-center gap-1 text-center">${dot}<span class="text-[10px] leading-3 font-semibold ${done||now?'text-on-surface':'text-on-surface-variant'} px-0.5">${s}</span></li>`;}).join('')}</ol></div>`;
+}
+const CHIP={
+  awaiting_payment:['Awaiting funding','hourglass_top','bg-surface-container-high text-on-surface-variant'],
+  in_delivery:['Locked · in delivery','lock','bg-secondary-fixed text-on-secondary-fixed'],
+  delivered:['Delivered · confirm','fact_check','bg-secondary-container text-on-secondary-container'],
+  disputed:['Frozen · dispute','gavel','bg-error-container text-on-error-container'],
+  released:['Released','check_circle','bg-primary-fixed text-on-primary-fixed'],
+  expired:['Expired','timer_off','bg-surface-container-high text-on-surface-variant'],
+  cancelled:['Cancelled','cancel','bg-surface-container-high text-on-surface-variant']
+};
+function callout(o){
+  const box=(cls,icon,html)=>`<div class="mt-space-sm rounded-lg p-2.5 flex items-start gap-2 ${cls}"><span class="material-symbols-outlined text-[18px] flex-shrink-0 mt-px">${icon}</span><div class="font-body-sm min-w-0">${html}</div></div>`;
+  const b=role==='buyer';
+  if(o.status==='awaiting_payment') return box('bg-surface-container-low text-on-surface','schedule', b?`Fund within <strong data-count="${o.fundBy}">${left(o.fundBy)}</strong> or the stock reservation lapses.`:`Waiting for the buyer to fund. You'll be told the moment the money is locked.`);
+  if(o.status==='in_delivery') return box('bg-surface-container-low text-on-surface','lock', `<strong>${ugx(total(o))}</strong> is locked. ${esc(o.eta)}. ${b?'Nothing is released until you confirm.':'Payout follows the buyer\'s confirmation.'}`);
+  if(o.status==='delivered'){ const diff=o.ticket.kg-o.kg; return box('bg-secondary-fixed/50 text-on-surface','scale', `Weighbridge ticket: <strong>${fmt(o.ticket.kg)} kg</strong> received of ${fmt(o.kg)} kg ordered${diff?` (${diff>0?'+':''}${fmt(diff)} kg)`:''}. ${b?'Auto-releases in':'Auto-release in'} <strong data-count="${o.releaseAt}">${left(o.releaseAt)}</strong> unless a dispute is raised.`); }
+  if(o.status==='disputed'){ const p=o.dispute; return box('bg-error-container/60 text-on-error-container','gavel', `<strong>${ugx(total(o))}</strong> frozen. ${esc(p.reason)} · ${p.pct}% affected. ${p.escalated?'Under You-Farm arbitration.':`Buyer ${p.buyerOk?'accepted':'pending'} · Seller ${p.sellerOk?'accepted':'pending'}.`}`); }
+  if(o.status==='expired') return box('bg-surface-container-low text-on-surface','timer_off','Not funded in time, so the stock reservation was released. No money moved.');
+  if(o.status==='cancelled') return box('bg-surface-container-low text-on-surface','cancel','Cancelled before funding. No money moved.');
+  if(o.status==='released') return box('bg-primary-fixed/60 text-on-primary-fixed','payments', `Seller was paid <strong>${ugx(o.paid)}</strong>${o.refund?` and you were refunded <strong>${ugx(o.refund)}</strong>`:''} · ${ago(o.releasedAt)}.`);
+  return '';
+}
+function actions(o){
+  const btn=(label,icon,fn,kind)=>`<button class="min-h-[44px] px-3 sm:px-4 whitespace-nowrap rounded-xl font-label-lg flex items-center justify-center gap-1.5 active:scale-[.98] transition-transform ${kind==='p'?'bg-primary text-on-primary shadow-sm':kind==='w'?'bg-secondary text-on-secondary shadow-sm':'bg-surface-container text-on-surface hover:bg-surface-container-high'}" onclick="${fn}"><span class="material-symbols-outlined text-[18px]">${icon}</span>${label}</button>`;
+  const link=(label,icon,href)=>`<a class="min-h-[44px] px-4 rounded-xl font-label-lg flex items-center justify-center gap-1.5 bg-surface-container text-on-surface hover:bg-surface-container-high active:scale-[.98] transition-transform" href="${href}"><span class="material-symbols-outlined text-[18px]">${icon}</span>${label}</a>`;
+  let a=[];
+  if(role==='buyer'){
+    if(o.status==='awaiting_payment') a=[btn('Fund escrow','lock',`openFund('${o.id}')`,'p'), btn('Cancel order','close',`openCancel('${o.id}')`)];
+    if(o.status==='in_delivery') a=[btn('Delivery PIN','pin',`openPin('${o.id}')`,'p'), link('Track delivery','local_shipping','Transit.html')];
+    if(o.status==='delivered') a=[btn('Confirm &amp; release','verified',`openConfirm('${o.id}')`,'p'), btn('Raise dispute','report',`openDispute('${o.id}')`)];
+    if(o.status==='disputed') a=[btn('View case','gavel',`openCase('${o.id}')`,'w')];
+    if(o.status==='released') a=[btn('Receipt','receipt_long',`openReceipt('${o.id}')`), link('Re-order','refresh','MarketPlace.html')];
+    if(o.status==='expired'||o.status==='cancelled') a=[link('Order again','refresh','MarketPlace.html')];
+  } else {
+    if(o.status==='awaiting_payment') a=[`<span class="font-body-sm text-on-surface-variant self-center">No action needed yet</span>`];
+    if(o.status==='in_delivery') a=[link('Track delivery','local_shipping','Transit.html')];
+    if(o.status==='delivered') a=[btn('Remind buyer','notifications_active',`toast('Reminder sent to the buyer','notifications_active')`)];
+    if(o.status==='disputed') a=[btn('Respond to case','gavel',`openCase('${o.id}')`,'w')];
+    if(o.status==='released') a=[btn('Receipt','receipt_long',`openReceipt('${o.id}')`)];
+  }
+  if(!a.length) return '';
+  return `<div class="mt-space-md flex flex-wrap gap-space-sm [&>*]:flex-1 sm:[&>*]:flex-none">${a.join('')}</div>`;
+}
+function orderCard(o,i){
+  const c=CHIP[o.status];
+  const youB = role==='buyer';
+  return `<article data-order="${o.id}" class="rise bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col sm:flex-row" style="animation-delay:${Math.min(i,4)*60}ms">
+    ${photo(o.photo,'h-36 sm:h-auto sm:w-44 lg:w-40 xl:w-48 flex-shrink-0')}
+    <div class="p-space-md flex-1 min-w-0">
+      <div class="flex items-start justify-between gap-space-sm">
+        <div class="min-w-0"><h3 class="font-title-md text-title-md text-on-surface leading-snug">${fmt(o.kg)} kg ${esc(o.title)}</h3><p class="font-body-sm text-on-surface-variant mt-0.5">#${o.id} · ${esc(o.spec)}</p></div>
+        <span class="flex-shrink-0 inline-flex items-center gap-1 px-2 py-1 rounded-full font-label-sm ${c[2]}"><span class="material-symbols-outlined text-[13px] msym-fill">${c[1]}</span><span class="hidden min-[420px]:inline">${c[0]}</span></span>
+      </div>
+      <div class="mt-space-sm flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-on-surface-variant">
+        <span class="flex items-center gap-1 min-w-0"><span class="material-symbols-outlined text-[15px] text-secondary">${youB?'storefront':'person'}</span><span class="truncate">${youB?'Seller':'Buyer'}: ${esc(youB?o.seller:o.buyer)}</span></span>
+        <span class="ml-auto font-headline-sm text-headline-sm text-primary">${ugx(total(o))}</span>
+      </div>
+      ${['released','expired','cancelled'].includes(o.status)?'':stepper(o)}
+      ${callout(o)}
+      ${actions(o)}
+    </div></article>`;
+}
+function renderTabs(){
+  const cnt={active:S.orders.filter(o=>['awaiting_payment','in_delivery','delivered'].includes(o.status)).length, disputes:S.orders.filter(o=>o.status==='disputed').length, done:S.orders.filter(o=>['released','expired','cancelled'].includes(o.status)).length};
+  const T=[['active','Active',cnt.active],['disputes','Disputes',cnt.disputes],['done','History',cnt.done]];
+  $('tabs').innerHTML=T.map(([k,l,n])=>`<button role="tab" aria-selected="${tab===k}" class="flex-shrink-0 px-4 h-10 rounded-full font-label-lg transition-colors flex items-center gap-2 ${tab===k?'bg-primary text-on-primary shadow-sm':'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'}" onclick="setTab('${k}')">${l}<span class="min-w-[20px] h-5 px-1.5 rounded-full text-[11px] leading-5 ${tab===k?'bg-surface-container-lowest/20':'bg-surface-container-highest'}">${n}</span></button>`).join('');
+}
+function renderOrders(){
+  const f={active:o=>['awaiting_payment','in_delivery','delivered'].includes(o.status),disputes:o=>o.status==='disputed',done:o=>['released','expired','cancelled'].includes(o.status)}[tab];
+  const rank={delivered:0,awaiting_payment:1,in_delivery:2,disputed:0,released:3,expired:4,cancelled:4};
+  const list=S.orders.filter(f).sort((a,b)=>rank[a.status]-rank[b.status]);
+  $('orders').innerHTML=list.length?list.map(orderCard).join(''):`<div class="bg-surface-container-lowest rounded-xl p-space-lg text-center flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[44px] text-primary-fixed-dim">${tab==='disputes'?'task_alt':'inventory_2'}</span><h3 class="font-title-md text-primary">${tab==='disputes'?'No open disputes':'Nothing here yet'}</h3><p class="text-on-surface-variant max-w-xs">${tab==='disputes'?'Every escrow order is running smoothly.':'Orders you place on the marketplace appear here with their escrow status.'}</p><a class="mt-1 px-4 h-11 rounded-xl bg-primary text-on-primary font-label-lg flex items-center" href="MarketPlace.html">Browse marketplace</a></div>`;
+}
+function setTab(k){ tab=k; renderTabs(); renderOrders(); }
+function setRole(r){ role=r; store.set('yf_escrow_role',r); ['buyer','seller'].forEach(x=>{ $('role-'+x).className='px-3.5 py-1.5 rounded-full transition-colors '+(x===r?'bg-primary text-on-primary shadow-sm':'text-on-surface-variant'); $('role-'+x).setAttribute('aria-pressed',x===r); }); renderAll(); }
+
+/* ==========================================================================
+   LEDGER
+   ========================================================================== */
+const EV={fund:['arrow_downward','bg-primary-fixed text-on-primary-fixed'],ship:['local_shipping','bg-surface-container-high text-on-surface-variant'],ticket:['scale','bg-surface-container-high text-on-surface-variant'],release:['payments','bg-tertiary-fixed text-on-tertiary-fixed'],dispute:['gavel','bg-error-container text-on-error-container'],refund:['undo','bg-secondary-fixed text-on-secondary-fixed'],cancel:['cancel','bg-surface-container-high text-on-surface-variant'],auto:['schedule_send','bg-tertiary-fixed text-on-tertiary-fixed'],escalate:['balance','bg-error-container text-on-error-container']};
+let ledgerAll=false;
+function renderLedger(){
+  $('ledger').innerHTML=S.events.slice(0,ledgerAll?50:6).map(e=>{const [i,c]=EV[e.k]||EV.ship; return `<li class="py-2.5 flex items-center gap-3"><span class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${c}"><span class="material-symbols-outlined text-[18px]">${i}</span></span><div class="min-w-0 flex-1"><p class="font-label-md text-on-surface truncate">${esc(e.text)}</p><p class="font-body-sm text-on-surface-variant">#${e.o} · ${ago(e.t)}</p></div>${e.amt?`<span class="font-label-lg flex-shrink-0 ${e.amt>0?'text-primary':'text-on-surface-variant'}">${e.amt>0?'+':'−'}${fmt(Math.abs(e.amt))}</span>`:''}</li>`;}).join('')+(S.events.length>6?`<li class="pt-2"><button class="w-full h-10 rounded-lg bg-surface-container font-label-md" onclick="ledgerAll=!ledgerAll;renderLedger()">${ledgerAll?'Show less':'Show all '+S.events.length+' entries'}</button></li>`:'');
+}
+
+/* ==========================================================================
+   SHEETS
+   ========================================================================== */
+function openSheet(kicker,title,html){ $('sheet-kicker').textContent=kicker; $('sheet-title').textContent=title; $('sheet-body').innerHTML=html; $('sheet-wrap').classList.remove('hidden'); $('sheet-wrap').classList.add('flex'); document.body.style.overflow='hidden'; }
+function closeSheet(){ $('sheet-wrap').classList.add('hidden'); $('sheet-wrap').classList.remove('flex'); document.body.style.overflow=''; }
+$('sheet-wrap').addEventListener('click',e=>{ if(e.target.id==='sheet-wrap') closeSheet(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeSheet(); });
+const row=(a,b,strong)=>`<div class="flex justify-between gap-3 ${strong?'pt-2 mt-1 border-t border-outline-variant/60 items-baseline':''}"><span class="text-on-surface-variant">${a}</span><span class="${strong?'font-headline-sm text-primary':'font-semibold'} text-right">${b}</span></div>`;
+const primary=(label,icon,fn,id)=>`<button ${id?`id="${id}"`:''} class="w-full min-h-[52px] bg-primary text-on-primary rounded-xl font-label-lg flex items-center justify-center gap-2 shadow-md active:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed" onclick="${fn}"><span class="material-symbols-outlined text-[20px]">${icon}</span>${label}</button>`;
+
+/* ---- fund ---- */
+let PAY='MTN';
+function openFund(id){
+  const o=getO(id); PAY='MTN';
+  if(o.status!=='awaiting_payment'||o.fundBy<=Date.now()){ process(); return toast('This order can no longer be funded','error'); }
+  openSheet('Fund escrow',`${fmt(o.kg)} kg ${o.title}`,`
+    <div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1.5">${row('Seller',esc(o.seller))}${row('Price',`${fmt(o.unit)} UGX/kg × ${fmt(o.kg)} kg`)}${row('Locked in escrow',ugx(total(o)),true)}</div>
+    <div><span class="font-label-sm text-on-surface-variant">Pay with mobile money</span>
+      <div class="grid grid-cols-2 gap-space-sm mt-1" id="pay-row">
+        <button class="pay h-12 rounded-lg font-label-lg bg-primary text-on-primary" onclick="pickPay('MTN')">MTN MoMo</button>
+        <button class="pay h-12 rounded-lg font-label-lg bg-surface-container text-on-surface" onclick="pickPay('Airtel')">Airtel Money</button></div>
+      <p class="font-body-sm text-on-surface-variant mt-1.5">A payment prompt will appear on your registered wallet. The seller is paid only after you confirm delivery.</p></div>
+    ${primary('Approve payment','lock',`doFund('${id}')`,'fund-btn')}`);
+}
+function pickPay(p){ PAY=p; document.querySelectorAll('.pay').forEach((b,i)=>{ b.className='pay h-12 rounded-lg font-label-lg '+((i===0)===(p==='MTN')?'bg-primary text-on-primary':'bg-surface-container text-on-surface'); }); }
+function doFund(id){
+  const b=$('fund-btn'); b.disabled=true; b.innerHTML='<span class="material-symbols-outlined text-[20px] spin">progress_activity</span>Waiting for wallet approval…';
+  setTimeout(()=>{ const o=getO(id); if(o.status!=='awaiting_payment'||o.fundBy<=Date.now()){ closeSheet(); process(); return toast('Reservation expired before payment completed. You were not charged','error'); } o.status='in_delivery'; o.fundedAt=Date.now(); o.eta='Seller is preparing dispatch'; o.pin=String(Math.floor(100000+Math.random()*900000)); delete o.fundBy;
+    logE(id,'fund',`Escrow funded · ${PAY==='MTN'?'MTN MoMo':'Airtel Money'}`,total(o)); save(); closeSheet(); tab='active'; renderAll(); toast(`${ugx(total(o))} locked in escrow`,'lock'); },1600);
+}
+
+/* ---- cancel unfunded ---- */
+function openCancel(id){
+  const o=getO(id);
+  openSheet('Cancel order',`#${id}`,`<p class="text-on-surface-variant">Cancel the ${fmt(o.kg)} kg ${esc(o.title)} order? You haven't paid anything, so nothing is refunded. The stock goes back on the marketplace.</p>
+  <div class="flex gap-2"><button class="flex-1 min-h-[48px] rounded-xl bg-surface-container font-label-lg" onclick="closeSheet()">Keep order</button><button class="flex-1 min-h-[48px] rounded-xl bg-error text-on-error font-label-lg" onclick="doCancel('${id}')">Cancel order</button></div>`);
+}
+function doCancel(id){ const o=getO(id); if(o.status!=='awaiting_payment') return closeSheet(); o.status='cancelled'; delete o.fundBy; logE(id,'cancel','Order cancelled before funding',0); save(); closeSheet(); renderAll(); toast('Order cancelled','cancel'); }
+
+/* ---- delivery PIN ---- */
+function openPin(id){
+  const o=getO(id);
+  openSheet('Delivery PIN',`Order #${id}`,`
+    <p class="text-on-surface-variant">Give this PIN to the depot clerk only after the load is weighed and accepted. It logs the delivery and starts your 72-hour inspection window.</p>
+    <div class="bg-primary-fixed rounded-xl py-space-lg text-center"><div class="font-display-lg text-[40px] tracking-[.35em] text-primary font-bold pl-[.35em]" aria-label="PIN ${o.pin.split('').join(' ')}">${o.pin.slice(0,3)} ${o.pin.slice(3)}</div></div>
+    <div class="bg-secondary-fixed/50 rounded-lg p-2.5 flex gap-2 font-body-sm"><span class="material-symbols-outlined text-[18px] text-secondary flex-shrink-0">warning</span><span>Never share this PIN in chat or with anyone before delivery. You-Farm staff will never ask for it.</span></div>
+    <button class="w-full min-h-[48px] rounded-xl bg-surface-container font-label-lg" onclick="simulateDelivery('${id}')">Demo: simulate depot delivery scan</button>`);
+}
+function simulateDelivery(id){ const o=getO(id); const kg=o.kg-Math.round(o.kg*0.004); o.status='delivered'; o.ticket={kg,at:Date.now()}; o.releaseAt=Date.now()+72*H; logE(id,'ticket',`Weighbridge ticket logged · ${fmt(kg)} kg`,0); save(); closeSheet(); renderAll(); toast('Delivery logged · 72-hour inspection started','scale'); }
+
+/* ---- confirm & release ---- */
+function openConfirm(id){
+  const o=getO(id); if(o.status!=='delivered'){ return toast('This order is not awaiting confirmation','error'); }
+  const {pay,refund,rec}=computePay(o); const varPct=Math.abs(o.kg-o.ticket.kg)/o.kg*100;
+  openSheet('Confirm delivery',`${fmt(o.kg)} kg ${o.title}`,`
+    <div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1.5">
+      ${row('Ordered',`${fmt(o.kg)} kg`)}${row('Weighbridge ticket',`${fmt(rec)} kg`)}${row('Difference',`${rec-o.kg===0?'None':(rec-o.kg)+' kg ('+varPct.toFixed(2)+'%)'}`)}
+      ${row('Seller receives',ugx(pay),true)}
+      ${varPct>TOL?`<p class="font-body-sm text-error text-right">Above the ${TOL}% weight tolerance. Check carefully, or raise a dispute.</p>`:''}
+      ${refund>0?`<p class="font-body-sm text-on-surface-variant text-right">${ugx(refund)} returns to your wallet for the shortfall.</p>`:''}
+    </div>
+    <fieldset class="flex flex-col gap-2"><legend class="font-label-lg mb-1">I have checked that</legend>
+      ${['The weight on the ticket matches what arrived','The grade and moisture match the listing','The produce is free of damage or spoilage'].map((t,i)=>`<label class="flex items-start gap-3 bg-surface-container-low rounded-lg p-3 cursor-pointer"><input type="checkbox" class="chk mt-0.5 w-5 h-5 accent-[#1b4332]" onchange="$('rel-btn').disabled=![...document.querySelectorAll('.chk')].every(c=>c.checked)"/><span>${t}</span></label>`).join('')}
+    </fieldset>
+    ${primary(`Release ${ugx(pay)}`,'payments',`doRelease('${id}')`,'rel-btn')}
+    <button class="w-full min-h-[44px] rounded-xl bg-surface-container text-error font-label-lg flex items-center justify-center gap-1.5" onclick="openDispute('${id}')"><span class="material-symbols-outlined text-[18px]">report</span>Something is wrong — raise a dispute</button>
+    <p class="font-body-sm text-on-surface-variant text-center">Releasing is final. Funds go straight to the seller's wallet.</p>`);
+  $('rel-btn').disabled=true;
+}
+function doRelease(id){
+  const o=getO(id); if(o.status!=='delivered') return closeSheet(); const {pay,refund}=computePay(o); o.status='released'; o.releasedAt=Date.now(); o.paid=pay; o.refund=refund; delete o.releaseAt;
+  logE(id,'release','Released to seller',-pay); if(refund) logE(id,'refund','Shortfall refunded to buyer',-refund);
+  save(); closeSheet(); tab='done'; renderAll(); toast(`${ugx(pay)} released to ${o.seller}`,'payments');
+}
+
+/* ---- dispute ---- */
+const REASONS=['Weight shortfall','Quality below grade','Damaged in handling','Wrong product delivered'];
+let EVID=[];
+function openDispute(id){
+  const o=getO(id); EVID=[];
+  if(!inspectionOpen(o)){ process(); return toast('The 72-hour inspection window has closed for this order','timer_off'); }
+  openSheet('Raise a dispute',`Order #${id}`,`
+    <div class="bg-error-container/50 text-on-error-container rounded-lg p-2.5 flex gap-2 font-body-sm"><span class="material-symbols-outlined text-[18px] flex-shrink-0">lock</span><span>Raising a dispute <strong>freezes ${ugx(total(o))}</strong> immediately. Neither side can withdraw until it is resolved.</span></div>
+    <div><label class="font-label-sm text-on-surface-variant" for="d-reason">What went wrong?</label>
+      <select id="d-reason" class="w-full h-12 mt-1 px-3 rounded-lg bg-surface-container-low outline-none">${REASONS.map(r=>`<option>${r}</option>`).join('')}</select></div>
+    <div><div class="flex justify-between font-label-sm text-on-surface-variant"><label for="d-pct">Share of the order affected</label><strong id="d-pct-l" class="text-on-surface">10%</strong></div>
+      <input id="d-pct" type="range" min="5" max="100" step="5" value="10" class="w-full mt-2 accent-[#904d00]" oninput="$('d-pct-l').textContent=this.value+'%';updPropose('${id}')"/>
+      <p class="font-body-sm text-on-surface-variant mt-1" id="d-prop"></p></div>
+    <div><label class="font-label-sm text-on-surface-variant" for="d-note">Describe the problem</label>
+      <textarea id="d-note" rows="3" maxlength="400" class="w-full mt-1 px-3 py-2.5 rounded-lg bg-surface-container-low outline-none resize-none" placeholder="Be specific: what you saw, how many bags or crates…" oninput="chkNote()"></textarea>
+      <p id="d-warn" class="hidden font-label-md text-error mt-1 flex items-start gap-1"><span class="material-symbols-outlined text-[16px]">warning</span><span></span></p></div>
+    <div><span class="font-label-sm text-on-surface-variant">Photo evidence (up to 4)</span>
+      <div class="mt-1 grid grid-cols-4 gap-2" id="d-evid"></div></div>
+    ${primary('Freeze funds &amp; open dispute','gavel',`doDispute('${id}')`,'d-btn')}`);
+  renderEvid(); updPropose(id);
+}
+function updPropose(id){ const o=getO(id), p=+$('d-pct').value; $('d-prop').textContent=`If upheld in full, ${ugx(Math.round(total(o)*p/100))} would be refunded to you and ${ugx(total(o)-Math.round(total(o)*p/100))} paid to the seller.`; }
+function chkNote(){ const r=detectContact($('d-note').value); const w=$('d-warn'); w.classList.toggle('hidden',!r); w.classList.toggle('flex',!!r); if(r) w.lastElementChild.textContent=`Remove ${r}. Keep everything on You-Farm.`; $('d-btn').disabled=!!r; }
+function renderEvid(){
+  $('d-evid').innerHTML=EVID.map((u,i)=>`<div class="relative aspect-square rounded-lg overflow-hidden bg-surface-container"><img src="${u}" alt="Evidence ${i+1}" class="w-full h-full object-cover"/><button aria-label="Remove photo" class="absolute top-1 right-1 w-6 h-6 rounded-full bg-black/60 text-white flex items-center justify-center" onclick="EVID.splice(${i},1);renderEvid()"><span class="material-symbols-outlined text-[14px]">close</span></button></div>`).join('')+
+  (EVID.length<4?`<label class="aspect-square rounded-lg border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-on-surface-variant cursor-pointer hover:bg-surface-container-low"><span class="material-symbols-outlined">add_a_photo</span><span class="text-[10px] font-semibold">Add</span><input type="file" accept="image/*" capture="environment" class="sr-only" onchange="addEvid(this)"/></label>`:'');
+}
+function addEvid(inp){ const f=inp.files&&inp.files[0]; if(!f) return; if(!/^image\//.test(f.type)){ toast('Please choose a photo','error'); return; } EVID.push(URL.createObjectURL(f)); renderEvid(); }
+function doDispute(id){
+  const note=$('d-note').value.trim(); if(detectContact(note)) return;
+  const o=getO(id); if(!inspectionOpen(o)){ closeSheet(); process(); return toast('Inspection window closed','timer_off'); }
+  o.status='disputed'; delete o.releaseAt;
+  o.dispute={reason:$('d-reason').value, pct:+$('d-pct').value, openedAt:Date.now(), note, evidence:EVID.length, buyerOk:false, sellerOk:false, escalated:false};
+  logE(id,'dispute','Dispute opened · funds frozen',-total(o)); save(); closeSheet(); tab='disputes'; renderAll(); toast('Funds frozen. A mediator will review within 48 hours','gavel');
+}
+
+/* ---- dispute case ---- */
+function openCase(id){
+  const o=getO(id), d=o.dispute; const buyerGets=Math.round(total(o)*d.pct/100), sellerGets=total(o)-buyerGets; const isB=role==='buyer'; const mine=isB?d.buyerOk:d.sellerOk;
+  const steps=[['Dispute opened',ago(d.openedAt),true],['Evidence from both sides','Due within 48 h',true],['Mediator proposal','Ready now',true],['Resolution &amp; payout','After both accept',false]];
+  openSheet('Dispute case',`Order #${id}`,`
+    <div class="bg-error-container/50 text-on-error-container rounded-lg p-space-md flex items-start gap-2"><span class="material-symbols-outlined text-[20px] msym-fill">lock</span><div class="font-body-sm"><strong class="block font-label-lg">${ugx(total(o))} frozen</strong>${esc(d.reason)} · ${d.pct}% of the order${d.evidence?` · ${d.evidence} photo${d.evidence>1?'s':''} attached`:''}${d.note?`<br><em>“${esc(d.note)}”</em>`:''}</div></div>
+    <ol class="flex flex-col gap-3 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">${steps.map(([t,s,ok])=>`<li class="flex gap-3 items-center relative"><span class="w-6 h-6 rounded-full flex items-center justify-center z-10 ${ok?'bg-primary text-on-primary':'bg-surface-container-high text-on-surface-variant'}"><span class="material-symbols-outlined text-[14px]">${ok?'check':'more_horiz'}</span></span><div><p class="font-label-md">${t}</p><p class="font-body-sm text-on-surface-variant">${s}</p></div></li>`).join('')}</ol>
+    <div class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/60">
+      <p class="font-label-sm text-secondary uppercase tracking-wider">Mediator's proposal</p>
+      <div class="mt-2 flex flex-col gap-1.5">${row('Refund to buyer',ugx(buyerGets))}${row('Paid to seller',ugx(sellerGets))}</div>
+      <p class="font-body-sm text-on-surface-variant mt-2">Based on the ${d.pct}% affected and the weighbridge ticket. Payout happens only when both sides accept.</p>
+      <div class="mt-3 flex gap-2 flex-wrap font-label-md">
+        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full ${d.buyerOk?'bg-tertiary-fixed text-on-tertiary-fixed':'bg-surface-container-high text-on-surface-variant'}"><span class="material-symbols-outlined text-[14px]">${d.buyerOk?'check_circle':'hourglass_top'}</span>Buyer ${d.buyerOk?'accepted':'pending'}</span>
+        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full ${d.sellerOk?'bg-tertiary-fixed text-on-tertiary-fixed':'bg-surface-container-high text-on-surface-variant'}"><span class="material-symbols-outlined text-[14px]">${d.sellerOk?'check_circle':'hourglass_top'}</span>Seller ${d.sellerOk?'accepted':'pending'}</span></div>
+      ${d.escalated?`<div class="mt-3 bg-error-container/60 text-on-error-container rounded-lg p-2.5 flex gap-2 font-body-sm"><span class="material-symbols-outlined text-[18px]">balance</span>Escalated. A You-Farm arbitrator will decide within 5 working days. Funds stay frozen.</div>`:`
+      <div class="mt-3 flex flex-col sm:flex-row gap-2">
+        <button ${mine?'disabled':''} class="flex-1 min-h-[48px] rounded-xl bg-primary text-on-primary font-label-lg disabled:opacity-50" onclick="acceptSettlement('${id}')">${mine?'You accepted · waiting for the other side':'Accept proposal'}</button>
+        <button class="flex-1 min-h-[48px] rounded-xl bg-surface-container font-label-lg" onclick="escalate('${id}')">${isB?'Reject &amp; escalate':'Counter &amp; escalate'}</button></div>
+      ${mine?`<button class="mt-2 w-full min-h-[40px] rounded-lg bg-surface-container-high font-label-md noprint" onclick="otherSideAccepts('${id}')">Demo: let the other side accept</button>`:''}`}
+    </div>`);
+}
+function settle(id){
+  const o=getO(id), d=o.dispute; const buyer=Math.round(total(o)*d.pct/100), seller=total(o)-buyer;
+  o.status='released'; o.releasedAt=Date.now(); o.paid=seller; o.refund=buyer; o.settled=true;
+  logE(id,'release','Dispute settled · released to seller',-seller); if(buyer) logE(id,'refund','Dispute settled · refund to buyer',-buyer);
+}
+function acceptSettlement(id){
+  const o=getO(id), d=o.dispute; if(o.status!=='disputed'||d.escalated) return;
+  d[role==='buyer'?'buyerOk':'sellerOk']=true;
+  if(d.buyerOk&&d.sellerOk){ settle(id); save(); closeSheet(); tab='done'; renderAll(); toast('Both sides agreed. Funds paid out','handshake'); }
+  else { save(); renderAll(); openCase(id); toast('Accepted. Waiting for the other side','hourglass_top'); }
+}
+function otherSideAccepts(id){ const d=getO(id).dispute; d[role==='buyer'?'sellerOk':'buyerOk']=true; acceptSettlement(id); }
+function escalate(id){ const d=getO(id).dispute; d.escalated=true; d.buyerOk=d.sellerOk=false; logE(id,'escalate','Dispute escalated to arbitration',0); save(); renderAll(); openCase(id); toast('Escalated to arbitration. Funds stay frozen','balance'); }
+
+/* ---- receipt ---- */
+function openReceipt(id){
+  const o=getO(id);
+  openSheet('Receipt',`Order #${id}`,`
+    <div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1.5">${row('Product',`${fmt(o.kg)} kg ${esc(o.title)}`)}${row('Seller',esc(o.seller))}${row('Buyer',esc(o.buyer))}${row('Order value',ugx(total(o)))}${row('Paid to seller',ugx(o.paid||0))}${o.refund?row('Refunded to buyer',ugx(o.refund)):''}${row('Released',new Date(o.releasedAt).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}))}${o.settled?row('Outcome','Settled by mediation'):''}</div>
+    <div class="flex gap-2 noprint"><button class="flex-1 min-h-[48px] rounded-xl bg-primary text-on-primary font-label-lg flex items-center justify-center gap-1.5" onclick="window.print()"><span class="material-symbols-outlined text-[18px]">print</span>Print / save PDF</button></div>`);
+}
+
+/* ==========================================================================
+   BOOT
+   ========================================================================== */
+function process(){
+  let ch=false; const now=Date.now();
+  S.orders.forEach(o=>{
+    if(o.status==='awaiting_payment' && o.fundBy<=now){ o.status='expired'; delete o.fundBy; logE(o.id,'cancel','Reservation expired · not funded in time',0); ch=true; toast(`Order #${o.id} expired: not funded in time`,'timer_off'); }
+    if(o.status==='delivered' && o.releaseAt<=now){ const {pay,refund}=computePay(o); o.status='released'; o.releasedAt=now; o.paid=pay; o.refund=refund; delete o.releaseAt; logE(o.id,'auto','Auto-released after 72 h · no dispute raised',-pay); if(refund) logE(o.id,'refund','Shortfall refunded to buyer',-refund); ch=true; toast(`Order #${o.id} auto-released: inspection window ended`,'schedule_send'); }
+  });
+  if(ch){ save(); renderAll(); if(!$('sheet-wrap').classList.contains('hidden')) closeSheet(); }
+  return ch;
+}
+function renderAll(){ renderSummary(); renderTabs(); renderOrders(); renderLedger(); }
+function resetDemo(){ S=SEED(); save(); tab='active'; renderAll(); toast('Demo data reset','restart_alt'); }
+setInterval(()=>{ if(!process()) document.querySelectorAll('[data-count]').forEach(e=>e.textContent=left(+e.dataset.count)); },15000);
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) process(); });
+role = store.get('yf_escrow_role','buyer'); setRole(role); process();
+</script>
 </body></html>

@@ -1,368 +1,320 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#002114", "on-tertiary-fixed": "#002114", "surface-tint": "#3f6653", "error": "#ba1a1a", "tertiary-container": "#00452e", "inverse-surface": "#2e312f", "outline": "#717973", "on-surface-variant": "#414844", "secondary-fixed": "#ffdcc3", "surface-variant": "#e2e3e0", "secondary-fixed-dim": "#ffb77d", "on-tertiary-fixed-variant": "#0e5138", "on-primary-fixed-variant": "#274e3d", "primary": "#012d1d", "on-secondary": "#ffffff", "surface-dim": "#d9dad7", "on-tertiary-container": "#75b393", "surface-bright": "#f9faf7", "surface": "#f9faf7", "primary-fixed-dim": "#a5d0b9", "on-tertiary": "#ffffff", "on-secondary-container": "#663500", "error-container": "#ffdad6", "primary-fixed": "#c1ecd4", "inverse-primary": "#a5d0b9", "tertiary-fixed": "#b1f0ce", "on-surface": "#191c1b", "on-secondary-fixed": "#2f1500", "surface-container-highest": "#e2e3e0", "on-primary": "#ffffff", "background": "#f9faf7", "secondary-container": "#fe932c", "on-primary-container": "#86af99", "inverse-on-surface": "#f0f1ee", "surface-container-high": "#e7e8e6", "on-secondary-fixed-variant": "#6e3900", "secondary": "#904d00", "primary-container": "#1b4332", "on-error": "#ffffff", "tertiary-fixed-dim": "#95d4b3", "outline-variant": "#c1c8c2", "surface-container-low": "#f3f4f1", "on-background": "#191c1b", "surface-container": "#edeeeb", "tertiary": "#002d1c", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "2.5rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-xl": "2.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "label-md": ["Public Sans"], "label-sm": ["Public Sans"], "body-md": ["Public Sans"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "label-lg": ["Public Sans"], "body-sm": ["Public Sans"], "display-lg": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "title-lg": ["Public Sans"], "title-md": ["Public Sans"], "body-lg": ["Public Sans"] }, "fontSize": { "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "600"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-</head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="You-Farm Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdryaOneto5aYotA6uQjNAQ4C8P9CN5Xklc_4qjItWmxHO2SWFxxXvjHVtoGk48JIqRUVqF3WxRWQdI3bo9iG2s29Li-gG-IFroLa2sIJSyfgnxpW68yKSJyfuSAmrYSUT8ISiRi5S-EbDnsYoFFy86m3Wo5Wv-kSDEIanafdKRCj-rNu14Bq_YymhsGbNqMqzpiAcY26Bwk2z6Gsa9zu6KxARBkZKdkOY95plrqmByBAvS3I7ZhJNrQ"><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary truncate tracking-tight">You-Farm</span><span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Online</span></div><div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm truncate"><span class="material-symbols-outlined text-[14px] text-secondary">location_on</span><span class="truncate font-label-sm text-label-sm">Kampala &amp; Central Hub</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(0,0,0,0.08)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjGpVqcRobJ6dgJqOb6OImerkE_Z6Na2ia4wnP9ggICH2fYk1OwCpcv9IkNZd0KV-ygAw-O1Usu0rjJjsL2vwGd_p52QqDsyeXT3sINDxCKDDc_B2OAatZdSy1eiKbIwZVMdmz_v7bx0lK2eeQp7kPRL7fFFGCjr4Q8bh7-TGajqdX5vo_J_1Fvh2QoCLYQsWfS5dxCKkDzBFpX9dRYKKngLbYoLNpqkNrQvhV5b7qwce4IJPeTLuoGw"></div></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin pb-10 gap-space-lg">
-<!-- 1. Top Profile Header Card -->
-<section class="flex flex-col bg-surface-container-lowest rounded-full p-space-md shadow-sm relative overflow-hidden">
-<div class="flex items-start justify-between gap-space-sm mb-space-md">
-<div class="flex items-center gap-space-md min-w-0">
-<div class="relative flex-shrink-0">
-<img alt="Grace Nakato Profile Photo" class="w-16 h-16 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1U0sbeW1cm16ozNg5UqrpW6em4pPluMJzG-YAdawtotG4jNHRzPEI9Q6OYAmx6zvWaY8x6vsI7o7nhyYA-LDY_kh6l7n9jw843XQelOLP3tnYUQda2HIHdH7UnyU43RjPWZZk8uGb7f6pZQc_7WGDpNxaDniv1v47R7rRBvAq_q552FUh6MEzC2RcQhJnVcnehkDxESExePicopIQOJccb4SNKUbwGjRl9iV6YFtWTdMcHwr0AuvMUgdSQ">
-<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-primary-fixed ring-2 ring-surface-container-lowest flex items-center justify-center">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-</span>
-</div>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-space-xs flex-wrap">
-<h1 class="font-headline-sm text-headline-sm text-primary truncate">Grace Nakato</h1>
-<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
-              Verified
-            </span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5 truncate">
-<span class="material-symbols-outlined text-[15px] text-secondary">location_on</span>
-            Nakasero &amp; Masaka Hubs
-          </p>
-<div class="mt-1">
-<span class="inline-block px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold truncate max-w-full">
-              Buddu Corridor Leader
-            </span>
-</div>
-</div>
-</div>
-<button aria-label="Edit Profile" class="flex-shrink-0 p-2 rounded-full bg-surface-container-low text-primary hover:bg-surface-container transition-colors active:scale-95" id="editProfileBtn">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-</button>
-</div>
-<!-- Certification & Cooperative ID Tag -->
-<div class="flex items-center justify-between gap-space-xs p-2.5 rounded-xl bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm mb-space-md">
-<div class="flex items-center gap-1.5 truncate">
-<span class="material-symbols-outlined text-[16px] text-primary">badge</span>
-<span class="truncate font-semibold text-primary">Co-op: #UG-AG-8821</span>
-</div>
-<span class="inline-flex items-center gap-1 text-secondary font-semibold flex-shrink-0">
-<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
-        UNBS Grade 1
-      </span>
-</div>
-<!-- Quick Stats Bento Strip -->
-<div class="grid grid-cols-4 gap-space-xs bg-surface-container-high/60 rounded-xl p-2.5 text-center">
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-primary">3</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Active Lots</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-primary">48</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Deals</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-primary">18.4M</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">UGX Sold</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-secondary flex items-center justify-center gap-0.5">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>4.9
-        </span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Rating</span>
-</div>
-</div>
-</section>
-<!-- 2. Regional Depot & Location Settings -->
-<section class="flex flex-col bg-surface-container-lowest rounded-full p-space-md shadow-sm gap-space-md">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-primary text-[22px]">warehouse</span>
-<h2 class="font-title-md text-title-md text-primary">Regional Depot &amp; Hubs</h2>
-</div>
-<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Active Routing</span>
-</div>
-<!-- Primary Trading Depot Selector Card -->
-<div class="flex flex-col bg-surface-container-low rounded-xl p-3 gap-2">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Primary Trading Gate</span>
-<button class="font-label-sm text-label-sm text-secondary hover:text-on-secondary-container font-bold flex items-center gap-0.5">
-<span class="">Change Hub</span>
-<span class="material-symbols-outlined text-[14px]">tune</span>
-</button>
-</div>
-<div class="flex items-center gap-space-sm bg-surface-container-lowest rounded-xl p-2.5 shadow-sm">
-<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
-<span class="material-symbols-outlined text-[20px]">local_convenience_store</span>
-</div>
-<div class="flex flex-col min-w-0">
-<span class="font-title-sm text-title-md text-primary font-bold truncate">Masaka Central Hub</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Depot Gate #2 • Scales Calibrated 06:00 AM</span>
-</div>
-</div>
-</div>
-<!-- Secondary / Monitored Depots -->
-<div class="flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface font-semibold">Secondary Monitored Depots</label>
-<div class="flex flex-col gap-1.5">
-<label class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
-<div class="flex items-center gap-space-sm min-w-0">
-<span class="material-symbols-outlined text-primary text-[18px]">domain</span>
-<div class="flex flex-col truncate">
-<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Kampala Kalerwe Wholesale</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Live Spot Market &amp; Truck Drops</span>
-</div>
-</div>
-<input checked="" class="w-5 h-5 rounded accent-primary cursor-pointer" type="checkbox">
-</label>
-<label class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
-<div class="flex items-center gap-space-sm min-w-0">
-<span class="material-symbols-outlined text-primary text-[18px]">domain</span>
-<div class="flex flex-col truncate">
-<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Mbarara Agro-Terminal</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Cold Storage &amp; Dairy Aggregate</span>
-</div>
-</div>
-<input checked="" class="w-5 h-5 rounded accent-primary cursor-pointer" type="checkbox">
-</label>
-<label class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
-<div class="flex items-center gap-space-sm min-w-0">
-<span class="material-symbols-outlined text-primary text-[18px]">domain</span>
-<div class="flex flex-col truncate">
-<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Mbale Regional Hub</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Arabica Export Staging Area</span>
-</div>
-</div>
-<input class="w-5 h-5 rounded accent-primary cursor-pointer" type="checkbox">
-</label>
-</div>
-</div>
-<!-- Sourcing & Delivery Radius Slider/Indicator -->
-<div class="flex flex-col gap-2 pt-1">
-<div class="flex items-center justify-between">
-<span class="font-label-md text-label-md text-on-surface font-semibold">Active Dispatch Radius</span>
-<span class="font-label-md text-label-md text-primary font-bold px-2 py-0.5 rounded-full bg-primary-fixed">45 km</span>
-</div>
-<div class="grid grid-cols-3 gap-1.5 p-1 bg-surface-container-high rounded-xl text-center">
-<button class="py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">Local Ward</button>
-<button class="py-1.5 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm text-primary font-bold shadow-sm">District Wide</button>
-<button class="py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">Cross-Regional</button>
-</div>
-</div>
-<!-- Off-grid Depot Sync Mode toggle -->
-<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
-<div class="flex items-start gap-space-sm pr-2">
-<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5">wifi_off</span>
-<div class="flex flex-col">
-<span class="font-body-md text-body-md font-semibold text-on-surface">Offline Gate Cache (*284*44#)</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Store price board locally for quick USSD/SMS fallback in low-band valleys</span>
-</div>
-</div>
-<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
-<input checked="" class="sr-only peer" type="checkbox">
-<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
-</label>
-</div>
-</section>
-<!-- 3. Saved Trade Interests & Crop Alerts -->
-<section class="flex flex-col bg-surface-container-lowest rounded-full p-space-md shadow-sm gap-space-md">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-primary text-[22px]">psychiatry</span>
-<h2 class="font-title-md text-title-md text-primary">Crop Interests &amp; Thresholds</h2>
-</div>
-<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:underline font-bold">
-<span class="material-symbols-outlined text-[16px]">add_circle</span>
-        Add Crop
-      </button>
-</div>
-<!-- Role Preference Segmented Control -->
-<div class="flex flex-col gap-1.5">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Active Operational Stance</span>
-<div class="grid grid-cols-3 gap-1 bg-surface-container-high rounded-xl p-1 text-center">
-<button class="py-2 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-sm">Seller / Co-op</button>
-<button class="py-2 rounded-lg text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-on-surface">Buyer Desk</button>
-<button class="py-2 rounded-lg text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-on-surface">Dual Trader</button>
-</div>
-</div>
-<!-- Crop Watchlist Badges -->
-<div class="flex flex-wrap gap-2 pt-1">
-<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-primary font-label-md text-label-md font-semibold">
-<span class="w-2 h-2 rounded-full bg-primary"></span>
-        Matooke (Cooking)
-        <button class="text-on-surface-variant hover:text-error ml-1">×</button>
-</span>
-<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-primary font-label-md text-label-md font-semibold">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-        Yellow Maize (Gr. 1)
-        <button class="text-on-surface-variant hover:text-error ml-1">×</button>
-</span>
-<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-primary font-label-md text-label-md font-semibold">
-<span class="w-2 h-2 rounded-full bg-primary-container"></span>
-        Arabica Cherries
-        <button class="text-on-surface-variant hover:text-error ml-1">×</button>
-</span>
-<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-primary font-label-md text-label-md font-semibold">
-<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
-        Roma Tomatoes
-        <button class="text-on-surface-variant hover:text-error ml-1">×</button>
-</span>
-</div>
-<!-- Alert Threshold Summary Cards -->
-<div class="grid grid-cols-2 gap-2">
-<div class="flex flex-col bg-surface-container-low p-2.5 rounded-xl">
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Matooke High Trigger</span>
-<span class="font-headline-sm text-headline-sm text-primary mt-1">&gt; 1,800 <span class="font-label-sm text-label-sm">UGX/kg</span></span>
-<span class="font-label-sm text-label-sm text-primary-fixed-dim font-bold mt-0.5">Auto-Notify WhatsApp</span>
-</div>
-<div class="flex flex-col bg-surface-container-low p-2.5 rounded-xl">
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Maize Floor Trigger</span>
-<span class="font-headline-sm text-headline-sm text-secondary mt-1">&lt; 1,400 <span class="font-label-sm text-label-sm">UGX/kg</span></span>
-<span class="font-label-sm text-label-sm text-secondary font-bold mt-0.5">Escrow Hold Safeguard</span>
-</div>
-</div>
-</section>
-<!-- 4. Notification & Preference Toggles -->
-<section class="flex flex-col bg-surface-container-lowest rounded-full p-space-md shadow-sm gap-space-md">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
-<h2 class="font-title-md text-title-md text-primary">Dispatch &amp; Payout Automation</h2>
-</div>
-<div class="flex flex-col gap-space-md">
-<!-- Push Notifications Toggle -->
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex flex-col">
-<span class="font-body-md text-body-md font-semibold text-on-surface">Depot Pings &amp; Escrow Releases</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Real-time gate rate updates, escrow milestone unlocking &amp; hauler arrival notices</span>
-</div>
-<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 mt-1">
-<input checked="" class="sr-only peer" type="checkbox">
-<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
-</label>
-</div>
-<!-- Export Quality Test Reports -->
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex flex-col">
-<span class="font-body-md text-body-md font-semibold text-on-surface">Automated Quality Certs</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">UNBS laboratory test certs, digital moisture scans (&lt;13%) &amp; aflatoxin audit logs</span>
-</div>
-<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 mt-1">
-<input checked="" class="sr-only peer" type="checkbox">
-<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
-</label>
-</div>
-<!-- Zero Data SMS Fallback -->
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex flex-col">
-<div class="flex items-center gap-1.5">
-<span class="font-body-md text-body-md font-semibold text-on-surface">Zero-Data SMS Fallback</span>
-<span class="px-1.5 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">Free</span>
-</div>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Dispatch critical price alerts and settlement tokens via reverse-billed MTN &amp; Airtel SMS</span>
-</div>
-<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 mt-1">
-<input checked="" class="sr-only peer" type="checkbox">
-<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
-</label>
-</div>
-<!-- Mobile Money Trust Settlement Card -->
-<div class="flex flex-col bg-surface-container-low rounded-xl p-3 gap-2">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Instant Escrow Payout Channel</span>
-<span class="font-label-sm text-label-sm text-primary font-bold flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-            Verified MoMo
-          </span>
-</div>
-<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-lowest shadow-sm">
-<div class="flex items-center gap- space-sm min-w-0">
-<div class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary flex-shrink-0 font-bold font-headline-sm text-headline-sm">
-              M
-            </div>
-<div class="flex flex-col truncate pl-2">
-<span class="font-title-sm text-title-md text-on-surface font-semibold truncate">MTN MoMo Corporate</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">+256 772 ••• 419 (Grace N.)</span>
-</div>
-</div>
-<button class="px-2.5 py-1 text-primary font-label-sm text-label-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors font-bold">
-            Edit
-          </button>
-</div>
-</div>
-</div>
-</section>
-<!-- 5. Account Security & Cooperative Governance -->
-<section class="flex flex-col bg-surface-container-lowest rounded-full p-space-md shadow-sm gap-space-md">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-primary text-[22px]">verified_user</span>
-<h2 class="font-title-md text-title-md text-primary">Compliance &amp; Governance</h2>
-</div>
-<div class="flex flex-col gap-2">
-<!-- NIN Status -->
-<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
-<div class="flex items-center gap-space-sm min-w-0">
-<span class="material-symbols-outlined text-primary text-[20px]">id_card</span>
-<div class="flex flex-col truncate">
-<span class="font-body-md text-body-md font-semibold text-on-surface">National ID (NIN) &amp; UNBS</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Biometrics Linked • Audit Clean</span>
-</div>
-</div>
-<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-bold">
-<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-          Verified
-        </span>
-</div>
-<!-- Certificate Download -->
-<button class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors text-left">
-<div class="flex items-center gap-space-sm min-w-0">
-<span class="material-symbols-outlined text-secondary text-[20px]">download_for_offline</span>
-<div class="flex flex-col truncate">
-<span class="font-body-md text-body-md font-semibold text-on-surface">Annual Trading &amp; Tax Certificate</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">URA EFRIS Compliant (2024 Season)</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-[18px] text-on-surface-variant">chevron_right</span>
-</button>
-<!-- Cooperative Switcher -->
-<button class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors text-left">
-<div class="flex items-center gap-space-sm min-w-0">
-<span class="material-symbols-outlined text-primary text-[20px]">switch_account</span>
-<div class="flex flex-col truncate">
-<span class="font-body-md text-body-md font-semibold text-on-surface">Switch Cooperative Entity</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Currently managing Buddu Central Union</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-[18px] text-on-surface-variant">swap_horiz</span>
-</button>
-</div>
-<!-- Save & Log Out CTA Row -->
-<div class="flex flex-col gap-2 pt-2">
-<button class="w-full h-12 flex items-center justify-center gap-2 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg font-bold shadow-sm hover:bg-primary transition-colors active:scale-[0.98]">
-<span class="material-symbols-outlined text-[20px]">save</span>
-        Save Preference Updates
-      </button>
-<button class="w-full h-11 flex items-center justify-center gap-2 rounded-full bg-surface-container-high text-error font-label-md text-label-md font-bold hover:bg-error-container hover:text-on-error-container transition-colors">
-<span class="material-symbols-outlined text-[18px]">logout</span>
-        Log Out from Terminal
-      </button>
-</div>
-</section>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="shell-type" content="mobile_tab">
+<title>Profile · You-Farm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-  // Simple micro-interactions for UX delight
-  document.addEventListener('DOMContentLoaded', () => {
-    const editBtn = document.getElementById('editProfileBtn');
-    if (editBtn) {
-      editBtn.addEventListener('click', () => {
-        alert('Depot profile sync initiated. Fetching latest UNBS farmer certificate...');
-      });
-    }
-  });
-</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="marketplace" href="#"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Marketplace</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="my-harvests-and-pools" href="#"><span class="material-symbols-outlined text-[22px]">nest_eco_leaf</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Harvests</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="orders-and-escrow" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Escrow</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="transits-and-hubs" href="#"><span class="material-symbols-outlined text-[22px]">local_shipping</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Transits</span></a></div></nav>
+tailwind.config = { theme: { extend: {
+  colors: {
+    primary:"#012d1d","primary-container":"#1b4332","primary-fixed":"#c1ecd4","primary-fixed-dim":"#a5d0b9","on-primary-fixed":"#002114",
+    "on-primary-container":"#9cc7b1",secondary:"#904d00","secondary-container":"#fe932c","secondary-fixed":"#ffdcc3","on-secondary-fixed":"#2f1500",
+    "on-tertiary-fixed-variant":"#0e5138",error:"#ba1a1a","error-container":"#ffdad6","on-error-container":"#93000a",
+    surface:"#f9faf7","surf-low":"#f3f4f1","surf-mid":"#edeeeb","surf-high":"#e7e8e6",
+    "on-surface":"#191c1b","on-surface-variant":"#414844","outline-variant":"#c1c8c2"
+  },
+  fontFamily: { sans:["Public Sans","system-ui","sans-serif"], display:["Space Grotesk","Public Sans","sans-serif"] }
+}}};
+</script>
+<style type="text/tailwindcss">
+@layer base {
+  html { scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-surface font-sans text-sm text-on-surface antialiased; overscroll-behavior-y: none; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-primary-container; outline-style: solid; }
+  button { @apply cursor-pointer; }
+}
+@layer components {
+  .card { @apply flex flex-col gap-4 rounded-2xl bg-white p-4 sm:p-5 border border-outline-variant/50; }
+  .h2 { @apply flex items-center gap-2 font-display text-lg font-semibold text-primary; }
+  .row { @apply flex items-center justify-between gap-3 rounded-xl bg-surf-low p-3 text-left; }
+  a.row, button.row { @apply min-h-[56px] transition-colors hover:bg-surf-mid active:bg-surf-high; }
+  .t1 { @apply text-sm font-semibold text-on-surface; }
+  .t2 { @apply text-xs leading-snug text-on-surface-variant; }
+  .lbl { @apply text-xs font-semibold text-on-surface-variant; }
+  .link { @apply inline-flex min-h-[44px] items-center gap-1 rounded-lg px-1 text-xs font-bold text-secondary hover:underline; }
+  .seg { @apply grid grid-cols-3 gap-1 rounded-xl bg-surf-high p-1; }
+  .seg button { @apply min-h-[40px] rounded-lg px-1 text-xs font-semibold text-on-surface-variant transition-colors hover:text-on-surface; }
+  .seg button[aria-pressed="true"] { @apply bg-white text-primary shadow-sm; }
+  .chip { @apply inline-flex items-center gap-2 rounded-full bg-surf-low py-1 pl-3 pr-1 text-xs font-semibold text-primary; }
+  .chip button { @apply grid size-7 place-items-center rounded-full text-on-surface-variant hover:bg-error-container hover:text-error; }
+  .nl { @apply flex flex-1 flex-col items-center justify-center gap-0.5 py-2 text-[11px] font-semibold text-on-surface-variant transition-colors hover:text-primary lg:min-h-[48px] lg:flex-none lg:flex-row lg:justify-start lg:gap-3 lg:rounded-xl lg:px-4 lg:text-sm lg:hover:bg-surf-mid; }
+  .pill { @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold; }
+  .btn { @apply flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-bold transition active:scale-[0.98]; }
+  .sw { position: relative; display: inline-block; flex-shrink: 0; width: 2.75rem; height: 1.5rem; border-radius: 9999px; background: #c1c8c2; transition: background .2s; }
+  .sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: 1.25rem; height: 1.25rem; border-radius: 9999px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.25); transition: transform .2s; }
+  input:checked + .sw { background: #1b4332; }
+  input:checked + .sw::after { transform: translateX(1.25rem); }
+  input:focus-visible + .sw { outline: 2px solid #1b4332; outline-offset: 2px; }
+}
+.material-symbols-outlined { font-size: 20px; line-height: 1; user-select: none; }
+.fill { font-variation-settings: 'FILL' 1; }
+::-webkit-scrollbar { display: none; }
+@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
 
-</body></html>
+<!-- Top bar -->
+<header class="fixed inset-x-0 top-0 z-40 border-b border-outline-variant/40 bg-surface/90 backdrop-blur-xl" style="padding-top:env(safe-area-inset-top,0px)">
+  <div class="mx-auto flex h-16 items-center justify-between gap-3 px-4 sm:px-6">
+    <div class="flex min-w-0 items-center gap-3">
+      <img alt="You-Farm logo" class="h-8 w-auto shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdryaOneto5aYotA6uQjNAQ4C8P9CN5Xklc_4qjItWmxHO2SWFxxXvjHVtoGk48JIqRUVqF3WxRWQdI3bo9iG2s29Li-gG-IFroLa2sIJSyfgnxpW68yKSJyfuSAmrYSUT8ISiRi5S-EbDnsYoFFy86m3Wo5Wv-kSDEIanafdKRCj-rNu14Bq_YymhsGbNqMqzpiAcY26Bwk2z6Gsa9zu6KxARBkZKdkOY95plrqmByBAvS3I7ZhJNrQ">
+      <div class="min-w-0">
+        <div class="flex items-center gap-2">
+          <span class="truncate font-display text-lg font-semibold leading-none text-primary">You-Farm</span>
+          <span class="pill bg-primary-fixed text-on-primary-fixed"><span class="size-1.5 animate-pulse rounded-full bg-primary"></span>Online</span>
+        </div>
+        <p class="mt-1 flex items-center gap-1 truncate text-xs text-on-surface-variant"><span class="material-symbols-outlined fill !text-[14px] text-secondary">location_on</span>Kampala &amp; Central Hub</p>
+      </div>
+    </div>
+    <div class="flex shrink-0 items-center gap-1">
+      <button aria-label="Notifications (1 unread)" class="relative grid size-11 place-items-center rounded-full text-on-surface-variant hover:bg-surf-mid">
+        <span class="material-symbols-outlined !text-[24px]">notifications</span>
+        <span class="absolute right-2.5 top-2.5 size-2.5 rounded-full bg-secondary-container ring-2 ring-surface"></span>
+      </button>
+      <img alt="Your profile" class="size-9 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjGpVqcRobJ6dgJqOb6OImerkE_Z6Na2ia4wnP9ggICH2fYk1OwCpcv9IkNZd0KV-ygAw-O1Usu0rjJjsL2vwGd_p52QqDsyeXT3sINDxCKDDc_B2OAatZdSy1eiKbIwZVMdmz_v7bx0lK2eeQp7kPRL7fFFGCjr4Q8bh7-TGajqdX5vo_J_1Fvh2QoCLYQsWfS5dxCKkDzBFpX9dRYKKngLbYoLNpqkNrQvhV5b7qwce4IJPeTLuoGw">
+    </div>
+  </div>
+</header>
+
+<!-- Navigation: bottom bar on phones/tablets, side rail on desktop -->
+<nav aria-label="Main" class="fixed inset-x-0 bottom-0 z-40 border-t border-outline-variant/40 bg-surface/95 backdrop-blur-xl lg:inset-y-0 lg:right-auto lg:top-16 lg:w-56 lg:border-r lg:border-t-0 lg:bg-surface" style="padding-bottom:env(safe-area-inset-bottom,0px)">
+  <div class="flex lg:flex-col lg:gap-1 lg:p-3">
+    <a class="nl" href="#"><span class="material-symbols-outlined !text-[24px]">storefront</span>Marketplace</a>
+    <a class="nl" href="#"><span class="material-symbols-outlined !text-[24px]">nest_eco_leaf</span>Harvests</a>
+    <a class="nl" href="#"><span class="material-symbols-outlined !text-[24px]">verified_user</span>Escrow</a>
+    <a class="nl" href="#"><span class="material-symbols-outlined !text-[24px]">local_shipping</span>Transits</a>
+  </div>
+</nav>
+
+<main class="px-4 pb-28 pt-20 sm:px-6 lg:pb-10 lg:pl-[calc(14rem+1.5rem)] lg:pr-6" style="padding-top:calc(5rem + env(safe-area-inset-top,0px))">
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 lg:grid lg:grid-cols-[5fr_7fr] lg:items-start lg:gap-6">
+
+    <!-- Left column (wrappers dissolve on small screens so the original order is kept) -->
+    <div class="contents lg:sticky lg:top-24 lg:flex lg:flex-col lg:gap-6">
+
+      <!-- Profile hero -->
+      <section class="order-1 overflow-hidden rounded-2xl bg-primary-container p-4 text-white sm:p-6" aria-labelledby="name">
+        <div class="flex items-start justify-between gap-3">
+          <div class="flex min-w-0 items-center gap-4">
+            <div class="relative shrink-0">
+              <img alt="Grace Nakato" class="size-16 rounded-full object-cover ring-2 ring-primary-fixed-dim sm:size-20" src="https://lh3.googleusercontent.com/aida/AEtjO1U0sbeW1cm16ozNg5UqrpW6em4pPluMJzG-YAdawtotG4jNHRzPEI9Q6OYAmx6zvWaY8x6vsI7o7nhyYA-LDY_kh6l7n9jw843XQelOLP3tnYUQda2HIHdH7UnyU43RjPWZZk8uGb7f6pZQc_7WGDpNxaDniv1v47R7rRBvAq_q552FUh6MEzC2RcQhJnVcnehkDxESExePicopIQOJccb4SNKUbwGjRl9iV6YFtWTdMcHwr0AuvMUgdSQ">
+              <span class="absolute bottom-0 right-0 size-4 rounded-full bg-primary-fixed ring-2 ring-primary-container" title="Active now"></span>
+            </div>
+            <div class="min-w-0">
+              <h1 id="name" class="font-display text-xl font-semibold leading-tight sm:text-2xl">Grace Nakato</h1>
+              <p class="mt-0.5 flex items-center gap-1 text-xs text-on-primary-container"><span class="material-symbols-outlined fill !text-[15px] text-secondary-container">location_on</span><span class="truncate">Nakasero &amp; Masaka Hubs</span></p>
+              <div class="mt-2 flex flex-wrap gap-1.5">
+                <span class="pill bg-primary-fixed text-on-primary-fixed"><span class="material-symbols-outlined fill !text-[13px]">verified</span>Verified</span>
+                <span class="pill bg-white/15 text-white">Buddu Corridor Leader</span>
+              </div>
+            </div>
+          </div>
+          <button id="editBtn" aria-label="Edit profile" class="grid size-11 shrink-0 place-items-center rounded-full bg-white/15 text-white transition hover:bg-white/25 active:scale-95">
+            <span class="material-symbols-outlined">edit</span>
+          </button>
+        </div>
+
+        <div class="mt-5 flex items-center justify-between gap-3 rounded-xl bg-black/20 px-3 py-2.5 text-xs font-semibold">
+          <span class="flex items-center gap-1.5 truncate"><span class="material-symbols-outlined !text-[18px] text-primary-fixed-dim">badge</span>Co-op #UG-AG-8821</span>
+          <span class="flex shrink-0 items-center gap-1 text-secondary-container"><span class="material-symbols-outlined fill !text-[16px]">workspace_premium</span>UNBS Grade 1</span>
+        </div>
+
+        <dl class="mt-3 grid grid-cols-4 gap-2 text-center">
+          <div class="rounded-xl bg-white/10 px-1 py-3"><dd class="font-display text-lg font-semibold sm:text-xl">3</dd><dt class="mt-0.5 text-[11px] text-on-primary-container">Active lots</dt></div>
+          <div class="rounded-xl bg-white/10 px-1 py-3"><dd class="font-display text-lg font-semibold sm:text-xl">48</dd><dt class="mt-0.5 text-[11px] text-on-primary-container">Deals</dt></div>
+          <div class="rounded-xl bg-white/10 px-1 py-3"><dd class="font-display text-lg font-semibold sm:text-xl">18.4M</dd><dt class="mt-0.5 text-[11px] text-on-primary-container">UGX sold</dt></div>
+          <div class="rounded-xl bg-white/10 px-1 py-3"><dd class="flex items-center justify-center gap-0.5 font-display text-lg font-semibold text-secondary-container sm:text-xl"><span class="material-symbols-outlined fill !text-[16px]">star</span>4.9</dd><dt class="mt-0.5 text-[11px] text-on-primary-container">Rating</dt></div>
+        </dl>
+      </section>
+
+      <!-- Compliance -->
+      <section class="card order-5" aria-labelledby="h-comp">
+        <h2 id="h-comp" class="h2"><span class="material-symbols-outlined !text-[22px]">verified_user</span>Compliance &amp; governance</h2>
+        <div class="flex flex-col gap-2">
+          <div class="row">
+            <div class="flex min-w-0 items-center gap-3">
+              <span class="material-symbols-outlined text-primary">id_card</span>
+              <div class="min-w-0"><p class="t1">National ID (NIN) &amp; UNBS</p><p class="t2">Biometrics linked, audit clean</p></div>
+            </div>
+            <span class="pill shrink-0 bg-primary-fixed text-on-primary-fixed"><span class="material-symbols-outlined fill !text-[14px]">check_circle</span>Verified</span>
+          </div>
+          <button class="row w-full">
+            <div class="flex min-w-0 items-center gap-3">
+              <span class="material-symbols-outlined text-secondary">download_for_offline</span>
+              <div class="min-w-0"><p class="t1">Annual trading &amp; tax certificate</p><p class="t2">URA EFRIS compliant, 2024 season</p></div>
+            </div>
+            <span class="material-symbols-outlined shrink-0 text-on-surface-variant">chevron_right</span>
+          </button>
+          <button class="row w-full">
+            <div class="flex min-w-0 items-center gap-3">
+              <span class="material-symbols-outlined text-primary">switch_account</span>
+              <div class="min-w-0"><p class="t1">Switch cooperative</p><p class="t2">Managing Buddu Central Union</p></div>
+            </div>
+            <span class="material-symbols-outlined shrink-0 text-on-surface-variant">swap_horiz</span>
+          </button>
+        </div>
+        <div class="flex flex-col gap-2 pt-1 sm:flex-row lg:flex-col xl:flex-row">
+          <button id="saveBtn" class="btn bg-primary-container text-white shadow-sm hover:bg-primary"><span class="material-symbols-outlined">save</span>Save changes</button>
+          <button class="btn bg-surf-high text-error hover:bg-error-container hover:text-on-error-container"><span class="material-symbols-outlined">logout</span>Log out</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Right column -->
+    <div class="contents lg:flex lg:flex-col lg:gap-6">
+
+      <!-- Depots -->
+      <section class="card order-2" aria-labelledby="h-depot">
+        <div class="flex items-center justify-between gap-2">
+          <h2 id="h-depot" class="h2"><span class="material-symbols-outlined !text-[22px]">warehouse</span>Depots &amp; hubs</h2>
+          <span class="pill bg-secondary-fixed text-on-secondary-fixed">Active routing</span>
+        </div>
+
+        <div class="rounded-xl bg-surf-low p-3">
+          <div class="mb-2 flex items-center justify-between">
+            <span class="lbl">Primary trading gate</span>
+            <button class="link"><span class="material-symbols-outlined !text-[16px]">tune</span>Change hub</button>
+          </div>
+          <div class="flex items-center gap-3 rounded-xl bg-white p-3 shadow-sm">
+            <span class="grid size-11 shrink-0 place-items-center rounded-full bg-primary-fixed text-primary"><span class="material-symbols-outlined">local_convenience_store</span></span>
+            <div class="min-w-0"><p class="truncate text-base font-bold text-primary">Masaka Central Hub</p><p class="t2">Depot Gate #2 · Scales calibrated 06:00 AM</p></div>
+          </div>
+        </div>
+
+        <fieldset class="flex flex-col gap-2">
+          <legend class="lbl mb-2 !text-sm !text-on-surface">Secondary monitored depots</legend>
+          <label class="row cursor-pointer hover:bg-surf-mid">
+            <span class="flex min-w-0 items-center gap-3"><span class="material-symbols-outlined text-primary">domain</span><span class="min-w-0"><span class="t1 block">Kampala Kalerwe Wholesale</span><span class="t2 block">Live spot market &amp; truck drops</span></span></span>
+            <input type="checkbox" checked class="size-5 shrink-0 accent-[#1b4332]">
+          </label>
+          <label class="row cursor-pointer hover:bg-surf-mid">
+            <span class="flex min-w-0 items-center gap-3"><span class="material-symbols-outlined text-primary">domain</span><span class="min-w-0"><span class="t1 block">Mbarara Agro-Terminal</span><span class="t2 block">Cold storage &amp; dairy aggregate</span></span></span>
+            <input type="checkbox" checked class="size-5 shrink-0 accent-[#1b4332]">
+          </label>
+          <label class="row cursor-pointer hover:bg-surf-mid">
+            <span class="flex min-w-0 items-center gap-3"><span class="material-symbols-outlined text-primary">domain</span><span class="min-w-0"><span class="t1 block">Mbale Regional Hub</span><span class="t2 block">Arabica export staging area</span></span></span>
+            <input type="checkbox" class="size-5 shrink-0 accent-[#1b4332]">
+          </label>
+        </fieldset>
+
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <span class="t1">Dispatch radius</span>
+            <span id="radiusVal" class="pill !text-xs bg-primary-fixed text-on-primary-fixed">45 km</span>
+          </div>
+          <div class="seg" id="radiusSeg" role="group" aria-label="Dispatch radius">
+            <button data-v="10 km" aria-pressed="false">Local ward</button>
+            <button data-v="45 km" aria-pressed="true">District wide</button>
+            <button data-v="120 km" aria-pressed="false">Cross-regional</button>
+          </div>
+        </div>
+
+        <label class="row cursor-pointer items-start">
+          <span class="flex min-w-0 items-start gap-3"><span class="material-symbols-outlined mt-0.5 text-secondary">wifi_off</span><span><span class="t1 block">Offline gate cache (*284*44#)</span><span class="t2 block">Keep the price board on your phone for USSD/SMS use in low-signal valleys</span></span></span>
+          <input type="checkbox" checked class="peer sr-only"><span class="sw mt-1"></span>
+        </label>
+      </section>
+
+      <!-- Crops -->
+      <section class="card order-3" aria-labelledby="h-crop">
+        <div class="flex items-center justify-between gap-2">
+          <h2 id="h-crop" class="h2"><span class="material-symbols-outlined !text-[22px]">psychiatry</span>Crops &amp; price alerts</h2>
+          <button class="link"><span class="material-symbols-outlined !text-[18px]">add_circle</span>Add crop</button>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <span class="lbl">I trade as</span>
+          <div class="seg" id="stanceSeg" role="group" aria-label="Trading role">
+            <button aria-pressed="true">Seller / Co-op</button>
+            <button aria-pressed="false">Buyer desk</button>
+            <button aria-pressed="false">Dual trader</button>
+          </div>
+        </div>
+
+        <ul class="flex flex-wrap gap-2" id="chips">
+          <li class="chip"><span class="size-2 rounded-full bg-primary"></span>Matooke (cooking)<button aria-label="Remove Matooke">×</button></li>
+          <li class="chip"><span class="size-2 rounded-full bg-secondary"></span>Yellow maize (Gr. 1)<button aria-label="Remove Yellow maize">×</button></li>
+          <li class="chip"><span class="size-2 rounded-full bg-primary-container"></span>Arabica cherries<button aria-label="Remove Arabica cherries">×</button></li>
+          <li class="chip"><span class="size-2 rounded-full bg-secondary-container"></span>Roma tomatoes<button aria-label="Remove Roma tomatoes">×</button></li>
+        </ul>
+
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="rounded-xl border-l-4 border-primary-container bg-surf-low p-3">
+            <p class="t2">Matooke high trigger</p>
+            <p class="mt-1 font-display text-xl font-semibold text-primary">&gt; 1,800 <span class="text-xs font-medium text-on-surface-variant">UGX/kg</span></p>
+            <p class="mt-0.5 text-xs font-bold text-on-tertiary-fixed-variant">Auto-notify on WhatsApp</p>
+          </div>
+          <div class="rounded-xl border-l-4 border-secondary-container bg-surf-low p-3">
+            <p class="t2">Maize floor trigger</p>
+            <p class="mt-1 font-display text-xl font-semibold text-secondary">&lt; 1,400 <span class="text-xs font-medium text-on-surface-variant">UGX/kg</span></p>
+            <p class="mt-0.5 text-xs font-bold text-secondary">Escrow hold safeguard</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Automation -->
+      <section class="card order-4" aria-labelledby="h-auto">
+        <h2 id="h-auto" class="h2"><span class="material-symbols-outlined !text-[22px]">tune</span>Dispatch &amp; payout automation</h2>
+        <div class="flex flex-col gap-2">
+          <label class="row cursor-pointer items-start">
+            <span><span class="t1 block">Depot pings &amp; escrow releases</span><span class="t2 mt-0.5 block">Live gate rates, escrow milestones and hauler arrival notices</span></span>
+            <input type="checkbox" checked class="peer sr-only"><span class="sw mt-1"></span>
+          </label>
+          <label class="row cursor-pointer items-start">
+            <span><span class="t1 block">Automated quality certificates</span><span class="t2 mt-0.5 block">UNBS lab certs, digital moisture scans (&lt;13%) and aflatoxin audit logs</span></span>
+            <input type="checkbox" checked class="peer sr-only"><span class="sw mt-1"></span>
+          </label>
+          <label class="row cursor-pointer items-start">
+            <span><span class="t1 flex items-center gap-2">Zero-data SMS fallback<span class="pill bg-secondary-fixed text-on-secondary-fixed">Free</span></span><span class="t2 mt-0.5 block">Get critical price alerts and settlement tokens by reverse-billed MTN &amp; Airtel SMS</span></span>
+            <input type="checkbox" checked class="peer sr-only"><span class="sw mt-1"></span>
+          </label>
+        </div>
+
+        <div class="rounded-xl bg-surf-low p-3">
+          <div class="mb-2 flex items-center justify-between gap-2">
+            <span class="lbl">Instant escrow payout</span>
+            <span class="pill bg-primary-fixed text-on-primary-fixed"><span class="size-1.5 rounded-full bg-primary"></span>Verified MoMo</span>
+          </div>
+          <div class="flex items-center justify-between gap-3 rounded-xl bg-white p-3 shadow-sm">
+            <div class="flex min-w-0 items-center gap-3">
+              <span class="grid size-10 shrink-0 place-items-center rounded-full bg-secondary-container/25 font-display text-lg font-bold text-secondary">M</span>
+              <div class="min-w-0"><p class="t1 truncate">MTN MoMo Corporate</p><p class="t2">+256 772 ••• 419 (Grace N.)</p></div>
+            </div>
+            <button class="min-h-[44px] rounded-lg bg-surf-mid px-4 text-xs font-bold text-primary hover:bg-surf-high">Edit</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed left-1/2 z-50 -translate-x-1/2 translate-y-4 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white opacity-0 shadow-lg transition-all duration-200 bottom-24 lg:bottom-8"></div>
+
+<script>
+(() => {
+  const toast = document.getElementById('toast'); let t;
+  const show = m => { toast.textContent = m; toast.classList.remove('opacity-0','translate-y-4'); clearTimeout(t); t = setTimeout(() => toast.classList.add('opacity-0','translate-y-4'), 2400); };
+
+  document.querySelectorAll('.seg').forEach(seg => seg.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    seg.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    if (seg.id === 'radiusSeg') document.getElementById('radiusVal').textContent = b.dataset.v;
+  }));
+
+  document.getElementById('chips').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (b) b.closest('li').remove();
+  });
+
+  document.getElementById('editBtn').addEventListener('click', () => show('Syncing depot profile…'));
+  document.getElementById('saveBtn').addEventListener('click', () => show('Changes saved'));
+})();
+</script>
+</body>
+</html>

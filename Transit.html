@@ -1,490 +1,395 @@
 <!DOCTYPE html>
-
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#002114", "on-tertiary-fixed": "#002114", "surface-tint": "#3f6653", "error": "#ba1a1a", "tertiary-container": "#00452e", "inverse-surface": "#2e312f", "outline": "#717973", "on-surface-variant": "#414844", "secondary-fixed": "#ffdcc3", "surface-variant": "#e2e3e0", "secondary-fixed-dim": "#ffb77d", "on-tertiary-fixed-variant": "#0e5138", "on-primary-fixed-variant": "#274e3d", "primary": "#012d1d", "on-secondary": "#ffffff", "surface-dim": "#d9dad7", "on-tertiary-container": "#75b393", "surface-bright": "#f9faf7", "surface": "#f9faf7", "primary-fixed-dim": "#a5d0b9", "on-tertiary": "#ffffff", "on-secondary-container": "#663500", "error-container": "#ffdad6", "primary-fixed": "#c1ecd4", "inverse-primary": "#a5d0b9", "tertiary-fixed": "#b1f0ce", "on-surface": "#191c1b", "on-secondary-fixed": "#2f1500", "surface-container-highest": "#e2e3e0", "on-primary": "#ffffff", "background": "#f9faf7", "secondary-container": "#fe932c", "on-primary-container": "#86af99", "inverse-on-surface": "#f0f1ee", "surface-container-high": "#e7e8e6", "on-secondary-fixed-variant": "#6e3900", "secondary": "#904d00", "primary-container": "#1b4332", "on-error": "#ffffff", "tertiary-fixed-dim": "#95d4b3", "outline-variant": "#c1c8c2", "surface-container-low": "#f3f4f1", "on-background": "#191c1b", "surface-container": "#edeeeb", "tertiary": "#002d1c", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "2.5rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-xl": "2.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "label-md": ["Public Sans"], "label-sm": ["Public Sans"], "body-md": ["Public Sans"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "label-lg": ["Public Sans"], "body-sm": ["Public Sans"], "display-lg": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "title-lg": ["Public Sans"], "title-md": ["Public Sans"], "body-lg": ["Public Sans"] }, "fontSize": { "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "600"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>You-Farm Transits</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#002114", "on-tertiary-fixed": "#002114", "surface-tint": "#3f6653", "error": "#ba1a1a", "tertiary-container": "#00452e", "inverse-surface": "#2e312f", "outline": "#717973", "on-surface-variant": "#414844", "secondary-fixed": "#ffdcc3", "surface-variant": "#e2e3e0", "secondary-fixed-dim": "#ffb77d", "on-tertiary-fixed-variant": "#0e5138", "on-primary-fixed-variant": "#274e3d", "primary": "#012d1d", "on-secondary": "#ffffff", "surface-dim": "#d9dad7", "on-tertiary-container": "#75b393", "surface-bright": "#f9faf7", "surface": "#f9faf7", "primary-fixed-dim": "#a5d0b9", "on-tertiary": "#ffffff", "on-secondary-container": "#663500", "error-container": "#ffdad6", "primary-fixed": "#c1ecd4", "inverse-primary": "#a5d0b9", "tertiary-fixed": "#b1f0ce", "on-surface": "#191c1b", "on-secondary-fixed": "#2f1500", "surface-container-highest": "#e2e3e0", "on-primary": "#ffffff", "background": "#f9faf7", "secondary-container": "#fe932c", "on-primary-container": "#86af99", "inverse-on-surface": "#f0f1ee", "surface-container-high": "#e7e8e6", "on-secondary-fixed-variant": "#6e3900", "secondary": "#904d00", "primary-container": "#1b4332", "on-error": "#ffffff", "tertiary-fixed-dim": "#95d4b3", "outline-variant": "#c1c8c2", "surface-container-low": "#f3f4f1", "on-background": "#191c1b", "surface-container": "#edeeeb", "tertiary": "#002d1c", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "2.5rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-xl": "2.5rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "label-md": ["Public Sans"], "label-sm": ["Public Sans"], "body-md": ["Public Sans"], "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "label-lg": ["Public Sans"], "body-sm": ["Public Sans"], "display-lg": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "title-lg": ["Public Sans"], "title-md": ["Public Sans"], "body-lg": ["Public Sans"] }, "fontSize": { "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "600"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}] } } } };</script>
 <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-</head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="You-Farm Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdryaOneto5aYotA6uQjNAQ4C8P9CN5Xklc_4qjItWmxHO2SWFxxXvjHVtoGk48JIqRUVqF3WxRWQdI3bo9iG2s29Li-gG-IFroLa2sIJSyfgnxpW68yKSJyfuSAmrYSUT8ISiRi5S-EbDnsYoFFy86m3Wo5Wv-kSDEIanafdKRCj-rNu14Bq_YymhsGbNqMqzpiAcY26Bwk2z6Gsa9zu6KxARBkZKdkOY95plrqmByBAvS3I7ZhJNrQ"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary truncate tracking-tight">You-Farm</span><span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Online</span></div><div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm truncate"><span class="material-symbols-outlined text-[14px] text-secondary">location_on</span><span class="truncate font-label-sm text-label-sm">Kampala &amp; Central Hub</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(0,0,0,0.08)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjGpVqcRobJ6dgJqOb6OImerkE_Z6Na2ia4wnP9ggICH2fYk1OwCpcv9IkNZd0KV-ygAw-O1Usu0rjJjsL2vwGd_p52QqDsyeXT3sINDxCKDDc_B2OAatZdSy1eiKbIwZVMdmz_v7bx0lK2eeQp7kPRL7fFFGCjr4Q8bh7-TGajqdX5vo_J_1Fvh2QoCLYQsWfS5dxCKkDzBFpX9dRYKKngLbYoLNpqkNrQvhV5b7qwce4IJPeTLuoGw"/></div></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-6"><!-- Active Tab Syncer (Bottom Nav highlight) -->
-<script>
-  (function syncTab() {
-    const navLinks = document.querySelectorAll('nav a[data-path="transits-and-hubs"]');
-    navLinks.forEach(link => {
-      link.classList.remove('text-on-surface-variant');
-      link.classList.add('text-primary', 'font-bold');
-    });
-  })();
-</script>
-<!-- Top Corridor & Status Section -->
-<div class="px-margin pt-4 pb-4 flex flex-col gap-3 bg-surface-container-low border-b border-outline-variant/30">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2 min-w-0">
-<div class="w-9 h-9 rounded-xl bg-primary-fixed flex items-center justify-center flex-shrink-0 text-primary shadow-xs">
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
-</div>
-<div>
-<h1 class="font-headline-sm text-headline-sm text-primary leading-tight tracking-tight">Agri Transits &amp; Haulage</h1>
-<p class="font-body-sm text-[12px] text-on-surface-variant">Reliable farm-to-market dispatch</p>
-</div>
-</div>
-<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm shadow-xs">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-      34 Active Trucks
-    </span>
-</div>
-<!-- Active Loading Zone Selector Pill -->
-<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant/20 hover:border-outline-variant/40 transition-colors">
-<div class="flex items-center gap-3 min-w-0">
-<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary">
-<span class="material-symbols-outlined text-[19px]">alt_route</span>
-</div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-sm text-[10px] text-outline uppercase tracking-wider font-semibold">Active Depot Corridor</span>
-<span class="font-title-md text-[14px] text-on-surface font-semibold truncate">Mbale Central Depot • Jinja Corridor</span>
-</div>
-</div>
-<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-surface-variant transition-colors flex-shrink-0 font-label-sm text-[12px] font-semibold">
-<span>Change</span>
-<span class="material-symbols-outlined text-[16px]">expand_more</span>
-</button>
-</div>
-<!-- Quick Corridor Filter Chips -->
-<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-margin px-margin">
-<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
-<span class="material-symbols-outlined text-[15px]">tune</span>
-      All Transporters
-    </button>
-<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-xs border border-outline-variant/30 hover:bg-surface-container transition-colors">
-      Mbale → Kampala
-    </button>
-<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-xs border border-outline-variant/30 hover:bg-surface-container transition-colors">
-      Masaka → Nakasero
-    </button>
-<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-xs border border-outline-variant/30 hover:bg-surface-container transition-colors">
-      Kasese → Jinja
-    </button>
-<button class="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-secondary font-label-md text-label-md shadow-xs border border-secondary-fixed flex items-center gap-1.5 hover:bg-surface-container transition-colors">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
-      Cold Chain
-    </button>
-</div>
-</div>
-<div class="px-margin flex flex-col gap-5 pt-4">
-<!-- Decongested Backhaul Promo Banner -->
-<div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-secondary to-secondary-container p-4 text-on-secondary shadow-md">
-<div class="flex items-start justify-between gap-3 relative z-10">
-<div class="flex items-start gap-3 min-w-0">
-<div class="w-10 h-10 rounded-xl bg-on-secondary/20 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-[22px] text-on-secondary">local_shipping</span>
-</div>
-<div class="flex flex-col min-w-0 pr-4">
-<div class="flex items-center gap-2 mb-1">
-<span class="px-2 py-0.5 rounded-md bg-surface-container-lowest text-secondary font-label-sm text-[11px] font-bold">BACKHAUL SALE</span>
-<span class="font-label-sm text-[12px] opacity-90 text-on-secondary font-semibold">Save up to 35%</span>
-</div>
-<h3 class="font-title-md text-[16px] text-on-secondary leading-snug font-bold">Empty Return Trips Rolling Today</h3>
-<p class="font-body-sm text-[13px] text-on-secondary/90 mt-1 line-clamp-2 leading-relaxed">Book vacant cargo bays from Jinja, Iganga &amp; Mukono returning to Eastern hubs at discounted rates.</p>
-</div>
-</div>
-<button aria-label="Dismiss banner" class="w-7 h-7 rounded-full bg-on-secondary/15 flex items-center justify-center text-on-secondary/80 hover:text-on-secondary hover:bg-on-secondary/25 transition-colors flex-shrink-0" onclick="this.closest('.relative').style.display='none'">
-<span class="material-symbols-outlined text-[16px]">close</span>
-</button>
-</div>
-</div>
-<!-- Search & Filter Section -->
-<div class="flex flex-col gap-2.5">
-<div class="relative flex items-center w-full">
-<span class="material-symbols-outlined text-outline absolute left-3.5 text-[20px] pointer-events-none">search</span>
-<input class="w-full h-12 pl-11 pr-11 rounded-xl bg-surface-container-lowest font-body-md text-body-md text-on-surface placeholder:text-outline border border-outline-variant/30 focus:outline-none shadow-xs" placeholder="Search driver, vehicle type, corridor..." type="text"/>
-<button aria-label="Filter search" class="absolute right-2.5 w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[18px]">tune</span>
-</button>
-</div>
-<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
-<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-variant transition-colors">
-        3T Canter
-      </button>
-<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm whitespace-nowrap flex items-center gap-1 shadow-xs">
-        7.5T Forward <span class="material-symbols-outlined text-[14px]">check</span>
-</button>
-<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-variant transition-colors">
-        15T Fuso
-      </button>
-<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap flex items-center gap-1 hover:bg-surface-variant transition-colors">
-<span class="material-symbols-outlined text-[14px] text-secondary">ac_unit</span> Cold Chain
-      </button>
-<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-variant transition-colors">
-        Boda Cargo
-      </button>
-</div>
-</div>
-<!-- Section Header -->
-<div class="flex items-center justify-between pt-1">
-<div class="flex items-center gap-2">
-<span class="font-title-lg text-title-lg font-bold text-on-surface">Verified Haulers</span>
-<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-[11px] font-bold">4 ready</span>
-</div>
-<button class="text-secondary font-label-md text-label-md flex items-center gap-1 font-semibold hover:opacity-80 transition-opacity">
-<span>Sort by departure</span>
-<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
-</button>
-</div>
-<!-- TRANSPORTER CARD 1: Kato Francis -->
-<div class="rounded-2xl bg-surface-container-lowest p-5 shadow-sm border border-outline-variant/30 flex flex-col gap-4">
-<!-- Driver info & tier -->
-<div class="flex items-center justify-between gap-2">
-<div class="flex items-center gap-3 min-w-0">
-<div class="relative flex-shrink-0">
-<img class="w-12 h-12 rounded-full object-cover shadow-xs ring-2 ring-surface-container" data-alt="Portrait of Kato Francis" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9wqlbpmf4GzMOsPuNyZBksMwP2Uty4rFgwslo3v6qkgMrwWL6N_1LMMw0sbDEW7k3SRixuwmfrR-dx3zwuCngrhF_wHiKmos3JQj_LhDNyRSRPUlh3XrXvrYPtHWhwyZW1LOlPBCEMK0m6ttgd6L4lagi8wx2S1VDkndlAUNDo8tX0kCYClibRKcLoIcPgr4oDH2JwL8qgnTQ7gzXz8p2SmAVxwCOfVl8ch0qhPCqFQyBn-ia5vqTgg"/>
-<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[9px] shadow-xs">
-<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">verified</span>
-</span>
-</div>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-2">
-<span class="font-title-md text-title-md font-bold text-on-surface truncate">Kato Francis</span>
-<div class="flex items-center gap-0.5 text-secondary flex-shrink-0 font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="font-bold">4.9</span>
-<span class="text-outline text-[11px]">(184)</span>
-</div>
-</div>
-<span class="font-body-sm text-[12px] text-on-surface-variant truncate">Rwenzori Express Haulers • Mbale Base</span>
-</div>
-</div>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[11px] font-bold flex-shrink-0">
-<span class="material-symbols-outlined text-[13px]">shield</span>
-        Level 3 Vetted
-      </span>
-</div>
-<!-- Route Pill Stepper -->
-<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between gap-2">
-<div class="flex items-center gap-2 min-w-0 flex-1">
-<span class="material-symbols-outlined text-[16px] text-primary flex-shrink-0">trip_origin</span>
-<div class="flex flex-col min-w-0">
-<span class="font-label-sm text-[10px] text-outline uppercase font-semibold">From</span>
-<span class="font-body-sm text-[13px] text-on-surface font-semibold truncate">Mbale Central Depot</span>
-</div>
-</div>
-<div class="flex items-center justify-center px-1 text-outline">
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</div>
-<div class="flex items-center gap-2 min-w-0 flex-1 justify-end text-right">
-<div class="flex flex-col min-w-0">
-<span class="font-label-sm text-[10px] text-outline uppercase font-semibold">Destination</span>
-<span class="font-body-sm text-[13px] text-on-surface font-semibold truncate">Kampala Markets</span>
-</div>
-<span class="material-symbols-outlined text-[16px] text-secondary flex-shrink-0">location_on</span>
-</div>
-</div>
-<!-- Vehicle specs & capacity bar -->
-<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2.5">
-<div class="flex items-center justify-between text-body-sm font-body-sm">
-<span class="text-on-surface font-semibold flex items-center gap-1.5 text-[13px]">
-<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
-          Isuzu Forward 7.5 MT Box Body
-        </span>
-<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-[11px] font-semibold">Ventilated</span>
-</div>
-<div class="flex flex-col gap-1.5">
-<div class="flex justify-between items-center font-label-sm text-[12px]">
-<span class="text-on-surface-variant">Available Capacity</span>
-<span class="text-primary font-bold">3.2 Tons <span class="text-outline font-normal">/ 7.5 MT Max</span></span>
-</div>
-<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
-<div class="h-full rounded-full bg-primary" style="width: 57%;"></div>
-</div>
-</div>
-</div>
-<!-- Guarantee tags -->
-<div class="flex flex-wrap items-center gap-1.5">
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-[11px]">
-<span class="material-symbols-outlined text-[13px] text-primary">water_drop</span> Rainproof Tarpaulin
-      </span>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-[11px]">
-<span class="material-symbols-outlined text-[13px] text-primary">my_location</span> GPS Waybill
-      </span>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-sm text-[11px] font-semibold">
-<span class="material-symbols-outlined text-[13px]">verified_user</span> Escrow Covered
-      </span>
-</div>
-<!-- Price & Actions Footer -->
-<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
-<div class="flex flex-col">
-<span class="font-label-sm text-[11px] text-secondary font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-[13px]">schedule</span> Departs Today, 6:00 PM
-        </span>
-<div class="flex items-baseline gap-1 mt-0.5">
-<span class="font-headline-sm text-headline-sm font-bold text-primary">UGX 65</span>
-<span class="font-label-sm text-label-sm text-outline">/ kg</span>
-<span class="font-label-sm text-[11px] text-on-surface-variant ml-1 font-normal">• UGX 450k Half-Bay</span>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<button aria-label="Call Transporter" class="w-11 h-11 rounded-xl bg-surface-container text-primary flex items-center justify-center hover:bg-surface-variant transition-colors">
-<span class="material-symbols-outlined text-[20px]">call</span>
-</button>
-<button class="px-5 h-11 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container transition-colors shadow-sm flex items-center gap-1">
-          Book Space
-        </button>
-</div>
-</div>
-</div>
-<!-- TRANSPORTER CARD 2: Sarah Namubiru -->
-<div class="rounded-2xl bg-surface-container-lowest p-5 shadow-sm border border-secondary-fixed/40 flex flex-col gap-4 relative overflow-hidden">
-<div class="absolute -right-10 top-5 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold py-0.5 px-10 rotate-45 uppercase tracking-wider text-center shadow-xs">
-      Cold Chain
+@layer base{html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}body{overscroll-behavior:none}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px)}.pt-safe{padding-top:env(safe-area-inset-top,0px)}}
+::-webkit-scrollbar{display:none}
+.no-scrollbar{scrollbar-width:none;-ms-overflow-style:none}
+.msym-fill{font-variation-settings:'FILL' 1}
+@keyframes rise{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.rise{animation:rise .4s ease both}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+@keyframes fade{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.sheet{animation:up .28s cubic-bezier(.2,.8,.2,1) both}
+@media(min-width:768px){.sheet{animation:fade .2s ease both}}
+.skeleton{background:linear-gradient(90deg,#edeeeb 25%,#f3f4f1 37%,#edeeeb 63%);background-size:400% 100%;animation:sk 1.4s ease infinite}
+@keyframes sk{0%{background-position:100% 50%}100%{background-position:0 50%}}
+@keyframes spin{to{transform:rotate(360deg)}}.spin{animation:spin .9s linear infinite}
+.bubble{max-width:82%;padding:8px 12px;border-radius:16px;font-size:14px;line-height:20px;overflow-wrap:anywhere;white-space:pre-wrap}
+.bubble.me{background:#1b4332;color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.bubble.them{background:#fff;color:#191c1b;border-bottom-left-radius:4px;align-self:flex-start;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.truck{transition:transform 1s linear}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid #fe932c;outline-offset:2px}
+</style></head>
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen">
+
+<header class="fixed top-0 inset-x-0 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+  <div class="h-16 md:h-20 mx-auto max-w-6xl px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md">
+    <div class="flex items-center gap-space-sm min-w-0">
+      <img alt="You-Farm logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdryaOneto5aYotA6uQjNAQ4C8P9CN5Xklc_4qjItWmxHO2SWFxxXvjHVtoGk48JIqRUVqF3WxRWQdI3bo9iG2s29Li-gG-IFroLa2sIJSyfgnxpW68yKSJyfuSAmrYSUT8ISiRi5S-EbDnsYoFFy86m3Wo5Wv-kSDEIanafdKRCj-rNu14Bq_YymhsGbNqMqzpiAcY26Bwk2z6Gsa9zu6KxARBkZKdkOY95plrqmByBAvS3I7ZhJNrQ"/>
+      <div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary truncate tracking-tight leading-6">You-Farm</span><span class="hidden sm:flex items-center gap-1 text-on-surface-variant font-label-sm truncate"><span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>Kampala &amp; Central Hub</span></div>
     </div>
-<div class="flex items-center justify-between gap-2 pr-6">
-<div class="flex items-center gap-3 min-w-0">
-<div class="relative flex-shrink-0">
-<img class="w-12 h-12 rounded-full object-cover shadow-xs ring-2 ring-secondary-fixed" data-alt="Portrait of Sarah Namubiru" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE-tnqUe9JkIn_SuQ4lA_F_AYiPEP5pN3PV_pC-dvbtlED7AC9Mw57mKKpMDigtJxrxmgFWMAK8szIOFUXPsE2LuamTcEsSPxjELsZ20xFM-QDqOPY90vNfZ4o3_HgHvljs8kLFDTNrS1PDUed_Jhn-A7nG8JHhBeRUjFizpWNy8xlie4bsklirGOO2ZnkoLMf-ZYEz5cXHDJtPYzursubtGDnolFY9dpDWud85BVQ89groEMefVl0FA"/>
-<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center text-[9px] shadow-xs">
-<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
-</span>
-</div>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-2">
-<span class="font-title-md text-title-md font-bold text-on-surface truncate">Sarah Namubiru</span>
-<div class="flex items-center gap-0.5 text-secondary flex-shrink-0 font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="font-bold">5.0</span>
-<span class="text-outline text-[11px]">(92)</span>
-</div>
-</div>
-<span class="font-body-sm text-[12px] text-on-surface-variant truncate">Masaka Fresh Agro-Logistics</span>
-</div>
-</div>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold flex-shrink-0">
-<span class="material-symbols-outlined text-[13px]">verified</span>
-        Level 4 Certified
-      </span>
-</div>
-<!-- Route Stepper -->
-<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between gap-2">
-<div class="flex items-center gap-2 min-w-0 flex-1">
-<span class="material-symbols-outlined text-[16px] text-secondary flex-shrink-0">warehouse</span>
-<div class="flex flex-col min-w-0">
-<span class="font-label-sm text-[10px] text-outline uppercase font-semibold">Origin</span>
-<span class="font-body-sm text-[13px] text-on-surface font-semibold truncate">Masaka (Kyabakuza)</span>
-</div>
-</div>
-<div class="flex items-center justify-center px-1 text-outline">
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</div>
-<div class="flex items-center gap-2 min-w-0 flex-1 justify-end text-right">
-<div class="flex flex-col min-w-0">
-<span class="font-label-sm text-[10px] text-outline uppercase font-semibold">Destination</span>
-<span class="font-body-sm text-[13px] text-on-surface font-semibold truncate">Kampala Industrial Hub</span>
-</div>
-<span class="material-symbols-outlined text-[16px] text-secondary flex-shrink-0">storefront</span>
-</div>
-</div>
-<!-- Vehicle specs & cold capacity -->
-<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2.5">
-<div class="flex items-center justify-between text-body-sm font-body-sm">
-<span class="text-on-surface font-semibold flex items-center gap-1.5 text-[13px] truncate">
-<span class="material-symbols-outlined text-[16px] text-secondary">kitchen</span>
-          Mitsubishi Canter 4.0 MT (Chilled 12°C)
-        </span>
-<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-[11px] font-semibold flex-shrink-0">Live Logger</span>
-</div>
-<div class="flex flex-col gap-1.5">
-<div class="flex justify-between items-center font-label-sm text-[12px]">
-<span class="text-on-surface-variant truncate">Tomatoes, Matooke, Fresh Veggies</span>
-<span class="text-secondary font-bold flex-shrink-0">1.8 MT Remaining</span>
-</div>
-<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
-<div class="h-full rounded-full bg-secondary" style="width: 55%;"></div>
-</div>
-</div>
-</div>
-<!-- Price & Actions Footer -->
-<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
-<div class="flex flex-col">
-<span class="font-label-sm text-[11px] text-primary font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-[13px]">nest_clock_farsight_analog</span> Tomorrow, 5:00 AM
-        </span>
-<div class="flex items-baseline gap-1 mt-0.5">
-<span class="font-headline-sm text-headline-sm font-bold text-primary">UGX 95</span>
-<span class="font-label-sm text-label-sm text-outline">/ kg (Chilled)</span>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<button class="px-3.5 h-11 rounded-xl bg-surface-container text-primary font-label-md text-label-md font-semibold hover:bg-surface-variant transition-colors">
-          Route Info
+    <div class="flex items-center gap-space-xs flex-shrink-0">
+      <a aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors" href="Market-Alerts.html"><span class="material-symbols-outlined text-[24px]">notifications</span><span id="notif-dot" class="hidden absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></a>
+      <div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-lg shadow-sm" title="Crown Agro Kampala">CA</div>
+    </div>
+  </div>
+</header>
+
+<main class="pt-20 md:pt-28 pb-28">
+<div class="mx-auto max-w-6xl px-margin md:px-margin-tablet lg:px-margin-desktop">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-gutter-desktop gap-y-space-md items-start">
+
+    <!-- LEFT: corridor + filters -->
+    <aside class="lg:col-span-4 flex flex-col gap-space-md lg:sticky lg:top-28">
+      <div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0"><div class="w-9 h-9 rounded-xl bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0"><span class="material-symbols-outlined text-[20px] msym-fill">local_shipping</span></div>
+            <div class="min-w-0"><h1 class="font-headline-sm text-headline-sm text-primary leading-tight tracking-tight">Agri Transits &amp; Haulage</h1><p class="font-body-sm text-on-surface-variant">Farm-to-market freight, booked in-app</p></div></div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm flex-shrink-0"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span id="fleet-count">0</span> trucks</span>
+        </div>
+        <button class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low text-left hover:bg-surface-container transition-colors" onclick="openHubs()">
+          <div class="flex items-center gap-3 min-w-0"><span class="material-symbols-outlined text-secondary">alt_route</span>
+            <div class="min-w-0"><span class="block font-label-sm text-[10px] text-outline uppercase tracking-wider">Depot / corridor</span><span class="block font-title-md text-[14px] truncate" id="hub-label">All hubs</span></div></div>
+          <span class="flex items-center gap-0.5 text-primary font-label-md flex-shrink-0">Change<span class="material-symbols-outlined text-[16px]">expand_more</span></span>
         </button>
-<button class="px-5 h-11 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container transition-colors shadow-sm">
-          Book Space
-        </button>
+      </div>
+      <div class="hidden lg:block bg-surface-container-lowest rounded-xl shadow-sm p-space-md" id="filters-lg"></div>
+    </aside>
+
+    <!-- RIGHT: modules -->
+    <section class="lg:col-span-8 flex flex-col gap-space-md min-w-0">
+      <div class="grid grid-cols-3 gap-1 p-1 rounded-xl bg-surface-container" role="tablist" id="mods"></div>
+      <div id="view" class="flex flex-col gap-space-md"></div>
+    </section>
+  </div>
+  <p class="mt-space-xl text-center font-body-sm text-outline">Vehicle photos via <a class="underline" href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> · Maps are route schematics, not satellite imagery · <button class="underline" onclick="resetDemo()">Reset demo data</button></p>
 </div>
+</main>
+
+<div id="sheet-wrap" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-end md:items-center justify-center md:p-margin-tablet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="sheet bg-surface-container-lowest w-full max-w-lg rounded-t-2xl md:rounded-2xl shadow-2xl max-h-[92dvh] flex flex-col pb-safe">
+    <div class="flex items-start justify-between gap-space-sm p-space-lg pb-space-sm flex-shrink-0">
+      <div class="min-w-0"><p class="font-label-sm text-secondary uppercase tracking-wider" id="sheet-kicker"></p><h2 class="font-headline-sm text-headline-sm text-primary leading-tight" id="sheet-title"></h2></div>
+      <button aria-label="Close" class="w-9 h-9 flex-shrink-0 rounded-full bg-surface-container flex items-center justify-center" onclick="closeSheet()"><span class="material-symbols-outlined text-[20px]">close</span></button>
+    </div>
+    <div class="px-space-lg pb-space-lg overflow-y-auto flex flex-col gap-space-md" id="sheet-body"></div>
+  </div>
 </div>
-</div>
-<!-- TRANSPORTER CARD 3: Musa Byaruhanga -->
-<div class="rounded-2xl bg-surface-container-lowest p-5 shadow-sm border border-secondary-container/40 flex flex-col gap-4">
-<div class="flex items-center justify-between gap-2">
-<div class="flex items-center gap-3 min-w-0">
-<div class="relative flex-shrink-0">
-<img class="w-12 h-12 rounded-full object-cover shadow-xs ring-2 ring-surface-container" data-alt="Portrait of Musa Byaruhanga" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjHwFp-5Lm5cko9yZKgJaIZHe5ITHBGyegxpDkg39YG6F2qmCr06uHC7y2RE_7Zyd6Y8dOtr87rvVQ2JUNjEMPjZZ8MfbwVl4x8eHntTq7O9jJW11GW8rHYGMi7kdlBBIGdnTbc0VgdGgP6gJLKoHaaYQOlVTvvVhAP7eDmMBxIU3lwK13Xho8PmV3wZdlQaPggIqf9_vau3_OcUwRI8JuXKLJn3HCfudHp3WIPrOZUJzGSGlgqtaXfw"/>
-<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary text-on-primary flex items-center justify-center text-[9px] shadow-xs">
-<span class="material-symbols-outlined text-[10px]">local_shipping</span>
-</span>
-</div>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-2">
-<span class="font-title-md text-title-md font-bold text-on-surface truncate">Musa Byaruhanga</span>
-<div class="flex items-center gap-0.5 text-secondary flex-shrink-0 font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="font-bold">4.8</span>
-<span class="text-outline text-[11px]">(310)</span>
-</div>
-</div>
-<span class="font-body-sm text-[12px] text-on-surface-variant truncate">Fuso Freight Direct • Jinja Hub</span>
-</div>
-</div>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[11px] font-bold flex-shrink-0">
-<span class="material-symbols-outlined text-[13px]">sell</span>
-        -30% Backhaul
-      </span>
-</div>
-<!-- Route and urgency banner -->
-<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between gap-3">
-<div class="flex items-center gap-2 min-w-0">
-<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0">departure_board</span>
-<div class="flex flex-col min-w-0">
-<span class="font-body-sm text-[13px] text-on-surface font-semibold truncate">Jinja Silo → Tororo / Mbale Grain Depot</span>
-<span class="font-label-sm text-[11px] text-error font-bold flex items-center gap-1 mt-0.5">
-<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
-            Rolling in under 2 hours
-          </span>
-</div>
-</div>
-<div class="text-right flex-shrink-0">
-<span class="font-label-sm text-[10px] text-outline uppercase font-semibold">Capacity</span>
-<div class="font-title-md text-[14px] text-primary font-bold">6.5 Tons</div>
-</div>
-</div>
-<!-- Price & Instant CTA -->
-<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
-<div class="flex flex-col">
-<div class="flex items-baseline gap-1">
-<span class="font-headline-sm text-headline-sm font-bold text-secondary">UGX 40</span>
-<span class="font-label-sm text-label-sm text-outline">/ kg</span>
-<span class="text-[12px] line-through text-outline ml-1.5">UGX 60/kg</span>
-</div>
-<span class="font-label-sm text-[11px] text-on-surface-variant font-medium">UGX 380,000 Full Remaining Bay</span>
-</div>
-<div class="flex items-center gap-2">
-<button aria-label="Call Driver" class="w-11 h-11 rounded-xl bg-surface-container text-primary flex items-center justify-center hover:bg-surface-variant transition-colors">
-<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
-</button>
-<button class="px-5 h-11 rounded-xl bg-secondary text-on-secondary font-label-lg text-label-lg font-bold hover:opacity-95 transition-opacity shadow-sm flex items-center gap-1">
-          Instant Lock
-        </button>
-</div>
-</div>
-</div>
-<!-- TRANSPORTER CARD 4: Brian Otim -->
-<div class="rounded-2xl bg-surface-container-lowest p-5 shadow-sm border border-outline-variant/30 flex flex-col gap-4">
-<div class="flex items-center justify-between gap-2">
-<div class="flex items-center gap-3 min-w-0">
-<div class="relative flex-shrink-0">
-<img class="w-12 h-12 rounded-full object-cover shadow-xs ring-2 ring-surface-container" data-alt="Portrait of Brian Otim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwmzJzb-liIgUsQ0TlMwM2qC67ntw3Td9Qe3VlEAnu4DaOOWhj7D_y6U1dpF8UhTvsq1ZSWvde_qj_noFjAzUKj69GMF-oqy3Q-YGp_9H0UbQJGQGjHM1aApduQJqQP7SW4VJcJp2guRBdv64xJpmQDd7nhA13IZIAjaPb2_eV5-ddT4q7RBd06nWsac2NsAGV8_mNc1OHLEeGriq7vHxIK5oGF1bxFiHZ-JO90vFn2DKg3IvpXoPDAg"/>
-<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center text-[9px] shadow-xs">
-<span class="material-symbols-outlined text-[10px]">two_wheeler</span>
-</span>
-</div>
-<div class="flex flex-col min-w-0">
-<div class="flex items-center gap-2">
-<span class="font-title-md text-title-md font-bold text-on-surface truncate">Brian Otim</span>
-<div class="flex items-center gap-0.5 text-secondary flex-shrink-0 font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="font-bold">4.7</span>
-<span class="text-outline text-[11px]">(412)</span>
-</div>
-</div>
-<span class="font-body-sm text-[12px] text-on-surface-variant truncate">SwiftBoda Cargo • Smallholder Batches</span>
-</div>
-</div>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[11px] font-semibold flex-shrink-0">
-        Local Courier
-      </span>
-</div>
-<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
-<div class="flex items-center gap-2.5">
-<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
-<span class="material-symbols-outlined text-[20px]">moped</span>
-</div>
-<div class="flex flex-col">
-<span class="font-title-md text-[14px] text-on-surface font-semibold">Boxed Tricycle / Bajaj Cargo</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant">Max 500 kg capacity (Crates / Sacks)</span>
-</div>
-</div>
-</div>
-<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
-<div class="flex flex-col">
-<span class="font-label-sm text-[11px] text-on-surface-variant font-medium">Kampala &amp; Wakiso Peri-urban</span>
-<div class="flex items-baseline gap-1 mt-0.5">
-<span class="font-headline-sm text-headline-sm font-bold text-primary">UGX 25,000</span>
-<span class="font-label-sm text-label-sm text-outline">/ flat rate</span>
-</div>
-</div>
-<button class="px-5 h-11 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container transition-colors shadow-sm flex items-center gap-1">
-        Express Dispatch
-      </button>
-</div>
-</div>
-<!-- Decongested Clean Trust & Escrow Guarantee (2x2 Grid) -->
-<div class="rounded-2xl bg-surface-container-low p-5 flex flex-col gap-3.5 border border-outline-variant/20">
-<div class="flex items-center gap-2.5">
-<div class="w-9 h-9 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0 shadow-xs">
-<span class="material-symbols-outlined text-[20px]">verified_user</span>
-</div>
-<div>
-<h4 class="font-title-md text-title-md font-bold text-on-surface">Transit Guarantee &amp; Escrow</h4>
-<p class="font-body-sm text-[12px] text-on-surface-variant">Zero produce loss guarantee across all haulers</p>
-</div>
-</div>
-<div class="grid grid-cols-1 gap-2.5 pt-1">
-<div class="flex items-start gap-2.5 p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/20">
-<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">lock_clock</span>
-<div class="flex flex-col">
-<span class="font-title-md text-[13px] font-bold text-on-surface">Escrow Release Protection</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5 leading-snug">Drivers paid only after arrival weighbridge confirmation and digital receiver OTP sign-off.</span>
-</div>
-</div>
-<div class="flex items-start gap-2.5 p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/20">
-<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">policy</span>
-<div class="flex flex-col">
-<span class="font-title-md text-[13px] font-bold text-on-surface">GIT Goods-in-Transit Cover</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5 leading-snug">Automated coverage against road incidents, breakdowns, or temperature variation.</span>
-</div>
-</div>
-<div class="flex items-start gap-2.5 p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/20">
-<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">share_location</span>
-<div class="flex flex-col">
-<span class="font-title-md text-[13px] font-bold text-on-surface">Live GPS &amp; WhatsApp Tracking</span>
-<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5 leading-snug">Share live satellite trip links directly with your cooperative leaders and buyers.</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Polished Post Freight Request CTA -->
-<div class="pt-2 pb-3">
-<button class="w-full h-14 rounded-2xl bg-primary text-on-primary font-title-lg text-title-lg font-bold flex items-center justify-center gap-2.5 shadow-md hover:bg-primary-container active:scale-[0.99] transition-all">
-<span class="material-symbols-outlined text-[24px]">add_circle</span>
-      Post Freight Request (Get Driver Bids)
-    </button>
-<p class="font-body-sm text-[12px] text-outline text-center mt-2 font-normal">
-      Need dedicated trailer allocation or cold reefer? Driver bids arrive in &lt; 20 mins.
-    </p>
-</div>
-</div></div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="marketplace" href="MarketPlace.html"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Marketplace</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="my-harvests-and-pools" href="Harvest.html"><span class="material-symbols-outlined text-[22px]">nest_eco_leaf</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Harvests</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="orders-and-escrow" href="Escrow.html"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Escrow</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="transits-and-hubs" href="Transit.html"><span class="material-symbols-outlined text-[22px]">local_shipping</span><span class="font-label-sm text-label-sm mt-0.5 truncate">Transits</span></a></div></nav>
+<div id="toast" role="status" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[70] bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full font-label-md shadow-xl opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2 max-w-[92vw]"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed" id="toast-icon">check_circle</span><span id="toast-msg"></span></div>
+
+<nav class="fixed bottom-0 inset-x-0 z-40 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] border-t border-outline-variant/40" aria-label="Primary" data-active-classes="text-primary font-bold"><div class="w-full flex items-center justify-around h-16 px-space-xs">
+  <a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="marketplace" href="MarketPlace.html"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-sm mt-0.5 truncate">Marketplace</span></a>
+  <a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="my-harvests-and-pools" href="Harvest.html"><span class="material-symbols-outlined text-[22px]">nest_eco_leaf</span><span class="font-label-sm mt-0.5 truncate">Harvests</span></a>
+  <a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-on-surface-variant transition-colors" data-path="orders-and-escrow" href="Escrow.html"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm mt-0.5 truncate">Escrow</span></a>
+  <a aria-current="page" class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] py-1 text-primary font-bold transition-colors" data-path="transits-and-hubs" href="Transit.html"><span class="material-symbols-outlined text-[22px] msym-fill">local_shipping</span><span class="font-label-sm mt-0.5 truncate">Transits</span></a>
+</div></nav>
+
+<script>
+/* ============================ helpers ============================ */
+const $=id=>document.getElementById(id);
+const fmt=n=>Math.round(n).toLocaleString('en-US'), ugx=n=>'UGX '+fmt(n);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const H=3600e3,M=60e3,NOW=Date.now();
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let tT;function toast(t,i='check_circle'){$('toast-msg').textContent=t;$('toast-icon').textContent=i;const e=$('toast');e.classList.remove('opacity-0','pointer-events-none');clearTimeout(tT);tT=setTimeout(()=>e.classList.add('opacity-0','pointer-events-none'),3000)}
+const initials=s=>s.split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+const clock=ts=>new Date(ts).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+const dayLabel=ts=>{const d=new Date(ts),n=new Date();const k=x=>x.toDateString();const t=new Date(n);t.setDate(n.getDate()+1);return (k(d)===k(n)?'Today':k(d)===k(t)?'Tomorrow':d.toLocaleDateString([], {weekday:'short',day:'numeric',month:'short'}))+', '+clock(ts)};
+const dur=ms=>{ms=Math.max(0,ms);const h=Math.floor(ms/H),m=Math.round(ms%H/M);return h?`${h}h ${String(m).padStart(2,'0')}m`:`${m} min`};
+
+/* contact-sharing rule shared with Marketplace chat: all hauler talk stays in-app */
+const NW={zero:0,oh:0,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9};
+function detectContact(raw){const t=String(raw||'').toLowerCase();
+ if(/[a-z0-9._%+-]+\s*(@|\(at\)|\bat\b)\s*[a-z0-9-]+\s*(\.|\(dot\)|\bdot\b)\s*[a-z]{2,}/.test(t)||/\b(gmail|yahoo|hotmail|outlook)\b/.test(t))return'an email address';
+ if(/(https?:\/\/|www\.|\bwa\.me\b|\b[a-z0-9-]{2,}\s?(\.|\bdot\b)\s?(com|net|org|ug|co|io|me|app)\b)/.test(t))return'a link';
+ if(/\b(whats\s?app|telegram|viber|imo|facebook|insta(gram)?|tiktok|snap(chat)?|call me|text me|my (number|phone|line|contact)|outside (the )?(app|platform))\b/.test(t)||/(^|\s)@[a-z0-9_.]{3,}/.test(t))return'a way to contact you off the platform';
+ let n=t.replace(/\b(zero|oh|one|two|three|four|five|six|seven|eight|nine)\b/g,w=>NW[w]).replace(/(?<=\d)o(?=\d)/g,'0');
+ n=n.replace(/\d{1,3}(,\d{3})+(\.\d+)?/g,' ').replace(/\d+(\.\d+)?\s*(kg|kgs|ugx|shs|tons?|mt|bags?|sacks?|%|km|h|hrs?|am|pm)\b/g,' ');
+ if((n.match(/\+?\d(?:[\s\-.()/_*|,]*\d){6,}/g)||[]).length||n.replace(/\D/g,'').length>=9)return'a phone number';return''}
+
+/* ============================ geography (real town coordinates, schematic map) ============================ */
+const TOWN={Mbale:[1.0827,34.1750],Tororo:[0.6928,34.1808],Iganga:[0.6092,33.4686],Jinja:[0.4244,33.2042],Mukono:[0.3533,32.7553],Kampala:[0.3476,32.5825],Masaka:[-0.3338,31.7342],Mbarara:[-0.6072,30.6545],'Fort Portal':[0.6710,30.2750],Kasese:[0.1833,30.0833]};
+const km=(a,b)=>{const R=6371,r=x=>x*Math.PI/180,[la1,lo1]=TOWN[a],[la2,lo2]=TOWN[b];const dla=r(la2-la1),dlo=r(lo2-lo1);const x=Math.sin(dla/2)**2+Math.cos(r(la1))*Math.cos(r(la2))*Math.sin(dlo/2)**2;return 2*R*Math.asin(Math.sqrt(x))*1.25}; // ×1.25 road factor
+const pathOf=r=>[r.from,...(r.via||[]),r.to];
+const pathKm=r=>{const p=pathOf(r);let s=0;for(let i=1;i<p.length;i++)s+=km(p[i-1],p[i]);return s};
+function pointAt(r,f){const p=pathOf(r),segs=[];let tot=0;for(let i=1;i<p.length;i++){const d=km(p[i-1],p[i]);segs.push(d);tot+=d}let t=f*tot;for(let i=0;i<segs.length;i++){if(t<=segs[i]||i===segs.length-1){const k=segs[i]?Math.min(1,t/segs[i]):0;const[a,b]=[TOWN[p[i]],TOWN[p[i+1]]];return[a[0]+(b[0]-a[0])*k,a[1]+(b[1]-a[1])*k]}t-=segs[i]}}
+function cumF(r){const p=pathOf(r);const tot=pathKm(r);let a=0;return p.map((t,i)=>{if(i)a+=km(p[i-1],t);return a/tot})}
+function nextStop(r,f){const p=pathOf(r);let tot=pathKm(r),acc=0;for(let i=1;i<p.length;i++){acc+=km(p[i-1],p[i]);if(acc/tot>f+1e-9)return p[i]}return r.to}
+const W=480,Hh=300,LAT=[-0.95,1.3],LON=[29.8,34.6];
+const proj=([la,lo])=>[(lo-LON[0])/(LON[1]-LON[0])*W,(LAT[1]-la)/(LAT[1]-LAT[0])*Hh];
+function mapSVG(r,f,showTruck=true){
+  const pts=pathOf(r).map(t=>proj(TOWN[t]));const d=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+  const tp=proj(pointAt(r,f));const involved=new Set(pathOf(r));
+  const dots=Object.keys(TOWN).map(t=>{const[x,y]=proj(TOWN[t]);const on=involved.has(t);return `<g><circle cx="${x}" cy="${y}" r="${on?5:3}" fill="${on?'#1b4332':'#a5d0b9'}" ${on?'stroke="#fff" stroke-width="2"':''}/><text x="${x+(x>W-70?-8:8)}" y="${y+4}" text-anchor="${x>W-70?'end':'start'}" font-size="${on?12:10}" font-weight="${on?700:500}" fill="${on?'#012d1d':'#717973'}">${t}</text></g>`}).join('');
+  const grid=[0,1,2,3,4].map(i=>`<line x1="${i*W/4}" y1="0" x2="${i*W/4}" y2="${Hh}" stroke="#e2e3e0" stroke-width="1"/>`).join('')+[0,1,2,3].map(i=>`<line x1="0" y1="${i*Hh/3}" x2="${W}" y2="${i*Hh/3}" stroke="#e2e3e0" stroke-width="1"/>`).join('');
+  const done=showTruck&&f>0?`<path d="${d}" fill="none" stroke="#fe932c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="${f} 1"/>`:'';
+  return `<svg viewBox="0 0 ${W} ${Hh}" style="aspect-ratio:${W}/${Hh}" class="w-full flex-shrink-0 rounded-xl bg-[#f3f4f1]" role="img" aria-label="Route schematic ${esc(r.from)} to ${esc(r.to)}">${grid}
+   <path d="${d}" fill="none" stroke="#a5d0b9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>${done}${dots}
+   ${showTruck?`<g class="truck" style="transform:translate(${tp[0]}px,${tp[1]}px)"><circle r="14" fill="#fe932c" opacity=".25"><animate attributeName="r" values="10;18;10" dur="2s" repeatCount="indefinite"/></circle><circle r="8" fill="#904d00" stroke="#fff" stroke-width="2.5"/></g>`:''}</svg>`;
+}
+
+/* ============================ data ============================ */
+const COMMONS=f=>`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=700`;
+const VPHOTO={forward:'Isuzu_Elf_&_Forward_(Widebody-type)_trucks.jpg',canter:'Mitsubishi_Fuso_Canter._Box_rigid_truck._Spielvogel.jpg',fuso:'Nittsu_Sumidagawa_Unyu_Isuzu_Forward_Container_Truck_5t.jpg',boda:'Boda_boda_guy.jpg'};
+const VICON={forward:'local_shipping',canter:'ac_unit',fuso:'local_shipping',boda:'moped'};
+const VTYPES=[['canter','3-4T Canter'],['forward','7.5T Forward'],['fuso','15T Fuso'],['boda','Boda / tricycle cargo']];
+const HAULERS=[
+ {id:'H1',name:'Kato Francis',co:'Rwenzori Express Haulers · Mbale base',rating:4.9,jobs:184,lvl:'Level 3 Vetted',vt:'forward',veh:'Isuzu Forward 7.5 MT box body',cap:7.5,rem:3.2,perKg:65,half:450000,dep:NOW+4*H,route:{from:'Mbale',via:['Jinja'],to:'Kampala'},corr:'Mbale → Kampala',cold:false,tags:['Rainproof tarpaulin','GPS waybill','Ventilated'],dest:'Kampala Markets',plate:'UBF 412K'},
+ {id:'H2',name:'Sarah Namubiru',co:'Masaka Fresh Agro-Logistics',rating:5.0,jobs:92,lvl:'Level 4 Certified',vt:'canter',veh:'Mitsubishi Canter 4.0 MT · chilled 12°C',cap:4,rem:1.8,perKg:95,dep:NOW+20*H,route:{from:'Masaka',to:'Kampala'},corr:'Masaka → Nakasero',cold:true,tags:['Live temperature logger','Tomatoes · matooke · veg','GPS waybill'],dest:'Kampala Industrial Hub',plate:'UBJ 238C'},
+ {id:'H3',name:'Musa Byaruhanga',co:'Fuso Freight Direct · Jinja hub',rating:4.8,jobs:310,lvl:'Backhaul −33%',vt:'fuso',veh:'Fuso Fighter 15 MT · returning empty',cap:15,rem:6.5,perKg:40,was:60,dep:NOW+1.5*H,route:{from:'Jinja',via:['Iganga'],to:'Mbale'},corr:'Jinja → Mbale',cold:false,backhaul:true,tags:['Backhaul rate','GPS waybill','Rainproof tarpaulin'],dest:'Mbale Grain Depot',plate:'UBG 907M'},
+ {id:'H4',name:'Brian Otim',co:'SwiftBoda Cargo · smallholder batches',rating:4.7,jobs:412,lvl:'Local courier',vt:'boda',veh:'Boxed tricycle / Bajaj cargo · max 500 kg',cap:.5,rem:.5,flat:25000,dep:NOW+.5*H,route:{from:'Kampala',to:'Mukono'},corr:'Kampala & Wakiso',cold:false,tags:['Flat rate','Crates & sacks'],dest:'Kampala & Wakiso peri-urban',plate:'UFA 551T'},
+ {id:'H5',name:'Robert Tumusiime',co:'Rwenzori Grain Lines · Kasese',rating:4.6,jobs:121,lvl:'Level 3 Vetted',vt:'fuso',veh:'Fuso Fighter 15 MT flatbed',cap:15,rem:9,perKg:55,dep:NOW+9*H,route:{from:'Kasese',via:['Fort Portal','Kampala'],to:'Jinja'},corr:'Kasese → Jinja',cold:false,tags:['Tarpaulin & ropes','GPS waybill'],dest:'Jinja Processing Terminal',plate:'UBH 120R'},
+ {id:'H6',name:'Agnes Kyomuhendo',co:'Ankole Cold Freight · Mbarara',rating:4.8,jobs:67,lvl:'Level 4 Certified',vt:'canter',veh:'Canter 3.5 MT · chilled 10°C',cap:3.5,rem:2.4,perKg:110,dep:NOW+6*H,route:{from:'Mbarara',via:['Masaka'],to:'Kampala'},corr:'Mbarara → Kampala',cold:true,tags:['Live temperature logger','Dairy · veg · fruit'],dest:'Kampala Nakasero Market',plate:'UBK 664A'}
+];
+const CARGO=[['grain','Grain, beans & dry goods',false],['matooke','Matooke & bananas',true],['fresh','Fresh vegetables & fruit',true],['coffee','Coffee & cash crops',false],['dairy','Dairy & chilled produce',true]];
+const getH=id=>HAULERS.find(h=>h.id===id);
+
+const SEED=()=>({v:1,rem:Object.fromEntries(HAULERS.map(h=>[h.id,h.rem])),
+ ships:[
+  {id:'TR-4821',h:'H1',cargo:'Yellow maize, Grade 1',kg:2500,price:162500,status:'in_transit',p:.6,departAt:NOW-4*H,speed:52,route:{from:'Mbale',via:['Jinja'],to:'Kampala'},otp:'4821',plate:'UBF 412K',driver:'Peter Semakula',cold:false,log:[],inc:[],rated:null,hist:[{t:NOW-5*H,e:'Booked'},{t:NOW-4.2*H,e:'Loaded at Mbale Central Depot'},{t:NOW-4*H,e:'Departed Mbale'}]},
+  {id:'TR-4833',h:'H2',cargo:'Roma tomatoes',kg:1200,price:114000,status:'loading',p:0,departAt:NOW+20*H,speed:48,route:{from:'Masaka',to:'Kampala'},otp:'7305',plate:'UBJ 238C',driver:'Sarah Namubiru',cold:true,log:[12.1,11.9,12.0,12.2,12.0],inc:[],rated:null,hist:[{t:NOW-2*H,e:'Booked'},{t:NOW-.5*H,e:'Vehicle pre-cooled to 12°C'}]},
+  {id:'TR-4790',h:'H3',cargo:'Soya beans',kg:3000,price:120000,status:'delivered',p:1,departAt:NOW-30*H,speed:50,route:{from:'Jinja',via:['Iganga'],to:'Mbale'},otp:'1190',plate:'UBG 907M',driver:'Musa Byaruhanga',cold:false,log:[],inc:[],rated:null,hist:[{t:NOW-31*H,e:'Booked'},{t:NOW-30*H,e:'Departed Jinja'},{t:NOW-26*H,e:'Delivered · OTP confirmed'}]}
+ ],
+ reqs:[],chats:{}});
+let S=store.get('yf_transit_v1',null);if(!S||S.v!==1)S=SEED();
+const save=()=>store.set('yf_transit_v1',S);
+const getS=id=>S.ships.find(s=>s.id===id);
+const km_of=s=>pathKm(s.route);
+const etaMs=s=>(1-s.p)*km_of(s)/s.speed*H;
+
+/* ============================ shell ============================ */
+let mod='find';
+const F={q:'',vt:new Set(),cold:false,back:false,corr:'all',hub:'all',sort:'dep',maxPrice:''};
+const MODS=[['find','Find a haul','search'],['ships','My shipments','route'],['reqs','Freight requests','request_quote']];
+function renderMods(){
+  const act=S.ships.filter(s=>!['delivered'].includes(s.status)).length, rq=S.reqs.filter(r=>r.status==='open').length;
+  const cnt={find:'',ships:act,reqs:rq};
+  $('mods').innerHTML=MODS.map(([k,l,i])=>`<button role="tab" aria-selected="${mod===k}" class="min-h-[48px] rounded-lg flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5 font-label-md transition-colors px-1 ${mod===k?'bg-surface-container-lowest text-primary shadow-sm':'text-on-surface-variant hover:bg-surface-container-high'}" onclick="setMod('${k}')"><span class="material-symbols-outlined text-[20px] ${mod===k?'msym-fill':''}">${i}</span><span class="text-[11px] sm:text-[12px] leading-3 text-center">${l}${cnt[k]?` <b class="ml-0.5 px-1.5 rounded-full bg-secondary-container text-on-secondary-container">${cnt[k]}</b>`:''}</span></button>`).join('');
+}
+function setMod(k){mod=k;renderAll()}
+function renderAll(){renderMods();renderView();renderFilters();$('fleet-count').textContent=HAULERS.filter(h=>S.rem[h.id]>0).length+28;$('hub-label').textContent=F.hub==='all'?'All hubs':F.hub+' corridor'}
+function renderView(){({find:viewFind,ships:viewShips,reqs:viewReqs})[mod]()}
+
+/* ============================ FIND A HAUL ============================ */
+const CORRS=['all',...new Set(HAULERS.map(h=>h.corr))];
+function filtersHTML(){
+  const chip=(on,txt,fn,ic)=>`<button class="px-3 py-1.5 rounded-lg font-label-md whitespace-nowrap flex items-center gap-1 transition-colors ${on?'bg-primary text-on-primary shadow-sm':'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'}" onclick="${fn}">${ic?`<span class="material-symbols-outlined text-[14px]">${ic}</span>`:''}${txt}</button>`;
+  return `<div class="flex flex-col gap-space-md">
+   <div><p class="font-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5">Corridor</p><div class="flex flex-wrap gap-1.5">${CORRS.map(c=>chip(F.corr===c,c==='all'?'All transporters':c,`setF('corr','${c}')`)).join('')}</div></div>
+   <div><p class="font-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5">Vehicle</p><div class="flex flex-wrap gap-1.5">${VTYPES.map(([k,l])=>chip(F.vt.has(k),l,`togVT('${k}')`,F.vt.has(k)?'check':'')).join('')}</div></div>
+   <div class="flex flex-wrap gap-1.5">${chip(F.cold,'Cold chain',`setF('cold',!F.cold)`,'ac_unit')}${chip(F.back,'Backhaul deals',`setF('back',!F.back)`,'sell')}</div>
+   <div><label class="font-label-sm text-on-surface-variant uppercase tracking-wider" for="maxp-${'x'}">Max price per kg (UGX)</label><input type="number" inputmode="numeric" min="0" value="${F.maxPrice}" placeholder="No limit" class="mt-1.5 w-full h-11 px-3 rounded-lg bg-surface-container-low outline-none" onchange="setF('maxPrice',this.value)"/></div>
+   <button class="h-10 rounded-lg bg-surface-container font-label-md" onclick="resetF()">Reset filters</button></div>`;
+}
+function renderFilters(){$('filters-lg').innerHTML=`<h2 class="font-title-md text-primary flex items-center gap-2 mb-space-sm"><span class="material-symbols-outlined text-[20px] text-secondary">tune</span>Filters</h2>`+filtersHTML();const m=$('filters-sheet');if(m)m.innerHTML=filtersHTML()}
+function setF(k,v){F[k]=v;renderAll()}
+function togVT(k){F.vt.has(k)?F.vt.delete(k):F.vt.add(k);renderAll()}
+function resetF(){Object.assign(F,{q:'',vt:new Set(),cold:false,back:false,corr:'all',hub:'all',maxPrice:''});renderAll()}
+function activeFilters(){return (F.vt.size?1:0)+(F.cold?1:0)+(F.back?1:0)+(F.corr!=='all'?1:0)+(F.maxPrice?1:0)+(F.hub!=='all'?1:0)}
+function haulers(){
+  const q=F.q.trim().toLowerCase();
+  let l=HAULERS.filter(h=>S.rem[h.id]>0&&(!q||(h.name+h.co+h.veh+h.corr+pathOf(h.route).join(' ')).toLowerCase().includes(q))&&(!F.vt.size||F.vt.has(h.vt))&&(!F.cold||h.cold)&&(!F.back||h.backhaul)&&(F.corr==='all'||h.corr===F.corr)&&(F.hub==='all'||pathOf(h.route).includes(F.hub))&&(!F.maxPrice||(h.perKg||h.flat)<=+F.maxPrice));
+  const c={dep:(a,b)=>a.dep-b.dep,price:(a,b)=>(a.perKg||a.flat/500)-(b.perKg||b.flat/500),rating:(a,b)=>b.rating-a.rating,cap:(a,b)=>S.rem[b.id]-S.rem[a.id]}[F.sort];return l.sort(c)}
+function departTxt(h){const ms=h.dep-Date.now();return ms<=0?`<span class="text-primary">Loading now</span>`:ms<2*H?`<span class="text-error flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>Rolling in ${dur(ms)}</span>`:`<span class="text-secondary">Departs ${dayLabel(h.dep)}</span>`}
+function vphoto(h,cls){const f=VPHOTO[h.vt];return `<div class="relative overflow-hidden bg-surface-container ${cls}"><div class="absolute inset-0 skeleton"></div><img src="${COMMONS(f)}" alt="${esc(h.veh)}" loading="lazy" referrerpolicy="no-referrer" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0');this.previousElementSibling.remove()" onerror="this.parentElement.innerHTML='<div class=&quot;absolute inset-0 flex items-center justify-center bg-surface-container-high text-outline&quot;><span class=&quot;material-symbols-outlined text-[40px]&quot;>${VICON[h.vt]}</span></div>'"/></div>`}
+function haulerCard(h,i){
+  const rem=S.rem[h.id],pct=Math.round(rem/h.cap*100),dist=Math.round(pathKm(h.route)),hrs=dist/50;
+  const price=h.flat?`<span class="font-headline-sm text-headline-sm text-primary">${ugx(h.flat)}</span><span class="font-label-sm text-outline"> flat rate</span>`:`<span class="font-headline-sm text-headline-sm ${h.backhaul?'text-secondary':'text-primary'}">UGX ${h.perKg}</span><span class="font-label-sm text-outline"> / kg</span>${h.was?`<span class="text-[12px] line-through text-outline ml-1.5">UGX ${h.was}</span>`:''}`;
+  return `<article class="rise bg-surface-container-lowest rounded-2xl shadow-sm border ${h.backhaul?'border-secondary-container/50':h.cold?'border-secondary-fixed/60':'border-outline-variant/30'} overflow-hidden flex flex-col md:flex-row" style="animation-delay:${Math.min(i,4)*60}ms">
+   ${vphoto(h,'h-32 md:h-auto md:w-44 flex-shrink-0')}
+   <div class="p-space-md flex-1 min-w-0 flex flex-col gap-space-sm">
+    <div class="flex items-start justify-between gap-2">
+      <div class="flex items-center gap-3 min-w-0"><div class="w-11 h-11 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-lg flex-shrink-0">${initials(h.name)}</div>
+        <div class="min-w-0"><div class="flex items-center gap-2"><span class="font-title-md font-bold truncate">${esc(h.name)}</span><span class="flex items-center gap-0.5 text-secondary font-label-sm flex-shrink-0"><span class="material-symbols-outlined text-[14px] msym-fill">star</span>${h.rating}<span class="text-outline font-normal">(${h.jobs})</span></span></div><p class="font-body-sm text-on-surface-variant truncate">${esc(h.co)}</p></div></div>
+      <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full font-label-sm flex-shrink-0 ${h.backhaul?'bg-secondary-fixed text-on-secondary-fixed-variant':h.cold?'bg-secondary-fixed text-on-secondary-fixed':'bg-primary-fixed text-on-primary-fixed'}"><span class="material-symbols-outlined text-[13px]">${h.backhaul?'sell':h.cold?'ac_unit':'shield'}</span><span class="hidden min-[400px]:inline">${h.lvl}</span></span>
+    </div>
+    <div class="p-2.5 rounded-xl bg-surface-container-low flex items-center gap-2 font-body-sm"><span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0">trip_origin</span><span class="font-semibold truncate">${esc(h.route.from)}</span><span class="material-symbols-outlined text-[16px] text-outline flex-shrink-0">arrow_forward</span><span class="font-semibold truncate">${esc(h.dest)}</span><span class="ml-auto text-on-surface-variant whitespace-nowrap">${dist} km · ~${hrs<1?Math.round(hrs*60)+' min':hrs.toFixed(1)+' h'}</span></div>
+    <div><div class="flex justify-between font-label-sm mb-1"><span class="text-on-surface-variant truncate pr-2">${esc(h.veh)}</span><span class="text-primary font-bold whitespace-nowrap">${rem<1?fmt(rem*1000)+' kg':rem.toFixed(1)+' t'} <span class="text-outline font-normal">/ ${h.cap<1?'500 kg':h.cap+' t'}</span></span></div><div class="h-2 rounded-full bg-surface-container-highest overflow-hidden"><div class="h-full rounded-full ${h.cold?'bg-secondary':'bg-primary'}" style="width:${pct}%"></div></div></div>
+    <div class="flex flex-wrap gap-1.5">${h.tags.map(t=>`<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm">${esc(t)}</span>`).join('')}</div>
+    <div class="flex flex-wrap items-end justify-between gap-2 pt-2 border-t border-outline-variant/20 mt-auto">
+      <div><div class="font-label-sm font-bold flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">schedule</span>${departTxt(h)}</div><div class="mt-0.5">${price}</div></div>
+      <div class="flex items-center gap-2">
+        <button aria-label="Message ${esc(h.name)}" class="w-11 h-11 rounded-xl bg-surface-container text-primary flex items-center justify-center hover:bg-surface-variant" onclick="openChat('${h.id}')"><span class="material-symbols-outlined text-[20px]">chat</span></button>
+        <button class="px-3 h-11 rounded-xl bg-surface-container text-primary font-label-md hover:bg-surface-variant" onclick="openRoute('${h.id}')">Route</button>
+        <button class="px-4 h-11 rounded-xl ${h.backhaul?'bg-secondary text-on-secondary':'bg-primary text-on-primary'} font-label-lg shadow-sm active:scale-[.98]" onclick="openBook('${h.id}')">${h.backhaul?'Lock bay':h.flat?'Dispatch':'Book space'}</button>
+      </div></div>
+   </div></article>`;
+}
+function viewFind(){
+  const l=haulers(),n=activeFilters();
+  $('view').innerHTML=`
+   ${S.dismissBack?'':`<div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-secondary to-secondary-container p-4 text-on-secondary shadow-md"><div class="flex items-start justify-between gap-3"><div class="min-w-0"><div class="flex items-center gap-2 mb-1"><span class="px-2 py-0.5 rounded-md bg-surface-container-lowest text-secondary font-label-sm font-bold">BACKHAUL</span><span class="font-label-sm font-semibold">Up to 33% off</span></div><h3 class="font-title-md font-bold leading-snug">Empty return trips rolling today</h3><p class="font-body-sm opacity-95 mt-1">Trucks heading home empty sell their bay cheap. Lock one in a tap.</p><button class="mt-2 px-3 h-9 rounded-lg bg-surface-container-lowest text-secondary font-label-md" onclick="setF('back',true)">Show backhaul deals</button></div><button aria-label="Dismiss" class="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0" onclick="S.dismissBack=true;save();renderView()"><span class="material-symbols-outlined text-[16px]">close</span></button></div></div>`}
+   <div class="flex gap-2"><label class="relative flex-1 min-w-0"><span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px] pointer-events-none">search</span><input id="q" type="search" value="${esc(F.q)}" placeholder="Search driver, vehicle or corridor" aria-label="Search haulers" class="w-full h-12 pl-11 pr-3 rounded-xl bg-surface-container-lowest shadow-sm outline-none" oninput="F.q=this.value;clearTimeout(window._qt);window._qt=setTimeout(()=>{viewFind();const q=$('q');q.focus();q.setSelectionRange(q.value.length,q.value.length)},180)"/></label>
+    <button class="lg:hidden relative h-12 px-4 rounded-xl bg-surface-container-lowest shadow-sm font-label-lg flex items-center gap-1.5" onclick="openFilters()"><span class="material-symbols-outlined text-[20px]">tune</span>Filters${n?`<span class="min-w-[18px] h-[18px] rounded-full bg-secondary text-on-secondary text-[10px] leading-[18px] text-center">${n}</span>`:''}</button></div>
+   <div class="flex items-center justify-between gap-2"><div class="flex items-center gap-2"><h2 class="font-title-lg font-bold">Verified haulers</h2><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-[11px] font-bold">${l.length} ready</span></div>
+    <label class="flex items-center gap-1 font-label-md text-secondary"><span class="material-symbols-outlined text-[16px]">swap_vert</span><select aria-label="Sort" class="bg-transparent outline-none font-semibold" onchange="F.sort=this.value;renderView()">${[['dep','Departure'],['price','Price'],['rating','Rating'],['cap','Capacity']].map(([k,t])=>`<option value="${k}" ${F.sort===k?'selected':''}>${t}</option>`).join('')}</select></label></div>
+   ${l.length?l.map(haulerCard).join(''):`<div class="bg-surface-container-lowest rounded-xl p-space-lg text-center flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[44px] text-primary-fixed-dim">local_shipping</span><h3 class="font-title-md text-primary">No trucks match</h3><p class="text-on-surface-variant max-w-xs">Loosen the filters, or post a freight request and let drivers bid for your load.</p><div class="flex gap-2 mt-1"><button class="px-4 h-11 rounded-xl bg-surface-container font-label-lg" onclick="resetF()">Reset filters</button><button class="px-4 h-11 rounded-xl bg-primary text-on-primary font-label-lg" onclick="openReq()">Post request</button></div></div>`}
+   <button class="w-full h-14 rounded-2xl bg-primary text-on-primary font-title-md font-bold flex items-center justify-center gap-2 shadow-md active:scale-[.99]" onclick="openReq()"><span class="material-symbols-outlined text-[24px]">add_circle</span>Post a freight request · get driver bids</button>`;
+}
+function openFilters(){openSheet('Filter','Find the right truck','<div id="filters-sheet"></div><button class="w-full min-h-[48px] rounded-xl bg-primary text-on-primary font-label-lg" onclick="closeSheet()">Show results</button>');renderFilters()}
+function openHubs(){const hubs=['all',...Object.keys(TOWN)];openSheet('Depot / corridor','Choose a hub',`<p class="text-on-surface-variant">Show trucks that pass through or serve this hub.</p><div class="grid grid-cols-2 gap-2">${hubs.map(t=>`<button class="h-12 rounded-xl font-label-lg ${F.hub===t?'bg-primary text-on-primary':'bg-surface-container'}" onclick="F.hub='${t}';closeSheet();setMod('find')">${t==='all'?'All hubs':t}</button>`).join('')}</div>`)}
+
+/* ============================ sheets ============================ */
+function openSheet(k,t,html){$('sheet-kicker').textContent=k;$('sheet-title').textContent=t;$('sheet-body').innerHTML=html;$('sheet-wrap').classList.remove('hidden');$('sheet-wrap').classList.add('flex');document.body.style.overflow='hidden'}
+function closeSheet(){$('sheet-wrap').classList.add('hidden');$('sheet-wrap').classList.remove('flex');document.body.style.overflow='';curChat=null;curShip=null}
+$('sheet-wrap').addEventListener('click',e=>{if(e.target.id==='sheet-wrap')closeSheet()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+const row=(a,b,s)=>`<div class="flex justify-between gap-3 ${s?'pt-2 mt-1 border-t border-outline-variant/60 items-baseline':''}"><span class="text-on-surface-variant">${a}</span><span class="${s?'font-headline-sm text-primary':'font-semibold'} text-right">${b}</span></div>`;
+
+/* ---- route info ---- */
+function openRoute(id){const h=getH(id),d=Math.round(pathKm(h.route));
+ openSheet('Route',`${h.route.from} → ${h.dest}`,`${mapSVG(h.route,0,false)}<p class="font-body-sm text-on-surface-variant -mt-1">Schematic of the corridor using real town positions. Not to scale for roads.</p>
+ <div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1.5">${row('Distance (road est.)',d+' km')}${row('Typical drive time','~'+(d/50).toFixed(1)+' h')}${row('Stops',pathOf(h.route).join(' → '))}${row('Vehicle',esc(h.veh))}${row('Plate',h.plate)}${row('Departure',dayLabel(h.dep))}</div>
+ <button class="w-full min-h-[48px] rounded-xl bg-primary text-on-primary font-label-lg" onclick="openBook('${id}')">Book this truck</button>`)}
+
+/* ---- booking ---- */
+let BK=null;
+function openBook(id){
+  const h=getH(id),rem=S.rem[id]*1000;BK={id,mode:h.flat?'flat':'kg'};
+  const opts=CARGO.map(([k,l])=>`<option value="${k}">${l}</option>`).join('');
+  openSheet(h.backhaul?'Lock backhaul bay':'Book space',`${h.route.from} → ${h.dest}`,`
+   <div class="flex items-center gap-3 bg-surface-container-low rounded-lg p-2.5"><div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-lg">${initials(h.name)}</div><div class="min-w-0"><p class="font-label-lg truncate">${esc(h.name)} · ${h.plate}</p><p class="font-body-sm text-on-surface-variant truncate">${esc(h.veh)}</p></div></div>
+   <div><label class="font-label-sm text-on-surface-variant" for="b-cargo">What are you shipping?</label><select id="b-cargo" class="w-full h-12 mt-1 px-3 rounded-lg bg-surface-container-low outline-none" onchange="calcBook()">${opts}</select></div>
+   ${h.flat?'':`<div><span class="font-label-sm text-on-surface-variant">Space</span><div class="grid grid-cols-3 gap-2 mt-1" id="b-modes">${[['kg','By weight'],['half','Half bay'],['full','Full bay']].map(([k,l])=>`<button class="h-11 rounded-lg font-label-md ${k===(h.backhaul?'full':'kg')?'bg-primary text-on-primary':'bg-surface-container'}" onclick="setBM('${k}')">${l}</button>`).join('')}</div></div>`}
+   <div id="b-kgwrap"><label class="font-label-sm text-on-surface-variant" for="b-kg">Weight (kg)</label><input id="b-kg" type="number" inputmode="numeric" class="w-full h-12 mt-1 px-3 rounded-lg bg-surface-container-low outline-none font-title-md" oninput="calcBook()"/><p class="font-body-sm text-on-surface-variant mt-1" id="b-hint"></p></div>
+   <div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1.5" id="b-sum"></div>
+   <p id="b-err" class="font-label-md text-error hidden"></p>
+   <div class="bg-primary-fixed/60 rounded-lg p-2.5 flex gap-2 font-body-sm"><span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0">lock</span><span>The freight charge is held in escrow and paid to the driver after the receiver's OTP confirms delivery. <a class="underline font-semibold" href="Escrow.html">See Escrow</a>.</span></div>
+   <button id="b-go" class="w-full min-h-[52px] bg-primary text-on-primary rounded-xl font-label-lg flex items-center justify-center gap-2 shadow-md disabled:opacity-40" onclick="doBook()"><span class="material-symbols-outlined text-[20px]">local_shipping</span>Confirm booking</button>`);
+  if(h.backhaul){BK.mode='full'}
+  setBM(BK.mode,true);
+}
+function setBM(m,init){BK.mode=m;const h=getH(BK.id),rem=S.rem[BK.id]*1000;
+  document.querySelectorAll('#b-modes button').forEach((b,i)=>b.className=`h-11 rounded-lg font-label-md ${['kg','half','full'][i]===m?'bg-primary text-on-primary':'bg-surface-container'}`);
+  const kg=$('b-kg');if(m==='full'){kg.value=rem;kg.disabled=true}else if(m==='half'){kg.value=Math.round(h.cap*500>rem?rem:h.cap*500);kg.disabled=true}else if(m==='kg'){kg.disabled=false;if(init||!kg.value||+kg.value>rem)kg.value=Math.min(1000,rem)}else{kg.value=Math.min(500,rem);kg.disabled=true}
+  calcBook()}
+function bookQuote(){const h=getH(BK.id),kg=+$('b-kg').value||0,rem=S.rem[BK.id]*1000;let price,err='';
+  if(h.flat)price=h.flat;else if(BK.mode==='half'&&h.half)price=Math.min(h.half,h.perKg*kg);else price=Math.round(h.perKg*kg);
+  const cargo=CARGO.find(c=>c[0]===$('b-cargo').value),d=pathKm(h.route);
+  if(kg<(h.flat?10:100))err=`Minimum load is ${h.flat?10:100} kg`;else if(kg>rem+1e-6)err=`Only ${fmt(rem)} kg of space left`;
+  else if(cargo[2]&&!h.cold&&d>150)err=`${cargo[1]} should travel chilled on trips over 150 km. Pick a cold-chain truck.`;
+  else if(h.flat&&kg>500)err='Boda cargo carries up to 500 kg';
+  return{h,kg,price,err,cargo,d,rem}}
+function calcBook(){if(!BK)return;const q=bookQuote();$('b-hint').textContent=`Up to ${fmt(q.rem)} kg available`;
+  $('b-sum').innerHTML=row('Rate',q.h.flat?`${ugx(q.h.flat)} flat`:`${ugx(q.h.perKg)} / kg`)+row('Load',`${fmt(q.kg)} kg`)+row('Cover','Goods-in-transit cover included')+row('Total freight',ugx(q.price),true);
+  const e=$('b-err');e.textContent=q.err;e.classList.toggle('hidden',!q.err);$('b-go').disabled=!!q.err}
+function doBook(){const q=bookQuote();if(q.err)return;const{h}=q;
+  if(S.rem[h.id]*1000<q.kg-1e-6){toast('Space was just taken. Pick another truck','error');closeSheet();renderAll();return}
+  S.rem[h.id]=Math.max(0,+(S.rem[h.id]-q.kg/1000).toFixed(3));
+  const id='TR-'+(4900+Math.floor(Math.random()*99));S.ships.unshift({id,h:h.id,cargo:q.cargo[1],kg:q.kg,price:q.price,status:'booked',p:0,departAt:h.dep,speed:h.vt==='boda'?30:50,route:h.route,otp:String(Math.floor(1000+Math.random()*9000)),plate:h.plate,driver:h.name,cold:h.cold,log:h.cold?[12,12,12.1]:[],inc:[],rated:null,hist:[{t:Date.now(),e:'Booked'}]});
+  save();closeSheet();mod='ships';renderAll();toast(`Booked ${id} · ${ugx(q.price)} held in escrow`,'local_shipping')}
+
+/* ============================ MY SHIPMENTS ============================ */
+const STAT={booked:['Booked','event_available','bg-surface-container-high text-on-surface-variant'],loading:['Loading','inventory','bg-secondary-fixed text-on-secondary-fixed'],in_transit:['In transit','local_shipping','bg-secondary-container text-on-secondary-container'],arrived:['Arrived · handover','pin_drop','bg-tertiary-fixed text-on-tertiary-fixed'],delivered:['Delivered','check_circle','bg-primary-fixed text-on-primary-fixed']};
+const STEPS=['booked','loading','in_transit','arrived','delivered'];
+function stepBar(s){const i=STEPS.indexOf(s.status);return `<ol class="grid grid-cols-5 mt-2">${['Booked','Loading','On road','Arrived','Delivered'].map((l,k)=>`<li class="flex flex-col items-center gap-1 relative"><span class="w-6 h-6 rounded-full flex items-center justify-center z-10 ${k<i||s.status==='delivered'?'bg-primary text-on-primary':k===i?'bg-secondary-container text-on-secondary-container animate-pulse':'bg-surface-container-high text-on-surface-variant'}"><span class="material-symbols-outlined text-[14px]">${k<i||s.status==='delivered'?'check':'more_horiz'}</span></span><span class="text-[10px] leading-3 font-semibold ${k<=i?'':'text-on-surface-variant'}">${l}</span>${k?`<span class="absolute top-3 right-1/2 w-full h-0.5 ${k<=i?'bg-primary':'bg-surface-container-high'}"></span>`:''}</li>`).join('')}</ol>`}
+function shipCard(s,i){const h=getH(s.h),c=STAT[s.status],tempBad=s.cold&&s.log.length&&(s.log.at(-1)>14||s.log.at(-1)<10);
+ const line=s.status==='in_transit'?`${Math.round(s.p*100)}% · ${Math.round((1-s.p)*km_of(s))} km left · ETA ${clock(Date.now()+etaMs(s))}`:s.status==='booked'||s.status==='loading'?`Departs ${dayLabel(s.departAt)}`:s.status==='arrived'?'At destination · waiting for OTP handover':'Handed over';
+ return `<article class="rise bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm" style="animation-delay:${Math.min(i,4)*60}ms">
+  <div class="flex items-start justify-between gap-2"><div class="min-w-0"><p class="font-label-sm text-outline">#${s.id} · ${esc(s.plate)}</p><h3 class="font-title-md font-bold leading-snug">${fmt(s.kg)} kg ${esc(s.cargo)}</h3><p class="font-body-sm text-on-surface-variant truncate">${esc(s.route.from)} → ${esc(s.route.to)} · ${esc(s.driver)}</p></div>
+   <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full font-label-sm flex-shrink-0 ${c[2]}"><span class="material-symbols-outlined text-[13px] msym-fill">${c[1]}</span>${c[0]}</span></div>
+  ${stepBar(s)}
+  <div class="rounded-lg p-2.5 bg-surface-container-low font-body-sm flex items-center gap-2 ${tempBad?'!bg-error-container text-on-error-container':''}"><span class="material-symbols-outlined text-[18px] ${tempBad?'':'text-secondary'}">${tempBad?'device_thermostat':'near_me'}</span><span class="min-w-0">${tempBad?`<b>Temperature alert:</b> ${s.log.at(-1).toFixed(1)}°C. `:''}${line}</span></div>
+  <div class="flex flex-wrap gap-2 [&>*]:flex-1 sm:[&>*]:flex-none"><button class="min-h-[44px] px-4 rounded-xl bg-primary text-on-primary font-label-lg flex items-center justify-center gap-1.5" onclick="openShip('${s.id}')"><span class="material-symbols-outlined text-[18px]">my_location</span>Track</button>
+   <button class="min-h-[44px] px-4 rounded-xl bg-surface-container font-label-lg flex items-center justify-center gap-1.5" onclick="openChat('${s.h}')"><span class="material-symbols-outlined text-[18px]">chat</span>Message</button>
+   ${s.status==='delivered'&&!s.rated?`<button class="min-h-[44px] px-4 rounded-xl bg-secondary-fixed text-on-secondary-fixed font-label-lg flex items-center justify-center gap-1.5" onclick="openRate('${s.id}')"><span class="material-symbols-outlined text-[18px]">star</span>Rate driver</button>`:''}</div></article>`}
+function viewShips(){const l=S.ships;const act=l.filter(s=>s.status!=='delivered'),done=l.filter(s=>s.status==='delivered');
+ $('view').innerHTML=l.length?`<div class="grid grid-cols-3 gap-2">${[['On the road',l.filter(s=>s.status==='in_transit').length,'local_shipping'],['Scheduled',l.filter(s=>['booked','loading'].includes(s.status)).length,'event'],['Delivered',done.length,'check_circle']].map(([a,b,c])=>`<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm text-center"><span class="material-symbols-outlined text-secondary text-[22px]">${c}</span><div class="font-headline-sm text-primary leading-none mt-1">${b}</div><div class="font-label-sm text-on-surface-variant mt-0.5">${a}</div></div>`).join('')}</div>
+  ${act.map(shipCard).join('')}${done.length?`<h2 class="font-title-md text-on-surface-variant mt-2">Delivered</h2>${done.map(shipCard).join('')}`:''}`:`<div class="bg-surface-container-lowest rounded-xl p-space-lg text-center flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[44px] text-primary-fixed-dim">route</span><h3 class="font-title-md text-primary">No shipments yet</h3><p class="text-on-surface-variant max-w-xs">Book space on a truck and track it here from loading to delivery.</p><button class="px-4 h-11 rounded-xl bg-primary text-on-primary font-label-lg" onclick="setMod('find')">Find a haul</button></div>`}
+
+/* ---- shipment detail ---- */
+let curShip=null;
+function spark(a){if(a.length<2)return'';const w=300,h=60,min=8,max=16;const pts=a.slice(-24).map((v,i,arr)=>[i/(arr.length-1)*w,h-(Math.min(max,Math.max(min,v))-min)/(max-min)*h]);const band=[10,14].map(v=>h-(v-min)/(max-min)*h);
+ return `<svg viewBox="0 0 ${w} ${h}" class="w-full flex-shrink-0" style="aspect-ratio:300/60"><rect x="0" y="${band[1]}" width="${w}" height="${band[0]-band[1]}" fill="#c1ecd4" opacity=".6"/><polyline fill="none" stroke="#904d00" stroke-width="2" points="${pts.map(p=>p.map(x=>x.toFixed(1)).join(',')).join(' ')}"/></svg>`}
+function shipBody(s){const km0=km_of(s),stat=STAT[s.status],stops=pathOf(s.route);
+ const cf=cumF(s.route);const cps=stops.map((t,i)=>{const f=cf[i];const done=s.p>=f-1e-6&&s.status!=='booked'&&s.status!=='loading'||s.status==='arrived'||s.status==='delivered';return `<li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full flex items-center justify-center ${done?'bg-primary text-on-primary':'bg-surface-container-high text-on-surface-variant'}"><span class="material-symbols-outlined text-[14px]">${done?'check':i===stops.length-1?'flag':'more_horiz'}</span></span><div class="flex-1"><p class="font-label-md">${t}${i===0?' · origin':i===stops.length-1?' · destination':' · checkpoint'}</p><p class="font-body-sm text-on-surface-variant">${Math.round(km0*f)} km</p></div></li>`}).join('');
+ const dem=s.status==='in_transit'?`<button class="flex-1 min-h-[40px] rounded-lg bg-surface-container font-label-md noprint" onclick="advance('${s.id}')">Demo: +25% of trip</button>`:s.status==='booked'||s.status==='loading'?`<button class="flex-1 min-h-[40px] rounded-lg bg-surface-container font-label-md" onclick="advance('${s.id}')">Demo: ${s.status==='booked'?'start loading':'depart now'}</button>`:s.status==='arrived'?`<button class="flex-1 min-h-[40px] rounded-lg bg-surface-container font-label-md" onclick="advance('${s.id}')">Demo: driver enters OTP</button>`:'';
+ return `${mapSVG(s.route,s.p)}
+ <div class="flex flex-wrap items-center gap-2"><span class="inline-flex items-center gap-1 px-2 py-1 rounded-full font-label-sm ${stat[2]}"><span class="material-symbols-outlined text-[13px] msym-fill">${stat[1]}</span>${stat[0]}</span>${s.status==='in_transit'?`<span class="font-body-sm text-on-surface-variant">Heading to <b>${nextStop(s.route,s.p)}</b> · ${Math.round(s.speed)} km/h</span>`:''}</div>
+ <div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-1.5">${row('Distance left',Math.round((1-s.p)*km0)+' km of '+Math.round(km0))}${row('ETA',s.status==='delivered'?'Delivered':s.status==='in_transit'||s.status==='arrived'?clock(Date.now()+etaMs(s)):dayLabel(s.departAt))}${row('Vehicle',`${esc(s.plate)} · ${esc(s.driver)}`)}${row('Load',`${fmt(s.kg)} kg ${esc(s.cargo)}`)}${row('Freight',ugx(s.price))}</div>
+ ${s.cold?`<div class="rounded-xl border border-outline-variant/50 p-space-md"><div class="flex items-center justify-between"><span class="font-label-lg flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-secondary">ac_unit</span>Cargo temperature</span><span class="font-headline-sm ${s.log.at(-1)>14||s.log.at(-1)<10?'text-error':'text-primary'}">${s.log.at(-1).toFixed(1)}°C</span></div>${spark(s.log)}<p class="font-body-sm text-on-surface-variant">Safe band 10–14°C (green). Live logger reading every few minutes.</p><button class="mt-2 h-9 px-3 rounded-lg bg-surface-container font-label-md" onclick="tempSpike('${s.id}')">Demo: temperature spike</button></div>`:''}
+ ${s.status==='arrived'?`<div class="bg-primary-fixed rounded-xl p-space-md text-center"><p class="font-label-md text-on-primary-fixed">Receiver handover OTP</p><div class="font-display-lg text-[36px] tracking-[.4em] text-primary font-bold pl-[.4em]">${s.otp}</div><p class="font-body-sm text-on-primary-fixed-variant">Read this to the driver only after you've checked the load.</p></div>`:''}
+ <div><h3 class="font-label-lg mb-2">Checkpoints</h3><ol class="flex flex-col gap-3">${cps}</ol></div>
+ <div><h3 class="font-label-lg mb-2">Trip log</h3><ul class="flex flex-col gap-1.5 font-body-sm">${[...s.hist,...s.inc.map(i=>({t:i.t,e:'Issue: '+i.type+(i.note?' — '+i.note:'')}))].sort((a,b)=>b.t-a.t).map(x=>`<li class="flex gap-2"><span class="text-outline w-14 flex-shrink-0">${clock(x.t)}</span><span>${esc(x.e)}</span></li>`).join('')}</ul></div>
+ <div class="flex flex-wrap gap-2">${dem}${s.status==='in_transit'||s.status==='loading'||s.status==='booked'?`<button class="flex-1 min-h-[40px] rounded-lg bg-surface-container font-label-md" onclick="copyCode('${s.id}')"><span class="material-symbols-outlined text-[16px] align-middle">share</span> Copy trip code</button><button class="flex-1 min-h-[40px] rounded-lg bg-surface-container text-error font-label-md" onclick="openIssue('${s.id}')">Report issue</button>`:''}</div>
+ <a class="font-body-sm underline text-center text-on-surface-variant" href="Escrow.html">Freight payment status lives on the Escrow page</a>`}
+function openShip(id){curShip=id;const s=getS(id);openSheet('Live shipment',`#${s.id} · ${s.route.from} → ${s.route.to}`,shipBody(s))}
+function refreshShip(){if(curShip&&!$('sheet-wrap').classList.contains('hidden')){const s=getS(curShip);$('sheet-body').innerHTML=shipBody(s)}}
+function copyCode(id){const t=id;try{navigator.clipboard.writeText(t)}catch(e){}toast(`Trip code ${t} copied. Teammates can enter it to follow this trip`,'content_copy')}
+function tempSpike(id){const s=getS(id);s.log.push(16.4);s.hist.push({t:Date.now(),e:'Temperature above safe band: 16.4°C'});save();refreshShip();renderView();toast('Alert sent to you and the driver','device_thermostat')}
+function openIssue(id){openSheet('Report an issue',`#${id}`,`<select id="i-type" class="w-full h-12 px-3 rounded-lg bg-surface-container-low outline-none">${['Delay','Breakdown','Road closed','Wrong cargo loaded','Temperature problem'].map(t=>`<option>${t}</option>`).join('')}</select><textarea id="i-note" rows="3" maxlength="300" placeholder="What happened?" class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low outline-none resize-none" oninput="const r=detectContact(this.value);$('i-w').textContent=r?'Remove '+r+'. Keep it on You-Farm.':'';$('i-go').disabled=!!r"></textarea><p id="i-w" class="font-label-md text-error"></p><button id="i-go" class="w-full min-h-[48px] rounded-xl bg-primary text-on-primary font-label-lg" onclick="logIssue('${id}')">Send report</button>`)}
+function logIssue(id){const n=$('i-note').value.trim();if(detectContact(n))return;const s=getS(id);s.inc.push({t:Date.now(),type:$('i-type').value,note:n});save();openShip(id);renderView();toast('Issue logged. The hauler and You-Farm ops were notified','report')}
+
+/* ---- demo + live simulation ---- */
+function advance(id){const s=getS(id);const now=Date.now();
+ if(s.status==='booked'){s.status='loading';s.hist.push({t:now,e:'Loading started'})}
+ else if(s.status==='loading'){s.status='in_transit';s.departAt=now;s.hist.push({t:now,e:`Departed ${s.route.from}`})}
+ else if(s.status==='in_transit'){s.p=Math.min(1,s.p+.25);passCheckpoints(s);if(s.p>=1)arrive(s)}
+ else if(s.status==='arrived'){s.status='delivered';s.hist.push({t:now,e:'Delivered · receiver OTP confirmed'});toast('Delivered. Please rate your driver','check_circle')}
+ save();renderAll();refreshShip()}
+function passCheckpoints(s){const st=pathOf(s.route);const cf=cumF(s.route);st.forEach((t,i)=>{if(i&&i<st.length-1){const f=cf[i];if(s.p>=f&&!s.hist.some(h=>h.e==='Passed '+t)){s.hist.push({t:Date.now(),e:'Passed '+t})}}})}
+function arrive(s){s.p=1;s.status='arrived';s.hist.push({t:Date.now(),e:`Arrived at ${s.route.to} · awaiting handover`});toast(`#${s.id} arrived. Give the OTP to the driver after checking the load`,'pin_drop')}
+function tick(){let ch=false;const now=Date.now();
+ S.ships.forEach(s=>{
+  if(s.status==='booked'&&s.departAt<=now){s.status='loading';s.hist.push({t:now,e:'Loading started'});ch=true}
+  if(s.status==='in_transit'){s.p=Math.min(1,s.p+(s.speed/km_of(s))*(10e3/H)*20);passCheckpoints(s);if(s.p>=1)arrive(s);ch=true} // 20× demo speed so movement is visible
+  if(s.cold&&['in_transit','loading'].includes(s.status)&&Math.random()<.5){const last=s.log.at(-1)||12;s.log.push(+(last+(12-last)*.4+(Math.random()-.5)*.4).toFixed(1));if(s.log.length>60)s.log.shift();ch=true}
+ });
+ bidsTick();if(ch){save();renderMods();if(mod==='ships')renderView();refreshShip()}}
+setInterval(tick,10000);
+
+/* ---- rating ---- */
+function openRate(id){openSheet('Rate your driver',`#${id}`,`<div class="flex justify-center gap-1" id="stars">${[1,2,3,4,5].map(n=>`<button aria-label="${n} stars" class="w-11 h-11" onclick="starSet(${n})"><span class="material-symbols-outlined text-[36px] text-outline-variant">star</span></button>`).join('')}</div><textarea id="r-note" rows="3" maxlength="300" placeholder="How was the trip? (optional)" class="w-full px-3 py-2.5 rounded-lg bg-surface-container-low outline-none resize-none" oninput="const r=detectContact(this.value);$('r-w').textContent=r?'Remove '+r+'.':'';$('r-go').disabled=!window._st||!!r"></textarea><p id="r-w" class="font-label-md text-error"></p><button id="r-go" disabled class="w-full min-h-[48px] rounded-xl bg-primary text-on-primary font-label-lg disabled:opacity-40" onclick="doRate('${id}')">Submit rating</button>`);window._st=0}
+function starSet(n){window._st=n;document.querySelectorAll('#stars .material-symbols-outlined').forEach((e,i)=>{e.className='material-symbols-outlined text-[36px] '+(i<n?'text-secondary msym-fill':'text-outline-variant')});$('r-go').disabled=!!detectContact($('r-note').value)}
+function doRate(id){const s=getS(id);s.rated=window._st;save();closeSheet();renderAll();toast('Thanks. Your rating helps other farmers choose','star')}
+
+/* ============================ FREIGHT REQUESTS & BIDS ============================ */
+function openReq(){const towns=Object.keys(TOWN).map(t=>`<option>${t}</option>`).join('');
+ openSheet('Freight request','Get driver bids',`<div><label class="font-label-sm text-on-surface-variant" for="r-cargo">Cargo</label><select id="r-cargo" class="w-full h-12 mt-1 px-3 rounded-lg bg-surface-container-low outline-none">${CARGO.map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('')}</select></div>
+ <div class="grid grid-cols-2 gap-2"><div><label class="font-label-sm text-on-surface-variant" for="r-from">From</label><select id="r-from" class="w-full h-12 mt-1 px-3 rounded-lg bg-surface-container-low outline-none">${towns}</select></div><div><label class="font-label-sm text-on-surface-variant" for="r-to">To</label><select id="r-to" class="w-full h-12 mt-1 px-3 rounded-lg bg-surface-container-low outline-none">${Object.keys(TOWN).map(t=>`<option ${t==='Kampala'?'selected':''}>${t}</option>`).join('')}</select></div></div>
+ <div class="grid grid-cols-2 gap-2"><div><label class="font-label-sm text-on-surface-variant" for="r-kg">Weight (kg)</label><input id="r-kg" type="number" inputmode="numeric" value="2000" class="w-full h-12 mt-1 px-3 rounded-lg bg-surface-container-low outline-none"/></div><div><label class="font-label-sm text-on-surface-variant" for="r-when">Pickup within</label><select id="r-when" class="w-full h-12 mt-1 px-3 rounded-lg bg-surface-container-low outline-none"><option value="6">6 hours</option><option value="24" selected>24 hours</option><option value="48">2 days</option></select></div></div>
+ <div><label class="font-label-sm text-on-surface-variant" for="r-budget">Budget per kg (optional, UGX)</label><input id="r-budget" type="number" inputmode="numeric" placeholder="e.g. 70" class="w-full h-12 mt-1 px-3 rounded-lg bg-surface-container-low outline-none"/></div>
+ <div><label class="font-label-sm text-on-surface-variant" for="r-note">Notes for drivers (optional)</label><textarea id="r-note" rows="2" maxlength="200" class="w-full mt-1 px-3 py-2.5 rounded-lg bg-surface-container-low outline-none resize-none" oninput="const r=detectContact(this.value);$('r-w').textContent=r?'Remove '+r+'. Keep it on You-Farm.':'';$('r-go').disabled=!!r"></textarea><p id="r-w" class="font-label-md text-error"></p></div>
+ <p id="r-err" class="font-label-md text-error"></p>
+ <button id="r-go" class="w-full min-h-[52px] bg-primary text-on-primary rounded-xl font-label-lg flex items-center justify-center gap-2" onclick="postReq()"><span class="material-symbols-outlined text-[20px]">campaign</span>Post request</button>`)}
+function postReq(){const from=$('r-from').value,to=$('r-to').value,kg=+$('r-kg').value,c=CARGO.find(x=>x[0]===$('r-cargo').value),note=$('r-note').value.trim();
+ const err=from===to?'Pickup and drop-off must differ':kg<50?'Minimum weight is 50 kg':detectContact(note)?'Remove contact details from the notes':'';if(err){$('r-err').textContent=err;return}
+ S.reqs.unshift({id:'RQ-'+(100+Math.floor(Math.random()*899)),cargo:c[1],perish:c[2],from,to,kg,when:+$('r-when').value,budget:+$('r-budget').value||0,note,at:Date.now(),status:'open',bids:[],nextAt:Date.now()+4000,cold:c[2]});save();closeSheet();mod='reqs';renderAll();toast('Request sent to verified haulers on this corridor','campaign')}
+function candidates(r){const d=km(r.from,r.to);return HAULERS.filter(h=>{if(r.cold&&!h.cold&&d>150)return false;if(h.vt==='boda')return r.kg<=500&&d<60;const rem=S.rem[h.id]*1000;return rem>=r.kg&&(pathOf(h.route).includes(r.from)||pathOf(h.route).includes(r.to))||(rem>=r.kg&&km(h.route.from,r.from)<120)})}
+function bidsTick(){let ch=false;const now=Date.now();S.reqs.forEach(r=>{if(r.status!=='open')return;if(now-r.at>r.when*H){r.status='expired';ch=true;return}
+ if(now>=r.nextAt&&r.bids.length<4){const used=new Set(r.bids.map(b=>b.h));const c=candidates(r).filter(h=>!used.has(h.id));if(c.length){const h=c[0];const d=km(r.from,r.to);const base=h.flat||(h.perKg||60)*r.kg;const price=Math.round(base*(.92+Math.random()*.16)/1000)*1000;r.bids.push({h:h.id,price,eta:Math.round((km(h.route.from,r.from)/50+.5)*10)/10,at:now});ch=true;r.nextAt=now+5000+Math.random()*6000}else r.nextAt=now+1e9}});
+ if(ch){save();renderMods();if(mod==='reqs')renderView();$('notif-dot').classList.remove('hidden')}}
+function reqCard(r,i){const open=r.status==='open';
+ return `<article class="rise bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm" style="animation-delay:${Math.min(i,4)*60}ms"><div class="flex items-start justify-between gap-2"><div class="min-w-0"><p class="font-label-sm text-outline">#${r.id} · posted ${dur(Date.now()-r.at)} ago</p><h3 class="font-title-md font-bold">${fmt(r.kg)} kg ${esc(r.cargo)}</h3><p class="font-body-sm text-on-surface-variant">${esc(r.from)} → ${esc(r.to)} · pickup within ${r.when<48?r.when+' h':'2 days'}${r.budget?` · budget UGX ${r.budget}/kg`:''}</p></div>
+  <span class="px-2 py-1 rounded-full font-label-sm flex-shrink-0 ${open?'bg-secondary-container text-on-secondary-container':r.status==='awarded'?'bg-primary-fixed text-on-primary-fixed':'bg-surface-container-high text-on-surface-variant'}">${open?'Collecting bids':r.status==='awarded'?'Awarded':r.status==='expired'?'Expired':'Cancelled'}</span></div>
+  ${open&&!r.bids.length?`<div class="bg-surface-container-low rounded-lg p-3 flex items-center gap-2 font-body-sm"><span class="material-symbols-outlined text-[18px] spin text-secondary">progress_activity</span>Waiting for driver bids. These usually arrive within minutes.</div>`:''}
+  ${r.bids.sort((a,b)=>a.price-b.price).map((b,k)=>{const h=getH(b.h),win=r.winner===b.h;return `<div class="rounded-xl border ${win?'border-primary bg-primary-fixed/40':'border-outline-variant/50'} p-3 flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-lg flex-shrink-0">${initials(h.name)}</div><div class="min-w-0 flex-1"><p class="font-label-lg truncate">${esc(h.name)} ${k===0&&open?'<span class="ml-1 px-1.5 rounded bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold">LOWEST</span>':''}</p><p class="font-body-sm text-on-surface-variant truncate">★ ${h.rating} · ${esc(h.veh.split('·')[0])} · pickup in ~${b.eta} h</p></div><div class="text-right flex-shrink-0"><p class="font-title-md text-primary font-bold">${ugx(b.price)}</p>${open?`<div class="flex gap-1 mt-1 justify-end"><button aria-label="Message" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center" onclick="openChat('${h.id}')"><span class="material-symbols-outlined text-[18px]">chat</span></button><button class="px-3 h-9 rounded-lg bg-primary text-on-primary font-label-md" onclick="acceptBid('${r.id}','${h.id}')">Accept</button></div>`:win?'<p class="font-label-sm text-primary">Winner</p>':''}</div></div>`}).join('')}
+  ${open?`<button class="h-10 rounded-lg bg-surface-container text-error font-label-md" onclick="cancelReq('${r.id}')">Cancel request</button>`:''}</article>`}
+function viewReqs(){$('view').innerHTML=`<button class="w-full h-14 rounded-2xl bg-primary text-on-primary font-title-md font-bold flex items-center justify-center gap-2 shadow-md active:scale-[.99]" onclick="openReq()"><span class="material-symbols-outlined text-[24px]">add_circle</span>Post a freight request</button>
+ ${S.reqs.length?S.reqs.map(reqCard).join(''):`<div class="bg-surface-container-lowest rounded-xl p-space-lg text-center flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[44px] text-primary-fixed-dim">request_quote</span><h3 class="font-title-md text-primary">No requests yet</h3><p class="text-on-surface-variant max-w-xs">Need a dedicated truck or cold reefer? Post your load once and let verified drivers bid for it.</p></div>`}`}
+function acceptBid(rid,hid){const r=S.reqs.find(x=>x.id===rid),b=r.bids.find(x=>x.h===hid),h=getH(hid);if(r.status!=='open')return;
+ const rem=S.rem[hid]*1000;if(rem<r.kg){toast('That truck no longer has space. Pick another bid','error');return}
+ r.status='awarded';r.winner=hid;S.rem[hid]=+(S.rem[hid]-r.kg/1000).toFixed(3);
+ const id='TR-'+(4900+Math.floor(Math.random()*99));S.ships.unshift({id,h:hid,cargo:r.cargo,kg:r.kg,price:b.price,status:'booked',p:0,departAt:Date.now()+b.eta*H,speed:h.vt==='boda'?30:50,route:{from:r.from,to:r.to},otp:String(Math.floor(1000+Math.random()*9000)),plate:h.plate,driver:h.name,cold:h.cold,log:h.cold?[12,12.1]:[],inc:[],rated:null,hist:[{t:Date.now(),e:`Booked via request ${r.id}`}]});
+ save();mod='ships';renderAll();toast(`${h.name} booked · ${ugx(b.price)} held in escrow`,'local_shipping')}
+function cancelReq(id){const r=S.reqs.find(x=>x.id===id);r.status='cancelled';save();renderAll();toast('Request cancelled','cancel')}
+
+/* ============================ in-app chat with haulers ============================ */
+let curChat=null;
+function openChat(hid){const h=getH(hid);curChat=hid;const t=S.chats[hid]=S.chats[hid]||[{from:'sys',text:`Private chat with ${h.name}. Phone numbers, emails and links are blocked. Keep everything on You-Farm.`}];
+ openSheet('Private chat',h.name,`<div class="flex flex-col gap-2 min-h-[220px] max-h-[40dvh] overflow-y-auto" id="c-body"></div><p id="c-w" class="hidden font-label-md text-error flex items-start gap-1"><span class="material-symbols-outlined text-[16px]">warning</span><span></span></p><div class="flex gap-2"><input id="c-in" maxlength="300" placeholder="Message ${esc(h.name.split(' ')[0])}…" class="flex-1 min-w-0 h-12 px-4 rounded-xl bg-surface-container-low outline-none" onkeydown="if(event.key==='Enter')sendChat()" oninput="const r=detectContact(this.value);const w=$('c-w');w.classList.toggle('hidden',!r);w.classList.toggle('flex',!!r);if(r)w.lastElementChild.textContent='This looks like '+r+'. Not allowed here.'"/><button aria-label="Send" class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center" onclick="sendChat()"><span class="material-symbols-outlined">send</span></button></div>`);drawChat()}
+function drawChat(){const b=$('c-body');if(!b)return;b.innerHTML=S.chats[curChat].map(m=>m.from==='sys'?`<div class="self-center text-center font-label-sm text-on-surface-variant bg-surface-container rounded-full px-3 py-1.5 max-w-[92%]">${esc(m.text)}</div>`:`<div class="bubble ${m.from==='me'?'me':'them'}">${esc(m.text)}</div>`).join('');b.scrollTop=1e9}
+function sendChat(){const i=$('c-in'),t=i.value.trim();if(!t)return;const r=detectContact(t);if(r){toast(`Not sent: contains ${r}`,'block');return}
+ const hid=curChat,h=getH(hid);S.chats[hid].push({from:'me',text:t});i.value='';save();drawChat();
+ setTimeout(()=>{const s=t.toLowerCase();const rep=/price|cheaper|discount|rate/.test(s)?`My rate is ${h.flat?ugx(h.flat)+' flat':'UGX '+h.perKg+' per kg'}. For bigger loads, post a request and I'll bid.`:/when|depart|time|leave/.test(s)?`We depart ${dayLabel(h.dep)} and load 1 hour before.`:/cold|chill|temp|fresh/.test(s)?h.cold?'Yes, the body is chilled and a live logger tracks temperature.':'This truck is not chilled, so I would not carry fresh produce far.':/space|capacity|kg|ton/.test(s)?`I have ${fmt(S.rem[hid]*1000)} kg free.`:'Noted. You can book space directly, or send me the weight and cargo type.';
+  S.chats[hid].push({from:'them',text:rep});save();if(curChat===hid)drawChat()},1200)}
+
+/* ============================ boot ============================ */
+function resetDemo(){S=SEED();save();Object.assign(F,{q:'',vt:new Set(),cold:false,back:false,corr:'all',hub:'all',maxPrice:''});mod='find';renderAll();toast('Demo data reset','restart_alt')}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){tick();renderAll()}});
+renderAll();
+</script>
 </body></html>
